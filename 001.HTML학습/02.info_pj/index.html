@@ -8,6 +8,9 @@
     <title>네이버 요약뉴스</title>
     <!-- css인터널방식 코드 -->
     <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Orbit&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
       /* CSS코딩구역 */
       /*
          선택자{
@@ -34,7 +37,8 @@
         모든 요소에서 기본값은 내용물만큼*/
         /* height: auto; */
         /* height: 300px; */
-        outline: 1px solid red;
+        border-radius: 10px;
+        border:4px double rgb(42, 42, 206);
         /* 패딩 
         padding: 수치;(4방향 모두)
         padding: 수치 수치;(위아래)
@@ -60,6 +64,61 @@
        }
        /* 메인 이미지 크기 변경하기 */
        main#main-area img{width:100%;}
+
+       /* 상단영역, 하단영역 공통 - 콤마,는 그룹선택자 */
+
+       header.part, footer.part{text-align: center;}
+
+       /* 상단영역 */
+       #top-area{
+        background-color: #98d5f8;
+   
+        
+       }
+
+       .tit{
+         font-family: "Orbit", sans-serif;
+         font-weight: bold;
+         font-style: normal;
+         font-size:40px;
+       }
+
+
+       /* 메뉴링크 */
+       .menu a{color:#222; text-decoration: none; font-family: "Orbit", sans-serif;}
+
+       /* 메뉴링크 마우스오버시 */
+       .menu a:hover{text-decoration: overline; text-decoration-style: dotted; color:rgb(42, 42, 206);}
+
+       /* 하단영역 */
+       #info-area{
+        background-color: #f4f4f4;
+       }
+      
+       /* 주소요소 */
+       #info-area address{
+         /* 글자체 */
+         font-family: "Noto Sans KR", sans-serif;
+         /* 이탤릭체 해제 */
+         font-style: normal;
+         font-size: 14px;
+       }
+      
+
+       /* 
+         [선택자들]
+         1. 타입선택자 : 태그명
+         2. 아이디/클래스 선택자 : 요소이름
+         3. 종속선택자 : 요소명+이름(h1#my)
+         4. 자손선택자 : 띄어쓰기
+         5. 직계자식 선택자 : 꺽쇠(>) 
+         6. 그룹선택자 : 콤마(,)
+         7. 형제 선택자 : 플러스(+)
+            예) a+a ->앞에 a요소가 있는 a요소 선택
+
+       */
+
+     
     </style>
   </head>
   <body>
@@ -74,11 +133,11 @@
                 style="width: 80px; vertical-align: middle;">
                 <!-- style속성으로 개별요소에 css를 설정할 수 있다(인라인 방식) -->
             </a>
-            <a href="">정치</a>
-            <a href="">경제</a>
-            <a href="">사회</a>
-            <a href="">TV/과학</a>
-            <a href="">TV/연예</a>
+            <a href="">정치</a> |
+            <a href="">경제</a> |
+            <a href="">사회</a> |
+            <a href="">TV/과학</a> |
+            <a href="">TV/연예</a> |
           </div>
 
     </header>
