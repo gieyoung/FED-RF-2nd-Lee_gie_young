@@ -1,0 +1,69 @@
+/* info_pj 서브페이지용 CSS - sub.css */
+
+/* 공통 외부CSS 불러오기 */
+
+@import url(./common.css);
+/* @import방식으로 외부파일을 불러와서 합치면 html 파일에서 link방식으로 불러올 필요가 없다 
+http request웹요청이 줄어들어 html의 랜더링 속도가 향상되는 이점
+*/
+
+/* 서브페이지 타이틀 */
+ h2.sub-title{
+/* 글자색 : color(c) */
+color:#fff;
+
+/* 글자크기:font-size(fz) */
+font-size: 38px;
+
+/* 글자두께:font-weight(fw) ; */
+font-weight:bold;
+
+/* 글자체:font-family; 
+-콤마로 구분된 글자체는 대체체임*
+앞의 글자체가 없으면 뒤의 글자체가 적용됨. 만약 모두 없으면 브라우저 기본체가 적용*/
+
+font-family:'궁서', '굴림', '돋움';
+
+/* 텍스트 정렬: text-align */
+text-align: center;
+
+/* 텍스트 그림자: text-shadow */
+text-shadow: 2px 2px 2px rgba(0,0,0,0.35);
+
+/* 박스테두리: border:두께 종류 색상 
+solid 실선, dotted 점선, dashed데쉬선*/
+border:2px dotted skyblue;
+
+
+/* 둥근모서리: border-radius */
+border-radius: 20px;
+
+/* 패딩 */
+padding:20px;
+
+/* 배경색: bgc */
+background-color: #f1f1f1;
+
+
+
+/* 배경반복여부 bgr */
+
+/* 배경고정 */
+
+/* 배경위치 */
+background-position: center;
+
+/* 배경크기 bgz*/
+background-size:cover;
+
+/* 외부 css에서 이미지 경로 주의 
+html파일이 아닌 css파일 위치에서 상대경로를 잡아야 이미지가 나옴*/
+
+ }
+ /* 배경이미지: bgi */
+
+.politic{background-image: url(../images/titbg1.jpg)}
+.economic{background-image: url(../images/titbg2.jpg)}
+.social{background-image: url(../images/titbg3.jpg);}
+.science{background-image: url(../images/titbg4.jpg);}
+.entertain{background-image: url(../images/titbg5.jpg);}
