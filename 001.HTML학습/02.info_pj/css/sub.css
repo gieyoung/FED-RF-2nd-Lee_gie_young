@@ -88,7 +88,41 @@ html파일이 아닌 css파일 위치에서 상대경로를 잡아야 이미지�
 .article-title{
   text-align: center;     
   font-size: 24px;
+  color: #111;
 }
 
+/* 기사 이미지 박스 */
+.article-picture{
+  margin: 40px 0;
+}
 /* 기사메인사진 */
-.article-picture img{width:100%;}
+.article-picture img{
+  width:100%;
+padding-bottom: 15px;}
+
+/* 기사이미지 설명 */
+.article-picture figcaption{
+  text-align: center;
+  padding: 0 5px;
+  
+}
+}
+
+
+/* 기사 이미지 설명 글자크기 변경 */
+.article-picture figcaption small{
+  font-size:15px;
+  /* small에 글자크기가 지정되어 있으므로 여기에서 글자크기를 변경해야 반영된다 */
+}
+
+  /* 기사내용 */
+ .contents p{
+  /* 글자크기 */
+  font-size: 17px;
+  /* 줄간격 */
+  line-height: 1.56;
+  /* line-height 줄간격은 글자의 위아래 간격.
+  단위 없을 경우 글자크기의 배수로 셋팅됨 */
+  /* 글자색 */
+  color: #333;
+ }
