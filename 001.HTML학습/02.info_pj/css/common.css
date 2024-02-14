@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 /* info_pj 공통 CSS - common.css */
 
 /* 웹폰트 적용 */
@@ -65,7 +67,7 @@ main#main-area img {
  
 }
 
-.article-picture img{width:100%;}
+
 
 /* 상단영역, 하단영역 공통 - 콤마,는 그룹선택자 */
 
@@ -83,7 +85,9 @@ footer.part {
   font-family: "Orbit", sans-serif;
   font-weight: bold;
   font-style: normal;
-  font-size: 40px;
+  font-size: 45px;
+  text-shadow: 2px 2px 2px #f1f1f1;
+  margin: 0;
 }
 
 /* 메뉴링크 */
@@ -126,4 +130,3 @@ footer.part {
     예) a+a ->앞에 a요소가 있는 a요소 선택
 
 */
-.article-title{text-align: center;}
