@@ -10,7 +10,7 @@ http request웹요청이 줄어들어 html의 랜더링 속도가 향상되는 �
 /* 서브페이지 타이틀 */
  h2.sub-title{
 /* 글자색 : color(c) */
-color:#fff;
+/* color:#fff; */
 
 /* 글자크기:font-size(fz) */
 font-size: 38px;
@@ -61,9 +61,16 @@ html파일이 아닌 css파일 위치에서 상대경로를 잡아야 이미지�
 
  }
  /* 배경이미지: bgi */
+ /* 글자색 */
 
-.politic{background-image: url(../images/titbg1.jpg)}
-.economic{background-image: url(../images/titbg2.jpg)}
-.social{background-image: url(../images/titbg3.jpg);}
-.science{background-image: url(../images/titbg4.jpg);}
-.entertain{background-image: url(../images/titbg5.jpg);}
+.politic{background-image: url(../images/titbg1.jpg); color:red;}
+.economic{background-image: url(../images/titbg2.jpg);color:orange;}
+.social{background-image: url(../images/titbg3.jpg); color:yellow;}
+.science{background-image: url(../images/titbg4.jpg); color:blue;}
+.entertain{background-image: url(../images/titbg5.jpg); color:#fff;}
+
+
+
+
+
+
