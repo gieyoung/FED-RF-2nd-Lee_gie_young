@@ -120,9 +120,36 @@ padding-bottom: 15px;}
   /* 글자크기 */
   font-size: 17px;
   /* 줄간격 */
-  line-height: 1.56;
+  line-height: 1.7;
   /* line-height 줄간격은 글자의 위아래 간격.
   단위 없을 경우 글자크기의 배수로 셋팅됨 */
   /* 글자색 */
   color: #333;
  }
+
+
+ /* 인라인 인용구 */
+.contents q{
+  font-weight: bold;
+}
+
+/* mark요소 디자인 변경 */
+.contents mark{
+  display: block;
+    /* 인라인요소는 사이즈가 안먹히기 때문에 display:inline-block으로 바꿔줌 */
+  width: 65%;
+  /* 크기를 가진 블록요소 중앙정렬 */
+  margin: 15px auto;
+  /* 글자중앙정렬 */
+  text-align: center;
+  padding: 20px 50px;
+  border-top: 2px solid grey;
+  border-bottom:2px solid grey;
+  background-color: #f1f1f1;
+  color:rgb(52, 20, 168);
+  font-family: "Roboto", sans-serif;
+
+ 
+
+
+}
