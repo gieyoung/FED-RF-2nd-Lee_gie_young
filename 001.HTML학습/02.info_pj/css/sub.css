@@ -139,7 +139,7 @@ padding-bottom: 15px;}
     /* 인라인요소는 사이즈가 안먹히기 때문에 display:inline-block으로 바꿔줌 */
   width: 65%;
   /* 크기를 가진 블록요소 중앙정렬 */
-  margin: 15px auto;
+  margin: 40px auto;
   /* 글자중앙정렬 */
   text-align: center;
   padding: 20px 50px;
@@ -152,4 +152,58 @@ padding-bottom: 15px;}
  
 
 
+}
+
+
+/* 인용구박스 */
+.quote-box{
+  border-top: 2px dashed #ccc;
+  border-bottom: 2px dashed #ccc;
+  margin:20px 0;
+  
+
+}
+
+/* 인용구 제목 */
+.quote-box h4{
+  font-size: 20px;
+  border-radius: 40px;
+  /* 박스그림자 *
+  box-shadow: x축 y축 blur spread 색
+  ->spread는 그림자 기존크기보다 더한 크기*/
+  box-shadow: 2px 2px 4px 4px #c8c8c8;
+  text-align: center;
+  width: 250px;
+  padding: 20px;
+  background-color: #f1f1f1;
+
+}
+
+.quote-box blockquote{
+  /* 기본마진없애기 */
+  margin:0;
+  font-size: 15px;
+  /* 자식요소인 이미지에 float를 사용할 경우 부모박스에서 자식요소를 인식하지 못하는 경우가 발생함
+  이를 해결하기 위한 한가지 방법으로 overflow:hidden 사용하여 넘치는 요소 숨기기 */
+  overflow:hidden;
+  margin-bottom: 20px;
+  line-height: 2.2;
+  text-align: justify;
+  /* 넘치는 자식요소 숨기는 설정때문에 그림자가 잘리므로 이를 패딩으로 처리함 */
+  padding: 5px 5px 5px 0;
+  
+  
+}
+
+.quote-box img{
+  /* 기본적으로 이미지는 인라인요소.
+  글자가 왼쪽으로 한줄 하단에 나열됨
+  글자가 옆에 올라와서 흘러가게 하려면 float속성 써야한다
+  float:left 이미지는 왼쪽에 글자는 오른쪽
+  float:right 이미지는 오른쪽에 글자는 왼쪽 */
+  float:right;
+  /* 이미지 옆에 공간주기 */
+  margin: 0 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px grey;
 }
