@@ -2,30 +2,52 @@
 /* 인트로 사이트 메인 css- main.css */
 
 
+/* 스크롤 애니메이션 셋팅 */
+html{
+  scroll-behavior: smooth;
+  /* html 즉, Root에 부드러운 스크롤 설정을 하면 이동시 스크롤 애니메이션이 연출된다 */
+}
 
-    html, body{
-      margin: 0;
-      padding: 0;
-      height: 100%;
+/* 마진, 패딩 초기화 */
+html,body,h1,h2,h3,p{
+  margin: 0;
+  padding: 0;
+}
+
+html, body, .page{
+  /* 높이값 보이는 화면 기준 채우기 */
+  height: 100%;
+
+}
+body{
+  /* background-image:
+  linear-gradient(to bottom, rgb(0, 255, 179), rgb(0, 183, 255)); */
+  /* [선형그라데이션]
+  background-image: linear-gradient(방향, 색1, 색2, 색3,....) 
+  -방향 tp top, to left, to right, to bottom*/
+  background-image: url("../images/back_img.jpg");
+  background-size: cover;
+}
+
+.menu{
+  width: 700px;
+  margin: 0 auto;
+  background-color:rgba(135,206,206,0.696);
+}
+
+/* 메뉴 하위 h1,h2 옆으로 흐르게 display 변경하기 */
+.menu>*{
+  display: inline-block;
+}
+/* 컨텐츠 박스 */
+.link-box{
+    border:2px dashed blue;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: center;
 
     }
-    body{
-      background-image:
-      linear-gradient(to bottom, rgb(0, 255, 179), rgb(0, 183, 255));
-      /* [선형그라데이션]
-      background-image: linear-gradient(방향, 색1, 색2, 색3,....) 
-      -방향 tp top, to left, to right, to bottom*/
-      background-image: url("../images/back_img.jpg");
-      background-size: cover;
-    }
-    .page{
-        border:2px dashed blue;
-        border-radius: 20px;
-        max-width: 600px;
-        margin: 100px auto;
-        padding: 20px;
-        text-align: center;
-   
-        }
 
   
