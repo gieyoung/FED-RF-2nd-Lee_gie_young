@@ -290,7 +290,7 @@ padding-bottom: 15px;}
   /* 부모박스에 패딩이 없는 상태에서 첫번째 자식 블록박스의 마진은 부모 바깥쪽으로 나가서 셋팅된다.
   이유는 마진은 바깥쪽으로 셋팅하는 개념이고 부모가 이를 셋팅하지 않았다면 첫번째 블록박스에서 마진을 셋팅할 수 있도록 기본 설계가 되어있음.
   -> 패딩을 주는 순간 자식의 마진은 패딩의 내부공간을 밀게된다. */
-  border:13px dotted blue;
+  border:2px dotted #c8c8c8;
 
   background-clip: border-box;
   /* [ 배경 관련 표시 영역지정 background-clip ] 
