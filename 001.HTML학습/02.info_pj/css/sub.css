@@ -156,7 +156,7 @@ padding-bottom: 15px;}
 
 
 /* 인용구박스 */
-.quote-box{
+.bd-box{
   border-top: 2px dashed #ccc;
   border-bottom: 2px dashed #ccc;
   margin:20px 0;
@@ -165,7 +165,7 @@ padding-bottom: 15px;}
 }
 
 /* 인용구 제목 */
-.quote-box h4{
+.bd-box h4{
   font-size: 20px;
   border-radius: 40px;
   /* 박스그림자 *
@@ -206,4 +206,25 @@ padding-bottom: 15px;}
   margin: 0 10px;
   border-radius: 10px;
   box-shadow: 2px 2px 4px grey;
+}
+
+
+/* 동영상 박스: 유튜브 iframe*/
+.mvbox{
+  /* 비율유지박스 설정 
+  aspect-ratio:가로비/세로비 
+  */
+  aspect-ratio:16/9;
+
+  /* height: 550px; */
+   /* ->주의: 가로, 세로가 유동적이므로 특정값을 셋팅하지 말 것 */
+  /* div같은 block요소는 width설정을 하지 않으면 width:auto로 자동설정됨 */
+
+}
+
+/* 아이프레임 */
+.mvbox iframe{
+  border: none;  /*bdn*/
+  width: 100%;
+  height: 100%;
 }
