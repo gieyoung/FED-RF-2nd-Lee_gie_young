@@ -283,7 +283,8 @@ padding-bottom: 15px;}
   /* background-image:linear-gradient(-45deg, red 5%, blue 20%, yellow 80%); */
 
   background-image:linear-gradient(46deg, #f8abff 30%, #d3f8c4, #dfe497);
-
+  
+ 
   /* padding */
   padding: 20px;
   /* 부모박스에 패딩이 없는 상태에서 첫번째 자식 블록박스의 마진은 부모 바깥쪽으로 나가서 셋팅된다.
@@ -310,6 +311,9 @@ padding-bottom: 15px;}
 
   /* 배경 반복 제거 */
   background-repeat: no-repeat;
+
+  /* 박스 내부 그림자 */
+  box-shadow: inset 0 0 10px #333;
  
   
 }
@@ -326,8 +330,20 @@ padding-bottom: 15px;}
   참고) 마지막 자식블록요소도 부모 박스 하단 마진은 바깥으로 나감 */
 
 }
+
+/* 작품 이미지 */
+.work img{
+border: 10px ridge goldenrod;
   
-  
+}
+
+
+.work cite{
+  font-family: "Gugi", sans-serif;
+  color:blue;
+  font-size: 20px;
+  font-style: normal;
+}
   
 
 
