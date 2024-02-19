@@ -367,8 +367,20 @@ border: 10px ridge goldenrod;
   
 
 }
+/* 뉴스 공통 말줄임표시 + 분야별 뉴스도 추가 */
+.news-box li, .sec-news dd{
+  /* 기본적으로 블록박스는 내용이 넘치면 줄바꿈이 되는 랩핑박스 */
+  /* 줄바꿈 방지하기 white-space: nowrap
+  (기본값은 normal)*/
+  /* 1. 줄바꿈 방지 */
+  white-space: nowrap;
+  /* 2. 넘치는 내용 숨기기*/
+  overflow: hidden;
+  /* 3. 넘치는 텍스트 말줄임표 */
+  text-overflow: ellipsis;  /*tov*/
 
-
+}
+/* 뉴스 타이틀 공통 */
 .news-box h3{
   font-family: "Roboto", sans-serif;
   font-weight: bold;
@@ -380,7 +392,7 @@ border: 10px ridge goldenrod;
 }
 
 /* 주요뉴스 ul 변경하기*/
-.main-news ul{
+.news-box ul, .news-box ol{
   /* 기본리스트 숨기기 */
   list-style: none;
   /* 기본 마진 패딩 없애기 */
@@ -407,6 +419,174 @@ border: 10px ridge goldenrod;
   /* content: url("../images/naver.png"); 이미지도 삽입 가능 */
 }
 
+/* 주요뉴스 li의 가상클래스를 사용한 선택법
+  [ 2가지 이상의 종류의 자식 요소일 경우 선택법 ]
+  :first-child -> 첫번째 자식
+  :last-child -> 마지막 자식
+  :nth-child(n) -> n번째 자식(n은 1부터)
+
+*/
+
+/* 분야별 뉴스 dt별 글자색, 배경색 변경하기*/
+/* 경제 */
+.sec-news dt:first-of-type{
+  color:red;
+  border-color:red;
+  
+}
+/* 사회 */
+.sec-news dt:nth-of-type(2){
+  color:blue;
+  border-color:blue;
+  
+}
+/* 연예 */
+.sec-news dt:last-of-type{
+  color:green;
+  border-color:green;
+  
+}
+
+.sec-news dd+dt{
+  margin-top:10px;
+}
+
+.main-news li:first-child a{
+  color: red;
+}
+
+.main-news li:nth-child(2) a{
+  color: orange;
+}
+
+/* 분야별 뉴스 dl */
+.sec-news dl{
+  margin: 0;
+}
+
+/* 분야별 뉴스 dt */
+.sec-news dt{
+  font-family: "Black And White Picture", system-ui;
+  font-size: 20px;
+  border: 4px dashed darkcyan;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 50%;
+
+}
+
+/* 분야별 뉴스 dd가상요소 아이콘 넣기 */
+.sec-news dd::before{
+  content:'💟';
+}
+
+
+
+/* 사진뉴스 박스 */
+/* 타이틀 변경하기 */
+.photo-news h3{
+  /* 배경 그라데이션 없애기 */
+  background-image: none;
+  text-align: center;
+}
+/* 타이틀 앞 가상요소 아이콘 넣기 */
+.photo-news h3::before{
+  content: '📷';
+  margin-right: 8px;
+  
+}
+
+/* 타이틀 뒤 가상요소 아이콘 넣기 */
+.photo-news h3::after{
+  content: '📸';
+  margin-left: 8px;
+
+}
+
+/* 사진 뉴스 테이블
+-테이블은 기본적으로 내용만큼 가로 */
+
+.photo-news table{
+  max-width: 500px;
+  margin: 0 auto;
+  /* 테이블 기본 간격 제거 */
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+
+
+}
+
+/* tr이나 td에 child선택자 사용가능
+table tr td 정해짐. 같은 종류의 형제요소들만 올 수 있음
+첫번째 td - 숫자부분 */
+
+.photo-news td{}
+
+
+/* 첫번째 td-번호 */
+.photo-news td:first-child{
+  /* 가로크기 */
+  width:50px;
+  /* 세로크기 */
+  height: 84px;
+  /* 글자중앙 */
+  text-align: center;
+  /* 배경색 */
+  background-color: #ccc;
+}
+
+/* 두번째 td-기사제목링크 */
+.photo-news td:nth-child(2){
+  /* 배경색: bgc */
+  background-color: #e4e4e4;
+  /* 패딩양쪽 */
+  padding: 0 20px;
+
+  
+  
+}
+
+/* 세번째 td */
+.photo-news td:last-child{
+  background-color: #e4e4e4;
+  border-bottom:none;
+ 
+  
+}
+
+/* 세번째 td-사진뉴스이미지 */
+.news-box a img{
+  /* 이미지 높이크기만 주면 가로크기는 자동 */
+  height: 70px;
+  /* 이미지 세로 가운데정렬 */
+  vertical-align: middle;
+  
+  
+}
+
+
+/* 사진뉴스 두번째 tr부터 마진탑넣기 */
+.photo-news tr+tr td{
+  border-top: 2px solid #ccc;
+
+}
+
+/* 사진 뉴스 기사 링크 2줄 말줄임 */
+.photo-news td:nth-child(2) a{
+  line-height: 1.5;
+  /* 말줄임 처리(2줄) */
+  /* 1. 넘치는 컨텐츠 숨기기 */
+  overflow:hidden;
+  /* 2. 넘치는 글 말줄임 표시 */
+  text-overflow: ellipsis;
+  /* 3. display를 -webket-box로 변경 */
+  display: -webkit-box;
+  /* 4. 말줄임표시 라인설정 */
+  -webkit-line-clamp: 2;
+  /* 5. 기준축 진행방향 설정 */
+  -webkit-box-orient: vertical;
+
+}
 
 
   

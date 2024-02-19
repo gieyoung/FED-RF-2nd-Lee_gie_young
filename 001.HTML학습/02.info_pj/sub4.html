@@ -192,13 +192,13 @@
       <!-- <ul style="list-style-type: disc;"> -->
       <ul>   
          <li>
-            <a href="https://www.inews24.com/view/1687585" target="_blank">"모델 안 바꾸면 불매, 계약 해지"…이강인 모델 세운 기업들 '불똥'</a>
+            <a href="https://www.inews24.com/view/1687585" target="_blank">1. "모델 안 바꾸면 불매, 계약 해지"…이강인 모델 세운 기업들 '불똥'</a>
          </li>
          <li>
-            <a href="https://www.inews24.com/view/1688057" target="_blank">"손흥민, 팬에게 사인하다가 '화들짝'...손가락 부상 얼마나 심하길래'</a>
+            <a href="https://www.inews24.com/view/1688057" target="_blank">2. "손흥민, 팬에게 사인하다가 '화들짝'...손가락 부상 얼마나 심하길래'</a>
          </li>
          <li>
-            <a href="https://www.inews24.com/view/1687865" target="_blank">"의사면허 박탈" 엄포 놓자…서울성모병원 인턴, '전원복귀'</a>
+            <a href="https://www.inews24.com/view/1687865" target="_blank">3. "의사면허 박탈" 엄포 놓자…서울성모병원 인턴, '전원복귀'</a>
          </li>
       </ul>
    </article>
@@ -210,16 +210,139 @@
       <!-- ol은 start로 시작번호 지정옵션, reversed를 주면 역순으로 순서를 보여준다 -->
       <ol>
          <li>
-            <a href="https://www.inews24.com/view/1687820" target="_blank">"당근! 홍삼 건기식 팔아요"…불법 거래 '5년 이하 징역'</a>
+            <a href="https://www.inews24.com/view/1687820" target="_blank">1. "당근! 홍삼 건기식 팔아요"…불법 거래 '5년 이하 징역'</a>
          </li>
          <li>
-            <a href="https://www.inews24.com/view/1688128" target="_blank">우본 "저소득 장애인, 우체국 암보험 무료가입 지원"</a>
+            <a href="https://www.inews24.com/view/1688128" target="_blank">2. 우본 "저소득 장애인, 우체국 암보험 무료가입 지원"</a>
          </li>
          <li>
-            <a href="https://www.inews24.com/view/1688093" target="_blank">개인정보위, 개인정보 처리방침 평가 본격 시동</a>
+            <a href="https://www.inews24.com/view/1688093" target="_blank">3. 개인정보위, 개인정보 처리방침 평가 본격 시동</a>
          </li>
       </ol>
    </article>
+
+
+   <!-- 
+   [ 용어정리리스트 : dl] 
+   
+   dl > dt + dd
+
+   -----------------------
+   
+   dl : 용어 리스트
+   (defines the description list)
+
+   dt : 용어정의
+   (defines the term) 
+
+   dd : 용어설명
+   (description each term)
+
+   -----------------------
+
+   주의 
+   - dl은 반드시 자식요소로 dt와 dd가 반드시 한번이상 사용되어야 함.
+   - dt와 dd는 형제관계
+   
+
+   -->
+
+
+   <!-- 분야별 뉴스 : dl -->
+   <article class="sec-news news-box">
+      <h3>분야별 뉴스</h3>
+      <dl>
+         <!-- 경제파트 -->
+         <dt>경제</dt>
+         <dd>
+            <a href="https://n.news.naver.com/mnews/article/011/0004301584" target="_blank">한미·OCI '경영권 프리미엄' 두고 장·차남 "프리미엄 제로"…그룹 "비교 대상 달라"</a>
+         </dd>
+         <dd>
+            <a href="https://n.news.naver.com/mnews/article/008/0005000448" target="_blank">삼성 직원 1만 5800명 가입한 '초기업노조' 출범…"더 커진다"</a>
+         </dd>
+         <!-- 사회파트 -->
+         <dt>사회</dt>
+         <dd>
+            <a href="https://n.news.naver.com/mnews/article/009/0005260466" target="_blank">원광대 의대생들 ‘휴학계 철회’</a>
+         </dd>
+         <dd>
+            <a href="https://n.news.naver.com/mnews/article/016/0002268605" target="_blank">‘의대 증원’ 찬성하십니까?…고교생·학부모·교원 49% 찬성, 43% 반대</a>
+         </dd>
+         <!-- TV/연예 파트 -->
+         <dt>TV/연예</dt>
+         <dd>
+            <a href="https://entertain.naver.com/ranking/read?oid=076&aid=0004111422" target="_blank">
+               전현무 "나는 쉽게 결혼 못 해요"…'왼손 약지 반지' 결혼설 해프닝 [종합]
+            </a>
+         </dd>
+         <dd>
+            <a href="https://entertain.naver.com/ranking/read?oid=311&aid=0001693272" target="_blank">
+               손석구 아역, CG였다→故송해, 딥페이크로 부활…양극화 심화 우려도 [엑's 초점]
+            </a>
+         </dd>
+      </dl>
+   </article>
+
+
+
+   <!-- 
+      
+   [ 테이블 요소 : table ]
+   table > tbody > tr > td
+   -> tbody는 안쓰고 tr부터 구현해도 브라우저가 자동으로 그려준다
+   주의) table > tr로 직계 선택하게 되면 위와 같은 구조적인 이유로 선택되지 않는다.
+
+   ------------------------
+
+   [ 간단한 테이블 작성시 필수요소 3가지 ]
+   table : 테이블 박스 부모요소
+   tr: 테이블 행요소(table row)
+   td: 테이블 데이터 요소(table data)
+   -->
+
+
+
+   <!-- 사진 뉴스 : table -->
+
+   <article class="photo-news news-box">
+      <h3>사진뉴스</h3>
+      <!-- 3행 3열 테이블 구성하기 -->
+      <!-- <table border="1"> -->
+      <table>
+         <tr>
+            <td>1</td>
+            <td>
+               <a href="https://n.news.naver.com/mnews/article/014/0005144189" table="_blank">
+                  벤츠, 신차 'CLE 쿠페' 韓 상륙…2도어 차량
+               </a>
+            </td>
+            <td>
+               <a href="https://n.news.naver.com/mnews/article/014/0005144189" table="_blank">
+               <img src="./images/pnews1.jpg" alt="포토뉴스이미지"></a>
+            </td>
+         </tr>
+         <tr>
+            <td>2</td>
+            <td><a href="https://n.news.naver.com/mnews/article/014/0005144144" table="_blank">
+               교대, '4등급'도 합격했다..정시 합격생 13% 등록 포기
+            </a></td>
+            <td><a href="https://n.news.naver.com/mnews/article/014/0005144144" table="_blank">
+               <img src="./images/pnews2.jpg" alt="포토뉴스이미지"></td></a>
+         </tr>
+         <tr>
+            <td>3</td>
+            <td><a href="https://n.news.naver.com/mnews/ranking/article/014/0005143972?ntype=RANKING" table="_blank">
+               80대 할머니한테 "빨리 앉아" 소리 지른 버스기사..징계 못한답니다
+            </a></td>
+            <td><a href="https://n.news.naver.com/mnews/ranking/article/014/0005143972?ntype=RANKING" table="_blank">
+               <img src="./images/pnews3.jpg" alt="포토뉴스이미지"></td></a>
+         </tr>
+      </table>
+   </article>
+
+   
+   
+
 
 
     
