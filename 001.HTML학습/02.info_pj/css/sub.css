@@ -363,7 +363,7 @@ border: 10px ridge goldenrod;
 
 /* 공통 a요소 마우스오버 */
 .news-box a:hover{
-  color: blue;
+  color: rgb(52, 52, 211);
   
 
 }
@@ -372,12 +372,43 @@ border: 10px ridge goldenrod;
 .news-box h3{
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   background-image: linear-gradient(to right, skyblue,transparent);
   /* 색상명을 transparent 쓰면 투명 */
   padding: 10px;
 
 }
+
+/* 주요뉴스 ul 변경하기*/
+.main-news ul{
+  /* 기본리스트 숨기기 */
+  list-style: none;
+  /* 기본 마진 패딩 없애기 */
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+[ CSS의 가상요소: before, after] 
+- 모든 요소는 맨 앞과 맨 뒤에 가상 요소를 사용할 수 있다.
+- 가상요소 표기법은 요소명 뒤에 콜론 2개를 겹쳐씀(::)
+- 맨 앞은 before, 맨 뒤는 after
+- 필수속성: content
+- 이미지는 content 속성 값으로 url() 사용!
+
+*/
+
+/* 주요뉴스에 가상요소로 아이콘 넣기 */
+.main-news ul li::before{
+  content: '💙';
+}
+.main-news ul li::after{
+  content:'💥';
+  /* content: url("../images/naver.png"); 이미지도 삽입 가능 */
+}
+
+
+
   
 
 
