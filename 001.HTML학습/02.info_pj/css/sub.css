@@ -344,6 +344,40 @@ border: 10px ridge goldenrod;
   font-size: 20px;
   font-style: normal;
 }
+
+
+/* 뉴스 파트 공통 클래스 */
+.news-box{
+  border-top: 2px dashed #ccc;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
+/* 뉴스 파트 공통 a요소 */
+.news-box a{
+  font-size: 17px;
+  line-height: 2.5;
+  color: #000;
+  text-decoration: none;
+}
+
+/* 공통 a요소 마우스오버 */
+.news-box a:hover{
+  color: blue;
+  
+
+}
+
+
+.news-box h3{
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  background-image: linear-gradient(to right, skyblue,transparent);
+  /* 색상명을 transparent 쓰면 투명 */
+  padding: 10px;
+
+}
   
 
 
