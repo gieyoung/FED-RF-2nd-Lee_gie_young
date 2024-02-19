@@ -520,7 +520,7 @@ border: 10px ridge goldenrod;
 table tr td 정해짐. 같은 종류의 형제요소들만 올 수 있음
 첫번째 td - 숫자부분 */
 
-.photo-news td{}
+.photo-news td{padding: 0 10px;}
 
 
 /* 첫번째 td-번호 */
