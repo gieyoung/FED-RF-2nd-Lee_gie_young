@@ -156,7 +156,73 @@
       < 여는 꺽쇠 &lt; (lt는 less than ~보다 작은)
       > 닫는 꺽쇠 &gt; (gt는 greater than ~보다 큰)
    -->
-    </article>
+
+   <bdo dir="rtl">우리나라대한민국만세</bdo>
+   <!-- 입력한 글자가 반대로 적혀 보임 -->
+   </article>
+
+
+<!-- 
+      
+   [ 순서없는 리스트 : <ul> ]
+   unordered list 
+   (참고 : 블릿옵션:https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ul_type_css )
+   <ul>
+      <li>
+         <a href=""></a>
+      </li>
+   </ul>
+
+   [ 순서있는 리스트 : ol]
+   ordered list
+   (참고: 순서표시옵션:https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ol_type_all_css)
+
+
+   [ul/ol 공통사항]
+   - 하위 필수 요소: li(개별리스트)
+   - 주의: 하위에 li 이외의 블록요소나 그 어떤 요소도 직계자식으로 사용할 수 없다.
+  예) <ul><li><div></div></li></ul> -> 사용불가
+
+
+   -->
+
+   <!-- 주요뉴스 : ul -->
+   <article class="main-news news-box">
+      <h3>주요뉴스</h3>
+      <!-- <ul style="list-style-type: disc;"> -->
+      <ul>   
+         <li>
+            <a href="https://www.inews24.com/view/1687585" target="_blank">"모델 안 바꾸면 불매, 계약 해지"…이강인 모델 세운 기업들 '불똥'</a>
+         </li>
+         <li>
+            <a href="https://www.inews24.com/view/1688057" target="_blank">"손흥민, 팬에게 사인하다가 '화들짝'...손가락 부상 얼마나 심하길래'</a>
+         </li>
+         <li>
+            <a href="https://www.inews24.com/view/1687865" target="_blank">"의사면허 박탈" 엄포 놓자…서울성모병원 인턴, '전원복귀'</a>
+         </li>
+      </ul>
+   </article>
+   
+   <!-- 랭킹뉴스 : ol -->
+   <article class="rank-news news-box">
+      <h3>랭킹뉴스</h3>
+      <!-- 스타일 변경 <ol style="list-style-type: circle;"> -->
+      <!-- ol은 start로 시작번호 지정옵션, reversed를 주면 역순으로 순서를 보여준다 -->
+      <ol>
+         <li>
+            <a href="https://www.inews24.com/view/1687820" target="_blank">"당근! 홍삼 건기식 팔아요"…불법 거래 '5년 이하 징역'</a>
+         </li>
+         <li>
+            <a href="https://www.inews24.com/view/1688128" target="_blank">우본 "저소득 장애인, 우체국 암보험 무료가입 지원"</a>
+         </li>
+         <li>
+            <a href="https://www.inews24.com/view/1688093" target="_blank">개인정보위, 개인정보 처리방침 평가 본격 시동</a>
+         </li>
+      </ol>
+   </article>
+
+
+    
 
     </main>
     
