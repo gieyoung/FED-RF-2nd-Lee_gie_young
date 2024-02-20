@@ -581,7 +581,7 @@ table tr td 정해짐. 같은 종류의 형제요소들만 올 수 있음
   text-overflow: ellipsis;
   /* 3. display를 -webket-box로 변경 */
   display: -webkit-box;
-  /* 4. 말줄임표시 라인설정 */
+  /* 4. 말줄임표시 라인설정(2줄만 보이게) */
   -webkit-line-clamp: 2;
   /* 5. 기준축 진행방향 설정 */
   -webkit-box-orient: vertical;
