@@ -1,54 +1,109 @@
 @charset "utf-8";
-/* 인트로 사이트 메인 css- main.css */
-
+/* 인트로 사이트 메인 CSS - main.css */
 
 /* 스크롤 애니메이션 셋팅 */
 html{
-  scroll-behavior: smooth;
-  /* html 즉, Root에 부드러운 스크롤 설정을 하면 이동시 스크롤 애니메이션이 연출된다 */
+    scroll-behavior: smooth;
+    /* html 즉, Root에 부드러운 스크롤 설정을 하면
+    이동시 스크롤 애니메이션이 연출된다! */
 }
 
-/* 마진, 패딩 초기화 */
-html,body,h1,h2,h3,p{
-  margin: 0;
-  padding: 0;
+/* 마진,패딩 초기화 */
+html,body,h1,h2,h3,p,ul,ol{
+    margin: 0;
+    padding: 0;    
+}
+ul,ol{
+    list-style: none;
+    /* 리스트 스타일 없앰 */
 }
 
-html, body, .page{
-  /* 높이값 보이는 화면 기준 채우기 */
-  height: 100%;
-
-}
-body{
-  /* background-image:
-  linear-gradient(to bottom, rgb(0, 255, 179), rgb(0, 183, 255)); */
-  /* [선형그라데이션]
-  background-image: linear-gradient(방향, 색1, 색2, 색3,....) 
-  -방향 tp top, to left, to right, to bottom*/
-  background-image: url("../images/back_img.jpg");
-  background-attachment : fixed;
-  background-size: cover;
+html,body,.page{
+    /* 높이값 보이는 화면 기준 채우기 */
+    height: 100%;
 }
 
+#pg1{
+    background: 
+    url(../images/back_img.jpg) no-repeat fixed center/cover;
+
+    /* background-image: 
+    linear-gradient(to bottom,rgb(205, 255, 227),rgb(247, 206, 255)); */
+    /* 
+        [ 선형 그라데이션 ]
+        background-image: 
+        linear-gradient(방향,색1,색2,색3,...)
+        - 방향: 
+        to top, to left, to right, to bottom
+    */
+}
+#pg2{
+    background: 
+    url(../images/sunset.jpg) no-repeat fixed center/cover;
+
+}
+
+/* 상단영역 */
+.top-area{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff78;
+    /* 패딩 : 위아래만 */
+    padding: 20px 0;
+    /* 상단박스 맨위! */
+    z-index: 999;
+}
+/* 로고박스 */
+.logo{
+    text-align: center;
+}
+
+
+/* 메뉴박스 */
 .menu{
-  max-width: 700px;
-  margin: 0 auto;
-  background-color:rgba(135,206,206,0.696);
+    width: 700px;
+    margin: 0 auto;
+    /* background-color: rgba(135, 206, 250, 0.696); */
+    padding: 15px;
+}
+/* clear설정 */
+.menu ul::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+/* 각 리스트 */
+.menu li{
+    /* 블록요소 옆으로 흐르게 */
+    float: left;
+    width: 50%;
+    text-align: center;
+    font-size: 30px;
+}
+/* 메뉴 a요소 : 글자색변경, 밑줄없앰 */
+.menu a{
+    color: #222;
+    text-decoration: none;
+}
+/* 메뉴 오버시 */
+.menu a:hover{
+    color: hotpink;
+    text-decoration: overline;
+    text-decoration-style: wavy;
 }
 
-/* 메뉴 하위 h1,h2 옆으로 흐르게 display 변경하기 */
-.menu>*{
-  display: inline-block;
-}
-/* 컨텐츠 박스 */
+
+/* 컨텐츠박스 */
 .link-box{
-    border:2px dashed blue;
+    position: relative;
+    top: 40%;
+    
+    border: 2px dashed darkblue;
     border-radius: 20px;
-    max-width: 600px;
-    margin: 100px auto;
+    width: 600px;
+    margin: 0 auto;
     padding: 20px;
     text-align: center;
-
-    }
-
-  
+    background-color: #ffffff6e;
+}
