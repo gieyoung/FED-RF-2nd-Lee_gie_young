@@ -60,6 +60,23 @@
         z-index: 1;
       }
 
+      /* 위치이동값을 사용한 픽스드 포지션!
+        -> 보이는 화면을 기준한다! */
+      #f2 {
+        position: fixed; /* pof */
+        top: -162px;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        border-radius: 50%;
+        background-color: pink;
+        border: 5px dashed red;
+        text-align: center;
+        font-size: 25px;
+        line-height: 443px;
+        z-index: 9999;
+      }
+
       /* 첫번째 앱솔루트 박스 */
       #a1 {
         position: absolute; /* poa */
@@ -293,12 +310,31 @@
         /* 하단간극 없앰 vam */
         vertical-align: middle;
       }
+
+      /* 
+            [ 부모가 많은 요소를 fixed처리하기! ]
+            - display:inline 요소가 자동 block처리됨!
+            왜? 앱솔루트/픽스드 는 모두 블록요소여야만 하기 때문!
+            - 가로,세로크기가 없는 경우 내용만큼 크기가 정해짐!
+        */
+      .iamfixed {
+        position: fixed;
+        top: 200px;
+        right: 200px;
+        background-color: yellowgreen;
+        border: 4px double blue;
+        border-radius: 50%;
+        padding: 15px;
+        font-size: 30px;
+        z-index: 99999;
+      }
     </style>
   </head>
   <body>
     <div class="bx" id="r1">r1</div>
     <div class="bx" id="s1">s1</div>
     <div class="bx" id="f1">나는 젠틀픽스드다!</div>
+    <div class="bx" id="f2">나는 보이는화면을 기준한다!</div>
     <div class="bx" id="a1" title="나는 젠틀앱솔루트다!">a1</div>
     <div class="bx" id="r2">r2</div>
     <div class="bx" id="s2">s2</div>
@@ -335,6 +371,9 @@
             <div class="abs a4" title="나는 부모찾아 올라간다!">a4</div>
 
             <span class="spabs" title="자동블록전환!!!"> 나는 span앱솔루트다! </span>
+
+            <!-- 부모가 많은 요소를 fixed처리하기! -->
+            <span class="iamfixed">👨‍🔧개발자👩‍🔧</span>
           </div>
         </div>
       </div>

@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+/* Robot PJ 메인 CSS - robot.css */
+
+/* 웹폰트 CDN */
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Black+Ops+One&family=Chakra+Petch&family=Orbitron:wght@500&display=swap');
+
+/* 
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Black Ops One', cursive;
+    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+*/
+
+
+/* 초기화 셋팅 */
+html,body,h1,h2,h3,ul,ol{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 전체 배경이미지 */
+body{
+    background:url("../images/bg.jpg") no-repeat fixed top/cover;
+}
+
+/* 공사중 표시 */
+body * {
+    outline: 2px dashed yellow;
+}
+
+/*********************** 공통클래스 ***********************/
+/* 메탈배경 클래스 */
+.metal1{
+    background:url(../images/metal01.jpg) no-repeat center/cover;
+}
+.metal2{
+    background:url(../images/metal02.jpg) no-repeat center/cover;
+}
+/********************** 1. 상단영역 **********************/
+
+/********************** 2. 메인영역 **********************/
+/* 2-1.로봇박스 */
+.robot-box{
+  
+
+}
+
+/* 2-1-1.로봇머리 */
+.head{
+    /* .eye의 부모 */
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius:20px 20px 100px 100px;
+    
+}
+/* 눈공통 */
+.eye{
+    position: absolute;
+    /* 부모는?->.head */
+    /* 크기공통 */
+    width: 50px;
+    height: 50px;
+    /* 배경공통 */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: #fff;
+    top:50px;
+    /* 둥근눈 */
+    border-radius: 50%;
+    border: 4px double #000;
+
+}
+
+/* 왼눈 */
+.eye1{
+    background-image: url(../images/e1.jpg);
+    left:50px;
+    
+}
+/* 오른눈 */
+.eye2{
+    background-image: url(../images/e2.jpg);
+    right:50px;
+    
+}
+
+/* 코 */
+.nose{
+    position: absolute;
+    border-radius:50%;
+    left:50%;
+    top: 40%;
+    transform: translate(-50%,0);
+    width: 50px;
+    height: 50px;
+    background: url(../images/nose.jpg) no-repeat 0/100% 100%;
+    
+
+}
+
+
+/* 입 */
+.mouth{
+    position: absolute;
+    left:50%;
+    bottom:30px;
+    transform: translate(-50%,0);
+    width: 130px;
+    height: 50px;
+    background: url(../images/mouth.png) no-repeat 0/100% 100%;
+} 
+
+
+/* 귀공통 */
+.ear{
+    position: absolute;
+    top: 70px;
+    width: 30px;
+    height: 70px;   
+}
+
+.ear1{
+    left:-30px;
+    border-radius:0 20px; 
+}
+
+.ear2{
+    right:-30px;
+    border-radius:20px 0; 
+}
+
+/* 2-1-1.몸통 */
+.body{
+    /* 부모자격 */
+    position: relative;
+    width: 220px;
+    height:400px;
+    /* 가운데정렬 */
+    margin: 0 auto;
+    margin-top: 50px;
+    /* 배경이미지 조정 */
+    background-repeat: repeat;
+    background-size: 50%;
+}
+
+
+/* 목 */
+.neck{
+    position: absolute;
+    top: -47px;
+    /* 
+    [ 가로/세로 중앙보내기 계산법 ]
+    left: calc(50% - 크기/2)
+    left: calc(50% - 크기/2)
+    -> 크기는 left일 경우 width이고
+    top일 경우 height 값이다.
+
+    또는 transform: trnalate(-50%,0);
+    */
+    left: calc(50% - 50px/2);
+    width: 50px;
+    height: 60px;
+    border-radius: 0 0 20px 20px;
+    z-index: 0;
+}
+
+/* 팔공통*/
+.arm{
+   position: absolute;
+   width: 50px;
+   height: 200px;
+}
+.arm span{
+    position: absolute;
+    /* 부모는 .arm */
+    top:100%;
+    left:10%;
+    width: 80%;
+    height: 80%;
+
+}
+
+/* 왼팔 */
+.arm1{
+    left: -50px;
+}
+/* 오른팔 */
+.arm2{
+    right: -50px;
+}
+
+/* 다리공통*/
+.leg{
+    position: absolute;
+    top:100%;
+    width: 70px;
+    height: 200px;
+ }
+ .leg span{
+     position: absolute;
+     /* 부모는 .arm */
+     top:100%;
+     left:10%;
+     width: 80%;
+     height: 80%;
+ 
+ }
+ 
+ /* 왼다리 */
+ .leg1{
+     left: 0;
+ }
+ /* 오른다리 */
+ .leg2{
+     right:0;
+ }
+/********************** 3. 하단영역 **********************/
