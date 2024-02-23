@@ -47,16 +47,30 @@ body * {
 /********************** 2. 메인영역 **********************/
 /* 2-1.로봇박스 */
 .robot-box {
+    padding-top:200px;
+    margin-bottom: 900px;
 }
 
 /* 2-1-1.로봇머리 */
 .head {
   /* .eye의 부모 */
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 230px;
+  height: 240px;
   margin: 0 auto;
   border-radius: 20px 20px 100px 100px;
+}
+
+/* 가상요소로 가발만들기 */
+.head::after{
+    content: '';
+    /* 부모는 .head */
+    position: absolute;
+    left:50%; top:-105px;
+    transform: translate(-50%,0);
+    width: 387px;
+    height: 400px;
+    background:url("../images/hair_new2.png") no-repeat 0/100% 100%;
 }
 /* 눈공통 */
 .eye {
@@ -78,12 +92,12 @@ body * {
 /* 왼눈 */
 .eye1 {
   background-image: url(../images/e1.jpg);
-  left: 50px;
+  left: 40px;
 }
 /* 오른눈 */
 .eye2 {
   background-image: url(../images/e2.jpg);
-  right: 50px;
+  right: 40px;
 }
 
 /* 코 */
@@ -141,6 +155,30 @@ body * {
   background-size: 50%;
 }
 
+/* 몸통 가상요소로 티셔츠만들기 */
+.body::before{
+    content: '';
+    position: absolute;
+    /* 부모는 .body  */
+    top: 0; left: 0;
+    width: 100%; height: 216px;
+    background-image: linear-gradient(to bottom, skyblue, blue);
+    
+
+}
+
+/* 몸통 가상요소로 치마만들기 */
+.body::after{
+    content: '';
+    position: absolute;
+    /* 부모는 .body  */
+    bottom: -58px; left: 0;
+    width: 100%; height: 100px;
+    background:pink;
+    border-radius: 10px;
+    
+
+}
 /* 목 */
 .neck {
   position: absolute;
@@ -164,8 +202,9 @@ body * {
 /* 팔공통*/
 .arm {
   position: absolute;
+  top: 10px;
   width: 50px;
-  height: 158px;
+  height: 150px;
 }
 
 /* 팔하단공통 */
@@ -190,7 +229,7 @@ body * {
     height: 140px;
     background-repeat: no-repeat;
     background-size:100% 100%;
-    z-index:1;
+    z-index:3;
     
 }
 
@@ -207,12 +246,12 @@ body * {
 }
 /* 왼팔 */
 .arm1 {
-  left: -50px;
+  left: -60px;
   
 }
 /* 오른팔 */
 .arm2 {
-  right: -50px;
+  right: -60px;
   
 }
 
@@ -351,7 +390,7 @@ body * {
 .shdr{
     position: absolute;
     top: 0;
-    width: 72px;
+    width: 75px;
     height: 72px;
     
     
@@ -360,12 +399,12 @@ body * {
 }
 /* 왼어꺠 */
 .shdr1{
-    left:-70px;
+    left:-75px;
     border-radius: 30px 0 0 30px;
 }
 /* 오른어꺠 */
 .shdr2{
-    right:-70px;
+    right:-75px;
     border-radius: 0 30px 30px 0;
 }
 
