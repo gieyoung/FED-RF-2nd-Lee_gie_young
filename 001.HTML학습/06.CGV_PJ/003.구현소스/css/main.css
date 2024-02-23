@@ -13,7 +13,13 @@
 
 
 /* 초기화 */
-html,body,h1,h2,ul,ol{margin: 0;padding: 0;}
+html,body,h1,h2,ul,ol{
+  margin: 0;padding: 0;
+  
+}
+
+/* 리스트 초기화 */
+ul,ol{list-style: none;}
 
 body{background-color: #000;}
 
@@ -69,7 +75,7 @@ body * {outline: 1px dashed yellow;}
   
 }
 
-
+/* 2-1.스크린 */
 .screen{
   /* 부모는 main-area */
   position: absolute;
@@ -87,6 +93,45 @@ body * {outline: 1px dashed yellow;}
   height: 100%;
   /* 기본 프레임보더 없앰 */
   border: none;
+}
+
+/* 2-2.포스터메뉴 */
+.poster-menu{
+  /* 부모는 main-area */
+  position: absolute;
+  bottom: 50px;
+  left:200px;
+ 
+
+
+}
+
+
+/* 포스터 ul가상요소 clear */
+.poster-menu ul::after{
+  content: '';
+  display: block;
+  clear:both;
+}
+
+/* 포스터 리스트 */
+.poster-menu li{
+  /* 블록요소 옆으로 흐르게 */
+  float:left;
+  
+
+}
+
+/* li 사이간격(첫번째 li빼고) */
+.poster-menu li+li{
+  margin-left: 15px;
+}
+
+
+/* 2-2.포스터메뉴 */
+.poster-menu img{
+  width: 120px;
+  
 }
 
 

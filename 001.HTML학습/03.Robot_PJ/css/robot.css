@@ -3,7 +3,7 @@
 /* Robot PJ 메인 CSS - robot.css */
 
 /* 웹폰트 CDN */
-@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Black+Ops+One&family=Chakra+Petch&family=Orbitron:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Black+Ops+One&family=Chakra+Petch&family=Orbitron:wght@500&display=swap");
 
 /* 
     font-family: 'Barlow', sans-serif;
@@ -12,147 +12,140 @@
     font-family: 'Orbitron', sans-serif;
 */
 
-
 /* 초기화 셋팅 */
-html,body,h1,h2,h3,ul,ol{
-    margin: 0;
-    padding: 0;
+html,
+body,
+h1,
+h2,
+h3,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
 }
 
-
 /* 전체 배경이미지 */
-body{
-    background:url("../images/bg.jpg") no-repeat fixed top/cover;
+body {
+  background: url("../images/bg.jpg") no-repeat fixed top/cover;
 }
 
 /* 공사중 표시 */
 body * {
-    outline: 2px dashed yellow;
+  outline: 2px dashed yellow;
 }
 
 /*********************** 공통클래스 ***********************/
 /* 메탈배경 클래스 */
-.metal1{
-    background:url(../images/metal01.jpg) no-repeat center/cover;
+.metal1 {
+  background: url(../images/metal01.jpg) no-repeat center/cover;
 }
-.metal2{
-    background:url(../images/metal02.jpg) no-repeat center/cover;
+.metal2 {
+  background: url(../images/metal02.jpg) no-repeat center/cover;
 }
 /********************** 1. 상단영역 **********************/
 
 /********************** 2. 메인영역 **********************/
 /* 2-1.로봇박스 */
-.robot-box{
-  
-
+.robot-box {
 }
 
 /* 2-1-1.로봇머리 */
-.head{
-    /* .eye의 부모 */
-    position: relative;
-    width: 250px;
-    height: 250px;
-    margin: 0 auto;
-    border-radius:20px 20px 100px 100px;
-    
+.head {
+  /* .eye의 부모 */
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 20px 20px 100px 100px;
 }
 /* 눈공통 */
-.eye{
-    position: absolute;
-    /* 부모는?->.head */
-    /* 크기공통 */
-    width: 50px;
-    height: 50px;
-    /* 배경공통 */
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-color: #fff;
-    top:50px;
-    /* 둥근눈 */
-    border-radius: 50%;
-    border: 4px double #000;
-
+.eye {
+  position: absolute;
+  /* 부모는?->.head */
+  /* 크기공통 */
+  width: 50px;
+  height: 50px;
+  /* 배경공통 */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: #fff;
+  top: 50px;
+  /* 둥근눈 */
+  border-radius: 50%;
+  border: 4px double #000;
 }
 
 /* 왼눈 */
-.eye1{
-    background-image: url(../images/e1.jpg);
-    left:50px;
-    
+.eye1 {
+  background-image: url(../images/e1.jpg);
+  left: 50px;
 }
 /* 오른눈 */
-.eye2{
-    background-image: url(../images/e2.jpg);
-    right:50px;
-    
+.eye2 {
+  background-image: url(../images/e2.jpg);
+  right: 50px;
 }
 
 /* 코 */
-.nose{
-    position: absolute;
-    border-radius:50%;
-    left:50%;
-    top: 40%;
-    transform: translate(-50%,0);
-    width: 50px;
-    height: 50px;
-    background: url(../images/nose.jpg) no-repeat 0/100% 100%;
-    
-
+.nose {
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, 0);
+  width: 50px;
+  height: 50px;
+  background: url(../images/nose.jpg) no-repeat 0/100% 100%;
 }
-
 
 /* 입 */
-.mouth{
-    position: absolute;
-    left:50%;
-    bottom:30px;
-    transform: translate(-50%,0);
-    width: 130px;
-    height: 50px;
-    background: url(../images/mouth.png) no-repeat 0/100% 100%;
-} 
-
+.mouth {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%, 0);
+  width: 130px;
+  height: 50px;
+  background: url(../images/mouth.png) no-repeat 0/100% 100%;
+}
 
 /* 귀공통 */
-.ear{
-    position: absolute;
-    top: 70px;
-    width: 30px;
-    height: 70px;   
+.ear {
+  position: absolute;
+  top: 70px;
+  width: 30px;
+  height: 70px;
 }
 
-.ear1{
-    left:-30px;
-    border-radius:0 20px; 
+.ear1 {
+  left: -30px;
+  border-radius: 0 20px;
 }
 
-.ear2{
-    right:-30px;
-    border-radius:20px 0; 
+.ear2 {
+  right: -30px;
+  border-radius: 20px 0;
 }
 
 /* 2-1-1.몸통 */
-.body{
-    /* 부모자격 */
-    position: relative;
-    width: 220px;
-    height:400px;
-    /* 가운데정렬 */
-    margin: 0 auto;
-    margin-top: 50px;
-    /* 배경이미지 조정 */
-    background-repeat: repeat;
-    background-size: 50%;
+.body {
+  /* 부모자격 */
+  position: relative;
+  width: 220px;
+  height:284px;
+  /* 가운데정렬 */
+  margin: 0 auto;
+  margin-top: 50px;
+  /* 배경이미지 조정 */
+  background-repeat: repeat;
+  background-size: 50%;
 }
 
-
 /* 목 */
-.neck{
-    position: absolute;
-    top: -47px;
-    /* 
+.neck {
+  position: absolute;
+  top: -47px;
+  /* 
     [ 가로/세로 중앙보내기 계산법 ]
     left: calc(50% - 크기/2)
     left: calc(50% - 크기/2)
@@ -161,61 +154,254 @@ body * {
 
     또는 transform: trnalate(-50%,0);
     */
-    left: calc(50% - 50px/2);
-    width: 50px;
-    height: 60px;
-    border-radius: 0 0 20px 20px;
-    z-index: 0;
+  left: calc(50% - 50px / 2);
+  width: 50px;
+  height: 50px;
+  border-radius: 0 0 20px 20px;
+  z-index: 0;
 }
 
 /* 팔공통*/
-.arm{
-   position: absolute;
-   width: 50px;
-   height: 200px;
+.arm {
+  position: absolute;
+  width: 50px;
+  height: 158px;
 }
-.arm span{
+
+/* 팔하단공통 */
+.arm span {
+  position: absolute;
+  /* 부모는 .arm */
+  top: 100%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+}
+
+/* 팔하단 가상요소 손 공통 */
+.arm span::after{
+    content: '';
+    display: block;
+    /* 부모는 .arm span */
     position: absolute;
-    /* 부모는 .arm */
+   
     top:100%;
-    left:10%;
-    width: 80%;
-    height: 80%;
-
+    width: 100px;
+    height: 140px;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    z-index:1;
+    
 }
 
+/* 왼손 */
+.arm1 span::after{
+    background-image: url("../images/hand_left.png") ;
+    left: -21px;
+}
+
+/* 오른손 */
+.arm2 span::after{
+    background-image: url("../images/hand_right.png") ;
+    left:-38px;
+}
 /* 왼팔 */
-.arm1{
-    left: -50px;
+.arm1 {
+  left: -50px;
+  
 }
 /* 오른팔 */
-.arm2{
-    right: -50px;
+.arm2 {
+  right: -50px;
+  
 }
 
-/* 다리공통*/
-.leg{
+/* 왼팔 관절 */
+.arm::before{
+    content: '';
     position: absolute;
-    top:100%;
+    width: 60px;
+    height: 60px;
+    left: -6px;
+    top:calc(100% - 20px);
+    z-index:1;
+    border-radius: 100%;
+    border: 3px solid #000;
+    /* 보더때문에 크기가 커지므로 패딩, 보더 포함박스 설정 */
+    box-sizing: border-box;
+    background-color: grey;
+   
+}
+/* 오른팔 관절 */
+.arm::after{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top:calc(100% - 11px);
+    left:50%;
+    transform: translate(-50%,0);
+    /* 그라데이션 배경 */
+    background-image: linear-gradient(to right,#ccc,#393939);
+    z-index: 2;
+    border-radius: 100%;
+    /* 박스내부그림자 inset */
+    box-shadow: inset 0 0 5px #222;
+}
+
+
+/* 다리공통*/
+.leg {
+  position: absolute;
+  top: 100%;
+  width: 70px;
+  height: 180px;
+}
+.leg span {
+  position: absolute;
+  /* 부모는 .arm */
+  top: 100%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+}
+
+/* 다리관절 공통 */
+.leg::after{
+    content: '';
+    position: absolute;
     width: 70px;
-    height: 200px;
- }
- .leg span{
-     position: absolute;
-     /* 부모는 .arm */
-     top:100%;
-     left:10%;
-     width: 80%;
-     height: 80%;
- 
- }
- 
- /* 왼다리 */
- .leg1{
-     left: 0;
- }
- /* 오른다리 */
- .leg2{
-     right:0;
- }
+    height: 70px;
+    border:3px solid #000;
+    background-color: grey;
+    top:calc(100% - 48px);
+    left:50%;
+    transform: translate(-50%,0);
+    border-radius: 20px;
+
+
+
+}
+
+.leg::before{
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    /* 그라데이션 배경 */
+    background-image: linear-gradient(to right,#ccc,#393939);
+    top:calc(100% - 40px);
+    left:50%;
+    transform: translate(-50%,0);
+    border-radius: 20px;
+    z-index: 2;
+}
+
+
+
+/* 왼다리 */
+.leg1 {
+  left: 0;
+}
+/* 오른다리 */
+.leg2 {
+  right: 0;
+}
+
+
+/* 발공통 */
+.leg span::after{
+    content: '';
+    position: absolute;
+    left:50%; top:70%;
+    transform: translate(-50%,0);
+    width: 60px;
+    height: 110px;
+    background-image:linear-gradient(to right,#ccc,#393939);
+    border-top:3px solid #000;
+    box-sizing: border-box;
+    border-radius: 0 0 20px 20px;
+}
+
+/* 부츠 */
+.leg span::before{
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    bottom:-74px;
+    left:50%;
+    transform: translate(-50%,0);
+    background-color: grey;
+    border:1px solid #000;
+    border-bottom: 5px solid #000;
+    box-sizing: border-box;
+    z-index: 2;
+    border-radius: 50% 50% 0 0;
+
+
+}
+
+
+
+
+/* 오른발 */
+
+/* 어깨공통 */
+.shdr{
+    position: absolute;
+    top: 0;
+    width: 72px;
+    height: 72px;
+    
+    
+
+
+}
+/* 왼어꺠 */
+.shdr1{
+    left:-70px;
+    border-radius: 30px 0 0 30px;
+}
+/* 오른어꺠 */
+.shdr2{
+    right:-70px;
+    border-radius: 0 30px 30px 0;
+}
+
+/* TV */
+.tv{
+    position: absolute;
+    top: 40px;
+    left:calc(50% - 167px/2);
+    width: 167px;
+    height: 127px;
+    background: url("../images/tv.jpg")no-repeat 0/100% 100%;
+}
+
+/* 스크린 */
+.screen{
+    /* 부모는 .tv */
+    position: absolute;
+    border-radius: 10px;
+    width: 118px;
+    height: 92px;
+    left: 9px;
+    top: 13px;
+    /* 자식유튜브 아이프레임 넘치는 부분 숨기기 */
+    overflow: hidden;
+    
+}
+
+/* 유튜브 아이프레임 */
+.screen iframe{
+    /* 부모는 .screen */
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 118px;
+    height: 92px;
+    border:none;
+    
+}
 /********************** 3. 하단영역 **********************/
