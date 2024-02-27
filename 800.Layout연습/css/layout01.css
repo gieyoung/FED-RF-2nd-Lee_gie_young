@@ -13,33 +13,40 @@ body * {
   outline:1px solid red;
 }
 /* 공통클래스 중앙속박스 */
-.part{
+.inbox{
   max-width: 1200px;
   margin: 0 auto;
+}
+
+
+/* 임시타이틀 */
+.temp-tit{
+  position: absolute;
+  color: #ccc;
 }
 
 /* <!-- 1.상단영역 --> */
 .top-area{
   height: 100px;
-  background-color: red;
+  background-color: 
 }
 
 /* <!-- 2.배너영역 --> */
 .ban-area{
   height:300px;
-  background-color: orange;
+  background-color: 
 
 }
 /* <!-- 3.컨텐츠영역 --> */
 .cont-area{
   height: 200px;
-  background-color: yellow;
+  background-color: 
 
 }
 
 /* <!-- 4.하단영역 --> */
 .footer-area{
   height: 100px;
-  background-color: green;
+  background-color: 
 
 }
