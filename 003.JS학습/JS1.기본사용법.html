@@ -458,8 +458,30 @@
      
 
      }
-      /////////////////////////////사각사각 함수//////////////////////////
+/////////////////////////////사각사각 함수//////////////////////////
 
+    //  과제
+
+     function 김비서2(){
+      // 1. 함수호출 확인
+     console.log("김비서2");
+
+      // 2. 대상선정: .pbox
+      var 우영우 = document.querySelector('.pbox');
+
+
+      // 3.변경내용: 더블클릭시 사진과 텍스트 변경됨
+      console.log(우영우);
+      우영우.innerText = '우 to the 영 to the 우<br>동 to the 그 to the 라미';
+      우영우.style.background =
+          "url(./images/uyu.jpg) no-repeat center/cover";
+      우영우.style.fontSize = '18px';
+
+
+
+     }
+      
+/////////////////////////////우영우 함수//////////////////////////
 
 
 
@@ -579,7 +601,7 @@
   </head>
   <body>
     <!-- 드라마 소개박스 -->
-    <p class="pbox" onclick="김비서()">
+    <p class="pbox" onclick="김비서()" ondblclick="김비서2()">
       나는 요즘 매일 생각한다! <br />
       도대체
       <span id="name"> </span>
