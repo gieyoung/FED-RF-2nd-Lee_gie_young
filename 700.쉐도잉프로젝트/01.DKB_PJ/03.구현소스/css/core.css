@@ -19,8 +19,20 @@
 */
 
 
+/* 임시타이틀 */
+.temp-tit{
+  position: absolute;
+  font-size: 2vw;
+  color:#888;
+
+}
+
 /* 공통클래스 중앙속박스 */
 .inbox{
   max-width: 1360px;
   margin: 0 auto;
+}
+
+.cont-box{
+  height: 100%;
 }
