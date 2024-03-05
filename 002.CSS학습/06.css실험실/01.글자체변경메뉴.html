@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01.글자체변경메뉴.html</title>
+    <style>
+      /*
+        원본참고사이트
+        https://www.joinflowparty.com/on-demand
+        ->메뉴 스타일 참고
+       */
+
+      /* 웹폰트 */
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap')
+
+      /* 초기화 */
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+
+      /* 메뉴박스 */
+      .menu {
+        border: 2px solid lightseagreen;
+        padding: 15px;
+        border-radius: 15px;
+        width: 400px;
+        margin: 0 auto;
+        background-color: beige;
+      }
+
+      /* 두번째 메뉴 안보이게 가림 */
+      .menu li {
+        overflow: hidden;
+        height: 54px;
+        border-bottom: 2px solid green;
+      }
+
+      .menu span {
+        display: block;
+        font-size: 40px;
+      }
+
+      .menu span:first-child {
+        transition: 0.3s;
+      }
+
+      /* 메뉴 호버시 두번째 메뉴가 밑에서 위로 올라오면서 글자바뀜 */
+      .menu li:hover span:first-child {
+        margin-top: -58px;
+      }
+
+      /* 두번째 메뉴 글씨체 변경 */
+      .menu span:last-child {
+        font-style: italic;
+        font-family: "Dancing Script";
+   
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="menu">
+      <ul>
+        <li>
+          <a href="">
+            <span>EVENTS</span>
+            <span>events</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span>WHO WE ARE</span>
+            <span>who we are</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span>ON DEMAND</span>
+            <span>on demand</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span>WHAT WE DO</span>
+            <span>what we do</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span>HANDY TOOLS</span>
+            <span>party tools</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

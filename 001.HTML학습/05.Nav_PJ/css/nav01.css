@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+/* 네비게이션 유형1 CSS - nav01.css */
+
+/* 12그리드 불러오기 */
+@import url("./grid_12_float.css");
+
+/* 초기화 */
+html,
+body,
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+ul,ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+a{
+    text-decoration: none;
+    color:#fff;
+    
+}
+
+
+/* 전체body */
+body{
+    color:#fff;
+    background: #050f4a url("../images/nav1bg.png") no-repeat fixed center/cover;
+}
+
+
+/* 공통클래스: 클리어 설정 */
+ul::after, ol::after, .clb::after{
+    content: '';
+    display: block;
+    clear:both;
+}
+
+/* 속박스 */
+.inbox{
+    max-width:1650px;
+    margin: 0 auto;
+    outline:1px solid red;
+}
+
+h1.tit {
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* 로고 */
+.logo{
+    padding:13px 0;
+}
+
+
+/* 메뉴 */
+.gnb{
+    margin-left: 65px;
+}
+.gnb ul > li{
+    float:left;
+    line-height: 78px;
+    padding: 0 32px;
+    font-weight: bold;
+    position: relative;
+    /* 글자관련 셋팅은 하위요소로 모두 상속 */
+}
+
+
+.gnb ul > li a{
+    display: block;
+    
+}
+
+
+/* 서브메뉴 */
+.smenu{
+    /* 부모는?.gnb ul > li */
+    position: absolute;
+    left:50%;
+    transform: translate(-50%,0);
+    width: 200px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px lightskyblue;
+    text-align: center;
+    line-height: 38px;
+    /* 패딩이 있으면 높이값 0 숨기기가 안됨. 그래서 하위 요소인 ol태그에 패딩줌 */
+    /* padding: 10px; */
+
+    /* 메뉴 숨기기 장치 */
+    /* height:0 */
+    max-height: 0;
+    overflow: hidden;
+    font-weight: normal;
+   
+
+   
+}
+
+.smenu ol{
+    padding: 10px;
+}
+
+.smenu li{
+    opacity:0;
+    transition: opacity .4s;
+}
+
+/* 오버시 글자 투명도 */
+.gnb ul > li:hover .smenu li{
+    opacity: 0.7;
+
+}
+
+.gnb ul > li:hover .smenu li:hover{
+    opacity:1;
+    font-weight: bold;
+    
+}
+
+
+
+/* 오버시 li 순서별 트렌지션 delay */
+.gnb ul > li:hover .smenu li:nth-child(2){
+transition-delay:.2s;
+}
+.gnb ul > li:hover .smenu li:nth-child(3){
+transition-delay:.3s;
+}
+.gnb ul > li:hover .smenu li:nth-child(4){
+transition-delay:.4s;
+}
+.gnb ul > li:hover .smenu li:nth-child(5){
+transition-delay:.5s;
+}
+
+/* 상위 li 마우스 오버시 서브메뉴 나오기 */
+.gnb ul > li:hover .smenu{
+    overflow: hidden;
+    /* 높이를 max-height로 하니까 트랜지션이 먹힘 */
+    max-height:210px;
+    /* height:auto; */
+    /* 높이를 auto로 하면 트랜지션이 안먹힘 */
+     /* 트랜지션 */
+     transition:max-height .5s;
+     transition:opacity 1 .5s;
+
+}
+.gnb ul>li>a{
+    position: relative;
+
+}
+/* gnb상위메뉴 오버시 밑줄애니 */
+.gnb ul>li>a::after{
+    content: '';
+    /* 부모는 .gnb ul>li>a */
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    /* 마우스나갈때 */
+    left:100%; top: 53px;
+    background-color: yellow;
+    transition: .3s;
+    width:0;
+    
+}
+
+/* 오버시 밑줄나오기 애니 */
+.gnb ul>li:hover>a::after{
+    left:0;
+    width:100%;
+    /* 오버시 트랜지션
+    ->left는 트랜지션 적용말것 */
+    transition: width .3s;
+
+}
+
+/* 메인영역 */
+.main-area {
+    max-width: 1000px;
+    min-height: 600px;
+    line-height: 600px;
+    text-align: center;
+    font-size: 2.5vw;
+    border: 10px dashed lightgreen;
+    margin: 100px auto;
+}
