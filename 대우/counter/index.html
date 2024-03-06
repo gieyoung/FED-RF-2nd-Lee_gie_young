@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="이지영">
+	<meta name="keyword" content="포트폴리오, 카운터">
+	<meta name="description" content="포트폴리오 카운터 만들기">
+	<title>카운터</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/all.css">
+	<script src="js/jquery-1.12.3.js"></script>   <!--  버전을 이걸로 해야 먹힘 -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+	<script src="js/jquery.counterup.min.js"></script>
+	<script src="js/all.js"></script>
+	<style>
+
+		*{margin:0;padding: 0;vertical-align: top; box-sizing: border-box;}
+		a{text-decoration:none;outline: none;}
+		li{list-style: none;}
+		p{
+			font-size: 100px;
+			text-align: center;
+		}
+
+		.tit{
+			font-size: 50px;
+			color:red;
+			margin-top: 50px;
+
+		}
+
+
+		.f_1{
+			float:left;
+			margin-right: 50px;
+		}
+
+		.f_1:last-child{
+			margin-right: 0;
+		}
+
+		.container{
+			width: 1300px;
+			margin:0 auto;
+			padding-top: 200px;
+			font-weight: bold;
+			
+			overflow: hidden;
+		}
+
+
+
+
+
+		.icon{
+			font-size: 50px;  /**폰트어썸의 아이콘 크기는 폰트사이즈로 늘림*/
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		
+
+
+	</style>
+
+
+</head>
+
+
+<body>	
+	<div class="container">
+		<div class="f_1">
+			<div class="icon"><i class="fas fa-wheelchair"></i></div>
+			<p class="counter">500</p>
+			<p class="tit">PROJECT<br>COMPLETED</p>
+
+		</div>
+
+		<div class="f_1">
+			<div class="icon"><i class="fas fa-wheelchair"></i></div>
+			<p class="counter">150</p>
+			<p class="tit">PROJECT<br>COMPLETED</p>
+		</div>
+
+		<div class="f_1">
+			<div class="icon"><i class="fas fa-wheelchair"></i></div>
+			<p class="counter">900</p>
+			<p class="tit">PROJECT<br>COMPLETED</p>
+		</div>
+
+
+		<div class="f_1">
+			<div class="icon"><i class="fas fa-wheelchair"></i></div>
+			<p class="counter">750</p>
+			<p class="tit">PROJECT<br>COMPLETED</p>
+		</div>
+
+		
+
+
+	</div>
+
+	<script>
+		$(function(){
+			$('.counter').counterUp({
+    			delay: 1,    //1초씩 증가
+    			time: 300   //3초에 완성
+});
+
+		});
+	</script>
+	
+</body>
+</html>

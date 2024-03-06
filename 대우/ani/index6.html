@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>잡스</title>
+	<style>
+		*{margin: 0; padding: 0; vertical-align: top;}
+		li{list-style: none;}
+		.big{
+			width: 500px;
+			height: 300px;
+			border:2px solid #000;
+			position: relative;
+			overflow:hidden;
+			margin:200px auto;
+
+		}
+
+		
+
+		.t{
+			width: 124px;
+			height: 53px;
+			position: absolute;
+		    margin-top:-26px;
+			animation: text 1s ;
+			animation-fill-mode: forwards;
+			left:20px; top:-53px;
+			
+
+		}
+
+		
+
+
+
+		.i{
+			width: 333px;
+			height: 278px;
+			position: absolute;
+			right:0; bottom:-278px;
+			animation: move 2s 3s;
+			animation-fill-mode: forwards;
+			transition:all 1s ease;
+			
+			
+		}
+
+
+		@keyframes text{
+			from{left:20px; top:-53px;}
+			to{left:20px; top:50%;}
+
+
+
+		}
+
+		@keyframes move{
+			from{right:0; bottom:-278px;}
+			to{right:0; bottom:0;}
+			
+		
+			
+
+
+		}
+
+	
+
+
+
+
+	</style>
+</head>
+
+
+
+
+<body>
+
+	<div class="big">
+
+		<ul>
+			<li class="t"><img src="images/jobs_text.gif"></li>
+			<li class="i"><img src="images/jobs.png"></li>
+			
+
+
+		</ul>
+		
+
+
+		
+		
+
+
+
+
+	</div>
+	
+</body>
+</html>

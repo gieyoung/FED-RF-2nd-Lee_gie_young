@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>라이온transition</title>
+	<style>
+		*{margin: 0; padding: 0; vertical-align: top;}
+		body{
+			background:#333333;
+		}
+		.imagebox{
+			width: 658px;
+			height: 508px;
+			border:10px solid #fff;
+			margin: auto;
+			margin-top: 150px;
+			position: relative;
+			opacity:0.2;
+			transition:all 1s ease;
+			overflow:hidden;
+
+		}
+
+		.imagebox:hover{
+			opacity: 1;
+
+		}
+
+
+
+		.imagebox p{
+			width: 100%;	
+			height: 150px;
+			background: rgba(255,255,255,0.5);
+			font-size: 60px;
+			font-weight: bold;
+			color: #fff;
+			text-align: center;
+			line-height: 150px;
+			position: absolute;
+			right:658px; top:50%;
+			margin-top: -75px;
+			transition: all 1s ease; 
+		}
+
+		.imagebox:hover p{
+			right:0;
+			
+
+		}
+
+
+		
+		
+
+
+	</style>
+</head>
+
+
+
+<body>
+	<div class="imagebox"><img src="images/lion.jpg">
+		<p>Lion Picture 2020</p>
+
+
+
+	</div>
+	
+</body>
+</html>

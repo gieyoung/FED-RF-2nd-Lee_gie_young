@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+
+
+
+		body{font-family: 'Noto Sans KR', sans-serif; letter-spacing: -1px; min-width:1164px;}
+		*{margin:0;padding: 0;vertical-align: top; box-sizing: border-box;}
+		a{text-decoration:none;outline: none;}
+		li{list-style: none;}
+
+
+		.main{
+			width: 100%;
+			height: 1121px;
+			background: url("../images/main_bg.jpg") no-repeat center top;
+
+		}
+
+
+		.main .section1{
+
+			width: 1000px;
+			margin:0 auto;
+			
+
+		}
+
+		.main .section1 .list{
+			overflow: hidden;
+
+			
+		}
+
+		.main .section1 .list li{
+			float:left;
+			width: 25%;
+			position: relative;
+		}
+
+		.main .section1 .list li a{
+			display: block;
+			width: 100%;
+		}
+
+		.main .section1 .list li a .logo{
+			position: absolute;
+			left:0; top:0;
+			width: 100%;
+			height: 100%;
+		}
+
+
+		.main .section1 .list .list1 a .logo{
+			background: url("../images/a2_logo2.png")no-repeat center center;
+		}
+
+		.main .section1 .list .list2 a .logo{
+			background: url("../images/a2_logo3.png")no-repeat center center;
+		}
+
+		.main .section1 .list .list3 a .logo{
+			background: url("../images/a2_logo4.png")no-repeat center center;
+		}
+
+		.main .section1 .list .list4 a .logo{
+			background: url("../images/a2_logo5.png")no-repeat center center;
+		}
+
+
+	
+
+		.main .section1 .list li .img2{
+			position: absolute;
+			left:0; top:0;
+			display: none;
+
+		}
+
+
+		/*list2*/
+		.main .section{
+			width: 1000px;
+			/*border:1px solid red;*/
+			margin:0 auto;
+
+		}
+
+		.main .section .list{
+			overflow: hidden;
+		}
+
+		.main .section .list li{
+			float:left;
+		}
+
+		.main .section .list li a{
+			/*border:1px solid red;*/
+		}
+
+		.main .section .list li a h2{
+			text-align: center;
+			font-size: 23px;
+			color:#000;
+			font-weight: bold;
+			padding:20px 0;
+
+		}
+
+		.main .section .list li a p{
+			text-align: center;
+			font-size: 13px;
+			color:#555;
+			margin:20px 0 50px;
+		}
+
+		.main .section .list li a .img{
+			position: relative;
+		}
+
+		.main .section .list li a .img .cover{
+			position: absolute;
+			left:0; top:0;
+			background: url("../images/area1_bg.png") no-repeat;
+			width: 100%; height: 100%;
+			display: none;
+
+		}
+
+

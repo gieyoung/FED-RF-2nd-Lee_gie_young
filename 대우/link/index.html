@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <link rel="stylesheet" href="css/reset.css">
+
+
+<style>
+
+    a{
+        display: inline-block;
+        background: green;
+        color:#fff;
+        padding:20px;
+        
+        
+    }
+    a:link{
+        background: blue;
+    }
+    a:visited{
+        background: red;
+/*        색 계속 유지*/
+    }
+    a:hover{
+        background:orange;
+/*        마우스오버시 색변함*/
+    }
+    a:active{
+        background:green;
+/*        클릭할때만 색변함*/
+    }
+    
+  
+
+ 
+    
+/*  ------------------  반응형-----------------------*/
+    @media all and (max-width:500px){
+        .base{width:100%;}
+        #wrap{width:100%;}
+        
+    }
+    
+  
+ 
+  
+    
+    
+
+</style>
+</head>
+
+<body>
+  <a href="#">링크</a>
+</body>
+</html>

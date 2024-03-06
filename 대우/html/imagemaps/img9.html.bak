@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="giyoung" content="본인이름">
+  <meta name="Keywords" content="이미지,맵">
+  <meta name="Description" content="이미지맵홈페이지">
+  <title>dhemfl</title>
+  <style>
+	h1,hr{text-align:center;}
+	p{text-align:center;}
+  </style>
+ </head>
+ <body>
+	<h1>캐서린제타존스</h1>
+	<hr>
+	<P>
+	<a href="./index.html"><img src="./images/img9.jpg" alt="캐서린제타존스사진"></a></p>
+	<hr>
+	<p><a href="./index.html">[Main Page]</a></p>
+	
+ </body>
+</html>

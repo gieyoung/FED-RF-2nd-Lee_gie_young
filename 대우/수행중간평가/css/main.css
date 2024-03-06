@@ -1,0 +1,34 @@
+@charset "utf-8";
+body {font-family: '맑은 고딕','malgun gothic','돋움',dotum,sans-serif; font-size: 16px}
+a {color:#333333;}
+button {padding:0px 14px; height:30px; outline:none; background:#66CCFF; margin-top:10px; display:block; float:left;}
+
+
+.loading_bar {height:3px; background:#FF3300; position:absolute; left:0; top:0;}
+
+.main {width: 1000px; margin: 0 auto; line-height:2; padding-bottom:200px;}
+.main h1 {font-size: 40px; text-align: center; margin-top: 20px}
+
+.main .section1 {margin-top: 50px; overflow:hidden;}
+.main .section1 .box_wrap {border:1px solid #999; height:100px;}
+.main .section1 .box_wrap .box1 {width:100px; height:100px; background:#3CC; text-align:center; line-height:100px;}
+
+.main .section2 {overflow:hidden;}
+.main .section2 .box_wrap {border:1px solid #999; height:100px;}
+.main .section2 .box_wrap .box2 {width:100px; height:100px; background:#3CC; text-align:center; line-height:100px;}
+
+.main .section3 {overflow:hidden;}
+.main .section3 .box_wrap .menu li {float:left; margin-right:40px;}
+.main .section3 .box_wrap .menu li a {display:inline-block; line-height:40px; height:40px;}
+.main .section3 .box_wrap .menu li a span {display:block; margin-top:-5px; height:3px; background:#0CF; display:none;}
+
+.main .section4 {margin-top:30px;}
+
+.main .section5 { overflow:hidden;}
+.main .section5 .box3 {font-size:30px; width:100px; height:100px; line-height:100px; text-align:center; border:1px solid #CCC;}
+
+.main .section7 .box4 {width:100px; height:100px; border:1px solid #CCC; line-height:100px; text-align:center;font-size:36px; }
+
+
+
+

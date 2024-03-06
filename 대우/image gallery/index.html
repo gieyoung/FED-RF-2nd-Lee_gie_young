@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>이미지갤러리</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+</head>
+<style>
+    ul{
+        width:100%;
+        outline:1px solid red;
+        overflow: hidden;
+    }
+    ul li{
+        width:calc(100% / 4 - 20px);
+        margin:10px;
+        float:left;
+        border:1px solid blue;
+        box-sizing: border-box;
+       
+    }
+  
+    ul li a img{
+        width:100%;
+     
+        
+    }
+    
+ 
+</style>
+
+<body> 
+    <ul>
+        <li><a target="_blank" href="/images/img_slider.jpg"><img src="/images/img_slider.jpg"></a></li>
+        <li><a target="_blank" href="/images/img_slider.jpg"><img src="/images/img_slider.jpg"></a></li>
+        <li><a target="_blank" href="/images/img_slider.jpg"><img src="/images/img_slider.jpg"></a></li>
+        <li><a target="_blank" href="/images/img_slider.jpg"><img src="/images/img_slider.jpg"></a></li>
+    </ul>
+  
+  
+
+
+
+
+<script>
+		$(function(){
+			
+		});
+		
+</script>
+</body>
+</html>

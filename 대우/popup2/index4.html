@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keyword" content="웹디자인기능사, 팝업창 띄우기">
+	<title>팝업</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-1.11.3.js"></script>
+	<style>
+		.popup{
+			width: 300px;
+			height: 400px;
+			background: green;
+			position: absolute;
+			left:200px; top:100px;
+			position: relative;
+			display: none;
+
+		}
+
+		.popup a{
+			display: block;
+			width: 50px;
+			height: 50px;
+			background: #555;
+			text-align: center;
+			line-height: 50px;
+			float:right;
+		}
+
+
+		.close{
+			position: absolute;
+			left:0; bottom:0;
+
+		}
+
+		label{
+			
+			color:#fff;
+			
+		}
+
+		
+
+		.btn_close{
+			position: absolute;
+			right:10px; top:10px;
+
+		}
+
+
+
+	</style>
+	
+</head>
+<body>
+	
+	<div class="popup">
+
+		
+		<div class="close">
+				<input type="checkbox" id="ch" name="today_close">
+				<label for="ch">오늘하루 열지않음</label>	
+		</div>
+<img src="images/icon_close.png" class="btn_close">
+	</div>
+
+
+	<script>
+		 
+		
+
+		// -------------------오늘하루열지않음 
+		$(function(){
+			$('.popup').show();
+			console.log('hplus');
+
+			if(GetCookie('hplus')=='close'){
+				$('.popup').hide();
+
+			}else{
+				$('.popup').show();
+
+			}
+
+//			$('.btn_close').click(function(){
+//				if($('input[name=today_close]').is(':checked')){
+//					setCookie('hplus','close',1) //1일동안 열지 않음
+//					$('.popup').hide();
+//				}else	
+//
+//				$('.popup').hide();
+//				
+//			});
+            
+            $('.btn_close').click(function(){
+				$('.popup').hide();
+			});        
+//            팝업창닫기
+            
+            
+			return false;
+
+			// -------------
+
+
+			// GetCookie
+			function GetCookie(name){
+				var value=null, search=name+"=";
+				if(document.cookie.length > 0){
+					var offset=document.cookie.indexOf(search);
+					if(offset != -1){
+						offset+=search.length;
+						var end=document.cookie.indexOf(";", offset);
+						if(end == -1) end=document.cookie.length;
+						value=unescape(document.cookie.substring(offset, end));
+					}
+				} return value;
+			}
+			// SetCookie
+			function setCookie(name, value, expiredays){
+				var days=10;
+				if(days){
+					var date=new Date(); 
+					date.setTime(date.getTime()+(days*24*60*60*1000));
+					var expires="; expires="+date.toGMTString();
+				}else{
+					var expires=""; 
+				}
+				document.cookie=name+"="+value+expires+"; path=/";
+			}
+			
+		});
+
+	</script>
+	
+	
+</body>
+</html>

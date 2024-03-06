@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 데이터 유형</title>
+	<script src="js/jquery-3.5.0.min.js"></script>
+</head>
+
+<body>
+
+	<h1>자바스크립트 데이터 유형</h1>
+	<p>데이터타입이란 프로그램에서 다룰 수 있는 값의 종류를 의미한다. 자바스크립트에서는 여러가지 형태의 타입을 미리 정의하여 제공하고 있으며 이를 기본타입이라 한다. </p>
+	<h2>1. 자바스크립트 데이터 유형</h2>
+	<ol>
+		<li>문자(String) 데이터</li>
+		<li>숫자형(Number) 데이터</li>
+		<li>부울형(Boolean) 데이터</li>
+		<li>찾을 수 없는(Undefinded) 데이터</li>
+		<li>값없음(Null) 데이터</li>
+		<li>함수형(Function) 데이터</li>
+		<li>배열형(Array) 데이터</li>
+		<li>객체형(Object) 데이터</li>
+		
+
+	</ol>
+
+	<script>
+		var str = "20";
+		var num = 20;
+		var bol = true;
+		var num2 = null;
+		var num3;
+
+		//데이터 유형을 확인(typeof)하면서 출력
+
+		document.write("<hr>");
+		document.write("str변수의 유형은:" + typeof(str) + "<br>");
+		document.write("num변수의 유형은:" + typeof(num) + "<br>");
+		document.write("bol변수의 유형은:" + typeof(bol) + "<br>");
+		document.write("num2변수의 유형은:" + typeof(num2) + "<br>");
+		document.write("num3변수의 유형은:" + typeof(num3) + "<br>");
+		
+
+		//배열형 데이터
+		var array = ["딸기", "바나나", "포도", "애플"];
+		document.write(array);
+		document.write("<br>" + array[0]); //딸기
+		document.write("<br>" + array[3]); //애플
+		document.write("<br>" + "오늘의 추천 과일은" + array[2] + "입니다");
+
+
+
+		//함수형 데이터
+
+		function test(){
+			document.write("<br>" + "함수도 데이터의 값으로 사용할 수 있다.")
+
+		}
+
+		test();  //위에걸 실행하는 명령
+
+
+		//객체형 데이터
+
+		var person = {
+
+			name: "jhon",
+			age:100,
+			job:"webdesigner"
+		}
+
+		// document.write("<br>" + "저의 이름은" + person.name + "입니다");
+		document.write("<br>" + "저의 이름은" + person.name + "이고");
+		document.write("&nbsp" + "직업은" + person.job + "이고");
+		document.write("&nbsp" + "나이는" + person.age + "입니다");
+
+
+		document.write("<br>" + "오늘의 신선한 과일은" + "&nbsp" +array[1] + "&nbsp" + "입니다");
+
+
+
+			
+
+
+
+
+
+
+	</script>
+
+
+
+	
+
+	
+
+	
+</body>
+</html>

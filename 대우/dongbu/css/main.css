@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+
+
+*{margin:0; padding:0; vertical-align:top;}
+	body{font-family: 'Noto Sans KR', sans-serif;}
+	button{border:none;background: none; outline: none;}
+	a{text-decoration:none;}
+
+
+
+	.header{
+		width: 100%;
+		height: 60px;
+		background: #fff;
+		/*border:1px solid red;*/
+		padding:0 10px;
+		border-bottom: 1px solid #c8c8c8;
+		
+		
+	}
+		
+
+	
+
+	.header h1{
+		float:left;
+		margin-top:15px;
+
+	}
+
+
+	.header h1 a{
+		display: block;
+		background: url("../images/logo.png") no-repeat;
+		background-size:115px;
+		width: 115px;
+		height: 30px;
+		text-indent:-99999px;
+		
+	}
+
+	.header .right{
+		float:right;
+		margin-top:15px;
+		position: absolute;
+		right:10px; top:3px;
+
+
+
+	}
+
+	
+
+	.header .right button{
+		float: left;
+		width: 63px;
+		height: 32px;
+		line-height: 32px;
+		border:1px solid #c8c8c8;
+		font-size: 13px;
+		position: relative;
+		margin-right: 10px;
+		cursor: pointer;
+		text-align: left;
+		padding-left: 10px;
+
+	}
+
+
+
+	.header .right .depth2{
+		margin-top: -1px;
+		width: 60px;
+		display: none;
+		text-align: left;
+		
+		
+	}
+
+	.header .right .depth2 a{
+		display: block;
+		width: 60px;
+		height: 32px;
+		border:1px solid #c8c8c8;
+		font-size: 13px;
+		color:#000;
+		background: #fff;
+
+	}
+
+	.header .right .depth2 li{
+		list-style: none;
+	}
+
+
+
+
+
+	.header .right button::after{
+		display: inline-block;
+		content: '';
+		position: absolute;
+		background: url("../images/select_ico.png") no-repeat;
+		right:3px; top:50%;
+		margin-top: -2.5px;
+		width: 9px; height: 5px;
+		padding:0 1px;
+
+
+	}
+
+	.header .right .menu{
+		float: left;
+		width: 30px;
+		height: 38px;
+		
+	}
+
+	.m_btn{
+	display: block;
+	text-indent: -99999px;
+	width: 30px;
+	height: 30px;
+	/*border:1px solid red;*/
+	position: relative;
+	
+}
+
+
+/*햄버거버튼 클릭때마다 엑스로 변화*/
+    .m_btn span{
+    	display: block;
+    	width: 23px;
+    	height: 2px;
+    	background: #000;
+    	position: absolute;
+    	left:0; top:50%;
+    	transform: translate(0,-50%);
+    	transition: all 0.5s ease;
+    }
+
+     .m_btn span::before{
+   	content:'';
+   	width: 30px;
+   	height: 2px;
+   	background: #000;
+ 	position: absolute;
+	left:0; top:-12px;
+	transition: all 0.5s ease;
+   }
+
+
+   .m_btn span::after{
+   		content:'';
+   	width: 30px;
+   	height: 2px;
+   	background: #000;
+ 	position: absolute;
+	left:0; top:12px;
+	transition: all 0.5s ease;
+
+   }
+
+    .m_btn.on span{
+  	background: rgba(0,0,0,0);
+  	transition: all 0.5s ease;
+
+
+
+  }
+
+  .m_btn.on span::before{
+  	transform: rotate(45deg);
+  	top:0;
+  	transition: all 0.5s ease;
+  }
+
+  .m_btn.on span::after{
+  	transform: rotate(-45deg);
+  	top:0;
+  	transition: all 0.5s ease;
+  }
+
+
+
+  .hidden{
+  	position: fixed;
+  	width: 100%;
+  	height: 1000px;
+  	background: #fff;
+  	left:100%;
+  	transition: all 0.5s ease-in-out;
+  	/*border:1px solid red;*/
+  	
+
+  }
+
+  .hidden.on{
+  	left:0;
+  }
+
+  .hidden li{
+  	position: relative;
+
+  }
+
+  .hidden li a{
+  	display: block;
+  	width: 100%;
+  	height: 60px;
+  	line-height: 60px;
+  	padding:0 20px 0 45px;
+  	font-size: 15px;
+  	color:#333;
+  	border-bottom:1px solid #c8c8c8;
+  	
+
+  }
+
+  .hidden li a::after{
+  	display:block;
+  	content:'';
+  	position: absolute;
+  	background: url("../images/select_ico.png") no-repeat;
+  	width: 9px; height: 5px;
+  	background-size:9px;
+  	right:20px; top:50%;
+  	opacity: 20%;
+  }
+
+
+  .main{
+  	background: url("../images/main_visual2.jpg")no-repeat;
+  	width: 100%;
+  	height: 915px;
+
+  }
+
+
+
+
+
+
+	
+
+
+
+	/*.header .right::after{
+		position: absolute;
+		content:'';
+		background: url("../images/select_ico.png") no-repeat;
+		left:0; top:0;
+	}
+*/
+
+	
+
+
+ 

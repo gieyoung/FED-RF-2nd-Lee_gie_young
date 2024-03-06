@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>데상트</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main2.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<script src="js/jquery-3.5.0.min.js"></script>
+</head>
+
+
+<body>
+	<div class="main">
+		<div class="section">
+			<ul class="list">
+				<li>
+					<a href="#">
+						<h2>CONTRIBUTION</h2>
+						<div class="img">
+							<img src="images/area1_img1.jpg">
+							<div class="cover"></div>
+						</div>
+						<p>데상트코리아는 세상과 함께 숨쉬고<br>
+						스포츠 발전에 기여합니다.</p>
+					</a>
+				</li>
+
+
+				<li>
+					<a href="#">
+						<h2>SPORTEVENT</h2>
+						<div class="img">
+							<img src="images/area1_img2.jpg">
+							<div class="cover"></div>
+						</div>
+						<p>다양한 스포츠 경기를 기획하고 후원함으로서<br> 스포츠 의지를 확대합니다.</p>
+					</a>
+				</li>
+
+
+				<li>
+					<a href="#">
+						<h2>WITH US</h2>
+						<div class="img">
+							<img src="images/area1_img3.jpg">
+							<div class="cover"></div>
+						</div>
+						<p>신규거래 신청을 받습니다.</p>
+					</a>
+				</li>
+				
+
+
+
+			</ul>
+			
+
+
+		</div>
+
+		<!-- section1 -->
+		<div class="section1">
+			<ul class="list">
+				<li class="list1">
+					<a href="#">
+						<div class="img1"><img src="images/area2_img2.jpg"></div>
+						<div class="img2"><img src="images/area2_img2_on.jpg"></div>
+						<div class="logo"></div>
+					</a>
+				</li>
+
+
+				<li class="list2">
+					<a href="#">
+						<div class="img1"><img src="images/area2_img3.jpg"></div>
+						<div class="img2"><img src="images/area2_img3_on.jpg"></div>
+						<div class="logo"></div>
+					</a>
+				</li>
+
+
+
+				<li class="list3">
+					<a href="#">
+						<div class="img1"><img src="images/area2_img4.jpg"></div>
+						<div class="img2"><img src="images/area2_img4_on.jpg"></div>
+						<div class="logo"></div>
+					</a>
+				</li>
+
+
+				<li class="list4">
+					<a href="#">
+						<div class="img1"><img src="images/area2_img5.jpg"></div>
+						<div class="img2"><img src="images/area2_img5_on.jpg"></div>
+						<div class="logo"></div>
+					</a>
+				</li>
+			</ul>
+			
+
+		</div>
+		
+
+
+	</div>
+
+	<script>
+		$(function(){
+
+
+			$(".section .list li a").mouseenter(function(){
+				$(this).find(".cover").stop().fadeIn(300);
+
+			})
+
+
+			$(".section .list li a").mouseleave(function(){
+				$(this).find(".cover").stop().fadeOut(300);
+
+			})
+
+			$(".section1 .list li a").mouseenter(function(){
+				$(this).find(".img2").stop().fadeIn(300);
+
+			})
+
+
+			$(".section1 .list li a").mouseleave(function(){
+				$(this).find(".img2").stop().fadeOut(300);
+
+			})
+
+
+			
+
+		});
+		
+
+	</script>
+	
+</body>
+</html>

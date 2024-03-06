@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="gi young">
+  <meta name="Keywords" content="">
+  <title>index2</title>
+  <style>
+    img{width:250px;}
+  </style>
+
+ </head>
+ <body>
+  <h2>웹디자인-프론트엔드</h1>
+  <ol>
+	<li>HTML</li>
+	<li>CSS</li>
+	<li>Javascript</li>
+  </ol>
+
+  <hr>
+
+  <h2>저녁메뉴</h2>
+	<ul type="disc">
+	<li>
+	삼겹살<br>
+	<img src="images/sam.jpg">
+	</li>
+	<li>물</li>
+	<li>국밥</li>
+  </ul>
+
+  <hr>
+
+  <h2>상상속 여행을 현실로...</h2>
+	<dl>
+		<dt>1일차</dt>
+		 <dd>한라산 오르기<br>
+		 <img src="images/han.jpg">
+		 </dd>
+
+		<dt>2일차</dt>
+		<dd>점심시간</dt>
+		<dd>낚시체험</dt>
+		<dd>자유시간</dt>
+		<dd>야식</dt>
+
+	</dl>
+
+
+ </body>
+</html>

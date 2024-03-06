@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>세븐스프링스</title>
+	<style>
+		*{margin: 0; padding: 0; vertical-align: top;}
+		a{text-decoration: none;}
+		li{list-style: none;}
+
+		.section{
+			width: 100%;
+			height: 720px;
+			background: #f7f7f7;
+		}
+
+
+		.section .section_inner{
+			width: 1200px;
+			height: 720px;
+			
+			margin: 0 auto;
+			padding:80px 0 100px 0;
+
+		}
+
+		h2{
+			text-align: center;
+			font-size: 38px;
+			font-weight:bold;
+
+
+		}
+
+		h3{
+			color:#212129;
+			margin:35px 0 0 10px;
+			text-align:center;
+			font-weight: bold;
+			
+		}
+
+
+
+
+
+
+
+
+
+
+
+		.section .section_inner .p1{
+			text-align: center;
+			color:#80716e;
+			font-size: 18px;
+			padding-top:20px;
+
+
+		}
+
+
+		.section .section_inner .p2{
+			font-size: 15px;
+			color:#888;
+			margin-top: 15px;
+			text-align: center;
+			font-weight: bold;
+
+		}
+
+		.section .section_inner .p3{
+			text-align: center;
+			font-size: 15px;
+			color:#888;
+			margin-top: 50px;
+
+		}
+
+		.event{
+			margin-top: 50px;
+		}
+
+		.event .mask{
+			width: 365px;
+			height: 188px;
+			box-sizing: border-box;
+			overflow: hidden;
+
+
+		}
+
+		.mask img{
+			transition: all 0.5s ease;
+			transform: scale(1);
+
+		}
+
+		.mask:hover img{
+			transform:scale(1.2);
+			
+		}
+
+
+
+
+		li{
+			float:left;
+
+
+		}
+
+
+
+		li:nth-child(2){
+			margin:0 52px;
+		}
+
+
+
+		li:last-child .mask img{
+			width: 365px;
+		}
+
+
+
+		
+
+
+	</style>
+
+</head>
+
+
+<body>
+	<div class="section">
+		<div class="section_inner">
+			<h2>EVENT</h2>
+			<p class="p1">세븐스프링스의 다양한 이벤트를 확인하세요.</p>
+
+			<ul class="event">
+				<li>
+					<a href="#">
+						<div class="mask">
+							<img src="images/event1.jpg">
+						</div>
+
+						<h3>플친이라면 평일디너 20%할인</h3>
+						<p class="p2">플친에게만 발송되는 쿠폰을 확인하세요!</p>
+					</a>
+					<p class="p3">2020-06-05~2019-06-28</p>
+			</li>
+
+			<li>
+					<a href="#">
+						<div class="mask">
+							<img src="images/event2.jpg">
+						</div>
+
+						<h3>100%당첨 스크래치 쿠폰 증정!</h3>
+						<p class="p2">여름 신메뉴 출시 기념, 선착순 제공!</p>
+					</a>
+					<p class="p3">2020-06-05~2019-06-28</p>
+			</li>
+
+
+			<li>
+					<a href="#">
+						<div class="mask">
+							<img src="images/event3.jpg">
+						</div>
+
+						<h3>호국보훈의 달 감사 할인!</h3>
+						<p class="p2">국가유공자, 경찰관, 소방관, 군인 50%!</p>
+					</a>
+					<p class="p3">2020-06-05~2019-06-28</p>
+			</li>
+				
+
+
+			</ul>
+
+			
+
+		</div>
+		
+
+
+	</div>
+	
+</body>
+</html>

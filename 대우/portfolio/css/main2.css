@@ -1,0 +1,145 @@
+@charset "util-8";	
+
+
+body{font-family: 'Noto Sans KR', sans-serif; letter-spacing: -1px; min-width:1164px;}
+		*{margin:0;padding: 0;vertical-align: top;}
+		a{text-decoration:none;outline: none;}
+		li{list-style: none;}
+
+
+
+
+
+		.contact{
+			width: 100%;
+			height: 900px;
+			background: #ededed;
+		}
+
+
+		.contact .contact_inner{
+			width: 1045px;
+			height: 100%;
+			/*border:1px solid red;*/
+			margin: 0 auto;
+			overflow: hidden;
+		} 
+
+
+		.contact .contact_inner .tit{
+			margin-top: 70px;
+			text-align: center;
+		}
+
+
+		.contact .contact_inner .tit h2{
+			font-size: 35px;
+			color:#000;
+			font-weight: 700;
+			position: relative;
+			margin-bottom: 45px;
+		}
+
+
+		.contact .contact_inner .tit p{
+			color:#b8b8b8;
+		}
+
+		.contact .contact_inner .tit h2:after{
+			content: '';
+			position: absolute;
+			width: 100px; height: 3px;
+			background: #054688;
+			left:50%; bottom:-20px;
+			transform: translate(-50%,0);
+
+		}
+
+
+		.contact .contact_inner .notice{
+			/*border:1px solid red;*/
+			width: 50%;
+			color:#000;
+			margin-top: 100px;
+			float:left;
+		}
+
+
+		.contact .contact_inner .notice p{
+			margin-bottom: 17px;
+			text-indent: 15px;
+			padding: 5px;
+		}
+
+		.contact .contact_inner .notice .icon{
+			display:block;
+
+		}
+
+		
+
+
+		.contact .contact_inner .notice fieldset{
+			margin-top: 55px;
+		}
+
+		.contact .contact_inner .notice fieldset label{
+			display: block;
+			margin-bottom: 20px;
+		}
+
+		.contact .contact_inner .notice fieldset input{
+			margin-bottom: 24px;
+			width: 450px; height: 30px;
+			background: #e2e2e2;
+			border:1px solid #cbcbcb;
+			outline: none;
+			border-radius: 3px;
+			padding-left: 20px;
+		}
+
+		.contact .contact_inner .notice fieldset .t1{
+			height: 95px;
+
+
+		}
+
+
+
+		.contact .contact_inner .notice .submit{
+			width: 230px;
+			height: 30px;
+			font-weight: 900;
+			border:1px solid #cbcbcb;
+			margin-top: 30px;
+			cursor: pointer;
+			outline: none;
+		}
+
+		.contact .contact_inner .notice .submit:hover{
+			background: #054688;
+			color:#fff;
+
+		}
+
+		.contact .contact_inner .map{
+			border:1px solid #cbcbcb;
+			width: 50%;
+			height: 540px;
+			float:right;
+			box-sizing: border-box;
+			margin-top: 100px;
+			background: #fff;
+		}
+
+
+		.contact .contact_inner .map #map_canvas{
+			width: 100%;
+			height: 540px;
+			
+		
+
+		}
+
+
+

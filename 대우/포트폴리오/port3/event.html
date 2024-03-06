@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>이벤트</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/jquery.lightbox-0.5.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<script src="js/jquery.lightbox-0.5-mod.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+
+<style>
+body{width: 100%; font-family: 'Noto Sans KR', sans-serif;}
+    
+/*타이틀*/
+
+
+.bar{
+    text-align: center;
+   
+}
+.event{width: 1200px;margin: 0 auto;}
+h2{font-size:20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 2px; text-align: center; font-weight: 500; margin: 100px auto 30px; line-height:35px;}
+.event .box{margin-top: 50px;}
+.event .box ul li{width: 380px; height: 300px; float: left; margin-right: 25px; margin-bottom: 30px;border:1px solid #c8c8c8;}
+.event .box ul li:nth-child(3){margin-right: 0;}
+.event .box ul li a img{width: 380px; height: 300px; transition: all 0.5s ease;}
+.event .box ul li:hover a img{opacity: 0.5;}
+
+</style>
+
+
+<body>
+    <div class="event">
+                  <h2>다양한 이벤트, 배너, 광고 디자인</h2>
+                    <div class="bar"><img src="images/bar.jpg" alt="제목 바"></div> 
+	<div class="box">
+		<ul>
+			<li><a href="images/event/1.jpg"><img src="images/event/1.jpg"></a></li>
+			<li><a href="images/event/2.jpg"><img src="images/event/2.jpg"></a></li>
+			<li><a href="images/event/3.jpg"><img src="images/event/3.jpg"></a></li>
+		</ul>
+		
+		<ul>
+			<li><a href="images/event/4.jpg"><img src="images/event/4.jpg"></a></li>
+			<li><a href="images/event/5.jpg"><img src="images/event/5.jpg"></a></li>
+			<li><a href="images/event/6.jpg"><img src="images/event/6.jpg"></a></li>
+		</ul>
+		
+		<ul>
+			<li><a href="images/event/7.jpg"><img src="images/event/7.jpg"></a></li>
+			<li><a href="images/event/8.jpg"><img src="images/event/8.jpg"></a></li>
+			<li><a href="images/event/9.jpg"><img src="images/event/9.jpg"></a></li>
+		</ul>
+		
+		<ul>
+			<li><a href="images/event/10.gif"><img src="images/event/10.gif"></a></li>
+			<li><a href="images/event/11.jpg"><img src="images/event/11.jpg"></a></li>
+			<li><a href="images/event/12.jpg"><img src="images/event/12.jpg"></a></li>
+        </ul>
+
+		
+		<ul>
+			<li><a href="images/event/13.jpg"><img src="images/event/13.jpg"></a></li>
+			<li><a href="images/event/14.gif"><img src="images/event/14.gif"></a></li>
+			<li><a href="images/event/15.jpg"><img src="images/event/15.jpg"></a></li>
+		</ul>
+		
+		<ul>
+			<li><a href="images/event/16.jpg"><img src="images/event/16.jpg"></a></li>
+			<li><a href="images/event/17.jpg"><img src="images/event/17.jpg"></a></li>
+			<li><a href="images/event/18.jpg"><img src="images/event/18.jpg"></a></li>
+		</ul>
+		
+		<ul>
+			<li><a href="images/event/20.jpg"><img src="images/event/20.jpg"></a></li>
+			<li><a href="images/event/21.jpg"><img src="images/event/21.jpg"></a></li>
+			<li><a href="images/event/22.jpg"><img src="images/event/22.jpg"></a></li>
+		</ul>
+		
+		<ul>
+			
+			<li><a href="images/event/23.jpg"><img src="images/event/23.jpg"></a></li>
+			<li><a href="images/event/24.jpg"><img src="images/event/24.jpg"></a></li>
+			<li><a href="images/event/25.jpg"><img src="images/event/25.jpg"></a></li>
+		</ul>
+		
+		<ul>
+			
+			<li><a href="images/event/26.jpg"><img src="images/event/26.jpg"></a></li>
+			<li><a href="images/event/27.jpg"><img src="images/event/27.jpg"></a></li>
+			<li><a href="images/event/28.gif"><img src="images/event/28.gif"></a></li>
+		</ul>
+
+		<ul>
+			
+			<li><a href="images/event/28.jpg"><img src="images/event/28.jpg"></a></li>
+			<li><a href="images/event/29.jpg"><img src="images/event/29.jpg"></a></li>
+			
+		</ul>
+  </div>
+	</div>
+	
+	
+	<script>
+		$(function(){
+
+   $('.box a').lightBox({
+	overlayBgColor:'#000',  
+	overlayOpacity: 0.8,
+	imageLoading: 'images/lightbox-ico-loading.gif',
+	imageBtnClose: 'images/lightbox-btn-close.gif',
+	imageBtnPrev: 'images/lightbox-btn-prev.gif',
+	imageBtnNext: 'images/lightbox-btn-next.gif',
+	containerResizeSpeed: 300,
+	txtImage: '작품',
+	txtOf: '중에'
+   });
+
+
+ 
+});
+
+
+
+</script>
+</body>
+</html>

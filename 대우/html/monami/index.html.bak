@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+  *{margin:0; padding:0;vertical-align:top;}
+ 
+  #header{width:100%;border-bottom:1px solid #eaeaea;}
+  #header .header_inner{width:1400px;height:89px;margin:0 auto; }
+  #header .header_inner h1{float:left;}
+  #header .header_inner ul{list-style:none;} 
+  #header .header_inner .gnb{float:left;margin-left:120px;}
+  #header .header_inner .gnb li{height:89px; float:left;margin-right:66px;}
+  #header .header_inner .gnb li:nth-child(6){margin-right:0;}
+
+
+  #header .header_inner .gnb li a{height:89px;font-size:17px; color:#303030; text-decoration:none;display:block;line-height:89px;}
+  #header .header_inner .gnb li a:hover{color:#c40f39;}
+ 
+  
+  
+  #header .header_inner .util li{float:right;margin-top:36px; margin-right:18px;}
+  
+
+
+
+
+  
+
+
+  </style>
+
+ 
+ 
+ </head>
+ 
+ 
+ <body>
+ <div id="header">
+	 <div class="header_inner">
+		<h1><a href="#"><img src="images/logo.jpg" alt="모나미로고"></a></h1>
+		<ul class="gnb">
+			<li><a href="#">모나미소개</a></li>
+			<li><a href="#">모나미제품</a></li>
+			<li><a href="#">문구박물관</a></li>
+			<li><a href="#">NEWS&VIDEO</a></li>
+			<li><a href="#">고객지원</a></li>
+			<li><a href="#">기업및단체구매</a></li>
+		</ul>
+
+
+		<ul class="util">
+			<li><a href="#"><img src="images/btn_search.gif" alt="검색"></a></li>
+			<li><a href="#"><img src="images/ico_mTopetc04.png" alt="메뉴"></a></li>
+
+		</ul>
+	</div>	
+</div>
+
+  
+ </body>
+</html>
+

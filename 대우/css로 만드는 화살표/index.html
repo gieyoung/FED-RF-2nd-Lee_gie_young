@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<style>
+body {
+  text-align: center;
+  background: #222;
+  margin: 20px;
+}
+* {
+  color: #888 !important;
+}
+*:hover {
+  color: #aaa !important;
+}
+[class*="icono"] {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  color: #666;
+  box-sizing: border-box;
+}
+[class*="icono"]:after,
+[class*="icono"]:before {
+  content: "";
+  box-sizing: border-box;
+}
+[class*="icono-arrow1"] {
+  width: 20px;
+  height: 20px;
+  border-width: 4px 4px 0 0;
+  border-style: solid;
+  margin: 10px;
+}
+[class*="icono-arrow1"]:before {
+  right: 0;
+  top: -3px;
+  position: absolute;
+  height: 4px;
+  box-shadow: inset 0 0 0 32px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 23px;
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+}
+[class*="icono-arrow1"][class*="-left"] {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+[class*="icono-arrow1"][class*="-left"][class*="-up"] {
+  -webkit-transform: none;
+          transform: none;
+}
+[class*="icono-arrow1"][class*="-left"][class*="-down"] {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+[class*="icono-arrow1"][class*="-right"] {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+[class*="icono-arrow1"][class*="-right"][class*="-up"] {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+[class*="icono-arrow1"][class*="-right"][class*="-down"] {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+[class*="icono-arrow1"][class*="-up"] {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+[class*="icono-arrow1"][class*="-down"] {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+[class*="icono-arrow2"] {
+  width: 0;
+  height: 0;
+  border-width: 6px;
+  border-style: solid;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  margin: 10px;
+}
+[class*="icono-arrow2"]:before {
+  right: 0;
+  top: -3px;
+  position: absolute;
+  height: 4px;
+  box-shadow: inset 0 0 0 32px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 15px;
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+}
+[class*="icono-arrow2"][class*="-left"] {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+[class*="icono-arrow2"][class*="-left"][class*="-up"] {
+  -webkit-transform: none;
+          transform: none;
+}
+[class*="icono-arrow2"][class*="-left"][class*="-down"] {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+[class*="icono-arrow2"][class*="-right"] {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+[class*="icono-arrow2"][class*="-right"][class*="-up"] {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+[class*="icono-arrow2"][class*="-right"][class*="-down"] {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+[class*="icono-arrow2"][class*="-up"] {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+[class*="icono-arrow2"][class*="-down"] {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+[class*="icono-arrow4"] {
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-top: 7px solid;
+  border-right: 7px solid;
+  margin: 15px;
+}
+[class*="icono-arrow4"][class*="-left"] {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+[class*="icono-arrow4"][class*="-left"][class*="-up"] {
+  -webkit-transform: none;
+          transform: none;
+}
+[class*="icono-arrow4"][class*="-left"][class*="-down"] {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+[class*="icono-arrow4"][class*="-right"] {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+[class*="icono-arrow4"][class*="-right"][class*="-up"] {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+[class*="icono-arrow4"][class*="-right"][class*="-down"] {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+[class*="icono-arrow4"][class*="-up"] {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+[class*="icono-arrow4"][class*="-down"] {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+</style>
+</head>
+<body>
+<i class="icono-arrow1-left"></i>
+<i class="icono-arrow1-right"></i>
+<i class="icono-arrow1-up"></i>
+<i class="icono-arrow1-down"></i>
+<br>
+<i class="icono-arrow1-left-up"></i>
+<i class="icono-arrow1-left-down"></i>
+<i class="icono-arrow1-right-up"></i>
+<i class="icono-arrow1-right-down"></i>
+<br><br><br><br>
+<i class="icono-arrow2-left"></i>
+<i class="icono-arrow2-right"></i>
+<i class="icono-arrow2-up"></i>
+<i class="icono-arrow2-down"></i>
+<br>
+<i class="icono-arrow2-left-up"></i>
+<i class="icono-arrow2-left-down"></i>
+<i class="icono-arrow2-right-up"></i>
+<i class="icono-arrow2-right-down"></i>
+<br><br><br><br>
+<i class="icono-arrow4-left"></i>
+<i class="icono-arrow4-right"></i>
+<i class="icono-arrow4-up"></i>
+<i class="icono-arrow4-down"></i>
+<br>
+<i class="icono-arrow4-left-up"></i>
+<i class="icono-arrow4-left-down"></i>
+<i class="icono-arrow4-right-up"></i>
+<i class="icono-arrow4-right-down"></i>
+<br>
+Part of
+<a href="https://saeedalipoor.github.io/icono">ICONO</a>
+</body>
+</html>

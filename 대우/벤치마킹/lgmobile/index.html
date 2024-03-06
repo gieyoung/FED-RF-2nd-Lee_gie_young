@@ -1,0 +1,1372 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+ 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<script src="js/jquery-3.5.0.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+
+
+
+  
+  
+  
+  
+
+
+
+<title>엘지헬로비전(모바일)</title>
+
+	<style>
+		*{margin:0;padding: 0;vertical-align: top;box-sizing: border-box;}
+		a{text-decoration: none;}
+		li{list-style: none;}
+		button{border:none; 
+			background:none; 
+			cursor: pointer;
+		}
+
+		body{font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Roboto', sans-serif;}
+
+		/*빠른메뉴스타일*/
+		.quick_btn{
+			position: fixed; 
+			width:100%;
+			bottom:0; left:0;
+			overflow: hidden;
+}
+		.quick_btn a{
+			display: block;
+			width: 50%;
+			height: 77px;
+			float: left;
+			font-size: 21px;
+			text-align: center;
+			line-height: 77px;
+			position: relative;
+		}
+
+		.quick_btn a span{
+			position: absolute;
+			left:50%; top:0;
+			margin-left: -60px;
+			margin-top:30px;
+			display: block;
+			background: url("images/ico-phone-call2.png") no-repeat;
+			width: 42px; height: 40px;
+			background-size: 21px;
+		}
+
+		.quick_btn .left{
+			background: #4200ad;
+			color:#fff;
+		}
+
+		.quick_btn .right{
+			background:#fff;
+			color:#4200ad;
+		}
+
+
+
+
+		.header{width: 100%; height:60px; position:relative; border-bottom:1px solid #d6d3d6;}
+
+		.b1{position:absolute; top:50%; left:17px;cursor:pointer;margin-top:-10px;}
+		.b1 img{width: 21.5px;}
+
+		h1{position:absolute; top:50%; left:50%; 
+			margin-left:-75px; margin-top:-20px;cursor:pointer;}
+		h1 img{width: 150px;}
+		.b2{position:absolute; top:50%; right:17px; margin-top:-10.5px;cursor:pointer;}
+		.b2 img{width: 21.5px;}
+
+		.main .main_slider img{
+      width: 100%;
+    }
+
+    /*페이지버튼 커스텀*/
+
+    .main .main_slider .swiper-pagination{
+      background: rgb(0,0,0,0.5);
+      padding:10px 10px 0;
+      border-radius: 20px;
+      width:auto;
+      position: absolute;
+      left:50%; bottom: 30px;
+      transform: translate(-50%,0);
+
+  
+
+
+
+
+    }
+
+     .main_slider .swiper-pagination .swiper-pagination-bullet{
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      opacity: 1;
+      transition: all 0.5s ease;
+    
+      
+
+
+
+    }
+
+    .main_slider .swiper-pagination .swiper-pagination-bullet-active{
+
+      transform: scale(1.8);
+     
+
+    }
+
+
+
+
+
+		.menu{width: 100%;text-align: center;}
+		.menu li{display:inline-block;
+				padding:0 12px;}
+		.menu li a{font-size: 14px;
+    				line-height: 54px;
+    			   color:#000;
+    			font-family: 'Roboto', 'Noto Sans CJK KR', 'Noto Sans KR', 'Malgun Gothic', sans-serif, Arial, Dotum, Gulim, Verdana, Tahoma;}
+
+
+
+    
+
+
+    /*섹션1*/
+
+   /* .section1{
+    	width: 100%;
+    	padding:55px 0;
+    	margin:0 auto;
+    }
+
+    .section1 h2{
+    	font-size: 20px;
+    	text-align: center;
+    	color: #000;
+    	margin-bottom:40px;
+    	
+    }
+
+    .section1 .list{
+    	overflow: hidden;
+    	margin:auto;
+    	width: 360px;
+    }
+*/
+
+
+   /* .section1 .list li a{
+    	display:block;
+    	float:left;
+    	color: #000;
+    	font-size: 17px;
+    	font-weight: bold;
+    	width: 80px;
+    	text-align:center;
+    	padding: 55px 0 0;
+    	position: relative;
+    }
+
+    .section1 .list li:first-child a::before{
+    	content:"";
+    	position: absolute;
+    	display: block;
+    	background: url("images/ico-45-tv.png") no-repeat;
+    	width: 45px; height: 45px;
+    	background-size: 45px;
+    	left:25%; top:0;
+    }
+*/
+/*
+.section1 .list li:nth-child(2) a::before{
+    	content:"";
+    	position: absolute;
+    	display: block;
+    	background: url("images/ico-45-internet.png") no-repeat;
+    	width: 45px; height: 45px;
+    	background-size: 45px;
+    	left:25%; top:0;
+    }
+
+
+
+.section1 .list li:nth-child(3) a::before{
+    	content:"";
+    	position: absolute;
+    	display: block;
+    	background: url("images/ico-45-combination.png") no-repeat;
+    	width: 45px; height: 45px;
+    	background-size: 45px;
+    	left:25%; top:0;
+    }*/
+/*
+    .section1 .list li:nth-child(4) a::before{
+    	content:"";
+    	position: absolute;
+    	display: block;
+    	background: url("images/ico-45-special.png") no-repeat;
+    	width: 45px; height: 45px;
+    	background-size: 45px;
+    	left:25%; top:0;
+    }
+*/
+
+
+/*섹션1 쌤풀이*/
+     .section1{
+     	padding: 55px 0;
+
+}
+
+      .section1 h2{
+      	font-size: 18px;
+      	font-weight: 700;
+      	text-align:center;
+      	margin-bottom: 38px;
+      }
+
+      .section1 .list{
+      	text-align: center;
+
+      }
+
+      .section1 .list li{
+      	display: inline-block;
+      	margin:0 15px;
+
+      }
+
+       .section1 .list li:first-child{
+       	margin-left: 0;
+       }
+
+       .section1 .list li:last-child{
+       	margin-right: 0;
+       }
+
+      .section1 .list li a h3{
+      	font-size: 15px;
+      	color:#000;
+      	margin-top: 15px;
+      	text-align: center;
+      }
+
+      .section1 .list li a img{
+      	width: 45px;
+      }
+
+
+
+      /*섹션2*/
+
+
+      .section2{
+      	background: #f7f3f7;
+      	/*border:1px solid red;*/
+      	text-align:center;
+      	padding: 45px 0;
+      }
+
+      .section2 img{
+      	width: 320px;
+      }
+
+
+      .section2 h2{
+      	font-size: 25px;
+      	font-weight:bold;
+
+      }
+
+      .section2 p{
+      	/*border:1px solid red;*/
+      	margin:15px 0 30px;
+      	font-size: 14px;
+      }
+
+      .section2 map area{
+      	outline: none;
+      }
+
+
+      /*섹션3*/
+
+      .section3{
+      	/*border:1px solid red;*/
+      	text-align: center;
+      	padding: 55px 0 20px;
+      	
+      }
+
+
+      .section3 h2{
+      	font-size: 25px;
+      	font-weight: bold;
+      	margin-bottom:10px;
+      } 
+
+
+      .section3 .benefit{
+      	overflow: hidden;
+      	width: 290px;
+      	/*border:1px solid red;*/
+      	display: inline-block;
+      	margin-top:30px;
+ }
+
+      	
+
+      .section3 a{
+      	color:#000;
+      	display:block;
+      }
+
+      .section3 li{
+      	/*float:left;*/
+      	/*border:1px solid blue;*/
+      	margin-bottom: 35px;
+
+
+
+      	
+      }
+
+
+      .section3 li:nth-child(1){
+      	float:left;
+
+
+      }
+
+
+      .section3 li:nth-child(2){
+      	float:left;
+      	padding-left: 10px;
+
+
+      }
+
+     
+
+      .section3 li:nth-child(3){
+      	float:left;
+      	padding-left: 5px;
+
+
+      }
+
+      .section3 li:nth-child(4){
+      	float:left;
+      	padding-left: 16px;
+      	
+
+      }
+
+      .section3 h3{
+      	font-size: 18px;
+      	font-weight: 700;
+      	margin:15px 0 10px;
+
+
+      }
+
+      .section3 p{
+      	font-size: 14px;
+      	font-weight: 400;
+      	color:#737573;
+      	
+
+
+
+      }
+
+
+/*섹션4*/
+
+	  .section4{
+	  	padding: 55px 0 65px;
+	  	text-align: center;
+	  	/*background: #ed174d;*/
+	  	color:#fff;
+	  	background-image:linear-gradient(to left,#ff419c,#ed174d);
+
+}
+      
+      .section4 h2{
+      	font-size: 25px;
+      	font-weight: 500;
+      	margin-bottom: 10px;
+
+
+      }
+
+      .section4 .search{
+      	border-bottom:1px solid #fff;
+      	width: 320px;
+      	height: 60px;
+      	margin: auto;
+      	position: relative;
+
+      }
+
+      .section4 .search fieldset{
+      	border:none;
+      }
+
+      .section4 .search fieldset legend{
+      	/*text-indent: -99999px;*/
+      	position: absolute;
+      	left:-99999px;
+      }
+
+
+      .section4 .search input{
+      	width: 320px;
+      	height: 60px;
+      	padding: 0 50px 0 5px;
+      	font-size: 20px;
+      	font-weight: 300;
+      	line-height: 58px;
+      	border:none;
+      	background: none;
+      	color:#fff;
+      	outline:none;
+
+      }
+
+      .section4 .search input::placeholder{
+      	color:#fff;
+
+      }
+
+      .section4 .search .btn_search{
+      	background:url("images/ico-search-lg-white.png") no-repeat;
+      	position: absolute;
+      	background-size:27px;
+      	right:-20px; top:15px;
+      	width: 55px;
+      	height: 54px;
+      	text-indent: -99999px;
+      	outline:none;
+      	cursor: pointer;
+
+
+      }
+
+      /*섹션5*/
+
+
+      .section5{
+      	border:1px solid white;
+      	text-align: center;
+      	width: 100%;
+      	/*height: 435px;*/
+        background: #504964;
+        padding: 55px 10px 50px;
+        margin:auto;
+
+
+      }
+
+
+      .section5 h2{
+      	font-size: 25px;
+      	color:#fff; 
+      	font-weight: 700;
+      	margin-bottom: 60px;
+
+      }
+
+      .section5 span{
+      	text-align: right;
+      	font-size: 12px;
+
+      }
+
+      .section5 .s2{
+      	font-size: 23px;
+      	font-weight: 300;
+      	text-align: right;
+
+      }
+
+      .section5 li{
+      	font-size: 17px;
+      	font-weight: 300;
+      	line-height: 40px;
+
+      }
+
+
+      .section5 a{
+      
+      	color:#fff;
+      }
+
+      .section5 a::before{
+      	content:"#";
+      }
+
+
+
+
+      
+
+
+      /*섹션6*/
+
+      .section6{
+      	/*border: 1px solid red;*/
+      	padding: 55px 0;
+      	text-align: center;
+
+      	
+
+
+
+      }
+
+      .section6 h2{
+      	font-size: 25px;
+      	font-weight: 500;
+
+      }
+
+      .section6  img{
+      	margin:35px auto 25px;
+      }
+
+      .section6 h3{
+      	margin-bottom: 20px;
+      	font-size: 20px;
+      	line-height: 29px;
+      	font-weight: 500;
+
+
+      }
+
+      .section6 a{
+      	font-size: 14px;
+      	color:#767676;
+      }
+
+      .section6 a::before{
+      	content: "#";
+
+
+      }
+
+
+    
+
+
+
+
+
+      /*섹션7*/
+
+      .section7{
+        width: 100%;
+        height: 570px;
+      	text-align: center;
+      	background: 
+        url("images/bg-why-bottom.png") no-repeat center bottom,
+        url("images/bg-why-top.jpg")no-repeat center top;
+      	padding-top: 59px;
+        background-size: cover;
+
+      }
+
+      .section7 h2{
+      	color:#fff;
+      	margin-bottom: 15px;
+        font-size: 25px;
+
+      }
+
+
+      .section7 .show_more{
+        color:#fff;
+        font-size: 14px;
+
+      }
+
+
+      	
+
+      .section7 .show_more::after{
+      	content: ">";
+      }
+
+
+
+      .section7 .why_list{
+
+        overflow: hidden;
+        width: 310px;
+        margin: auto;
+        margin:25px auto 0;
+        /*border:1px solid red;*/
+        box-sizing:border-box;
+      }
+
+      .section7 .why_list li{
+        float:left;
+        border: 1px solid #fff;
+        width: 150px;
+        height: 180px;
+        margin:0 10px 10px 0;
+        box-sizing:border-box;
+      }
+
+
+      .section7 .why_list li a{
+        display: block;
+        text-align:left;
+        padding: 15px 12px 10px 15px;
+        width: 100%;
+        height: 100%;
+        box-sizing:border-box;
+      
+        
+        
+      }
+
+      .section7 .why_list li:nth-child(2){
+        margin-right:0;
+      }
+
+      .section7 .why_list li:nth-child(3){
+       
+      }
+      
+
+      .section7 .why_list li:nth-child(4){
+        margin-right:0;
+
+      }
+
+
+
+      .section7 h3{
+      	color:#bfe10e;
+      	font-size: 25px;
+        padding-bottom: 5px;
+
+      }
+
+      .section7 strong{
+
+      	color:#fff;
+      	font-size: 20px;
+        vertical-align: bottom;
+      	font-weight: 300;
+
+
+      }
+      
+      .section7 span{
+      	font-size: 14px;
+      	vertical-align: middle;
+        opacity:0.7;
+        vertical-align: bottom;
+
+      }
+
+      .section7 p{
+        padding-top: 10px;
+        color:#fff;
+        font-size: 12px;
+        text-align: justify;
+      	
+      }
+
+
+      /*정지재생버튼*/
+
+
+    .main{
+          position: relative;
+        }
+
+    .main .btn_pause{
+      position: absolute;
+      left:50%; bottom:33px;
+      margin-left: -90px;
+      background: url("images/btn-slider-pause.png") no-repeat;
+      width: 23px; height: 23px;
+      background-size: 23px;
+      border:1px solid red;
+      z-index:100;
+      border:none;
+      outline: none;
+      cursor: pointer;
+
+
+    }
+
+    .main .btn_pause.on{
+      background: url("images/btn-slider-play.png") no-repeat;
+       background-size: 23px;
+      
+
+    }
+
+
+
+
+     
+     
+
+
+
+
+
+      
+
+
+      
+
+      
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+/*footer*/
+
+         .footer{
+         	width: 100%;
+         	background: #181c21;
+         	padding-bottom: 48px;
+         }
+
+
+         .footer .footer_top .f_list{
+         	
+         	color:#fff;
+         	text-align: center;
+         	border-bottom:1px solid rgba(255,255,255,0.3);
+
+
+         }
+
+         .footer .footer_top .f_list a{
+         	color:#fff;
+         	font-size: 12px;
+         }
+
+          .footer .footer_top .f_list li{
+          	display: inline-block;
+          	padding:15px 0;
+          	/*border: 1px solid red;*/
+          	padding-right: 8px;
+          	position: relative;
+
+          }
+		 .footer .footer_top .f_list li:last-child{
+		 	padding-right: 0;
+		 }
+
+		 .footer .footer_top .f_list li::after{
+		 	position: absolute;
+		 	content:"";
+		 	width: 1px; height: 10px;
+		 	background: rgba(255,255,255,0.5);
+		 	right:0; top:18px;
+		 }
+
+
+		 .footer .footer_top .f_list li:last-child::after{
+		 	display: none;
+		 }
+
+		 .logo{
+		 	text-align: center;
+		 	margin-top: 15px;
+		 }
+
+		 .f_list2 li{
+		 	
+		 	display: inline-block;
+		 	position: relative;
+		 	/*border: 1px solid red;*/
+		 	padding-right: 10px;
+
+		 }	
+
+		 .f_list2 {
+		 	text-align: center;
+		 	
+		 }
+
+		 .f_list2 li a{
+		 	color:#fff;
+		 font-size: 12px;
+
+		}
+
+		.f_list2 li:last-child a{
+			color:#6399db;
+			font-weight: bold;
+		}
+
+
+		.footer .f_list2 li::after{
+			position: absolute;
+		 	content:"";
+		 	width: 1px; height: 10px;
+		 	background: rgba(255,255,255,0.5);
+		 	right:0; top:3px;
+
+
+		}
+
+		.footer .f_list2 li:last-child::after{
+			display: none;
+
+		}
+
+
+		.footer address{
+			text-align: center;
+			color:rgba(255,255,255,0.5);
+			padding: 15px 0;
+			font-style: normal;
+			font-size: 12px;
+			line-height:19px;
+
+		}
+
+		.f_list3{
+			text-align: center;
+		}
+
+
+
+		.f_list3 li{
+			display: inline-block;
+
+		}
+
+		.f_list3 li a{
+			font-size:12px;
+			color:rgba(255,255,255,0.7);
+
+		}
+
+		.f_list3 li:last-child{
+			text-decoration: underline;
+		}
+
+		.copy{
+			text-align: center;
+			padding-top: 15px;
+			color:rgba(255,255,255,0.3);
+			font-size: 12px;
+
+
+		}
+
+
+
+
+
+		         	
+        
+
+	</style>
+
+  </head>
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+    
+
+
+
+
+		
+
+
+
+
+	
+	<div class="header">
+		<button class="b1"><img src="images/ico-menu.png" alt="메뉴"></button>
+		<h1><a href="#"><img src="images/logo.png" alt="로고"></a></h1>
+		<button class="b2"><img src="images/ico-search.png" alt="검색
+			"></button>
+	</div>	
+
+
+	<ul class="menu">
+		<li><a href="#">SHOP</a></li>
+		<li><a href="#">상품</a></li>
+		<li><a href="#">이벤트/혜택</a></li>
+		<li><a href="#">고객센터</a></li>
+	</ul>
+
+	<div class="main">
+		<!-- Slider main container -->
+<div class="swiper-container main_slider">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="images/M_Main_banner__720X1000.png" class="slider1"></div>
+        <div class="swiper-slide"><img src="images/M_Main_banner__720X10001.png" class="slider1"></div>
+        <div class="swiper-slide"><img src="images/M_Main_banner_03_720X100021.png" class="slider1"></div>
+        <div class="swiper-slide"><img src="images/M_Main_banner_03_720X100032.png" class="slider1"></div>
+        <div class="swiper-slide"><img src="images/M_Main_banner_03_720X100034.png" class="slider1"></div>
+        <div class="swiper-slide"><img src="images/M_Main_banner_03_720X100035.png" class="slider1"></div>
+        <div class="swiper-slide"><img src="images/200615_M_Main_banner_03_720X1000.png" class="slider1"></div>
+        ...
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+     <!-- 정지재생버튼 -->
+    <button type="button" class="btn_pause"></button>
+
+    <!-- If we need navigation buttons -->
+   <!--  <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+ -->
+    <!-- If we need scrollbar -->
+   <!--  <div class="swiper-scrollbar"></div> -->
+</div>
+
+
+
+
+  <!-- 빠른메뉴 -->
+  <div class="quick_btn">
+     <a class="left" href="#">가입신청</a>
+     <a class="right" href="#" ><span></span>전화상담</a>
+  </div>
+
+    <!-- 섹션1 -->
+
+   <!--  <div class="section1">
+    	<h2>고객님 어떤 상품을 찾으세요?</h2>
+    	<ul class="list">
+	    	<li><a href="#" class="l1">TV</a></li>
+	    	<li><a href="#" class="l2">인터넷</a></li>
+	    	<li><a href="#" class="l3">결합상품</a></li>
+	    	<li><a href="#" class="l4">특가상품</a></li>
+        </ul>
+     </div> -->
+
+<!-- 섹션1 쌤풀이 -->
+
+     <div class="section1">
+    	<h2>고객님 어떤 상품을 찾으세요?</h2>
+    	<ul class="list">
+	    	<li><a href="#"><img src="images/ico-45-tv.png"><h3>TV</h3></a></li>
+	    	
+	    	<li><a href="#"><img src="images/ico-45-internet.png"><h3>인터넷</h3></a></li>
+	    	
+	    	<li><a href="#"><img src="images/ico-45-combination.png"><h3>결합상품</h3></a></li>
+	    	
+	    	<li><a href="#"><img src="images/ico-45-special.png"><h3>특가상품</h3></a></li>
+	    	
+
+        </ul>
+     </div>
+
+
+     <!-- 섹션2 -->
+
+
+
+     <div class="section2">
+     		<h2>상품을 선택하세요</h2>
+     		<p>결합을 하시면 더더욱 저렴하게 구입하실 수 있습니다.</p>
+     		<img src="images/bg-diy-tvplusone.png" usemap="#aaa" alt="">
+     		<map name="aaa">
+     			<area shape="poly" coords="160,13,184,14,215,23,241,36,257,49,277,69,289,89,301,115,307,144,306,197,301,205,288,233,277,250,268,260,265,264,160,160" href="#" alt="">
+     			<area shape="poly" coords="264,265,254,273,241,283,230,290,215,297,199,302,168,307,148,307,130,304,111,299,90,290,70,280,56,264,160,160" href="#" alt="">
+     			<area shape="poly" coords="55,264,44,250,34,238,26,222,19,203,15,203,15,184,13,161,15,132,20,115,34,83,47,63,82,34,107,21,128,16,145,12,160,11,160,160" href="#" alt="">
+     		</map>
+</div>
+     		
+
+
+
+
+     	
+     	
+
+
+
+
+   
+
+
+     <!-- /*섹션3*/ -->
+
+     <div class="section3">
+     	<h2>이달의 혜택</h2>
+     	<div>시계</div>
+     	<ul class="benefit">
+     		<li>
+     			<a href="#">
+     				<img src="images/011.png" alt="기프트">
+     				<h3>50인치 UHD TV</h3>
+     				<p>UHD 방송+1G 가입 시</p>
+     			</a>
+     		</li>
+
+
+
+     		<li>
+     			<a href="#">
+     				<img src="images/021.png" alt="돈">
+     				<h3>인터넷요금<br>14만원 할인</h3>
+     				<p>3년 약정 온라인 단독<br>할인</p>
+     			</a>
+     		</li>
+
+
+
+     		<li>
+     			<a href="#">
+     				<img src="images/031.png" alt="프리">
+     				<h3>1만원 VOD쿠폰</h3>
+     				<p>방송상품 가입 시</p>
+     			</a>
+     		</li>
+
+     		<li>
+     			<a href="#">
+     				<img src="images/041.png" alt="공유기">
+     				<h3>WiFi 공유기 무료</h3>
+     				<p>3년 약정 인터넷 가입<br>시</p>
+     			</a>
+     		</li>
+     		
+
+
+
+
+     	</ul>
+     	
+
+     </div>
+
+
+     <div class="section4">
+     	<h2>가입가능지역을 조회해 보세요</h2>
+     	<div class="search">
+     		<form action="">
+     			<fieldset>
+     				<legend>전체검색</legend>
+	     				<input type="text" placeholder="동/면/읍 입력해주세요">
+						<button type="button" class="btn_search">검색</button>
+				</fieldset>
+     		</form>
+     	</div>
+
+     </div>		
+
+
+
+     <!-- 섹션5 -->
+
+     <div class="section5">
+     	<h2>HELLO가 제안하는<br>
+     		 LIFESTYLE!</h2>
+
+
+        <ul class="shap">
+        	<li>
+        		<a href="#"><span>왜 헬로샵이죠?</span></a><br>
+  				<a href="#">TV 2대를 1대가격에</a>
+        		<a href="#">인기상품 여기!</a>
+
+
+        	</li>
+        	
+        	<li><a href="#"><span class="s2">지금 핫한 이벤트</span></a></li>
+        	<li><a href="#"><span class="s2">이번주는 뭘까?</span></a>
+        		<a href="#"><span>활용tip!</span></a>
+
+
+        	</li>
+        	
+        	<li><a href="#">헬로샵단독혜택</a>
+        		<a href="#"><span>30일 품질 보장!<sapn></a></li>
+        
+        	
+
+
+
+        </ul>
+
+
+     </div>
+
+
+
+     <!-- 섹션6 -->
+
+
+     <div class="section6">
+     	<h2>이유있는 제안</h2>
+     	<img src="images/list_banner12.png" alt="노트북">
+     	<h3>헬로tv와 헬로인터넷!<br>
+     	타사 전격비교</h3>
+     	<a href="#">헬로인터넷</a>
+     	<a href="#">헬로tv</a>
+     	<a href="#">UHD</a>
+     	<a href="#">기가</a>
+     	<a href="#">타사비교</a>
+     	
+     </div>
+
+     <!-- 섹션7 풀이 -->
+
+
+
+     <!-- 섹션7 -->
+
+     <div class="section7">
+     	<h2>WHY헬로샵?</h2>
+     	<a href="#" class="show_more">자세히보기</a>
+     	
+
+     	<ul class="why_list">
+     		<li>
+          <a href="#">
+       			<h3>01</h3>
+         		<strong>정직한/<span>헬로샵</span></strong>
+         		<p>유통 마진과 거품을
+         				쏙 빼서 저렴하고
+         				투명한
+         				가격으로 고객님께
+         				돌려드립니다.
+         		</p>
+     			</a>
+     		 </li>
+
+
+
+     		<li><a href="#">
+     			<h3>02</h3>
+     			<strong>현명한<span>/헬로샵</span></strong>
+     			<p>헬로의 모든 상품을
+     				한눈에! 내게 꼭 필요한 
+     				상품을 찾아서 쉽고
+     				빠르게 비교하세요.
+     			</p>
+     		    </a>
+     		 </li>
+
+
+
+     		<li><a href="#">
+     			<h3>03</h3>
+     			<strong>특별한<span>/헬로샵</span></strong>
+     			<p>오직 헬로샵에서만
+     				가능한 제휴 상품과 
+     				매월 진행되는 새로운
+     				이벤트를 만나보세요.
+     			</p>
+     			   </a>
+     		 </li>
+
+
+     			<li><a href="#">
+     			<h3>04</h3>
+     			<strong>편리한<span>/헬로샵</span></strong>
+     			<p>도움이 필요할 때는
+     				간편하게 상담 가능! 
+     				헬로샵 전담 상담원이
+     				항상 대기 중입니다.
+     			</p>
+     			   </a>
+     		 </li>
+
+
+
+     			
+     			
+
+
+
+     		</a></li>
+     		
+
+
+     	</ul>
+     	
+
+
+
+     </div>
+
+
+
+
+
+
+     	
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+    <!-- footer -->
+
+    <div class="footer">
+    	<div class="footer_top">
+    		<ul class="f_list">
+    			
+    			<li><a href="#">회사소개</a></li>
+    			<li><a href="#">지역방송</a></li>
+    			<li><a href="#">헬로모바일다이렉트</a></li>
+    			<li><a href="#">헬로렌탈</a></li>
+    			
+			</ul>
+		</div>
+
+			 <p class="logo"><a href="#"><img src="images/footer-logo.png"></a></p>
+
+			 <ul class="f_list2">
+			 	<!-- <li><a href="#"></a></li> -->
+			 	<li><a href="#">이용약관</a></li>
+    			<li><a href="#">개인정보처리방침</a></li>
+			 </ul>
+
+			 <address>
+			 	대표이사 송구영 개인정보보호책임자 이건호<br> 
+			 	사업자 등록번호 117-81-13423<br> 
+			 	통신판매업 2017-서울마포-0254 <br>
+				주소 서울특별시 마포구 월드컵북로56길 19 상암디지털드림타워
+			 </address>
+
+			 <ul class="f_list3">
+			 	<li><a href="#">고객행복센터</a></li>
+    			<li><a href="tel:02-1855-1000">1855-1000</a></li>
+			 </ul>
+
+			 <p class="copy">
+			 	Copyright © 2020 LG HelloVision All rights reserved. 
+			 </p>
+
+		
+	</div>
+			 
+   
+	
+</body>
+
+
+
+<script>
+
+var sw=0;
+$(".btn_pause").click(function(){
+  if(sw==0){
+    $('.btn_pause').addClass('on');
+    mySwiper.autoplay.stop();
+    sw=1;
+
+  }else{
+    $('.btn_pause').removeClass('on');
+    mySwiper.autoplay.start();
+    sw=0;
+  }
+  })
+
+
+
+var mySwiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  // direction: 'vertical',
+  loop: true,
+  autoplay:{
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+});
+
+
+  </script>
+
+
+</html>

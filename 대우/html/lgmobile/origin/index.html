@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>중심점바꾸기</title>
+	<style>
+		*{padding: 0; margin: 0;}
+	    
+	    .section{
+	    	width: 1200px;
+	    	height: 440px;
+	    	border:10px solid #000;
+	    	margin:20px auto;
+	    	position: relative;
+
+	    }
+
+	    .section .clock{
+	    	position: absolute;
+	    	left:50%; top:0;
+	    	margin-left: -75px;
+	    	/*transform: translateX(-50%);*/
+	    	transform: rotate(45deg);
+	    	transform-origin:center top;
+	    	animation: clock_ani 1s infinite ease-in-out;
+	    	animation-play-state: paused;
+	    }
+
+
+
+	    @keyframes clock_ani{
+	    	0%{transform:rotate(45deg);}
+	    	50%{transform:rotate(-45deg);}
+	    	/*100%{transform:rotate(45deg);}*/
+	    }
+
+
+	    .section:hover .clock{
+	    	animation-play-state: running;
+	    }
+
+
+	  
+
+	    .section .clock .line{
+	    	width: 5px;
+	    	height: 150px;
+	    	background: #000;
+	    	margin:0 auto;
+
+
+	    }
+
+	    .section .clock .circle{
+	    	width: 150px;
+	    	height: 150px;
+	    	border-radius: 100%;
+	    	border:5px solid #000;
+	    	margin:0 auto;
+	    	background: url("images/1.jpg") no-repeat 80% center;
+	    	background-size:cover;
+
+	    }
+
+	    .section h3{
+	    	text-align: center;
+	    	padding-top: 370px;
+	    }
+		
+
+
+	</style>
+</head>
+
+
+<body>
+	<div class="section">
+		<div class="clock">
+			<div class="line"></div>
+			<div class="circle"></div>
+		</div>
+    <h3>시계추 애니메이션</h3>
+	</div>
+	
+</body>
+</html>

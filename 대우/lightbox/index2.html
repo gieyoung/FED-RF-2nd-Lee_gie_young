@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>응용</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/jquery.lightbox-0.5.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<script src="js/jquery.lightbox-0.5-mod.js"></script>
+	<style>
+
+
+		h2{text-align: center;margin-top: 100px;font-weight: bold;font-size: 30px;}
+
+		.artwork{width: 960px; margin:80px auto 0;}
+		.artwork ul{overflow: hidden;/*border:1px solid red;*/ box-sizing:border-box; margin-bottom: 30px;}
+		.artwork ul li{float:left;margin-right: 20px;}
+		.artwork ul li:last-child{margin-right: 0;}
+		.artwork ul li:hover{
+			opacity:50%;
+		}
+		
+		
+		
+
+
+		
+	</style>
+
+</head>
+
+<body>
+
+	<h2>ARTWORK 작업물 목록</h2>
+	<div class="artwork">
+		<ul>
+			<li><a href="images2/big1.jpg"><img src="images2/sum1.jpg"></a></li>
+			<li><a href="images2/big2.jpg"><img src="images2/sum2.jpg"></a></li>
+			<li><a href="images2/big3.jpg"><img src="images2/sum3.jpg"></a></li>
+			<li><a href="images2/big4.jpg"><img src="images2/sum4.jpg"></a></li>
+		</ul>
+
+		<ul>
+			<li><a href="images2/big5.jpg"><img src="images2/sum5.jpg"></a></li>
+			<li><a href="images2/big6.jpg"><img src="images2/sum6.jpg"></a></li>
+			<li><a href="images2/big7.jpg"><img src="images2/sum7.jpg"></a></li>
+			<li><a href="images2/big8.jpg"><img src="images2/sum8.jpg"></a></li>
+		</ul>
+
+		<ul>
+			<li><a href="images2/big9.jpg"><img src="images2/sum9.jpg"></a></li>
+			<li><a href="images2/big10.jpg"><img src="images2/sum10.jpg"></a></li>
+			<li><a href="images2/big11.jpg"><img src="images2/sum11.jpg"></a></li>
+			<li><a href="images2/big12.jpg"><img src="images2/sum12.jpg"></a></li>
+		</ul>
+
+
+		<ul>
+			<li><a href="images2/big13.jpg"><img src="images2/sum13.jpg"></a></li>
+			<li><a href="images2/big14.jpg"><img src="images2/sum14.jpg"></a></li>
+			<li><a href="images2/big15.jpg"><img src="images2/sum15.jpg"></a></li>
+			<li><a href="images2/big16.jpg"><img src="images2/sum16.jpg"></a></li>
+		</ul>
+
+		
+
+
+
+
+	</div>
+
+
+		<script>
+		$(function(){
+
+   $('.artwork a').lightBox({
+	overlayBgColor:'#000',  
+	overlayOpacity: 0.8,
+	imageLoading: 'images/lightbox-ico-loading.gif',
+	imageBtnClose: 'images/lightbox-btn-close.gif',
+	imageBtnPrev: 'images2/btn_main_visual_prev_on.png',
+	imageBtnNext: 'images2/btn_main_visual_next_on.png',
+	containerResizeSpeed: 300,
+	txtImage: '작품',
+	txtOf: '중에'
+   });
+
+
+ 
+});
+
+
+
+</script>
+	
+</body>
+</html>

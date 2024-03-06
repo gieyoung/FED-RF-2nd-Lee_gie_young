@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>애니3</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background: #000;
+			line-height: 200px;
+			text-align: center;
+			color:#fff;
+			font-size: 30px;
+			border-radius: 100%;
+			position: absolute;
+			animation: move 5s 2s infinite;
+			animation-fill-mode:forwards;
+
+}
+
+		@keyframes move{
+			0%{left:0;}
+			25%{left:500px; top:0; background: #fc0;}
+			50%{left:500px; top:500px; background: #0cf;}
+			75%{left:0; top:500px; background: #cf0;}
+			100%{left:0; top:0;}
+
+		}
+
+
+
+	</style>
+</head>
+
+
+<body>
+	<div>Animation</div>
+
+	
+</body>
+</html>

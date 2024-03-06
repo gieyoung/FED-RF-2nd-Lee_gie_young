@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>아산병원</title>
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		*{margin: 0; padding: 0; vertical-align: top;}
+		a{text-decoration: none;}
+		li{list-style:none;}
+
+
+		.wrap{
+			position: relative;
+			width: 100%;
+
+
+		}
+
+		.cover{
+			position: fixed;
+			left:0; top:0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.8);
+			z-index: 10;
+			display: none;
+
+
+		}
+
+
+
+
+		.header{
+			width: 100%;
+			height: 46px;
+			background: #33353f;
+			position: relative;
+
+		}
+
+		.header h1{
+			position: absolute;
+			left:50%; top:50%;
+			transform: translate(-50%,-50%);
+
+		}
+
+		.header h1 a img{
+			width: 90px;
+
+
+
+		}
+
+		.header button{
+			position: absolute;
+			width: 45px; height: 45px;
+			text-indent: -99999px;
+			cursor:pointer;
+			border:none;
+			outline:none;                  
+		}
+
+		.header .m_btn{
+			background: url("images/bg_header_lnb.png") no-repeat;
+			left:0; top:0;
+			background-size: 45px;
+			
+		}
+
+		.header .m_search{
+			background: url("images/img_topSerch.png") no-repeat;
+			right:0; top:0;
+			background-size: 45px;
+			
+
+		}
+
+		/*메뉴*/
+
+		.m_gnb{
+			width: 274px;
+			height: 100%;
+			background: #f1f1f1;
+			position: fixed;
+			left:-274px; top:0;
+			z-index:21;
+
+		}
+
+		.m_home{
+			box-sizing: border-box;
+			width: 274px;
+			height: 173px;
+			background: #111;
+			padding: 40px 20px 35px;
+
+		}
+
+		.m_home p{
+			color:#fff;
+			font-size: 14px;
+			line-height: 20px;
+			margin-bottom:25px;
+		}
+
+		.m_home img{
+			width: 232px;
+
+		}
+
+		.m_menu img{
+			width: 274px;
+
+
+		}
+
+		.reserve img{
+			width: 235px;
+
+		}
+
+		.reserve{
+			text-align: center;
+			padding-top: 35px;
+
+
+		}
+
+
+
+
+
+		
+
+
+
+
+
+	</style>
+
+	<script>
+		$(document).ready(function(){
+			$(".m_btn").click(function(){
+				$(".m_gnb").animate({"left":0},500);
+
+
+
+			})
+
+
+		$(".login").click(function(){
+			$(".m_gnb").animate({"left":-274},500);
+
+
+		})
+
+		$(".m_btn").click(function(){
+			$(".wrap").animate({"left":274},500);
+
+
+		})
+
+		$(".login").click(function(){
+			$(".wrap").animate({"left":0},500);
+
+
+		})
+
+		$(".m_btn").click(function(){
+			$(".cover").fadeIn(500);
+
+
+		})
+
+		$(".login").click(function(){
+			$(".cover").fadeOut(500);
+
+
+		})
+
+
+		});
+
+
+
+
+
+	</script>
+
+
+
+
+</head>
+
+
+
+<body>
+	<div class="m_gnb">
+		<div class="m_home">
+			<p>로그인을 하시면 더 많은 정보를<br>
+			확인 하실 수 있습니다.</p>
+		    <a href="#" class="login"><img src="images/btn_login.png"></a>
+		</div>
+
+		<ul class="m_menu">
+			<li><a href="#"><img src="images/img_lnbtab01_off (1).png"></a></li>
+			<li><a href="#"><img src="images/img_lnbtab02_off.png"></a></li>
+			<li><a href="#"><img src="images/img_lnbtab03_off.png"></a></li>
+			<li><a href="#"><img src="images/img_lnbtab04_off.png"></a></li>
+			<li><a href="#"><img src="images/img_lnbtab05_off.png"></a></li>
+
+
+			
+
+		</ul>
+
+		<div class="reserve">
+		<a href="#"><img src="images/btn_reserve.png"></a>
+</div>
+
+
+	</div>
+
+
+<div class="cover"></div>
+<div class="wrap">
+	<div class="header">
+		<button type="button" class="m_btn">전체메뉴</button>
+		<h1><a href="index.html"><img src="images/img_header_logo.png" alt="아산병원로고"></a></h1>
+		<button type="button" class="m_search">검색</button>
+	</div>
+	
+	<div class="main"></div>
+	
+	
+	<div class="footer"></div>
+</div>
+	
+</body>
+</html>

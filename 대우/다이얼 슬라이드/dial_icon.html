@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3d slide 만들기</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .carousel{
+            position: absolute;
+            top:30px;
+            outline: 1px solid #e1e1e1;
+            width: 700px;
+            height: 900px;
+            transform-origin: left bottom;
+            transition: 0.7s;
+        }
+        .carousel .cell{
+            width: 480px;
+            height: 70px;
+            position: absolute;
+            left: 10px;
+            top:calc(50% - 35px);
+            transform-origin: 35px 35px;
+            transform: rotate( -80deg);
+            animation-name: example;
+            animation-duration: 1s;
+            
+        }
+        .carousel .cell .icon{
+            width: 70px; height: 70px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border : 2px solid #e1e1e1;
+            border-radius: 7px;
+            transform-origin: 35px 35px;
+            background: white;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .carousel .cell .icon p{
+            position: absolute;
+            right: -210px;
+            top:50%;
+            transform: translateY(-50%);
+            width: 200px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,021);
+            color: white;
+        }
+        
+        
+        .carousel .cell:nth-child(1){
+        }
+        
+        .carousel .cell:nth-child(1) .icon{
+            transform: rotate( 80deg);
+        }
+        
+        .carousel .cell:nth-child(2){
+            transform: rotate( -55deg);
+        }
+        .carousel .cell:nth-child(2) .icon{
+            transform: rotate( 55deg);
+        }
+        
+        .carousel .cell:nth-child(3){
+            transform: rotate( -30deg);
+        }
+        .carousel .cell:nth-child(3) .icon{
+            transform: rotate( 30deg);
+        }
+        
+        .carousel .cell:nth-child(4){
+            transform: rotate( 0deg );
+        }
+        
+        
+        .carousel .cell:nth-child(5){
+            transform: rotate( 30deg);
+        }
+        .carousel .cell:nth-child(5) .icon{
+            transform: rotate( -30deg);
+        }
+        
+        .carousel .cell:nth-child(6){
+            transform: rotate( 55deg);
+        }
+        .carousel .cell:nth-child(6) .icon{
+            transform: rotate( -55deg);
+        }
+        
+        .carousel .cell:nth-child(7){
+            transform: rotate( 80deg);
+        }
+        .carousel .cell:nth-child(7) .icon{
+            transform: rotate( -80deg);
+        }
+        
+        @keyframes example {
+          from { transform: rotate( -80deg);}
+          to { transform: rotate();}
+        }
+        
+        .carousel .univ{
+            position: absolute;
+            left: 10px;
+            top:50%;
+            transform: translateY(-50%);
+            animation-name: slideShow;
+            animation-duration: 1s;
+        }
+        @keyframes slideShow {
+          from { transform: translateY(-65%);opacity: 0;}
+          to { transform: translateY(-50%);opacity: 1;}
+        }
+        
+        .carousel:nth-child(2){
+            transform: rotateY(90deg);
+        }
+        
+        .carousel:nth-child(2){
+            transform: rotateY(90deg);
+        }
+        .carousel:nth-child(3){
+            transform: rotateY(180deg);
+        }
+        .carousel:nth-child(4){
+            transform: rotateY(270deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scene">
+        <div class="carousel">
+            <div class="cell"><div class="icon"><p>Business Management</p></div></div>
+            <div class="cell"><div class="icon"><p>Computer Science</p></div></div>
+            <div class="cell"><div class="icon"><p>Technology ＆ Society</p></div></div>
+            <div class="cell"><div class="icon"><p>Mechanical Engineering</p></div></div>
+            <div class="cell"><div class="icon"><p>Applied Mathematics ＆ Statistics</p></div></div>
+            <div class="cell"><div class="icon"><p>Fashion Design</p></div></div>
+            <div class="cell"><div class="icon"><p>Fashion Business Management</p></div></div>
+            <img src="/images/g2509.png" class="univ" alt="">  
+        </div>
+        <div class="carousel">
+            <div class="cell"><div class="icon"><p>Bachelor of Science Molecular Biotechnology</p></div></div>
+            <div class="cell"><div class="icon"><p>Bachelor of Science Environment Technology</p></div></div>
+            <div class="cell"><div class="icon"><p>Bachelor of Science Food Technology</p></div></div>
+            <div class="cell"><div class="icon"><p>News</p></div></div>
+            <div class="cell"><div class="icon"><p>Notice</p></div></div>
+            <img src="/images/g2400.png" class="univ" alt="">  
+        </div>
+        <div class="carousel">
+            <div class="cell"><div class="icon"><p>1</p></div></div>
+            <div class="cell"><div class="icon"><p>2</p></div></div>
+            <div class="cell"><div class="icon"><p>3</p></div></div>
+            <div class="cell"><div class="icon"><p>4</p></div></div>
+            <div class="cell"><div class="icon"><p>5</p></div></div>
+            <div class="cell"><div class="icon"><p>6</p></div></div>
+            <img src="/images/g2540.png" class="univ" alt="">  
+        </div>
+        <div class="carousel">
+            <div class="cell"><div class="icon"><p>1</p></div></div>
+            <div class="cell"><div class="icon"><p>2</p></div></div>
+            <div class="cell"><div class="icon"><p>3</p></div></div>
+            <div class="cell"><div class="icon"><p>4</p></div></div>
+            <img src="/images/g2675.png" class="univ" alt="">  
+        </div>
+    </div>
+    <a href="javascript:prev();">이전</a>
+    <a href="javascript:next();">다음</a>
+        
+    <script>
+        var degree = [0, 90, 180, 270];
+            var carousel = $(".carousel");
+        function prev(){
+            for(var i = 0; i < carousel.length; i++){
+                $(".carousel:nth-child("+(i+1)+")").css("transform","rotateY("+((degree[i]+90)%360)+"deg)");
+                degree[i]=((degree[i]+90)%360);
+            };
+            $(".cell").fadeToggle(200);
+            setTimeout(function() {
+                $(".cell").toggle();
+            }, 500);            
+        }
+        
+        function next(){
+            for(var i = 0; i < carousel.length; i++){
+                if(degree[i]>0){
+                    $(".carousel:nth-child("+(i+1)+")").css("transform","rotateY("+((degree[i]-90))+"deg)");
+                    degree[i]=(degree[i]-90);
+                }
+                else{
+                    $(".carousel:nth-child("+(i+1)+")").css("transform","rotateY("+((degree[i]+270))+"deg)");
+                    degree[i]= 270;
+                }
+            };
+            $(".cell").fadeToggle(200);
+            setTimeout(function() {
+                $(".cell").toggle();
+            }, 500);            
+        }
+    </script>
+</body>
+
+</html>

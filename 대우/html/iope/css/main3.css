@@ -1,0 +1,160 @@
+@charset "utf-8";
+body{font-family: 'Nanum Gothic', sans-serif;}
+
+
+
+#header{
+	width: 100%;
+
+
+}
+
+#header .top_header{
+	width: 1170px;
+	height: 72px;
+	border-bottom: 1px solid #e5e5e5;
+	margin:0 auto;
+	position: relative;
+	/*border:1px solid red;*/
+}
+
+
+#header .top_header h1{
+	position: absolute;
+	left:50%; top:50%;
+	margin-left:-38px;
+	margin-top:-12px;
+}
+
+
+
+#header .top_header h1 a{
+	
+	display: block;
+    background: url("../images/logo.svg") no-repeat;
+	width: 78px;
+	height: 25px;
+	background-size:78px;
+	text-indent: -99999px;
+}
+
+
+#header .bottom_header{
+	width: 100%;
+	height: 45px;
+	margin:0 auto;
+	/*border:1px solid red;*/
+	position: relative;
+	
+
+}
+
+#header .bottom_header .gnb{
+	text-align: center;
+}
+
+#header .bottom_header .gnb>li{
+	display: inline-block;
+	margin:0 29px;
+	
+
+}
+
+#header .bottom_header .gnb>li:first-child{
+	margin-left:0;
+}
+
+#header .bottom_header .gnb>li:last-child{
+	margin-right:0;
+}
+
+#header .bottom_header .gnb>li>a{
+	display: block;
+	/*border:1px solid blue;*/
+	line-height: 43px;
+	padding: 0 10px;
+	color:#333;
+	font-weight: 800;
+
+}
+
+#header .bottom_header .gnb>li:hover>a{
+	color:#002d96;
+	border-bottom:2px solid #002d96;
+
+}
+
+
+#header .bottom_header .gnb>li:hover .depth2_wrap{
+	display: block;
+}
+
+
+
+
+/*2단 메뉴 가로*/
+#header .bottom_header .gnb>li .depth2_wrap{
+	position: absolute;
+	left:0; top:45px;
+	width: 100%;
+	height: 45px;
+	background: #fff;
+	border-top:1px solid #e5e5e5;
+	/*border: 1px solid red;*/
+	display: none;
+
+}
+
+#header .bottom_header .gnb>li .depth2_wrap .depth2{
+	width: 1170px;
+	height: 45px;
+	margin:auto;
+	/*border: 1px solid blue;*/
+
+}
+
+#header .bottom_header .gnb>li .depth2_wrap .depth2 li{
+	float:left;
+	padding: 0 11px;
+}
+
+#header .bottom_header .gnb>li .depth2_wrap .depth2>li>a{
+	display: block;
+	/*border:1px solid red;*/
+	line-height: 45px;
+	padding: 0 6px;
+	color:#454545;
+
+}
+
+#header .bottom_header .gnb>li .depth2_wrap .depth2>li>a:hover{
+	color:#002d96;
+	border-bottom:1px solid #002d96;
+}
+
+
+/*메뉴 옆으로 보내기*/
+
+#header .bottom_header .gnb>li .depth2_wrap .dep1 li:first-child{
+	margin-left:150px;
+}
+
+#header .bottom_header .gnb>li .depth2_wrap .dep1 li:first-child
+
+
+
+
+
+
+
+/*메인*/
+
+.main{
+	width: 100%;
+
+}
+
+.main .visual{
+	height: 600px;
+	background: url("../images/img-kv-bio-2020.jpg") no-repeat center top;
+}

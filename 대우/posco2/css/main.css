@@ -1,0 +1,352 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap');
+
+.bl {
+   display: block;
+   position: absolute;
+   content: "";
+   width: 1px;
+   height: 1px;
+   z-index: -2;
+   overflow: hidden;
+}
+.clearfix::after {
+   display: block;
+   content: "";
+   clear: both;
+}
+
+
+body {
+   font-family: 'Nanum Gothic','Margun-gothic','맑은-고딕','Dotum','돋움' ,sans-serif;
+}
+
+/* wrap */
+.wrap {
+   min-width: 980px;
+   height: auto;
+   position: relative;
+}
+.inner {
+   width: 980px;
+   margin: 0 auto;
+}
+
+/* 헤더 */
+#header {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+#header .inner {
+   height: 80px;
+   position: relative;
+}
+
+#header .inner .logo {
+   width: 156px;
+   height: 24px;
+   position: relative;
+   margin: 30px 0 0 35px;
+   float: left;
+}
+#header .inner .logo a {
+   display: block;
+   width: 100%;
+   height: 100%;
+   background: url("../images/logo.png") no-repeat center center;
+}
+
+/* GNB */
+#header .inner .gnb {
+   width: 540px;
+   margin-left: 62px;
+   float: left;
+}
+#header .inner .gnb .menu_gnb {
+   width: 540px;
+   height: 80px;
+   display: flex;
+   justify-content: space-between;
+}
+#header .inner .gnb .menu_gnb .depth1_gnb {
+   height: 80px;
+   position: relative;
+   text-align: center;
+   
+}
+#header .inner .gnb .menu_gnb .depth1_gnb > a {
+   display: block;
+   line-height: 80px;
+   font-size: 17px;
+   color: #222;
+   font-weight: 600;
+}
+
+#header .inner .gnb .menu_gnb .depth1_gnb .depth2_gnb {
+   display: none;
+   position: absolute;
+   top: 80px;
+   left: 50%;
+   transform: translateX(-50%);
+   background-color: #fff;
+}
+#header .inner .gnb .menu_gnb .depth1_gnb .depth2_gnb li:first-child {
+   margin-top: 9px;
+}
+#header .inner .gnb .menu_gnb .depth1_gnb .depth2_gnb li:last-child {
+   margin-bottom: 9px;
+}
+#header .inner .gnb .menu_gnb .depth1_gnb .depth2_gnb a {
+   display: block;
+   width: 165px;
+   height: 34px;
+   line-height: 34px;
+   font-size: 15px;
+   color: #222;
+}
+#header .inner .gnb .menu_gnb .depth1_gnb .depth2_gnb a:hover {
+   background-color: #2475d0;
+   color: #fff;
+}
+
+/* util */
+#header .inner .util {
+   position: absolute;
+   width: 120px;
+   height: auto;
+   right: 0;
+   top: 50%;
+   text-align: center;
+   display: flex;
+   justify-content: space-between;
+   transform: translateY(-50%);
+} 
+#header .inner .util a {
+   color: #222;
+}
+#header .inner .util .btn_menu a{
+   display: block;
+   width: 19px;
+   height: 17px;
+   position: relative;
+}
+#header .inner .util .btn_menu a .bar {
+   display: block;
+   width: 17px;
+   height: 15px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%) rotate(0deg);
+   opacity: 1;
+}
+#header .inner .util .btn_menu a .bar::after {
+   position: absolute;
+   width: 17px;
+   height: 2px;
+   left: 0;
+   background-color: #222;
+   content: "";
+   display: block;
+   transform: translateY(0);
+}
+#header .inner .util .btn_menu a .top::after {
+   top: 0;
+}
+#header .inner .util .btn_menu a .middle::after {
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+/*슬라이더*/
+
+
+#main  .main_slider{
+   height: 100vh;
+}
+
+#main .section1{
+   width: 100%;
+   height: 100vh;
+   background: url("../images/index_bg1.jpg") no-repeat center top;
+   background-size: cover;
+   position: relative;
+
+
+}
+#main .section1 .section1_inner{
+   position: absolute;
+   left:50%; top:50%;
+   transform: translate(-50%,-50%);
+}
+
+
+#main .section1 .section1_inner h2{
+   font-size: 50px;
+   color:#fff;
+   font-weight: bold;
+   text-align: center;
+}
+
+#main .section1 .section1_inner p{
+   font-size:30px; 
+   color:#fff;
+   text-align: center;
+   margin-bottom: 23px;
+}
+
+
+#main .section2{
+   width: 100%;
+   height: 100vh;
+   background: url("../images/index_bg2.jpg") no-repeat center top;
+    background-size: cover;
+    position: relative;
+
+}
+
+
+#main .section2 .section2_inner h2{
+    font-size: 50px;
+   color:#fff;
+   font-weight: bold;
+   text-align: center;
+   margin-bottom: 23px;
+
+}
+
+
+#main .section2 .section2_inner p{
+   font-size:30px; 
+   color:#fff;
+   text-align: center;
+   
+
+}
+
+#main .section2 .section2_inner{
+   position: absolute;
+   left:50%; top:50%;
+   transform: translate(-50%,-50%);
+}
+
+
+#main .section3{
+   width: 100%;
+   height: 100vh;
+   background: url("../images/index_bg3.jpg") no-repeat center top;
+    background-size: cover;
+    position: relative;
+
+}
+
+
+#main .section3 .section3_inner h2{
+    font-size: 50px;
+   color:#fff;
+   font-weight: bold;
+   text-align: center;
+   margin-bottom: 23px;
+
+}
+
+
+#main .section3 .section3_inner p{
+   font-size:30px; 
+   color:#fff;
+   text-align: center;
+   
+
+}
+
+#main .section3 .section3_inner{
+   position: absolute;
+   left:50%; top:50%;
+   transform: translate(-50%,-50%);
+}
+
+
+
+/*슬라이드 좌우 버튼 커스텀화*/
+
+ 
+
+
+   #main .main_slider .swiper-pagination .swiper-pagination-bullet {
+      display: block;
+    background: #fff;
+    opacity: 1;
+    width: 14px;
+    height: 14px;
+    border-radius: 0;
+    margin-bottom: 12px;
+    border: 1px solid #000;
+    cursor: pointer;
+
+ }
+
+
+ #main .main_slider .swiper-pagination-bullet:hover{
+   background: yellow;
+ }
+
+
+ #main .main_slider .swiper-pagination .swiper-pagination-bullet-active{
+   display: block;
+    background: #000;
+    opacity: 1;
+    width: 14px;
+    height: 14px;
+    border-radius: 0;
+    border: 1px solid #000;
+    cursor: pointer;
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#header .inner .util .btn_menu a .bottom::after {
+   bottom: 0;
+}
+#header .inner .util .btn_menu.off a .bar {
+   transition: 0.3s ease-in-out;
+}
+#header .inner .util .btn_menu.off a .bar::after {
+   transition: 0.4s ease-in-out 0.3s;
+}
+#header .inner .util .btn_menu.on a .bar {
+   transition: 0.3s ease-in-out 0.4s;
+}
+#header .inner .util .btn_menu.on a .bar::after {
+   transition: 0.4s ease-in-out;
+}
+#header .inner .util .btn_menu.on  a .middle {
+   opacity: 0;
+}
+#header .inner .util .btn_menu.on a .top {
+   transform: translate(-50%, -50%) rotate(45deg);
+}
+#header .inner .util .btn_menu.on a .bottom {
+   transform: translate(-50%, -50%) rotate(-45deg);
+}
+#header .inner .util .btn_menu.on a .top::after {
+   top: 50%;
+   transform: translateY(-50%);
+}
+#header .inner .util .btn_menu.on a .bottom::after {
+   bottom: 50%;
+   transform: translateY(50%);
+}

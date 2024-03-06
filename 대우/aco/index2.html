@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>아코디언</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+	
+<style>
+	.gnb{
+		width: 300px;
+		margin:50px auto 0;
+		
+	}
+
+	.gnb> ul> li{
+		margin-bottom: 10px;
+	}
+
+	.gnb> ul> li:last-child{
+		margin-bottom: 0;
+	}
+
+	.gnb> ul> li> a{
+		display: block;
+		width: 300px;
+		height: 50px;
+		background:#444;
+		color:#fff;
+		line-height: 50px;
+		text-indent: 50px;
+	}
+
+	.gnb> ul> li> a:hover{
+		background: red;
+	}
+
+	.gnb> ul> li>.depth2{
+		background: #f2f2f2;
+		padding:10px;
+		display: none;
+	}
+
+	.gnb> ul> li>.depth2 li{
+		margin-bottom: 5px;
+	}
+
+	.gnb> ul> li>.depth2 li a{
+		/*display: block;*/
+		color:#444;
+	}
+
+	.gnb> ul> li>.depth2 li a:hover{
+		font-weight: bold;
+		color: #000;
+	}
+	
+</style>	
+</head>
+
+
+<body>
+	<div class="gnb">
+		<ul>
+			<li>
+				<a href="#">주메뉴1</a>
+				<ul class="depth2">
+					<li><a href="#">서브메뉴1</a></li>
+					<li><a href="#">서브메뉴2</a></li>
+					<li><a href="#">서브메뉴3</a></li>
+				</ul>
+
+
+			</li>
+
+			<li>
+				<a href="#">주메뉴2</a>
+				<ul class="depth2">
+					<li><a href="#">서브메뉴1</a></li>
+					<li><a href="#">서브메뉴2</a></li>
+					<li><a href="#">서브메뉴3</a></li>
+				</ul>
+			</li>
+
+
+			<li>
+				<a href="#">주메뉴3</a>
+				<ul class="depth2">
+					<li><a href="#">서브메뉴1</a></li>
+					<li><a href="#">서브메뉴2</a></li>
+					<li><a href="#">서브메뉴3</a></li>
+				</ul>
+			</li>
+		</ul>
+		
+
+
+	</div>
+
+
+	<script>
+		$(function(){
+			$(".gnb>ul>li>a").click(function(){
+				$(this).next().slideToggle()
+//				 .parent().siblings().find('.depth2').slideUp();
+				
+				
+			});
+
+
+		});
+		
+
+
+	</script>
+	
+</body>
+</html>

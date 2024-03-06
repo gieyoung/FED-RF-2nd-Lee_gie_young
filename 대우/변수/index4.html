@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this와 index함수</title>
+	<script src="js/jquery-3.5.0.min.js"></script>
+
+
+	<style>
+		*{margin: 0; padding: 0;}
+		a{text-decoration: none;}
+		li{list-style: none;}
+		.box{width: 900px; height: 800px;/*border:1px solid red*/; margin:0 auto; overflow: hidden;}
+		.box li{
+			position: relative;
+			float:left;
+			width: 100px;
+			height: 100px;
+			background: #000;
+			margin-right: 15px;
+		}
+		.box li:last-child{
+			margin-right: 0;
+		}
+
+		.box li a{
+			display: block;
+			line-height: 100px;
+			text-align: center;
+			/*border:1px solid red;*/
+			color:#333;
+			font-weight: bold;
+		}
+		
+
+	</style>
+</head>
+<body>
+	<ul class="box">
+		<li><a href="#">박스1</a></li>
+		<li><a href="#">박스2</a></li>
+		<li><a href="#">박스3</a></li>
+		<li><a href="#">박스4</a></li>
+		<li><a href="#">박스5</a></li>
+		<li><a href="#">박스6</a></li>
+		<li><a href="#">박스7</a></li>
+	</ul>
+
+
+<script>
+	$(function(){
+		$(".box li").click(function(){
+			console.log("클릭");
+			var num = $(this).index();
+			console.log(num);
+			if(num==0){
+				$(this).css('background','red').animate({'top':500},500)
+				.animate({'top':0},500)
+			}else if(num==1){
+				$(this).css('background','orange').animate({'top':500},500)
+				.animate({'top':0},500);
+
+			}else if(num==2){
+				$(this).css('background','yellow').animate({'top':500},500)
+				.animate({'top':0},500);
+			}else if(num==3){
+				$(this).css('background','green').animate({'top':500},500)
+				.animate({'top':0},500);
+			}else if(num==4){
+				$(this).css('background','blue').animate({'top':500},500)
+				.animate({'top':0},500);
+			}else if(num==5){
+				$(this).css('background','navy').animate({'top':500},500)
+				.animate({'top':0},500);
+			}else{
+				$(this).css('background','violet').animate({'top':500},500)
+				.animate({'top':0},500);}
+			
+		})
+
+
+	});
+</script>
+	
+</body>
+</html>

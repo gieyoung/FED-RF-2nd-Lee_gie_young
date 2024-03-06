@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+
+
+*{margin:0; padding:0; vertical-align:top;}
+	body{font-family: 'Noto Sans KR', sans-serif;}
+	button{border:none;background: none; outline: none;}
+	a{text-decoration:none;}
+
+
+
+ #header{
+ 	width: 100%;
+ 	background: url("../images/bg_header.gif");
+ 	height: 140px;
+
+
+ 	
+
+
+ }
+
+
+  #header .headertop_inner{
+  	width: 940px;
+  	height: 140px;
+  	margin:0 auto;
+    
+
+  	/*border:1px solid red;*/
+  }
+
+   #header .headertop_inner .right{
+   	float:right;
+   }
+
+   #header .headertop_inner .right li{
+   	float: left;
+   }
+
+    #header .headertop_inner .right li a{
+    	display:block;
+    	height: 40px;
+    	line-height: 40px;
+    	color:#fff;
+    	font-size: 14px;
+    	padding: 0 15px;
+    	/*border:1px solid red;*/
+
+    }
+
+    #header .headertop_inner .right li:last-child a{
+    	background: #a2a2a2;
+    }
+
+    #header .headertop_inner .right img{
+    	padding:15px 5px 0 0;
+    	
+    }
+
+    #header .headertop_inner .right li:first-child img{
+    	margin-top:-5px;
+    }
+
+
+    .header_inner{
+    	width: 940px;
+    	height: 100px;
+    	border:1px solid red;
+    	background: #fff;
+    	padding-top: 40px;
+
+
+
+    	
+
+    }
+
+    .header_inner h1 {
+    	float:left;
+    	
+
+    }
+
+    .header_inner h1 a{
+
+    	display: block;
+    	width: 125px;
+    	height: 50px;
+    	padding:25px 0;
+    	
+
+        
+
+
+}
+
+
+
+    .header_inner .gnb{
+    	float:left;
+    	margin-left: 60px;
+
+
+    }
+
+    .header_inner .gnb li{
+    	float:left;
+
+    }
+
+    .header_inner .gnb li a{
+    	display: block;
+    	font-size: 18px;
+    	color:#09386d;
+    	width: 115px;
+    	padding:42px 0 42px;
+    	/*border:1px solid red;*/
+
+
+    }
+
+    .header_inner .util{
+    	float:right;
+    	margin-right: 40px;
+    }
+
+    .header_inner .util li{
+    	float: left;
+    	padding-top: 35px;
+    	
+    }
+
+
+
+    .header_inner .util li:nth-child(2){
+    	margin:0 10px;
+    }
+
+
+    .visual{
+    	/*background: url("../images/banner_visual_safety.jpg") no-repeat;*/
+    	width: 2000px;
+    	height: 600px;
+    }
+
+
+    
+
+
+
+
+
+
+	

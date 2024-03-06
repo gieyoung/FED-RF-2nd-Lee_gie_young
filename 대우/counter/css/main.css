@@ -1,0 +1,21 @@
+
+@charset "utf-8";
+
+
+
+
+		body{font-family: 'Noto Sans KR', sans-serif; letter-spacing: -1px; min-width:1164px;}
+		*{margin:0;padding: 0;vertical-align: top; box-sizing: border-box;}
+		a{text-decoration:none;outline: none;}
+		li{list-style: none;}
+
+
+
+
+		.container{
+			
+		}
+
+
+
+	

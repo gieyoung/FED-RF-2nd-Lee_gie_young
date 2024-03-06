@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>애니3</title>
+	<style>
+		*{margin: 0; padding: 0; vertical-align: top;}
+
+
+		div{
+			width: 860px;
+			height: auto;
+			padding: 50px;
+			border:1px solid #000;
+			/*margin: auto;*/
+			position: absolute;
+			left:50%; top:50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+		}
+
+
+		div h2{
+			font-size: 35px;
+			margin-bottom: 30px;
+		}
+
+		div p{
+			font-size: 20px;
+			margin-bottom: 30px;
+
+		}
+
+		div .more{
+	     border:1px solid #000;
+	     padding: 20px 30px;
+	     background:#e2e2e2 ;
+	     font-weight: bold;
+	     color: #000;
+	     display:inline-block;
+
+		}
+
+		div .more:hover{
+			background: #fff;
+		}
+
+
+		.down{
+			width: 40px;
+			height: 60px;
+			border:3px solid #777;
+			position: absolute;
+			margin-left:-20px;
+			left:50%; bottom:100px;
+			text-indent: -99999px;
+			border-radius: 10px;
+
+		}
+
+		.down::after{
+			position: absolute;
+			left:50%; top:7px;
+			content: "";
+			border-radius: 3px;
+			margin-left: -4.5px;
+			width: 5px; height: 12px;
+			background: #000;
+			animation: move 1s ease infinite;
+			
+		}
+
+		@keyframes move{
+			0%{top:7px; opacity:0;}
+			25%{top:14px; opacity:1;}
+			50%{top:21px; opacity:1;}
+			75%{top:28px; opacity:1;}
+			100%{top:35px; opacity:0;}
+
+			
+		}
+
+
+
+		a{text-decoration: none;
+
+
+
+			
+
+
+
+		}
+		
+
+
+	</style>
+</head>
+
+
+<body>
+
+	<div >
+		<h2>Animate css</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ut incidunt, voluptate cumque porro maiores pariatur earum velit provident ex odio magni quibusdam quae voluptatum unde consectetur laborum excepturi. Eligendi?</p>
+		<a href="#" class="more">Learn More</a>
+			
+	</div>	
+
+	<a href="#" class="down">다운</a>
+
+
+
+
+
+	
+</body>
+</html>

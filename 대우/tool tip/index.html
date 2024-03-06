@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>툴팁</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+</head>
+<style>
+   
+ .tooltip {
+  position: relative;
+  display: inline-block;
+  margin:100px
+}
+
+/*    둘팁 네모박스*/
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom:30px;
+  left: 50%;
+  margin-left: -60px;
+/*    서서히 나타나는 효과*/
+     opacity: 0;
+  transition: opacity 1s;
+}
+
+/*    툴팁 아래쪽 화살표*/
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+    
+    /*    툴팁 위쪽 화살표*/
+/*
+    .tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+*/
+/*    툴팁 오른쪽 화살표*/
+/*
+    .tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+*/
+
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+    opacity: 1;
+}
+</style>
+
+<body>
+<div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip text</span>
+</div>
+
+
+
+<script>
+		$(function(){
+			
+		});
+		
+</script>
+</body>
+</html>

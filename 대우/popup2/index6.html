@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keyword" content="웹디자인기능사, 팝업창 띄우기">
+    <title>팝업</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/jquery-1.11.3.js"></script>
+    <style>
+
+
+    </style>
+ <script>
+        var rightNow = new Date();
+        var res = rightNow.toISOString().slice(0, 10).replace(/-/g, "");
+
+        function setCookie(name, value, expiredays) {
+            var todayDate = new Date();
+            todayDate.setDate(todayDate.getDate() + expiredays);
+            document.cookie = name + "=" + escape(value) + res + "; path=/; expires=" + todayDate.toGMTString() + ";"
+
+            console.log("쿠키설정 : " + document.cookie);
+        }
+
+        function closeWin(div, chk, cookname) {
+            if (document.getElementById(chk).checked) {
+                setCookie(cookname, "done", 1);
+            }
+            document.getElementById(div).style.visibility = "hidden";
+        }
+
+        window.onload = function() {
+            cookiedata = document.cookie;
+
+            //console.log("쿠키 : "+cookiedata.indexOf("maindiv=done"+res));
+            if (cookiedata.indexOf("maindiv=done" + res) < 0) {
+                document.getElementById('divpop').style.visibility = "visible";
+            } else {
+                document.getElementById('divpop').style.visibility = "hidden";
+            }
+            var popup = $("#divpop");
+            popup.draggable();
+        }
+    </script>
+    
+</head>
+
+<body>
+   
+    <div id="divpop" style="position:absolute;left:70%;margin-left:-453px;top:150px;z-index:98;visibility:hidden; background:white; box-shadow :2px 2px 4px rgba(0,0,0,0.2);z-index:20000000">
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td><a href="/gboard/bbs/board.php?bo_table=notice" title="명재관 공지사항 바로가기"><img src="" border="0" /></a></td>
+            </tr>
+            <tr>
+                <td align="right" style="background:#fff; padding:5px;">
+                    <input type="checkbox" id="chkbox2" class="margin_00" value="checkbox2" style="display:inline-block; float:left; margin-top:1px;">
+                    <label for="chkbox2" style="display:inline-block; float:left; margin-top:-1px;">오늘 하루 이 창을 열지 않음</label>
+                    <a href="javascript:closeWin('divpop', 'chkbox2', 'maindiv');"><B>[닫기]</B></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+</body></html>

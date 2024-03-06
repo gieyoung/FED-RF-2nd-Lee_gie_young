@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>캐논</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<script src="js/slick.js"></script>
+
+
+
+
+</head>
+
+
+<body>
+
+	<div class="section2">
+		<div class="gallery">
+			<a href="#">
+				<img src="images/1594618392361_UW8Jt9zjzO.jpg">
+				<div class="tit">
+					<h3>PhotoGallery</h3>
+					<h4>구름이 좋은날</h4>
+					<p>EOS 5D Mark III  l  EF24-70mm f/2.8L II USM</p>
+				</div>
+			</a>
+		</div>
+		<!-- 갤러리종료 -->
+
+
+		<div class="product">
+			<h2><span>e</span>스토어</h2>
+			<div class="line"></div>
+			<div class="product_list">
+				<div>
+					<a href="#">
+						<img src="images/1573722139851_1l6xsWJyyH.jpg">
+						<h3>EOS RP</h3>
+						<p>가볍게 즐기는 모두의 풀프레임</p>
+						<p class="price">\1,449,000</p>
+					</a>
+				</div>
+
+				<div>
+					<a href="#">
+						<img src="images/1589358791875_kz2Z81kwGs.jpg">
+						<h3>EOS M6 Mark II</h3>
+						<p>사진도, 영상도 완벽 퍼포먼스</p>
+						<p class="price">\1,329,000</p>
+					</a>
+				</div>
+
+				<div>
+					<a href="#">
+						<img src="images/1589358945740_vyMz0OFnbk.jpg">
+						<h3>EOS R</h3>
+						<p>캐논의 첫 번째 풀프레임 미러리스</p>
+						<p class="price">\2,399,000</p>
+					</a>
+				</div>
+
+
+				<div>
+					<a href="#">
+						<img src="images/1590473777681_75M5u5atON.jpg">
+						<h3>EOS 90D</h3>
+						<p>Be Professional</p>
+						<p class="price">\1,549,000</p>
+					</a>
+				</div>
+			</div>
+			<!-- 정지재생버튼 -->
+			<div class="btn">
+				<button type="button" class="btn_pause">play button</button>
+				
+
+			</div>
+
+
+			
+
+
+		</div>
+
+
+
+	</div>
+
+<script>
+
+
+
+		$(function(){
+			$(".product_list").slick({
+				autoplay:true,
+				slidesToShow:2,
+				slidesToScroll:2,
+				arrows:false,
+				dots:true
+
+
+
+
+			})
+
+		var sw=0;
+
+		$('.btn_pause').click(function(){
+			if(sw==0){
+				$('.btn_pause').addClass("on");
+				$('.product_list').slick('slickPause');
+				sw=1;
+
+			}else{
+				$('.btn_pause').removeClass("on")
+				$('.product_list').slick('slickPlay');
+				sw=0;
+			}
+
+		})
+
+
+		});
+
+	</script>
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+
+

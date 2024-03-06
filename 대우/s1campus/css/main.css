@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+
+
+*{margin:0; padding:0; vertical-align:top;}
+	body{font-family: 'Noto Sans KR', sans-serif;}
+	button{border:none;background: none; outline: none;}
+	a{text-decoration:none;}
+
+
+
+	.wrap{
+		position: fixed;
+		left:0; top:0;
+		background: #fff;
+		width: 100%;
+		height: 95px;
+
+
+	}
+
+
+
+
+	.header{
+		width: 100%;
+		border-bottom:1px solid #d9d9d9;
+
+	}
+
+	.header .header_inner{
+		width: 1280px;	
+		height: 95px;
+		margin:0 auto;
+		/*overflow:hidden;*/
+	}
+
+	.header h1{
+		float:left;
+	}
+
+	.header h1 a{
+		display: block;
+		background: url("../images/logo_ko.png") no-repeat;
+		width: 155px; height: 23px;
+		text-indent: -99999px;
+		margin-top: 55px;
+	}
+
+	.header .gnb{
+		float:left;
+		margin-top:58px;
+		margin-left:19px;
+		
+	}
+
+	.header .gnb> li{
+		float:left;
+		position: relative;
+		
+		
+	}
+
+	.header .gnb> li> a{
+		display: block;
+		padding: 0 35px;
+		color:#0D0D0D;
+		font-size: 19px;
+		font-weight: 500;
+		height: 38px;
+
+
+		
+	}
+
+	.header .gnb li:hover> a{
+		color:#0d7ee2;
+
+	}
+
+
+	/*2단메뉴*/
+
+	.header .header_inner .gnb>li>.depth2{
+		position: absolute;
+		width: 200px;
+		left:35px; top:38x;
+		/*border: 1px solid red;*/
+		padding-top:35px;
+		background: #fff;
+		display: none;
+
+
+	}
+
+
+	.header .header_inner .gnb>li>.depth2>li{
+		
+
+	}
+
+
+
+	.header .header_inner .gnb>li>.depth2 a{
+		color:#0d0d0d;
+		font-size: 16px;
+		line-height: 2.3;
+		/*border:1px solid red;*/
+
+	}
+
+	.header .header_inner .gnb>li>.depth2>li a:hover{
+		color:#156ad1;
+
+	}
+
+
+
+
+
+
+
+	/*오른쪽메뉴*/
+
+	.header .util_wrap{
+		float:right;
+		margin-top: 20px;
+
+	}
+
+	.header .util{
+		overflow: hidden;
+		padding-bottom: 15px;
+		float:right;
+		
+	}
+
+	.header .util li{
+		float:left;
+		padding-left: 30px;
+		position: relative;
+		
+
+	}
+
+	.header .util li:last-child::after{
+		position: absolute;
+		left:15px; top:2px;
+		content:"";
+		width: 1px; height: 11px;
+		background: #2b2b2b;
+	}
+
+
+	.header .util li:first-child{
+		padding-left:0;
+	}
+
+	
+
+	.header .util li a{
+		display: block;
+		color:#0d0d0d;
+		font-size: 14px;
+		clear: both;
+		font-weight: 500;
+	}
+
+	.header .boxs{
+		margin-bottom: 10px;
+		overflow: hidden;
+		clear:both;
+	}
+
+	.header .boxs a{
+		display: inline-block;
+		padding: 6px 15px;
+		font-size: 14px;
+		
+		
+
+	}
+
+	.header .boxs .a_1{
+		background: #156ad1;
+		border:1px solid #156ad1;
+		color:#fff;
+
+
+	}
+
+	.header .boxs .a_2{
+		background:#fff;
+		border:1px solid #4d4d4d;
+		color:#4d4d4d;
+		margin-right: 0;
+
+
+	}
+
+	#main{
+		width: 100%;
+	}
+
+
+	#main .visual{
+		background: url("../images/scroll_bg1.jpg") no-repeat center top;
+		width: 100%; height: 1080px;
+
+	}
+
+
+
+
+
+
+
+

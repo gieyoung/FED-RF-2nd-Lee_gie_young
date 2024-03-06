@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="이지영">
+	<meta name="keyword" content="포트폴리오, 미국스타일 원페이지 시안, 원형차트">
+	<meta name="description" content="미국스타일의 원페이지 스크롤 포트폴리오">
+	<title>포트폴리오(원형차트)</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/jQuery-plugin-progressbar.css"> <!-- 원형차트 -->
+	<link rel="stylesheet" href="css/main.css">	
+	<link rel="stylesheet" href="css/all.css">	<!-- 폰트어썸 -->
+	<link rel="stylesheet" href="css/jquery.lightbox-0.5.css">  <!-- 라이트박스 -->
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="js/jQuery-plugin-progressbar.js"></script>  <!-- 원형차트 -->
+	<script src="js/main.js"></script>
+	<script src="js/all.js"></script> <!-- 폰트어썸 -->
+	<script src="js/map (1).js"></script>  <!-- 지도 -->
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false=YOUR_API_KEY&callback=initMap"></script> <!-- 지도 -->
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>  <!-- 탭클릭시 해당 자료만 나열 -->
+	<script src="js/jquery.lightbox-0.5-mod.js"></script> <!-- 라이트박스 -->
+
+</head>
+
+
+<body onload="initialize()">
+
+	<!-- 오른쪽퀵메뉴 -->
+
+	<ul class="quick">
+		<li class="on"><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+	</ul>
+
+
+
+
+
+	<div id="header"></div>
+	<div id="about"></div>
+	<div id="team"></div>
+
+	<!-- 포트폴리오 -->
+	<div id="portfolio">
+
+		<div class="port_inner">
+			<div class="title">
+				<h2>TAKE A LOOK AT <span>OUR WORKS</span></h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			</div> <!-- title끝 -->
+
+
+				<ul class="gmenu">
+					<li><a href="javaScript:;" id="all">Show All</a></li>
+					<li><a href="javaScript:;" id="webde">Web Design</a></li>
+					<li><a href="javaScript:;" id="pho">Photography</a></li>
+					<li><a href="javaScript:;" id="des">Apps</a></li>
+				</ul>	
+
+
+			<div class="grid imgbox">
+				<div class="grid-item webde">
+					<a href="images/b-photo1.jpg"><img src="images/s2_photo1.png" alt="사진"><div class="cover"><img src="images/portfolioBtn (1).png"></div></a>
+				</div>
+
+				<div class="grid-item pho">
+					<a href="images/b-photo2.jpg"><img src="images/s2_photo2.png" alt="사진"><div class="cover"><img src="images/portfolioBtn (1).png"></div></a>
+				</div>
+
+				<div class="grid-item webde">
+					<a href="images/b-photo3.jpg"><img src="images/s2_photo3.png" alt="사진"><div class="cover"><img src="images/portfolioBtn (1).png"></div></a>
+				</div>
+
+				<div class="grid-item des">
+					<a href="images/b-photo4.jpg"><img src="images/s2_photo4.png" alt="사진"><div class="cover"><img src="images/portfolioBtn (1).png"></div></a>
+				</div>
+
+
+				<div class="grid-item webde">
+					<a href="images/b-photo5.jpg"><img src="images/s2_photo5.png" alt="사진"><div class="cover"><img src="images/portfolioBtn (1).png"></div></a>
+				</div>
+
+				<div class="grid-item des">
+					<a href="images/b-photo6.jpg"><img src="images/s2_photo6.png" alt="사진"><div class="cover"><img src="images/portfolioBtn (1).png"></div></a>
+				</div>
+
+				<div class="grid-item pho">
+					<a href="images/b-photo7.jpg"><img src="images/s2_photo7.png" alt="사진"><div class="cover"><img src="images/portfolioBtn (1).png"></div></a>
+				</div>
+
+				<div class="grid-item webde">
+					<a href="images/b-photo8.jpg"><img src="images/s2_photo8.png" alt="사진"><div class="cover"><img src="images/portfolioBtn (1).png"></div></a>
+				</div>
+			</div>
+			
+		</div><!-- port_inner끝 -->
+	</div> <!-- portfolio끝 -->
+
+
+	<!-- 스킬 -->
+	<div class="skill">
+		<div class="skill_inner">
+			<h2>SEE <span>OUR SKILLS</span></h2>
+			<div class="h_prog_wrap">
+				<div class="h_progress">
+					<h3>HTML5</h3>
+					<div class="progress-bar" data-percent="90" data-duration="1000" data-color="#fff,#7ccc35"></div>
+				</div>
+				
+				<div class="h_progress">
+					<h3>CSS3</h3>
+					<div class="progress-bar" data-percent="90" data-duration="1000" data-color="#fff,yellow"></div>
+				</div>
+				
+				
+				<div class="h_progress">
+					<h3>javaScript</h3>
+					<div class="progress-bar" data-percent="70" data-duration="1000" data-color="#fff,blue"></div>
+				</div>
+				
+				
+				
+				<div class="h_progress">
+					<h3>jQuery</h3>
+					<div class="progress-bar" data-percent="75" data-duration="1000" data-color="#fff,red"></div>
+				</div>
+
+				<div class="h_progress">
+					<h3>photoshop</h3>
+					<div class="progress-bar" data-percent="95" data-duration="1000" data-color="#fff,purple"></div>
+				</div>
+
+				<div class="h_progress">
+					<h3>illustrate</h3>
+					<div class="progress-bar" data-percent="90" data-duration="1000" data-color="#fff,orange"></div>
+				</div>
+			</div><!-- h_prog_wrap끝 -->
+
+		</div>  <!--  skill_inner끝 -->
+	</div>  <!-- skill끝 -->
+
+
+<!-- 구글맵구현 -->
+	<div id="map">
+		<div id="map_canvas"></div>
+		
+	</div>
+
+
+<!-- contact -->
+	<div id="contact">
+		<div class="contact_inner">
+			<h2><span>FEEL FREE TO</span> CONTACT US</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+	
+		<form action="">
+			<fieldset>
+				<legend>Contact form</legend>
+				<ul class="form_text">
+					<li>
+						<div class="form_group">
+							<label for="">Name</label>
+							<input type="text" placeholder="Your Name">
+						</div>
+
+						<div class="form_group">
+							<label for="">Email</label>
+							<input type="text" placeholder="Email Address">
+						</div>
+
+						<div class="form_group">
+							<label for="">Phone</label>
+							<input type="text" placeholder="Phone Number">
+						</div>
+					</li>
+
+					<li>
+						<label for="">message</label>
+						<textarea name="" id="" cols="30" rows="10"></textarea>
+					</li>
+				</ul>
+
+				
+			</fieldset>
+			<input type="submit" value="SUBMIT"  class="btn_submit">
+		</form>
+		</div>	<!-- contact_inner끝 -->
+	</div><!-- contact끝 -->
+
+
+<!-- footer -->
+	<div id="footer">
+		<div class="sns_group">
+			<div class="sns"><i class="fab fa-facebook-f"></i></div>
+			<div class="sns"><i class="fab fa-twitter"></i></div>
+			<div class="sns"><i class="fab fa-google-plus-g"></i></div>
+			<div class="sns"><i class="fab fa-linkedin-in"></i></div>
+			<div class="sns"><i class="fab fa-dribbble"></i></div>
+			
+		</div>
+		<p>Copywrite &copy; 2020 CodeCorns. All right reserved</p>
+		<div class="scroll">
+			<a href="javaScript:;"><img src="images/scroll_top.jpg"></a>
+		</div>
+		
+	</div>
+
+	
+	
+
+
+
+	
+
+
+	
+	
+</body>
+</html>

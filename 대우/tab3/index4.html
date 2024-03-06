@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>반응형 탭버튼</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+     .container{
+         max-width: 970px;
+         margin: auto;
+       
+         
+     }
+
+     input, section{
+         padding-top: 10px;
+         display: none;
+/*         탭리스트 감추기, input에 radio버튼 숨기기*/
+         clear:both; 
+/*         label에 float:left효과 준거 해제*/
+     }
+     
+     
+  
+     
+/*   tab~이 체크되었을 때 content~  */
+   #tab_btn1:checked ~ #tab_list,
+#tab_btn2:checked ~ #tab_list2,
+#tab_btn3:checked ~ #tab_list3,
+#tab_btn4:checked ~ #tab_list4,
+#tab_btn5:checked ~ #tab_list5 {
+  display: block;
+  padding: 50px;
+  color: #fff;
+  border-bottom: 2px solid grey;
+    background: #0980de;
+}
+     
+     .tablink {
+    display: table-cell;
+    background-color: #e6e6e6;
+    color: #444;
+    border: none;
+    cursor: pointer;
+    padding: 10px 0px;
+    font-size: 17px;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid white;
+     }
+     
+
+     
+/*     tab container안의 요소중 id에 tab_btn글자가 있는 것들이 체크되었을 때 label스타일 */
+     .tab_wrap [id^="tab_btn"]:checked + label{
+         background: grey;
+         color:#fff;
+        
+     }
+     
+     
+/*     반응형*/
+@media only screen and (max-width: 900px) {
+
+  .tab_wrap {
+    width:100%;
+  }
+}
+  
+ </style>
+    </head>
+    <body>
+		<div class="container">
+			<input id="tab_btn1" type="radio" name="tabs" checked>
+			<label for="tablink tab_btn1"><span>Code</span></label>
+
+			<input id="tab_btn2" type="radio" name="tabs">
+			<label for="tablink tab_btn2"><span>About</span></label>
+
+			<input id="tab_btn3" type="radio" name="tabs">
+			<label for="tablink tab_btn3"><span>Services</span></label>
+
+			<input id="tab_btn4" type="radio" name="tabs">
+			<label for="tablink tab_btn4"><span>Portfolio</span></label>
+
+			
+
+			<section id="tab_list">
+				<h3>Headline 1</h3>
+		      	<p>내용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
+			</section>
+
+			<section id="tab_list2">
+				<h3>Headline 2</h3>
+		      	<p>내용2</p>
+			</section>
+
+			<section id="tab_list3">
+				<h3>Headline 3</h3>
+		      	<p>내용3</p>
+			</section>
+
+			<section id="tab_list4">
+				<h3>Headline 4</h3>
+		      	<p>내용4</p>
+			</section>
+
+			<section id="tab_list5">
+				<h3>Headline 5</h3>
+		      	<p>내용5</p>
+			</section>
+		</div>
+
+
+
+
+</body>
+</html>

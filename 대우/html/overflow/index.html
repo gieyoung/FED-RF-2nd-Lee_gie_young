@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>overflow</title>
+	<style>
+		*{margin: 0; padding: 0; vertical-align: top;}
+
+		body{
+			background:#99cd00;
+		}
+
+		h2{
+			padding:30px 0;
+			font-size: 27px;
+		}
+
+		p{
+			margin-bottom: 23px;
+		}
+
+		.wrap{
+			width: 500px;
+			height: 250px;
+			background:#fff900 url("images/b.gif");
+
+			
+			/*background-color: #fff900;*/
+			border:10px solid #346e46;
+			overflow:auto;
+			position: relative;
+
+		}
+
+		.red{
+			position: absolute;
+			width: 200px;
+			height: 235px;
+			background: #ff6766;
+			margin:50px 0 0 50px;
+			z-index:3;
+
+		}
+
+		.green{
+			position: absolute;
+			width: 200px;
+			height: 235px;
+			background:#9afe66;
+			margin:100px 0 0 100px;
+			z-index:4;
+
+
+		}
+
+		.blue{
+			position: absolute;
+			width: 200px;
+			height: 235px;
+			background:#0066cb;
+			margin:150px 0 0 150px;
+			z-index:4;
+
+
+		}
+
+
+
+	
+
+
+
+
+
+
+		
+
+		
+
+	</style>
+</head>
+
+
+<body>
+	<h2>Lorem ipsum dolor sit amet</h2>
+	<div class="wrap">
+		<div class="red"></div>
+		<div class="green"></div>
+		<div class="blue"></div>
+		
+		
+
+
+	</div>
+
+	<h2>지정된 영역 밖으로 내용이 넘칠 때(overflow)</h2>
+	<p>hidden-영역 밖으로 넘쳐난 부분은 안보이게 한다</p>
+	<p>scroll-스크롤바를 만들어준다(컨텐츠 상관없이)</p>
+	<p>auto-내용이 넘칠때만 스크롤바를 만들어준다</p>
+	<h3>overflow-y, overflow-x 한쪽 방향으로만</h3>
+		
+	
+	
+	
+	
+</body>
+</html>

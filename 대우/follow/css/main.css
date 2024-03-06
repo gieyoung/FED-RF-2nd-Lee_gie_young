@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+
+
+
+		body{font-family: 'Noto Sans KR', sans-serif; letter-spacing: -1px; min-width:1164px;}
+		*{margin:0;padding: 0;vertical-align: top; box-sizing: border-box;}
+		a{text-decoration:none;outline: none;}
+		li{list-style: none;}
+
+
+
+		.header{
+			position: absolute;   /*공중에 떠야 동영상이 재생됨*/
+			width: 100%;
+			border-bottom: 5px solid red;
+			z-index: 100;
+
+		}
+
+
+		.header .top_header{
+			height: 40px;
+			background: #161616;
+		}
+
+
+		.header .top_header .logo_net{
+			display: block;
+			background: url("../images/gnb_logo.png") no-repeat 0 0;
+			height: 40px;
+
+		}
+
+
+		.header .bottom_header{
+			height: 113px;
+			overflow: hidden;
+
+		}
+
+		.header .bottom_header h1{
+			float:left;
+			margin:45px 0 0 100px;
+		}
+
+		.header .bottom_header .gnb_wrap{
+			float:right;
+			margin: 45px 200px 0 0;
+			position: relative;
+		}
+
+		.header .bottom_header .gnb_wrap .gnb_bar{
+
+		}
+
+		.header .bottom_header .gnb_wrap .gnb{
+
+		}
+
+		.header .bottom_header .gnb_wrap .gnb li{
+			float:left;
+		}
+
+		.header .bottom_header .gnb_wrap .gnb li a{
+			display: block;
+			color:#fff;
+			font-weight: bold;
+			padding: 23px 30px;
+			border:1px solid red;
+
+		}
+/*gnb li 누를 때마다 따라다니는 바 */
+		.header .bottom_header .gnb_wrap .gnb_bar{
+			position: absolute;
+			left:0; bottom:0;
+			background: red;
+			width: 100px;
+			height: 3px;
+			
+
+		}

@@ -1,0 +1,60 @@
+@charset "utf-8";
+body{font-family: 'Roboto', sans-serif;}
+#header{background: rgba(0,0,0,0);border:transparent;box-sizing: border-box;}
+#header h1 a{color: #fff;font-size:1.2em;}
+#header h1 a span{color:#84bb46;}
+#header #gnb li a{color: #fff;}
+#header #gnb li a.on{color:#84bb46;}
+#slider .slItems .slText{font-size: 3em;color:#84bb46;}
+.title h2{position: relative;text-align: center;font-size: 4em;margin: 42px auto;padding:42px 0;}
+.title h2 span{color:#84bb46;font-weight:900;}
+.title h2:after{position: absolute;left:50%;bottom:0;transform:translateX(-50%);content:'';width: 200px;height: 4px;background:#84bb46;}
+.title p{font-size: 1.5em;text-align: center;}
+#about .col-md-7 img{width: 100%;}
+#team{background: #42474a;}
+#team h2{color:#fff;margin-bottom:63px; }
+#team .col-md-3{text-align: center;}
+#team .col-md-3 img{margin-bottom: 20px;}
+#team .col-md-3 .sns{width: 35px;height: 35px;border:2px solid #fff; display: inline-block;border-radius: 100%;font-size: 1.4em;color:#fff;line-height: 35px;}
+#team .col-md-3 ul li{color:#fff;}
+#service .col-md-3{width: 23%;height: 230px;margin:1%;padding:20px;text-align: center;box-sizing: border-box;border:1px solid #84bb46;border-radius: 6px;}
+#service .col-md-3 .icon{color:#84bb46;font-size: 3em;}
+#service .col-md-3 h3{font-size: 1.5em;font-weight: bold;}
+#service .col-md-3 p{font-size: 1em;}
+#about,#team, #service, #skill{padding-bottom: 100px;}
+#skill{background: #42474a;}
+#skill h2{color:#fff;}
+#skill h3{color:#fff; text-align: center;}
+#skill .col-md-3{text-align: center;}
+.progress-bar{left:50%;transform: translateX(-50%);}
+#portfolio{box-sizing: border-box;}
+
+#portfolio .gmenu{width: 440px;height: 35px; margin:30px auto;}
+#portfolio .gmenu li{width: 100px;height: 35px;margin-right: 10px;   float: left;}
+#portfolio .gmenu li:last-child{margin-right: 0;}
+#portfolio .gmenu li a{display:block;width: 100%;height: 100%;background: #80c842;color: #fff;
+   border:1px solid #7cc947;font-size: 14px;font-weight: bold;text-align: center; line-height: 35px;}
+#portfolio .gmenu li a:hover{background: #fff;color: #80c842}
+#portfolio #imgbox{width: 1080px;margin:50px auto 0;/*overflow: hidden;*/}
+#portfolio #imgbox .grid_item{width: 250px;height: 200px;margin:0 20px 20px 0;float: left;}
+#portfolio #imgbox .grid_item img{width: 100%;height: 100%;}
+ .progress-bar div span {
+    background: #42474a;
+    color: #fff;
+    line-height: 125px;}
+
+
+/*media query start*/
+/*----------------pc 버전일 때-------------*/
+@media all and (min-width:768px) and ( max-width: 992px){
+
+
+}
+/*----------------mobile 버전일 때-------------*/
+@media all and ( max-width: 767px){
+	#team .col-md-3{margin-bottom: 50px;}
+	#slider .slItems .slText{font-size: 2em;}
+	.title h2{font-size: 2em;}
+	#service .row .col-md-3{width: 48%;}
+	#skill .row .col-md-3{margin-bottom: 50px;}
+}

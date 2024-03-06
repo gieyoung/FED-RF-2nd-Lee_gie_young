@@ -1,0 +1,210 @@
+@charset "utf-8";
+.header{
+	width: 100%;
+	height: 60px;
+	position: relative;
+	background: #fff;
+	border-bottom:2px solid #e7e7e7;
+}
+.header h1{
+	text-indent: -99999px;
+	position: absolute;
+	top:50%;
+	left:15px;
+	transform: translate(0,-50%);
+}
+.header h1 a{
+	display: block;
+	height: 30px;
+	width: 115px;
+	background:url("../images/logo.png") no-repeat;
+}
+.header .btn_lang{
+	position: absolute;
+	text-indent: 10px;
+	top:50%;
+	right:57px;
+	transform: translate(0,-50%);
+	border:1px solid #ddd;
+	width: 58px;
+	height: 30px;
+}
+.header .lang{
+	display: none;
+	width: 58px;
+}
+.header .lang.on{
+	display: block;
+}
+.header .lang li a{
+	font-size: 13px;
+	border:1px solid #ddd;
+	color: #333;
+	display: block;
+	width: 58px;
+	height: 31px;
+	line-height: 32px;
+	background: #fff
+	;text-indent: 15px;
+}
+.header .btn_lang>a{
+	line-height: 30px;
+	font-size: 13px;
+	color: #333;
+	cursor: pointer;
+	}
+.header .btn_lang>a:after{
+		content:"";
+		position: absolute;
+		top:50%;
+		right:10px;
+		background: url("../images/select_ico.png") no-repeat;
+		display: block;
+		width: 9px;
+		height: 5px;
+		transform: translate(0,-50%);
+	}
+.header .m_btn{
+	top:50%;
+	right:15px;
+	position: absolute;
+	text-indent: -99999px;
+	transform: translate(0,-50%);
+}
+.header .m_btn a{
+	width: 30px;
+	height: 22px;
+	display: block;}
+.header .m_btn a span{
+	transition: all 0.5s ease;
+	position: absolute;
+	top:50%;
+	left:0;
+	transform: translate(0,-50%);
+	display: block;
+	height: 2px;width: 20px;
+	background: #333;
+}
+.header .m_btn a span:before{
+	transition: all 0.5s ease;
+	content: "";
+	position: absolute;
+	top:-10px;left:0;
+	transform: translate(0,-50%);
+	height: 2px;width: 30px;
+	background: #333;
+}
+.header .m_btn a span:after{
+	transition: all 0.5s ease;
+	content: "";
+	position: absolute;
+	top:12px;left:0;
+	transform: translate(0,-50%);
+	height: 2px;width: 30px;
+	background: #333;
+}
+.header .m_btn.on a span{
+	background: rgba(0,0,0,0);
+}
+.header .m_btn.on a span:before{
+	top:0;
+	transform: rotate(45deg);
+}
+.header .m_btn.on a span:after{
+	top:0;
+	transform: rotate(-45deg);
+}
+
+.header .menu{
+	transition: all 0.5s ease;
+	width: 100%;height: 100%;
+	position: fixed;
+	top:61px;
+	right:-100%;
+	background: #fff;
+}
+.header .menu.on{
+	right:0;
+}
+.header .menu>li{
+	text-indent:50px;
+	position: relative;
+	border-bottom: solid 1px #e7e7e7;
+}
+.header .menu >li >a{
+	display: block;
+	color:#333;
+	height: 59px;
+	line-height: 59px;
+position: relative;
+}
+
+/*
+on클래스*/
+
+.header .menu >li.on>a{
+	color:#00a086;
+	
+
+}
+
+
+
+.header .menu >li >a:after{
+	content:"";
+	position: absolute;
+	top:50%;
+	right:25px;
+	background: url("../images/ico_1.png") no-repeat;
+	display: block;
+	width: 9px;
+	height: 5px;
+	transform: translate(0,-50%);
+	transition: all 0.5s ease;
+}
+
+
+.header .menu >li.on >a:after{
+	background: url("../images/ico_2.png") no-repeat;
+	transform: rotate(-180deg);
+
+
+}
+
+
+
+/*아코디언 메뉴*/
+
+.header .menu >li .depth2{
+	display: none;
+
+}
+
+.header .menu >li .depth2>li{
+	background: #eaeaea;
+
+}
+
+.header .menu >li .depth2>li >a{
+	display: block;
+	font-size: 13px;
+	border-bottom:1px solid #ddd;
+	color:#333;
+	padding:17px 20px 17px 5px;
+
+} 
+
+
+
+
+
+
+
+
+
+
+.main{
+	width: 100%;
+	height: 800px;
+	background: url("../images/main_visual2.jpg") no-repeat center;
+}

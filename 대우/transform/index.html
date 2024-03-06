@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>트랜스폼</title>
+	<style>
+		*{margin: 0; padding: 0; vertical-align: top;}
+
+		.yellow{
+			width: 200px;
+			height: 200px;
+			background: #ffcc00;
+			font-size: 24px;
+			line-height: 200px;
+			text-align: center;
+			font-weight: bold;
+			border:1px solid #000;
+			/*transform: translateX(400px);*/
+			transform:translate(300%,200%);
+
+			/**사파리
+			-webkit-transform:translate(300%,200%);*/
+
+
+
+		    /* transform: translate(800px,400px);*/
+
+
+		}
+
+		.blue{
+			position: absolute;
+			left:-200px; top:40px;
+			width: 500px;
+			height: 50px;
+			background: #00ccff;
+			text-align: center;
+			line-height: 50px;
+			transform:rotate(-45deg);
+		}
+
+		.black{
+			width: 100px;
+			height: 100px;
+			background: #000;
+			border-radius: 100%;
+			color:#fff;
+			font-size: 24px;
+			text-align: center;
+			line-height: 100px;
+			cursor: pointer;
+			position: absolute;
+			left:100px; top:300px;
+			transition: all 1s ease;
+		}
+
+		.black:hover{
+			transform:scale(1.5) rotate(360deg);
+
+
+		}
+
+
+		.green{
+			background:#ccff00;
+			width: 270px;
+			height: 200px;
+		}
+		
+
+
+	</style>
+</head>
+
+
+<body>
+	<div class="yellow">Translate</div>
+	<div class="blue">Rotate</div>
+	<div class="black">Scale</div>
+	<div class="green">Skew</div>
+	
+</body>
+</html>

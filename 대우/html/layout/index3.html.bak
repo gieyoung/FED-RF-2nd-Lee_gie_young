@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+
+  *{margin:0; padding:0;}
+  .wrap{width:1100px; margin:auto;}
+  .pleft{width:260px; float:left;margin:5px 5px 0 0;}
+  .left1{width:260px; height:147px;margin-bottom:5px; }
+  .left2{width:260px; height:345px;}
+  .left3{width:260px; height:185px;margin-top:5px;}
+
+  .center{width:560px; height:682px; float:left;margin:5px 0 0 0;}
+
+  .pright{width:270px; float:left; margin:5px 0 10px 5px;}
+  .right1{width:270px; height:261px;margin-bottom:5px;}
+  .right2{width:270px; height:190px;}
+  .right3{width:270px; height:222px;margin-top:5px;}
+
+   
+
+  .pfooter{width:1100px;overflow:hidden;}
+  
+  .title{width:1100px;margin-bottom:-5px;}
+  .footer1{width:376px; height:401px;float:left;}
+  .footer2{width:358px; height:401px;float:left;}
+  .footer1{width:366px; height:401px;float:left; float:left;}
+
+
+
+
+  </style>
+
+ </head>
+
+
+ <body>
+ <div class="wrap">
+ <div class="pleft">
+	 <div class="left1"><img src="images/bnner_l_1-01.jpg" alt="트레이닝"></div>
+	 <div class="left2"><img src="images/bnner_l_2-01.jpg" alt="7부티"></div>
+	 <div class="left3"><img src="images/bnner_l_3-01.jpg" alt="메롱툰"></div>
+ </div>
+
+
+  <div class="center"><img src="images/bnner_M-04.jpg"alt="2500원"></div>
+
+  <div class="pright">
+	  <div class="right1"><img src="images/bnner_R_1-01.jpg"alt="헨리넥"></div>
+	  <div class="right2"><img src="images/bnner_R_2-01.jpg"alt="Fluke"></div>
+	  <div class="right3"><img src="images/bnner_R_3-01.jpg"alt="양말"></div>
+  </div>
+
+  
+
+  <div class="pfooter">
+      <div class="title"><img src="images/title.jpg" alt="타이틀"></div>
+	  <div class="footer1"><img src="images/event_01.jpg"alt="셔츠"></div>
+	  <div class="footer2"><img src="images/event_02.jpg"alt="한장"></div>
+	  <div class="footer3"><img src="images/event_03.jpg"alt="싸다구"></div>
+  </div>
+  </div>
+
+  
+ </body>
+</html>

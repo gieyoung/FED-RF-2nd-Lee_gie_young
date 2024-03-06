@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>position(layer)</title>
+	<style>
+		.box{width: 200px;height: 200px;}
+		.box1{background:red;position:absolute; 
+			top:0; left:50%; margin-left:-100px;}
+		.box2{background:green;position: relative;}
+		.box2 .child1{position:absolute; top:50px; left:50px;width: 50px; height: 50px;background:#ffcc01;z-index:3;}
+		.box2 .child2{position:absolute; top:90px; left:90px;width: 50px; height: 50px;background:#ff67ff;}
+
+		.box3{background:blue;position: relative;}
+		.box3 .child3{position:absolute; top:0; right:0; width: 50px; height: 50px; background:yellow;}
+		.box3 .child4{position:absolute;bottom:0; left:0; width: 50px; height: 50px; background:pink;}
+		
+		.box4{background:#00ccff;position: relative;}
+		.box4 .child5{position:absolute;top:0; left:0; width: 50px; height: 50px; background:white;}
+		.box4 .child6{position:absolute; top:50px; left:50px; width: 50px; height: 50px; background:white;}
+		.box4 .child7{position:absolute;top:100px; left:100px; width: 50px; height: 50px; background:white;}
+
+		
+
+
+
+	</style>
+</head>
+
+
+
+<body>
+		<h1>포지셔닝 익히기</h1>
+		<p>position은 블럭레벨 요소들을 배치하기 위한 속성으로 사용됩니다! 공중으로 띄울때 
+		<br>가장 많이 사용되는 속성들은 3가지입니다!</p>
+
+		<ol>
+			<li>static:기본값</li>
+			<li>relative:상대적 위치 지정, 원하는 위치에 배치</li>
+			<li>absolute:절대위치지정</li>
+			<li>fixed:블록레벨 요소를 특정위치에 고정</li>
+		</ol>
+
+		<div class="box box1">box1</div>
+		<div class="box box2">
+			<div class="child1">child1</div>
+			<div class="child2">child2</div>
+		</div>
+		<div class="box box3">
+			<div class="child3">child1</div>
+			<div class="child4">child2</div>
+		</div>
+		
+		<div class="box box4">
+			<div class="child5">child1</div>
+			<div class="child6">child2</div>
+			<div class="child7">child3</div>
+
+
+
+		</div>
+
+			
+
+
+		
+
+
+				
+
+
+			
+			
+
+
+		
+			
+
+		
+
+
+
+	
+</body>
+</html>

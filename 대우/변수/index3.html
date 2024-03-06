@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 조건문</title>
+</head>
+
+<body>
+	<h1>자바스크립트조건문</h1>
+	<ol>
+		<li>프로그램의 핵심</li>
+		<li>프로그램을 지적으로 만들어준다</li>
+		<li>if.if~else,switch</li>
+		<li>비교연산자를 사용하고 결과값은 오로지 true,false반환해줌</li>
+		
+	</ol>
+	<script>
+
+	//조건문 if 사용 방법
+	// 	1. if(조건식){
+	// 	참일 때 처리 내용
+	// }
+	// 	2. if(조건식){
+	// 	true일 때 실행
+	// 	false일 때 실행
+	// }
+
+	// 	3. if(조건식){
+	// 	첫번째 조건이 참일 때
+
+	// 	}else if(조건식){
+	// 	두번째 조건이 참일 때
+
+	// }
+
+	// 	}else if(조건식){
+	// 	세번째 조건이 참일 때
+
+	// }
+
+	// 	else{
+	// 	마지막 조건이 거짓일 때
+	// }
+
+
+// var num = 9;
+// if(num==10){
+// 	document.write("<br>" + "같다")
+
+// }else{
+// 	document.write("<br>" + "다르다")
+// }
+
+
+
+// if(num%2==0){
+// 	document.write("<br>" + "짝수입니다")
+// }else{
+// 	document.write("<br>" + "홀수입니다")
+// }
+
+// var num = prompt("숫자를 입력하세요") //사용자로부터 정보를 받음
+// if(num%2==0){
+// 	alert("짝수입니다")
+// }else{
+// 	alert("홀수입니다")
+// }
+
+
+var kor = prompt("국어점수를 입력하세요");
+var kor = Number(kor)
+var eng = prompt("영어점수를 입력하세요");
+var eng = Number(eng)
+var mat = prompt("수학점수를 입력하세요");
+var mat = Number(mat)
+var tot = kor + eng + mat;
+var avg = tot/3;
+document.write("국어점수" + kor + "<br>");
+document.write("영어점수" + eng + "<br>");
+document.write("수학점수" + mat + "<br>");
+document.write("총점" + tot + "<br>");
+document.write("평균" + avg + "<br>");
+
+if(avg>=80){
+	document.write("판정=" + "합격")
+}else{
+	document.write("판정=" + "불합격")
+}
+
+// 평균 90점 이상일 때 수
+//      80점 이상일 때 우
+//      70점 이상일 때 미
+//      60점 이상일 때 양
+//      그 이하        가
+
+if(avg>=90){
+	document.write("<br>" + "수")
+}else if(avg>=80){
+	document.write("<br>" + "우")
+}else if(avg>=70){
+	document.write("<br>" + "미")
+}else if(avg>=60){
+	document.write("<br>" + "양")
+}else{
+	document.write("<br>" + "가")
+
+
+}
+
+
+//학점 구하는 프로그램 제작
+// 평균이 95점 이상이면 A+
+//        90점 이상이면 A
+//        85점 이상이면 B+
+//        80점 이상이면 B
+//        75점 이상이면 C+
+//        70점 이상이면 C
+//        65점 이상이면 D+
+//        60점 이상이면 D
+//        50점 이하면 F
+
+
+
+
+if(avg>=95){
+	document.write("<br>" + "학점은" + "<br>" + "A+" + "입니다")
+}else if(avg>=90){
+	document.write("<br>" + "학점은" + "<br>" + "A"  + "입니다")
+}else if(avg>=85){
+	document.write("<br>" + "학점은" + "<br>" + "B+" + "입니다")
+}else if(avg>=80){
+	document.write("<br>" + "학점은" + "<br>" + "B"  + "입니다")
+}else if(avg>=75){
+	document.write("<br>" + "학점은" + "<br>" + "C+" + "입니다")
+}else if(avg>=70){
+	document.write("<br>" + "학점은" + "<br>" + "C" + "입니다")
+}else if(avg>=65){
+	document.write("<br>" + "학점은" + "<br>" + "D+" + "입니다")
+}else if(avg>=60){
+	document.write("<br>" + "학점은" + "<br>" + "D"  + "입니다")
+}else{
+	document.write("<br>" + "학점은" + "<br>" + "F" + "입니다")
+
+}
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

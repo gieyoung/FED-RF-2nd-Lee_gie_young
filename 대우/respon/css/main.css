@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+
+
+
+		body{font-family:'Lora', 'Charm', serif;}
+		*{margin:0;padding: 0;vertical-align: top;}
+		a{text-decoration:none;outline: none;}
+		li{list-style: none;}
+
+	body{
+		background: linear-gradient(0deg, #ead1bd,#9c8777) no-repeat fixed;
+	}
+
+
+/*<!-- header -->*/
+
+	header{
+		width: 100%;
+		height: 400px;
+		background: url("../images/main_img02.png") no-repeat center top;
+		margin: 0 auto;
+		background-size: cover;  /*이미지 안잘리고 높이 크기만큼 맞춰짐*/
+		position: relative;
+		}
+
+	header h1{
+		position: absolute;
+		right:40px; top:50%;
+		font-size:45px;
+		font-family:charm;
+		margin-top: -20px;
+
+	
+	}
+
+	header .gnb{
+		position: absolute;
+		left:0; bottom:0;
+		width: 100%;
+		height: 50px;
+		background:rgba(255,0,0,0.6);
+
+	}
+
+
+	header .gnb a{
+		display: block;
+		width: 25%;
+		line-height: 50px;
+		float:left;
+		text-align: center;
+		color:#fff;
+		box-sizing: border-box;
+	}
+
+
+	header .gnb a:hover{
+		padding-right: 30px;
+		background:rgba(255,0,0);
+	}
+
+	/*main*/
+
+	main{
+		
+		padding:10px;
+		overflow: hidden;
+	}
+
+	main h2{
+		font-family:'charm',cursive;
+		text-align: center;
+		font-size: 30px;
+		text-align: center;
+
+	}
+
+	main h3{
+		font-family:'charm',cursive;
+		padding:18px 0; 
+		font-size: 30px;
+
+	}
+
+	main section p{
+		margin-bottom: 30px;
+		text-align: justify;
+
+	}
+
+	main section{
+		float:left;
+	    width: 70%;
+	    padding-right: 10px;
+	    box-sizing: border-box;
+
+	}
+
+	main aside{
+		float: right;
+		width: 30%;
+	}
+
+	main aside img{
+		display: block;
+		width: 100%;
+	}
+
+
+	/*border띄우는 거보다 더 쉬운방법*/
+
+	main aside a{
+		display: block;
+		margin-bottom: 20px;
+		border:solid 5px transparent;
+		box-sizing: border-box;
+		filter:sepia() brightness(0.5);
+		transition:all 0.5s ease;
+		/*밝기설정. 1이 젤 밝음*/
+
+		/*filter:blur(2px);*/
+		/*흐림효과*/
+
+	}
+
+	main aside a:hover{
+		border-color:#333;
+		filter:none;
+
+	}
+
+
+
+
+	/*footer*/
+
+	.wrap{
+		width: 960px;
+		margin:0 auto;
+		background: #fff;
+
+	}
+
+
+	footer{
+		width: 100%;
+		height: 50px;
+		background: #333;
+		line-height: 50px;
+	}
+
+
+	footer address{
+		text-align: center;
+		line-height: 50px;
+		color:#fff;
+
+
+	}
+
+	/*태블릿.ver 640*1024*/
+	@media screen and ( max-width:1024px ) and ( min-width: 640px ){
+		.wrap{
+			width: 98%;
+
+			/*옆에 여백을 1프로씩 남기려고*/
+		}
+
+		header{
+			height: 300px;
+		}
+
+		main section{
+			float:none;
+			width: 100%;
+			padding: 20px;
+		}
+
+		main aside{
+		float: none;
+		width: 100%;
+		/*padding: 20px;*/
+	}
+
+
+		main aside a{
+			float:left;
+			width: 32%;
+		}
+
+
+		/*맨끝에는 빼고*/
+
+		main aside a:not(:last-child){
+			margin-right:1.5%;
+		}
+
+	
+
+	}
+
+
+	/*모바일.ver 320*639*/ /*최소를 안쓰면 최소값이 0*/
+	@media screen and ( max-width: 639px ){
+
+
+		.wrap{
+			width: 96%;
+		}
+
+
+		header{
+			height: 640px;
+		}
+
+		header h1{
+			top:10%;
+		}
+		
+
+		header .gnb{
+			width: 70%;
+			left: 50%;
+			top:50%;
+
+			transform: translate(-50%,-50%);
+			background: none;
+		}
+
+		header .gnb a{
+			float: none;
+			width: 100%;
+			border-radius: 10px;
+			background: rgba(255,0,0,0.6);
+
+			
+		}
+
+		header .gnb a:not(:last-child){
+			margin-bottom: 10px;
+			}
+
+
+		main section{
+			width: 100%;
+			float:none;
+		}
+
+		main aside{
+			width: 100%;
+			float:none;
+		}
+
+		main aside a{
+			margin-bottom: 10px;
+		}
+
+	}
+	

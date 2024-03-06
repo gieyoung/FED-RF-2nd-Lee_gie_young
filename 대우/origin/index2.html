@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>중심점바꾸기응용</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.section{
+			width: 1200px;
+			height: 880px;
+			border: 10px solid #000;
+			margin: 0 auto;
+			position: relative;
+		}
+		.section .clock{
+			position: absolute;
+			/*animation-play-state: paused;*/
+		}
+
+		.section .clock1{
+			left: 50%; top: 0;
+			margin-left:-75px;
+			transform-origin: center top; 
+			transform: rotate(45deg);
+			animation: clock_ani1 1s infinite ease-in-out;
+		}
+
+		.section .clock2{
+			left: 50%; bottom: 0;
+			margin-left: -75px;
+			transform-origin: center bottom; 
+			transform: rotate(45deg);
+			animation: clock_ani2 1s infinite ease-in-out;
+
+		}
+
+		.section .clock3{
+			
+			left:; top: 50%;
+			margin-top: -2.5px;
+			transform-origin: center left; 
+			transform: rotate(45deg);
+			animation: clock_ani3 1s infinite ease-in-out;
+
+
+
+		}
+
+		.section .clock4{
+			right: 0; top: 50%;
+			margin-top:-2.5px;
+			transform-origin: center right; 
+			transform: rotate(45deg);
+			animation: clock_ani4 1s infinite ease-in-out;
+
+
+		}
+
+
+
+
+		/*.section:hover .clock{
+			animation-play-state: running;
+		}*/
+
+		@keyframes clock_ani1{
+			0%{transform: rotate(45deg);}
+			50%{transform: rotate(-45deg);}
+			100%{transform: rotate(45deg);}
+		}
+		@keyframes clock_ani2{
+			0%{transform: rotate(45deg);}
+			50%{transform: rotate(-45deg);}
+			100%{transform: rotate(45deg);}
+		}
+		@keyframes clock_ani3{
+			0%{transform: rotate(45deg);}
+			50%{transform: rotate(-45deg);}
+			100%{transform: rotate(45deg);}
+		}
+		@keyframes clock_ani4{
+			0%{transform: rotate(45deg);}
+			50%{transform: rotate(-45deg);}
+			100%{transform: rotate(45deg);}
+		}
+
+		.section .clock .circle{
+			width: 150px;
+			height: 150px;
+			border-radius: 100%;
+			border: 5px solid #000;
+			background: url("images/1.jpg") no-repeat 80% center;
+			background-size: cover;
+		}
+
+
+
+		.section .clock1 .line,
+		.section .clock2 .line{
+			width: 5px;
+			height: 150px;
+			background: #000;
+			margin: 0 auto;
+
+		}
+
+
+		.section .clock3 .line,
+		.section .clock4 .line{
+			width: 150px;
+			height: 5px;
+			background: #000;
+			
+		}
+
+
+		.section .clock3 .circle{
+			position: absolute;
+			left: 0; top: 50%;
+			margin-top: -75px;
+			margin-left: 150px;
+		
+		}
+
+		.section .clock4 .circle{
+			position: absolute;
+			right: 0; top: 50%;
+			margin-top: -75px;
+			margin-right: 150px;
+		}
+
+		.section h3{
+			text-align: center;
+			padding-top:440px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="section">
+		<div class="clock1 clock">
+			<div class="line"></div>
+			<div class="circle"></div>
+		</div>
+		<h3>시계추 애니메이션</h3>
+		<div class="clock2 clock">
+			<div class="circle"></div>
+			<div class="line"></div>
+		</div>
+		<div class="clock3 clock">
+			<div class="line"></div>
+			<div class="circle"></div>
+		</div>
+		<div class="clock4 clock">
+			<div class="line"></div>
+			<div class="circle"></div>
+		</div>
+	</div>
+</body>
+</html>

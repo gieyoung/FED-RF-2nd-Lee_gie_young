@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'SamsungOneKorean 300';
+    src: url('../font/SamsungOneKorean-300.woff2') format('woff2'),
+        url('../font/SamsungOneKorean-300.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SamsungOneKorean 600';
+    src: url('../font/SamsungOneKorean-600.woff2') format('woff2'),
+        url('../font/SamsungOneKorean-600.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SamsungOneKorean 700';
+    src: url('../font/SamsungOneKorean-700.woff2') format('woff2'),
+        url('../font/SamsungOneKorean-700.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

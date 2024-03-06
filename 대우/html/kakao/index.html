@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>카카오(footer)</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+	<style>
+		*{margin: 0; padding: 0; vertical-align: top;}
+		body{font-family: 'Noto Sans KR', sans-serif;}
+		a{text-decoration: none;}
+		li{list-style: none;}
+
+		.main{
+			width: 100%;
+			height: 400px;
+			background: #ccc;
+
+		}
+
+		.footer{
+			width: 100%;
+			background: #1e1e1e;
+
+
+		}
+
+		.footer .footer_inner{
+			width: 1160px;
+			height: 80px;
+			background: #1e1e1e;
+			margin:auto;
+			/*border:1px solid red;*/
+			/*overflow: hidden;*/
+			padding-top: 22px;
+			position: relative;
+		}
+
+
+		.footer .footer_inner .list{
+			float:left;
+		}
+
+
+		.footer .footer_inner .list li{
+			float: left;
+			/*border:1px solid white;*/
+			padding-right:15px;
+			position: relative;
+			
+
+		}
+
+		.footer .footer_inner .list li a::after{
+            content:"";
+            position: absolute;
+			background: url("images/s1.png") no-repeat;
+           right: 10px; top:7px;
+           width: 12px; height: 12px;
+            
+       }
+
+
+       .footer .footer_inner .list li a:hover::after{
+       	 content:"";
+            position: absolute;
+			background: url("images/s2.png") no-repeat;
+           right: 10px; top:7px;
+           width: 12px; height: 12px;
+          /* right:-10px; top:5px;*/
+
+       }
+
+ 
+  
+
+
+		.footer .footer_inner .list li a{
+			margin-right: 12px;
+            font-size: 12px;
+           /* border: 1px solid red;*/
+            display: block;
+            color: #aeaeae;
+        }
+
+        .footer .footer_inner .list li:nth-child(3) a{
+        	font-weight: bold;
+        	color:#fff;
+
+        }
+
+
+
+
+        .footer .footer_inner .list li a:hover{
+        	font-weight: bold;
+        	color:#fff;
+        }
+
+        .footer .footer_inner .copy{
+         /* border:1px solid red;*/
+          /*padding-top: 2px;*/
+          position: absolute;
+          left:0; top:50%;
+          font-size: 12px;
+          color: #aeaeae;
+          
+        }
+
+
+        /*패밀리*/
+
+
+        .family{
+        	float:right;
+        	position: relative;
+
+        }
+
+        .family_button{
+        	float:right;
+        	width: 160px; height: 25px;
+        	background: transparent;
+        	border:none;
+        	border-bottom: 1px solid  #aeaeae;
+
+
+        	
+        }
+
+        .family_button a{
+        	color: #aeaeae;
+        	display:block;
+        	background:url("images/ico_corp_181031-(1).jpg") no-repeat right top;
+        	font-size: 12px;
+        	text-indent:-100px;
+        	padding-bottom: 7px;
+
+        	/*border: 1px solid red;*/
+
+        }
+
+
+        .family_button:hover a{
+        	color:#fff;
+        	font-weight: bold;
+        	border-bottom: 1px solid  #aeaeae;
+        	background: url("images/ico_corp_181031-(2).jpg") no-repeat right top;
+
+       
+
+        }
+
+        .family .f_list{
+        	position: absolute;
+        	left:0; bottom:25px;
+        	background: #fff;
+        	width: 160px;
+        	display:none;
+
+
+
+
+
+        }
+
+        .family .f_list a{
+        	display: block;
+        	font-size: 12px;
+        	color:#aeaeae;
+        	padding:15px 0 0 15px;
+
+        }
+
+        .family .f_list li:last-child{
+        	padding-bottom:20px;
+        }
+
+
+        .family .f_list a:hover{
+        	text-decoration: underline #000;
+        	
+
+        }
+
+
+          .family:hover .f_list{
+          	display: block;}
+
+       
+
+
+
+
+
+   
+
+		
+
+
+
+
+	</style>
+
+
+
+
+</head>
+<body>
+	<div class="main"></div>
+
+	<div class="footer">
+		<div class="footer_inner">
+			<div class="left">
+				<ul class="list">
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">위치기반서비스이용약관</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">운영정책</a></li>
+					<li><a href="#">청소년보호정책</a></li>
+					<li><a href="#">권리침해신고안내</a></li>
+					<li><a href="#">공지사항</a></li>
+					<li><a href="#">사이버윤리실</a></li>
+				</ul>
+
+			</div>
+
+		<div class="copy">Copyright © Kakao Corp. All rights reserved</div>
+
+           
+<!-- 패밀리 -->
+<div class="family">
+
+        <button type="button" class="family_button"><a href="#">관련사이트</a></button>
+        <ul class="f_list">
+            <li><a href="#">카카오AI</a></li>
+            <li><a href="#">카카오프라이버시</a></li>
+            <li><a href="#">카카오 디벨로퍼스</a></li>
+            <li><a href="#">다음 포털 사이트</a></li>
+            <li><a href="#">동반성장 사이트</a></li>
+            <li><a href="#">제주 with kakao</a></li>
+            
+          </ul> 
+
+</div>
+
+       </div>
+
+
+		
+		
+
+	</div>
+
+
+
+
+	
+</body>
+</html>
+
+

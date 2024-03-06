@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>대림산업</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+  *{margin:0; padding:0; vertical-align:top;}
+  #header{width:100%;border-bottom:1px solid #d0d0d0;}
+  #header .header_inner{width:1200px; height:70px;
+  margin: auto;}
+  body{font-family:"Noto Sans KR", "맑은 고딕", "malgun gothic","돋움","dotum","sans-serif";font-size:16px;}
+  li{list-style:none;}
+  a{text-decoration:none;}
+   #header .header_inner h1{float:left;margin-top:25px;}
+   #header .header_inner .gnb{float:left; margin-left:54px;}
+   #header .header_inner .gnb li{float:left;margin-right:64px;}
+   #header .header_inner .gnb li:nth-child(7){margin-right:0;}
+   #header .header_inner .gnb li a{height:70px;display:block;line-height:70px;color:#222; font-size:16px;font-weight:900;}
+   #header .header_inner .gnb li a:hover{color:#2f6aa;}
+   #header .header_inner .util{float:right;overflow:hidden; margin-top:28px;}
+   #header .header_inner .util li{float:left;}
+   #header .header_inner .util li:nth-child(2){margin-top:2px;}
+   #header .header_inner .util li{margin-left:14px;}
+   #header .header_inner .util li:nth-child(1){margin-left:0;}
+
+  .main{width:100%;}
+  .main .visual{height:920px; 
+          background:url("images/main_01_01.jpg") no-repeat center top;}
+ 
+  </style>
+ </head>
+
+
+ <body>
+ <div id="header">
+	<div class="header_inner">
+		<h1><a href="daelim.html"><img src="images/pic_mtopLogo.png" alt="대림산업로고"></a></h1>
+
+		<ul class="gnb">
+			<li><a href="#">회사소개</a></li>
+			<li><a href="#">사업소개</a></li>
+			<li><a href="#">기술혁신</a></li>
+			<li><a href="#">지속가능경영</a></li>
+			<li><a href="#">투자정보</a></li>
+			<li><a href="#">홍보센터</a></li>
+			<li><a href="#">인재채용</a></li>
+        </ul>
+
+		<ul class="util">
+			<li><a href="#"><img src="images/ico_mTopetc01.png" alt="검색"></a></li>
+			<li><a href="#"><img src="images/ico_mTopetc02.png" alt="영어버전"></a></li>
+			<li><a href="#"><img src="images/ico_mTopetc04.png" alt="전체메뉴"></a></li>
+		</ul>
+
+	
+
+	</div>
+
+
+  <div class="main">
+    <div class="visual"></div>  
+
+
+  </div>
+
+	
+
+
+
+  
+ </body>
+</html>

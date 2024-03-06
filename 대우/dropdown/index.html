@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>드롭다운</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+</head>
+<style>
+    .drop{
+       position: relative;
+        display: inline-block;
+        border:1px solid red;
+        
+  
+    }
+
+
+    .drop_btn{
+        padding:16px;
+        background: green;
+        color:#fff;
+        border:none;
+        cursor:pointer;
+      
+ 
+        
+       
+    }
+    .drop_content{
+        min-width:160px;
+        background: grey;
+        position: absolute;
+        left:0;
+        display:none;
+        
+    }
+    .drop_content a{
+        display: block;
+        color:#fff;
+        padding:12px 16px;
+        border-top:1px solid #fff;
+    }
+    
+    
+    .drop:hover .drop_content {
+        display: block;
+        
+    }
+    
+ 
+</style>
+
+<body>
+
+<div class="drop">
+    <button class="drop_btn">dropdown</button>
+    <div class="drop_content">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+    </div>
+</div>
+
+
+
+<script>
+		$(function(){
+			
+		});
+		
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>부트스트랩을 이용한 반응형</title>
+    <scrtip src="js/jquery-3.5.0.min.js"></scrtip>
+    <scrtip src="js/bootstrap.min.js"></scrtip>
+    
+    <style>
+        body{font-family: 'Nanum Gothic', sans-serif;}
+		*{margin:0;padding: 0;vertical-align: top;}
+		a{text-decoration:none;}
+		li{list-style: none;}
+        
+        .container .row div{
+            border:1px solid #000;
+            height: 80px;
+            
+        }
+        
+        .container .row .col-md-3{
+            background: #ffcc00;
+        }
+        
+        .container .row .col-md-9{
+            background: #00ccff;
+            
+        }
+        
+        .container .row .col-md-4{
+            background: #ccff00;
+        }
+        
+          .container .row .col-md-1{
+            background: #fe0000;
+        }
+        
+        .container .row .col-md-5{
+            background: #008001;
+        }
+        
+        .container .row .col-md-2{
+            background: #cc6601;
+        }
+        
+        .container .row .col-md-8{
+            background: #fe0000;
+        }
+        
+        
+        .con2 .row div{
+            border:1px solid #000;
+            height: 80px;
+            margin-top: 100px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+   <div class="container">
+       <div class="row">
+          <div class="col-xs-12 col-md-3">col-3</div>
+          <div class="col-xs-12 col-md-9">col-9</div>
+          
+           
+       </div>
+       
+       <div class="row">
+           <div class="col-xs-12 col-md-4">col-4</div>
+          <div class="col-xs-12 col-md-4">col-4</div>
+          <div class="col-xs-12 col-md-4">col-4</div>
+           
+       </div>
+       
+       
+       <div class="row">
+           <div class="col-xs-12 col-md-1">1</div>
+          <div class="col-xs-12 col-md-5">5</div>
+          <div class="col-xs-12 col-md-5">5</div>
+          <div class="col-xs-12 col-md-1">1</div>
+           
+       </div>
+       
+        <div class="row">
+           <div class="col-xs-12 col-md-2">2</div>
+          <div class="col-xs-12 col-md-8">8</div>
+          <div class="col-xs-12 col-md-2">2</div>
+           
+       </div>
+       
+       <div class="row">
+           <div class="col-xs-12 col-md-3 col-sm-6"></div>
+          <div class="col-xs-12 col-md-3 col-sm-6"></div>
+          <div class="col-xs-12 col-md-3 col-sm-6"></div>
+          <div class="col-xs-12 col-md-3 col-sm-6"></div>
+           
+       </div>
+       
+       
+       
+   </div>
+   
+</body>
+</html>

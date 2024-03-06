@@ -1,0 +1,442 @@
+@charset "utf-8";	
+
+
+body{font-family: 'Noto Sans KR', sans-serif; letter-spacing: -1px; min-width:1164px;}
+		*{margin:0;padding: 0;vertical-align: top;}
+		a{text-decoration:none;outline: none;}
+		li{list-style: none;}
+/*오른쪽퀵메뉴*/
+.quick{
+	position: fixed;
+	right:30px; top:50%;
+	z-index: 9;
+	transform: translateY(-50%);
+}
+
+.quick li{
+	margin-bottom: 20px;
+
+}
+
+.quick li:last-child{
+	margin-bottom: 0;
+}
+
+.quick li a{
+	width: 20px;
+	height: 20px;
+	display: block;
+	background: url("../images/page_bg.png") no-repeat;
+	text-indent: -99999px;
+
+}
+
+.quick li.on a{
+	background-position-y:-20px;
+}
+
+.quick li a:hover{
+	background-position-y:-20px;
+}
+
+/*
+=============*/
+#header{
+	height: 660px;
+	background: #333;
+}
+
+#about{
+	height: 800px;
+	background: #fff;
+
+}
+#team{
+	height: 720px;
+	background: #42474a;
+}
+
+/*포트폴리오*/
+
+#portfolio{
+	width: 100%;
+	height: 900px;
+	background: #fff;
+}
+
+#portfolio .port_inner{
+	width: 1200px;
+	margin: 0 auto;
+	padding: 60px 0;
+
+}
+
+#portfolio .port_inner .title{
+	text-align: center;
+	padding-top: 40px;
+}
+
+
+#portfolio .port_inner .title h2{
+	font-size: 35px;	
+	color:#333;
+	position: relative;
+	margin-bottom: 70px;
+	
+
+}
+
+#portfolio .port_inner .title h2:before{
+	content: '';
+	position: absolute;
+	width: 200px;
+	height: 5px;
+	background:#7ccc35;
+	left:50%; bottom:-25px;
+	transform: translate(-50%,0);
+}
+
+
+#portfolio .port_inner .title span{
+	color:#7ccc35;
+	font-weight: 700;
+}
+
+
+#portfolio .port_inner .title p{
+	margin-bottom: 55px;
+	letter-spacing: 1px;
+	color:#333;
+	
+
+}
+
+#portfolio .port_inner .gmenu{
+	overflow: hidden;
+	text-align: center;
+}
+
+
+#portfolio .port_inner .gmenu li{
+	margin-right: 2px;
+	display:inline-block;
+	
+
+
+}
+
+#portfolio .port_inner ..gmenu li:last-child{
+	margin-right: 0;
+}
+
+#portfolio .port_inner .gmenu li a{
+	display:block;
+	color:#fff;
+	padding: 15px;
+	background:#7ecb3d;
+	border:1px solid #7cc947;
+
+}
+
+#portfolio .port_inner .gmenu li a:hover{
+	background: #fff;
+	color:#7ecb3d;
+}
+
+
+#portfolio .port_inner .imgbox{
+	width: 1080px;
+	margin: 50px auto 0;
+	overflow: hidden;
+}
+
+
+#portfolio .port_inner .imgbox .grid-item{
+	width: 250px; height: 200px;
+	margin: 0 20px 20px 0;
+	float:left;
+	position: relative;
+	
+}
+
+#portfolio .port_inner .imgbox .grid-item:nth-child(4){
+	margin-right:0;
+}
+
+#portfolio .port_inner .imgbox .grid-item:last-child{
+	margin-right:0;
+}
+
+#portfolio .port_inner .imgbox .grid-item img{
+	width: 100%;
+	height: 100%;
+}
+
+
+
+/*커버*/
+
+#portfolio .port_inner .imgbox .grid-item .cover{
+	width: 250px;
+	height: 200px;
+	background: rgba(123,206,64,0.7);
+	position: absolute;
+	left:0; top:0;
+	display: none;
+	transition:all 0.5 ease;
+	
+}
+
+
+#portfolio .port_inner .imgbox .grid-item .cover img{
+	width: 50px;
+	height: 50px;
+
+	position: absolute;
+	left:50%; top:50%;
+	transform: translate(-50%,-50%);
+	
+}
+
+
+
+
+
+/*스킬*/
+
+.skill{
+	width: 100%;
+	background: #42474a;
+}
+
+.skill .skill_inner{
+	width: 1200px;
+	height: 600px;	
+	margin: 0 auto;
+}
+
+
+.skill .skill_inner h2{
+	font-size: 35px;
+	text-align: center;
+	color:#fff;
+	padding-top: 90px;
+	position: relative;
+	margin-bottom: 70px;
+}
+
+.skill .skill_inner h2:before{
+	content: '';
+	position: absolute;
+	width: 200px;
+	height: 5px;
+	background:#7ccc35;
+	left:50%; bottom:-25px;
+	transform: translate(-50%,0);
+}
+
+.skill .skill_inner h2 span{
+	color:#7ccc35;
+}
+
+.skill .skill_inner h3{
+	text-align: center;
+	color:#fff;
+	width: 150px;
+	margin-bottom: 30px;
+	font-weight: 500;
+
+}
+
+
+.skill .skill_inner .h_prog_wrap{
+	text-align: center;
+
+}
+
+.skill .skill_inner .h_progress{
+	text-align: center;	
+	
+	display: inline-block;
+	margin-right: 30px;
+	margin-top: 100px;
+	
+}
+
+.skill .skill_inner .h_progress:last-child{
+	margin-right: 0;
+}
+
+
+.progress-bar div span{
+	line-height: 120px;
+	font-size: 30px;
+	background: #42474a;
+	color:#fff;
+
+}
+
+
+/*-------------------------------------------구글맵*/
+#map{
+	width: 100%;
+	height: 450px;
+	background: #fff;
+	margin-top: 30px;
+
+}
+
+#map #map_canvas{
+	width: 1200px;
+	height: 450px;
+	margin: 0 auto;
+
+}
+
+
+
+/*-------------------------------------------------contact*/
+#contact{
+	width: 100%;
+
+}
+
+#contact .contact_inner{
+	width: 1200px;
+	margin: 0 auto;
+	padding: 94px 0 72px;
+	position: relative;
+}
+
+#contact .contact_inner h2{
+	font-size: 35px;
+	text-align: center;
+	color:#7ccc35;
+	/*padding-top: 90px;*/
+	position: relative;
+	margin-bottom: 70px;
+	letter-spacing: 1px;
+	font-weight: 500;
+
+
+}
+
+
+#contact .contact_inner h2 span{
+	color:#333;
+}
+
+#contact .contact_inner h2:before{
+	content: '';
+	position: absolute;
+	width: 200px;
+	height: 5px;
+	background:#7ccc35;
+	left:50%; bottom:-25px;
+	transform: translate(-50%,0);
+
+}
+
+
+#contact .contact_inner p{
+	text-align: center;
+	margin-bottom: 70px;
+}
+
+#contact .contact_inner label, legend{
+    position: absolute;
+    left:-99999px;
+}
+#contact .contact_inner .form_text{
+    text-align: center;
+}
+#contact .contact_inner .form_text .form_group{
+    display: inline-block;
+    width: 33%;
+    box-sizing: border-box;
+}
+#contact .contact_inner .form_text .form_group input{
+    width: 97%;
+    box-sizing: border-box;
+    padding:15px 10px;
+    outline: none;
+}
+#contact .contact_inner .form_text .form_group input::placeholder{
+    color:#9a9a9a;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Noto Sans KR';
+}
+#contact .contact_inner .form_text textarea{
+    width: 98.5%;
+    padding:15px 10px;
+    box-sizing: border-box;
+    outline: none;
+}
+#contact .contact_inner .form_text textarea::placeholder{
+    color:#9a9a9a;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Noto Sans KR';
+}
+#contact .contact_inner .form_text li{
+    margin-bottom: 40px;
+}
+#contact .contact_inner .btn_submit{
+    display: block;
+    width: 182px;
+    height: 42px;
+    border:2px solid #80c842;
+    background:#fff;
+    color:#80c842;
+    cursor: pointer;
+    font-weight: 700;
+    margin:0 auto;
+    outline: none;
+}
+
+
+/*footer*/
+
+#footer{
+	width: 100%;
+	height: 108px;
+	text-align: center;
+	color:#fff;
+	background: #7ecb3d;
+	padding-top: 20px;
+	position: relative;
+
+}
+
+#footer .sns_group {
+	font-size: 30px;   /**폰트어썸의 아이콘 크기는 폰트사이즈로 늘림*/
+	
+
+}
+
+#footer .sns_group .sns{
+	display: inline-block;
+	border:2px solid #fff;
+	border-radius: 100%;
+	width: 50px; height: 50px;
+	text-align: center;
+	line-height: 50px;
+	margin-right: 10px;
+}
+
+#footer .sns_group .sns:last-child{
+	margin-right: 0;
+}
+
+
+#footer p{
+	margin-top: 12px;
+}
+
+#footer .scroll{
+	position: absolute;
+	right:30px; top:50%;
+	transform: translate(0,-50%);
+}
+

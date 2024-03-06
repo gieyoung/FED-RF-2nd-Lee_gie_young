@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>서브웨이 모바일</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+
+	<script>
+
+		$(document).ready(function(){
+				$(".m_btn").click(function(){
+					$(".gnb_wrap").animate({"right":0},500);
+					$(".cover").fadeIn(500);
+			})
+
+			$(".btn_close").click(function(){
+				$(".gnb_wrap").animate({"right":"-100%"},500);
+				$(".cover").fadeOut(500);
+			})
+
+		var sw=0;
+$(".btn_pause").click(function(){
+  if(sw==0){
+    $('.btn_pause').addClass('on');
+    mySwiper.autoplay.stop();
+    sw=1;
+
+  }else{
+    $('.btn_pause').removeClass('on');
+    mySwiper.autoplay.start();
+    sw=0;
+  }
+  })
+
+			
+		});
+
+	</script>
+
+
+
+
+
+</head>
+<body>
+	
+
+	<div class="header">
+		<button class="hot"><img src="images/icon_hd_store.png" alt="위치"></button>
+		<h1><a href="#"><img src="images/logo (1).png" alt="로고"></a></h1>
+		<button class="m_btn"><img src="images/icon_sidemenu.png" alt="메뉴"></button>
+
+	
+
+	<div class="cover"></div>
+		<!-- 모바일메뉴 영역 -->
+		<div class="gnb_wrap">
+			<div class="top_gnb">
+					<h2>Eat fresh<br>
+						<span>Enjoy Subway</span></h2>
+				    <button type="button" class="btn_close">메뉴닫기</button>
+		    </div>
+            <ul class="gnb">
+				<li class="icon1"><a href="#"><span></span>메뉴소개</a></li>
+				<li class="icon2"><a href="#"><span></span>이용방법</a></li>
+				<li class="icon3"><a href="#"><span></span>새소식</a></li>
+				<li class="icon4"><a href="#"><span></span>써브웨이</a></li>
+				<li class="icon5"><a href="#"><span></span>가맹점</a></li>
+				<li class="icon6"><a href="#"><span></span>고객센터</a></li>
+			</ul>
+
+		</div>
+
+	</div>
+
+	
+
+
+	
+	
+		<ul class="menu_list">
+			<li><a href="#">클래식</a></li>
+			<li><a href="#">프레쉬&라이트</a></li>
+			<li><a href="#">프리미엄</a></li>
+			<li><a href="#">아침메뉴</a></li>
+		</ul>
+
+
+
+
+	<div class="main">
+		<div class="visual">
+			<div class="swiper-container main_slider">
+	       <div class="swiper-wrapper main_slider">
+	        <div class="swiper-slide"><img src="images/main_Mobile_640x680_2_20200427113429218.jpg" class="slider1"></div>
+	        <div class="swiper-slide"><img src="images/1.jpg" class="slider1"></div>
+	        <div class="swiper-slide"><img src="images/2.jpg" class="slider1"></div>   
+
+    	</div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    <button type="button" class="btn_pause"></button>
+</div>
+
+</div>
+
+
+<!-- 빠른메뉴 -->
+	<div class="quick_btn">
+		 <a class="left" href="#"><span class="s1"></span>매장찾기</a>
+		 <a class="right" href="#" ><span class="s2"></span>가맹신청·문의</a>
+	
+
+	</div>
+
+
+<!-- 서브웨이메뉴 -->
+    <div class="section1">
+    	<h2>Subway's Menu</h2>
+    	<ul class="btn_tab">
+    		<li><a href="#">클래식</a></li>
+    		<li><a href="#">프레쉬&라이트</a></li>
+    		<li><a href="#">프리미엄</a></li>
+    		<li><a href="#">아침메뉴</a></li>
+
+    	</ul>
+    </div>
+
+<!-- 
+    /*What's New*/ -->
+
+    <div class="section5">
+    	<h2>What's New</h2>
+    	<a href="#" class="btn_more"><img src="images/icon_more01.png" alt="더보기"></a>
+
+    	<ul class="list">
+    		<li><a href="#">써브웨이 2020년 3월 가격 인상 안내</a></li>
+    		<li><a href="#">써브웨이와 함께하는 tvN '금요일금요일밤에'</a></li>
+    		<li><a href="#">써브웨이 고객센터 2020년 설 연휴 휴무 안내</a></li>
+    	</ul>	
+</div>
+
+
+	<!-- 섹션6 -->
+
+
+
+	<div class="section6">
+		<ul class="quick">
+		<li><a href="#" class="quick_1"><span></span>프랜차이즈</a></li>
+		<li><a href="#" class="quick_2"><span></span>광고영상</a></li>
+		<li><a href="#" class="quick_3"><span></span>지사안내</a></li>
+		<li><a href="#" class="quick_4"><span></span>1:1문의</a></li>
+		
+
+		</ul>
+
+
+
+	</div>
+</div>
+
+
+
+	<!-- footer -->
+	<div class="footer">
+		<div class="footer_top">
+			<ul>
+				<li><a href="#">이용약관</a></li>
+				<li><a href="#">개인정보취급방침</a></li>
+				<li><a href="#">Subway Listens</a></li>
+				<li><a href="#">PC버전</a></li>
+            </ul>
+        </div>
+
+
+        <div class="footer_bottom">
+         	<ul>
+         		<li><a href="#"><img src="images/icon_f_sns_ig.png"></a></li>
+         		<li><a href="#"><img src="images/icon_f_sns_fb.png"></a></li>
+         	</ul>
+
+
+         	<address>서울시 서초구 강남대로 535 프린스빌딩 15층<br>
+         		대표 : 콜린클락 전화 : <a href="tel:02-797-5036">02-797-5036</a><br>
+         		사업자등록번호 : 101-84-04143
+			</address>
+
+
+			<p>SUBWAY® is a Registered Trademark of Subway IP LLC. <br>
+				© 2019 Subway IP LLC. All Rights Reserved.
+			</p>
+        </div>
+    </div>
+		
+
+
+
+
+<script>
+	var mySwiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  // direction: 'vertical',
+  loop: true,
+  autoplay:true,
+
+ 
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  
+})
+</script>
+
+
+
+</body>
+</html>
+         	
+
+
+
+         	
+
+
+
+
+       
+				
+
+
+			
+			
+
+
+
+		
+		
+
+
+
+	
+	

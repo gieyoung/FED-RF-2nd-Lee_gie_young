@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>상세페이지</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/jquery.lightbox-0.5.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<script src="js/jquery.lightbox-0.5-mod.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+
+<style>
+body{width: 100%; font-family: 'Noto Sans KR', sans-serif;}
+    
+/*타이틀*/
+
+
+.bar{
+    text-align: center;
+   
+}
+.page{width: 1200px;margin: 0 auto;}
+h2{font-size:20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 2px; text-align: center; font-weight: 500; margin: 100px auto 30px; line-height:35px;}
+.page .box{margin-top: 50px;}
+.page .box ul li{width: 380px; height: 480px; float: left; margin-right: 25px; margin-bottom: 30px;border:1px solid #c8c8c8;overflow: hidden;}
+.page .box ul li:nth-child(3){margin-right: 0;}
+.page .box ul li a img{width: 380px; height: 480px; transition: all 0.5s ease;}
+.page .box ul li:hover a img{opacity: 0.5;}
+
+
+</style>
+
+
+<body>
+    <div class="page">
+                  <h2>모바일 및 PC 상세페이지 디자인입니다<br>
+                  그리드부터 레이아웃, 아이콘, 글자 모두 직접 제작했습니다.
+                  
+                   
+                   </h2>
+                    <div class="bar"><img src="images/bar.jpg" alt="제목 바"></div> 
+	<div class="box">
+		<ul>
+			<li><a href="images/page/1.jpg"><img src="images/page/1_1.jpg"></a></li>
+			<li><a href="images/page/2.jpg"><img src="images/page/2_1.jpg"></a></li>
+			<li><a href="images/page/3.jpg"><img src="images/page/3_1.jpg"></a></li>
+        </ul>
+        
+        <ul>
+			<li><a href="images/page/4.jpg"><img src="images/page/4_1.jpg"></a></li>
+			<li><a href="images/page/5.jpg"><img src="images/page/5_1.jpg"></a></li>
+			<li><a href="images/page/6.jpg"><img src="images/page/6_1.jpg"></a></li>
+        </ul>
+        
+        <ul>
+			<li><a href="images/page/7.jpg"><img src="images/page/7_1.jpg"></a></li>
+			<li><a href="images/page/8.jpg"><img src="images/page/8.jpg"></a></li>
+			<li><a href="images/page/9.jpg"><img src="images/page/9.jpg"></a></li>
+        </ul>
+        
+        <ul>
+			<li><a href="images/page/m1.jpg"><img src="images/page/m1.jpg"></a></li>
+			<li><a href="images/page/m2.jpg"><img src="images/page/m2.jpg"></a></li>
+			<li><a href="images/page/m3.jpg"><img src="images/page/m3.jpg"></a></li>
+        </ul>
+        
+        <ul>
+        	<li><a href="images/page/m4.jpg"><img src="images/page/m4.jpg"></a></li>
+        	<li><a href="images/page/10.jpg"><img src="images/page/10.jpg"></a></li>
+			<li><a href="images/page/11.jpg"><img src="images/page/11.jpg"></a></li>
+        </ul>
+			
+  </div>
+	</div>
+	
+	
+	<script>
+		$(function(){
+
+   $('.box a').lightBox({
+	overlayBgColor:'#000',  
+	overlayOpacity: 0.8,
+	imageLoading: 'images/lightbox-ico-loading.gif',
+	imageBtnClose: 'images/lightbox-btn-close.gif',
+	imageBtnPrev: 'images/lightbox-btn-prev.gif',
+	imageBtnNext: 'images/lightbox-btn-next.gif',
+	containerResizeSpeed: 300,
+	txtImage: '작품',
+	txtOf: '중에'
+   });
+
+
+ 
+});
+
+
+
+</script>
+</body>
+</html>

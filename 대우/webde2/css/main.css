@@ -1,0 +1,299 @@
+	@charset "utf-8";
+
+
+	body{ font-family:"맑은고딕";}
+
+
+	#wrap{
+		width: 960px;
+		margin:0 auto;
+	}
+
+
+	/*헤더*/
+
+	header{
+		height: 110px;
+		background: #fff;
+		/*overflow: hidden;*/
+
+	}
+
+	header .logo{
+		float:left;
+		line-height: 110px;
+
+	}
+
+
+
+	header .gnb{
+		float:right;
+		margin-top: 40px;
+		
+	}	
+
+	header .gnb>li{
+		float:left;
+		margin-right: 30px;
+		position: relative;
+	}
+
+	header .gnb>li:last-child{
+		margin-right: 0;
+	}
+
+	header .gnb>li>a{
+		padding: 5px 20px;
+		font-weight: bold;
+		background:#fff;
+		border:1px solid #e0e0e0;
+		color:#666;
+		
+	}
+
+	header .gnb>li:hover .depth2{
+		display: block;
+	}
+
+	header .gnb>li:hover>a{
+		color:#e0e0e0;
+		background: #ce2a30;
+
+	}
+
+	header .gnb>li>.depth2{
+		position: absolute;
+		width: 100%;
+		left:0; top:28px;
+		text-align: center;
+		display: none;
+
+
+
+	}
+	
+	header .gnb>li>.depth2>li>a{
+		display: block;
+		padding: 7px 0;
+		font-weight: bold;
+		background:#fff;
+		border:1px solid #e0e0e0;
+		color:#666;
+		font-size: 14px;
+		
+		
+	}
+
+
+
+	header .gnb .depth2>li>a:hover{
+		background: #e0e0e0;
+
+}
+
+	section .slide{
+		height: 429px;
+		background: green;
+	}
+
+
+	section .contents{
+		width: 100%;
+		height: 591px;
+		background: #fff;
+		overflow: hidden;
+		
+
+	}
+
+	section .contents .table_wrap{
+		width: 60%;
+		float:left;
+		
+	}
+
+	section .contents .table_wrap h2{
+		padding: 30px 0;
+		text-align: center;
+		font-size:25px;
+		font-weight: bold;
+	}
+
+
+	section .contents .table_wrap th{
+		font-size: 17px;
+		color:#e0e0e0;
+		background: #ce2a30;
+		padding: 15px;
+
+	}
+
+	section .contents .table_wrap table{
+		width: 100%;
+
+	}
+
+
+	section .contents .table_wrap tr td{
+		text-align: center;
+		border-bottom:1px solid #e0e0e0;
+		padding: 20px 0;
+		font-size: 13px;
+	
+	}
+
+	section .contents .table_wrap tr .t1{
+		color:#666;
+		background: #e0e0e0;
+		font-size: 15px;
+		font-weight: bold;
+		text-align: center;
+
+
+
+	}
+
+
+	section .port_wrap{
+		margin-left: 18px;
+	}
+
+	section .port_wrap h2{
+		padding: 30px 0;
+		text-align: center;
+		font-size:25px;
+		font-weight: bold;
+	}
+
+	section .port_wrap .port{
+		width: 40%;
+		float:right;
+		overflow: hidden;
+		box-sizing: border-box;
+		
+	}
+
+	section .port_wrap .port li{
+		float:left;
+		width: 182px;
+		height: 150px;
+
+		padding: 3px;
+		
+		
+
+	}
+
+	section .port li a:hover{
+		opacity: 40%;
+	}
+
+
+	section .port li img{
+		width: 182px;
+		
+		
+		
+
+	}
+
+	
+
+	section .contents .icon{
+		clear:both;
+		padding-top: 25px;
+		width: 560px;
+		box-sizing: border-box;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+
+
+	section .contents .icon li{
+		float:left;
+		width: 150px;
+		margin-right: 50px;
+		text-align: center;
+		box-sizing: border-box;
+	}
+
+	section .contents .icon li a{
+		font-size: 15px;
+		color:#666;
+		
+	}
+
+	section .contents .icon li p{
+		text-align: center;padding-top: 5px;
+
+	}
+
+	section .contents .icon li a:hover p{
+
+		text-decoration: underline;
+	}
+
+
+
+	section .contents .icon li:last-child{
+		margin-right: 0;
+	}
+
+	
+	footer{
+		height: 70px;
+		background: #e0e0e0;
+		overflow: hidden;
+
+	}
+
+
+	footer h2{
+		float:left;
+		line-height: 70px;
+		margin-left: 20px;
+		
+	}
+
+	footer a{
+		display: block;
+		font-size: 12px;
+		color:#666;
+
+	}
+
+	footer .nav ul{overflow: hidden;}
+
+	footer .nav ul li{
+		float:left;
+		margin-right: 20px;
+
+	}
+
+	footer .nav ul li a{
+		font-weight: bold;
+	}
+
+	footer .nav ul li:last-child{
+		margin-right: 0;
+	}
+
+
+	footer .nav{
+		float:right;
+		margin-right: 20px;
+		margin-top: 10px;
+	}
+
+	footer .nav address{
+		font-style: normal;
+		padding:5px 5px 5px 0;
+		
+	} 
+
+	footer .nav .copy{
+		font-size: 12px;
+
+	}
+

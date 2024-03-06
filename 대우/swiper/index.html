@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>swiper</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+	
+
+	
+
+
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+		<!-- Slider main container -->
+<div class="swiper-container main_slider">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="images/201902220555000140.jpg" class="slider1"></div>
+        <div class="swiper-slide"><img src="images/202005111050316900.jpg" class="slider1"></div>
+        <div class="swiper-slide"><img src="images/202005130508091810.jpg" class="slider1"></div>
+        ...
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- 정지재생버튼 -->
+    <button type="button" class="btn_pause">
+
+      
+
+
+
+    </button>
+
+    <!-- If we need scrollbar -->
+   <!--  <div class="swiper-scrollbar"></div> -->
+</div>
+
+
+	
+	
+
+
+<script>
+  $(function(){
+
+
+var mySwiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  // direction: 'vertical',
+  loop: true,
+  autoplay:{
+  	delay:3000
+
+
+
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+
+  // // And if we need scrollbar
+  // scrollbar: {
+  //   el: '.swiper-scrollbar',
+  // },
+})
+
+var sw=0;
+$(".btn_pause").click(function(){
+  if(sw==0){
+    $('.btn_pause').addClass('on');
+    mySwiper.autoplay.stop();
+    sw=1;
+
+  }else{
+    $('.btn_pause').removeClass('on');
+    mySwiper.autoplay.start();
+    sw=0;
+  }
+
+
+})
+});
+	</script>
+
+
+</body>
+</html>
+

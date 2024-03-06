@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="이지영">
+	<meta name="keyword" content="계산기, 자바스크립트">
+	<meta name="description" content="계산기 프로그램 입니다">
+
+	<title>계산기프로그램</title>
+	<style>
+		*{margin: 0; padding: 0;}
+		.box{
+			width: 500px;
+			position: absolute;
+			left:50%; top:50%;
+			transform: translate(-50%,-50%);
+			
+
+
+		}
+
+		.box form fieldset{
+			padding: 30px 20px;
+			height: 260px;
+			
+		}
+
+		.box form fieldset label{
+			display: inline-block;
+			margin-top: 20px;
+		}
+
+		.box form fieldset input{
+			margin-left: 20px;
+			width: 290px;
+			height: 34px;
+			border:1px solid #000;
+		}
+
+
+		.box form fieldset .btn{
+			margin-top: 20px;
+		}
+
+		.box form fieldset .btn button{
+			padding:18px 20px;
+		}
+
+		
+
+
+	</style>
+</head>
+
+
+<body>
+	<div class="box">
+		<form action="">
+			<fieldset>
+				<legend>계산기</legend>
+						<label for="">첫번째입력값</label>
+						<input type="text" id="z1">
+						<label for="">두번째입력값</label>
+						<input type="text" id="z2">
+						<div class="btn">
+							<button type="button" id="b1">+</button>
+							<button type="button" id="s1">-</button>
+							<button type="button" id="m1">*</button>
+							<button type="button" id="d1">/</button>
+							<button type="button" id="w1">%</button>
+							<button type="button" id="clear">CLEAR</button>
+						</div>
+						<label for="">결과값 출력</label>
+						<input type="text" id="res">
+			</fieldset>
+		</form>
+
+
+	</div>
+
+	<script>
+		// 폼안의 데이터를 읽어들여 변수에 기억 
+		var z1 = document.getElementById("z1");
+		var z2 = document.getElementById("z2");
+		var b1 = document.getElementById("b1");
+		var s1 = document.getElementById("s1");
+		var m1 = document.getElementById("m1");
+		var d1 = document.getElementById("d1");
+		var w1 = document.getElementById("w1");
+		var cls = document.getElementById("clear");
+
+
+		//더하는 함수
+		function add(){
+			var num1 = Number(z1.value);
+			var num2 = Number(z2.value);
+			var result = num1+num2
+			res.value = result
+		}
+
+		b1.onclick = function(){
+			add();
+		}
+
+		//빼는함수
+
+		function sub(){
+			var num1 = Number(z1.value);
+			var num2 = Number(z2.value);
+			var result = num1 - num2
+			res.value = result
+
+		}
+
+
+		s1.onclick = function(){
+			sub();
+		}
+
+// clear버튼 누르면 결과값 사라지게
+
+		function dataClear(){
+			z1.value = "";
+			z2.value = "";
+			res.value = "";
+		}
+
+
+		cls.onclick = function(){
+			dataClear();
+
+		}
+
+
+		//곱하기
+
+		function mul(){
+			var num1 = Number(z1.value);
+			var num2 = Number(z2.value);
+			var result = num1 * num2
+			res.value = result
+
+		}
+
+
+		m1.onclick = function(){
+			mul();
+		}
+
+		// 나누기
+
+		function div(){
+			var num1 = Number(z1.value);
+			var num2 = Number(z2.value);
+			var result = num1 / num2
+			res.value = result
+
+		}
+
+
+		d1.onclick = function(){
+			div();
+		}
+
+		// 퍼센트
+
+		function per(){
+			var num1 = Number(z1.value);
+			var num2 = Number(z2.value);
+			var result = num1 % num2
+			res.value = result
+
+		}
+
+
+		w1.onclick = function(){
+			per();
+		}
+
+
+
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <link rel="stylesheet" href="css/reset.css">
+
+
+<style>
+    
+/*    공통부분*/
+    #wrap{
+        width:100%;
+        border:1px solid blue;
+    }
+    #wrap .base{position: relative;}
+    #wrap .base p{
+        position: absolute;
+        left:50%; bottom:20px;
+        transform: translate(-50%,0);
+        font-size:20px;
+        line-height: 30px;
+        text-align: center;
+        color:#000;
+        background:#fff;
+    }
+    .base{
+       
+        height:300px; 
+        margin:50px auto 50px;
+        }
+    
+    .base li{
+        width:150px;
+        height:150px;  
+    }
+  /*    ................................*/  
+    
+    .base1{
+        width:300px; 
+        margin:0 auto;
+        display:flex;   /*        li들이 도형크기에 상관없이 무조건 일자로 수평정렬*/
+    }
+    
+/*    ................................*/
+    .base2{
+        width:800px; 
+        display:flex; 
+        justify-content:flex-start; 
+/*        li들이 좌측부터 정렬*/
+
+              
+    
+    }
+ 
+    /*    ................................*/
+    .base3{
+        width:800px; 
+        display:flex; 
+        justify-content:flex-end;
+/*        li들이 우측부터 정렬*/
+
+              
+    
+    }
+
+     /*    ................................*/
+    .base4{
+        max-width:800px; 
+        display:flex; 
+        justify-content:center;
+/*        li들이 가운데 정렬*/
+
+              
+    
+    }
+ 
+    /*    ................................*/
+    .base4{
+        width:800px; 
+        display:flex; 
+        justify-content:center;
+/*        li들이 가운데 정렬*/
+
+              
+    
+    }
+ 
+     /*    ................................*/
+    .base5{
+        width:800px; 
+        display:flex; 
+        justify-content:space-around;
+/*        li들이 가운데 정렬(양옆에 간격생김*/
+
+              
+    
+    }
+    
+         /*    ................................*/
+    .base6{
+        width:800px; 
+        display:flex; 
+        justify-content:space-between;
+/*        li들이 가운데 정렬(양옆에 간격생김, 맨끝은 간격없음)*/
+
+              
+    
+    }
+             /*    ................................*/
+    .base7{
+        width:800px; 
+        display:flex; 
+        flex-direction:column;
+/*        li수직졍렬*/
+
+              
+    
+    }
+                 /*    ................................*/
+    .base8{
+        width:300px; 
+        display:flex; 
+        flex-wrap:wrap;
+/*      li크기가 넘치면 밑으로 내려옴*/
+
+              
+    
+    }
+                     /*    ................................*/
+    .base9{
+        width:800px; 
+        display:flex; 
+        flex-flow:column wrap;
+
+
+              
+    
+    }
+ 
+ 
+ 
+    
+/*  ------------------  반응형-----------------------*/
+    @media all and (max-width:500px){
+        .base{width:100%;}
+        #wrap{width:100%;}
+        
+    }
+    
+    
+  
+    
+    
+
+</style>
+</head>
+
+<body>
+  <div id="wrap">
+       <ul class="base base1" style="background:grey"><p>display:flex<br>도형크기에 상관없이 무조건 일자로 수평정렬</p>
+           <li class="box1" style="background:red">1</li>
+           <li class="box2" style="background:orange">2</li>
+           <li class="box3" style="background:green">3</li>
+           <li class="box4" style="background:blue">4</li>
+       </ul>
+        <ul class="base base2" style="background:grey"><p>display:flex<br>justify-content:flex-start;<br>왼쪽정렬</p>
+           <li class="box1" style="background:red">1</li>
+           <li class="box2" style="background:orange">2</li>
+           <li class="box3" style="background:green">3</li>
+           <li class="box4" style="background:blue">4</li>
+       </ul>
+        <ul class="base base3" style="background:grey"><p>display:flex<br>justify-content:flex-end;<br>오른쪽정렬</p>
+           <li class="box1" style="background:red">1</li>
+           <li class="box2" style="background:orange">2</li>
+           <li class="box3" style="background:green">3</li>
+           <li class="box4" style="background:blue">4</li>
+       </ul>
+       <ul class="base base4" style="background:grey"><p>display:flex<br>justify-content:center;<br>가운데 정렬</p>
+           <li class="box1" style="background:red">1</li>
+           <li class="box2" style="background:orange">2</li>
+           <li class="box3" style="background:green">3</li>
+           <li class="box4" style="background:blue">4</li>
+       </ul>
+       <ul class="base base5" style="background:grey"><p>display:flex<br>justify-content:space-around;<br>li들이 가운데 정렬(양옆에 간격생김</p>
+           <li class="box1" style="background:red">1</li>
+           <li class="box2" style="background:orange">2</li>
+           <li class="box3" style="background:green">3</li>
+           <li class="box4" style="background:blue">4</li>
+       </ul>
+        <ul class="base base6" style="background:grey"><p>display:flex<br>justify-content:space-between;<br> li들이 가운데 정렬(양옆에 간격생김, 맨끝은 간격없음)</p>
+           <li class="box1" style="background:red">1</li>
+           <li class="box2" style="background:orange">2</li>
+           <li class="box3" style="background:green">3</li>
+           <li class="box4" style="background:blue">4</li>
+       </ul>
+        <ul class="base base7" style="background:grey"><p>display:flex<br>flex-direction:column;<br>수직정렬</p>
+           <li class="box1" style="background:red">1</li>
+           <li class="box2" style="background:orange">2</li>
+           <li class="box3" style="background:green">3</li>
+           <li class="box4" style="background:blue">4</li>
+       </ul>
+        <ul class="base base8" style="background:grey"><p>display:flex;<br>flex-wrap:wrap;<br>li크기가 넘치면 밑으로 내려옴</p>
+           <li class="box1" style="background:red">1</li>
+           <li class="box2" style="background:orange">2</li>
+           <li class="box3" style="background:green">3</li>
+           <li class="box4" style="background:blue">4</li>
+       </ul>
+        <ul class="base base9" style="background:grey">
+           <li class="box1" style="background:red">1</li>
+           <li class="box2" style="background:orange">2</li>
+           <li class="box3" style="background:green">3</li>
+           <li class="box4" style="background:blue">4</li>
+       </ul>
+  </div>
+  
+</body>
+</html>

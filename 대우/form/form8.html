@@ -1,0 +1,96 @@
+
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+      
+/*      입력폼*/
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+/*      제출버튼*/
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* 제출 버튼 마우스 오버시 색변화*/
+input[type=submit]:hover {
+  background-color: blue;
+    
+}
+/*    폼클릭시 색변화*/
+ input[type=text]:focus {
+  background-color:red;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+input[name=search] {
+  width: 150px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+    /*    아이콘추가*/
+  background:url("/images/search.png") no-repeat 10px;  
+ background-size:20px; 
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+/*폼 클릭시 넓이 150px에서 100%로 늘어나는 애니메이션 효과*/
+input[name=search]:focus {
+    width:100%;
+}
+  
+  </style>
+ </head>
+
+
+
+ <body>
+  <div>
+      <form action="">
+         <label for="f_name">성</label>
+         <input type="text" id="f_name" name="firstname" placeholder="성을 적어주세요">
+         
+         <label for="l_name">이름</label>
+         <input type="text" id="l_name" name="lastname" placeholder="이름을 적어주세요">
+         
+         <label for="country">사는곳</label>
+         <select id="country" name="country">
+             <option value="korea">한국</option>
+             <option value="china">중국</option>
+             <option value="japan">일본</option>
+         </select>
+         <input type="text" name="search" placeholder="Search..">
+        
+          <input type="submit" value="제출">
+          
+      </form>
+  </div>
+ 
+ </body>
+</html>

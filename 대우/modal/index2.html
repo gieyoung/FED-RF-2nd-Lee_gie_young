@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>모달</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+</head>
+<style>
+/*    모달(배경색)*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: grey;
+}
+
+/*하얀색 박스*/
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/*닫기버튼*/
+.close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
+
+<body>
+<!--   버튼 클릭시 팝업창 뜸-->
+<button id="myBtn" onClick="open2()">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onClick="cancle()">Χ</span>
+    <!--   닫기버튼-->
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
+    
+
+
+
+
+<script>
+    function open2(){
+       $(".modal").css("display","block");
+//       모달팝업 오픈
+					}
+					
+	function cancle(){
+		$(".modal").css("display","none");
+//        모달팝업 닫힘
+                        
+	}
+
+//   // Get the modal
+//var modal = document.getElementById("myModal");
+//
+//// Get the button that opens the modal
+//var btn = document.getElementById("myBtn");
+//
+//// Get the <span> element that closes the modal
+//var span = document.getElementsByClassName("close")[0];
+//
+//// When the user clicks on the button, open the modal
+//btn.onclick = function() {
+//  modal.style.display = "block";
+//}
+//
+//// When the user clicks on <span> (x), close the modal
+//span.onclick = function() {
+//  modal.style.display = "none";
+//}
+//
+//// When the user clicks anywhere outside of the modal, close it
+//window.onclick = function(event) {
+//  if (event.target == modal) {
+//    modal.style.display = "none";
+//  }
+//}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>커피그루나루</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<script src="js/slick.js"></script>
+
+<script>
+		$(document).ready(function(){
+			$('.slide').slick({
+    		autoplay:true,
+    		dots:true,
+    		autoplaySpeed:3000,
+    		arrows:true,
+    		pauseOnhover:true
+    		
+  		});
+
+			$('button').click(function(){
+				$('.banner').slideUp();
+				$('header').animate({"top":0});
+
+			})
+
+			$('.gnb').mouseenter(function(){
+				$('header').stop().animate({"height":400},300);
+				$('.depth2').stop().slideDown(300);
+				
+
+			})
+
+			$('header').mouseleave(function(){
+				$('header').stop().animate({"height":103},300);
+				$('.depth2').stop().slideUp(300);
+				
+
+			})
+
+			$('.tab li a').click(function(){
+				var num=$(this).index();
+				console.log(num);
+				$('.tab1').removeClass('on');
+				$(this).addClass('on');
+
+				// $('tab1').hide();
+				// $('tab1').eq(num).show();
+				
+
+			})
+
+
+
+
+
+
+		});
+</script>
+
+</head>
+
+
+<body>
+			<div class="banner">
+				<div class="visual"><button>close</button></div>
+			</div>
+<!-- 퀵메뉴 -->
+
+			<div class="quick"><a href="javascript:;"></a></div>
+			<div class="quick2"><a href="javascript:;">
+				<h2>개설문의</h2>
+				<h3>010-4874-2900</h3>
+				<input type="text" maxlength="10" placeholder="이름" class="input1">
+				<input type="text" maxlength="13" placeholder="연락처(-없이 입력)" class="input2">
+				<input type="textarea" placeholder="문의" class="input3">
+				<ul>
+					<li>개인정보 처리방침</li>
+					<li><input type='checkbox'></li>
+					<li>[자세히보기]</li>
+				</ul>
+
+				<button type='button' class='b1'>보내기</button>
+				<button type='button' class='b2'>TOP</button>
+			</a></div>
+
+<!-- 헤더 -->
+	<header>
+
+		<div class="header_inner">
+			<ul class="header_top">
+				<li><a href="javascript:;">로그인</a></li>
+				<li><a href="javascript:;">회원가입</a></li>
+				<li><a href="javascript:;">아카데미</a></li>
+				<li><a href="javascript:;">커핀그루나루 APP</a></li>
+			</ul>
+
+			
+			<h1><a href="javascript:;">logo</a></h1>
+			<div class="gnb">
+
+				<ul class="gnb_left">
+					<li>
+						<a href="javascript:;">MENU</a>
+							<ul class="depth2">
+								<li><a href="javascript:;">New & Best</a></li>
+								<li><a href="javascript:;">Theme Menu</a></li>
+								<li><a href="javascript:;">Coffee</a></li>
+								<li><a href="javascript:;">Tea & Beverage</a></li>
+								<li><a href="javascript:;">Wine</a></li>
+								<li><a href="javascript:;">Dessert</a></li>
+								<li><a href="javascript:;">MD</a></li>
+							</ul>
+
+					</li>
+					<li><a href="javascript:;">STORE</a>
+						<ul class="depth2">
+								<li><a href="javascript:;">매장찾기</a></li>
+								<li><a href="javascript:;">신규매장</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:;">EVENT</a>
+						<ul class="depth2">
+								<li><a href="javascript:;">진행중인 이벤트</a></li>
+								<li><a href="javascript:;">종료된 이벤트</a></li>
+								<li><a href="javascript:;">당첨자 발표</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:;">MEMBERSHIP</a>
+						<ul class="depth2">
+								<li><a href="javascript:;">퍼플멤버스 소개</a></li>
+								<li><a href="javascript:;">퍼플멤버스 혜택</a></li>
+								<li><a href="javascript:;">퍼플멤버스 충전형<br>/기프트 카드</a></li>
+								<li><a href="javascript:;">자주 묻는 질문</a></li>
+						</ul>
+					</li>
+					
+				</ul>
+
+				
+
+				<ul class="gnb_right">
+					<li><a href="javascript:;">COMMUNITY</a>
+						<ul class="depth2">
+								<li><a href="javascript:;">새소식</a></li>
+								<li><a href="javascript:;">자주 묻는 질문</a></li>
+								<li><a href="javascript:;">고객의 소리</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:;">FRANCSHISE</a>
+							<ul class="depth2">
+								<li><a href="javascript:;">가맹안내</a></li>
+								<li><a href="javascript:;">투자비용</a></li>
+								<li><a href="javascript:;">인테리어</a></li>
+								<li><a href="javascript:;">자주 묻는 질문</a></li>
+								<li><a href="javascript:;">개설문의</a></li>
+								<li><a href="javascript:;">지원 제도</a></li>
+								<li><a href="javascript:;">해외 사업</a></li>
+								<li><a href="javascript:;">점주광장</a></li>
+							</ul>
+					</li>
+					<li><a href="javascript:;">COFFINE STORY</a>
+						<ul class="depth2">
+								<li><a href="javascript:;">커핀그루나루 소개</a></li>
+								<li><a href="javascript:;">Coffee + Wine</a></li>
+								<li><a href="javascript:;">메뉴 스토리</a></li>
+								<li><a href="javascript:;">광고자료</a></li>
+								<li><a href="javascript:;">글로벌 브랜드</a></li>
+								<li><a href="javascript:;">사회공헌</a></li>
+								<li><a href="javascript:;">채용정보</a></li>
+								<li><a href="javascript:;">찾아오시는 길</a></li>
+						</ul>
+
+					</li>
+				</ul>
+		</div>
+		</div>
+	</header>
+
+	<main>
+		<div class="slide">
+			<div class="img1"><a href="javascript:;"><img src="images/HmUcPu5lVZiFYzyq_20200525.jpg"></a></div>
+			<div class="img2"><a href="javascript:;"><img src="images/9tJ0DxpSKVLzITqP_20180222.jpg"></a></div>
+			<div class="img3"><a href="javascript:;"><img src="images/VCwDjtlryWp432ON_20171106.jpg"></a></div>
+			<div class="img4"><a href="javascript:;"><img src="images/6OM7BRCGhliYwztX_20161212.jpg"></a></div>
+			<div class="img5"><a href="javascript:;"><img src="images/sMkbYCLarlo0f7Ow_20160204.jpg"></a></div>
+		</div>
+
+
+
+
+		<div class="section1">
+			<div class="section1_inner">
+				<ul>
+					<li class="b1">
+						<h2>Coffine Story</h2>
+						<p>커핀그루나루의 이야기입니다.</p>
+						<a href="javascript:;"><img src="images/btn_main_intro_go.gif"></a>
+						<img src="images/main_intro_img1.jpg">
+					</li>
+
+					<li class="b2">
+						<a href="javascript:;"><img src="images/mnUo8ZWBcivL4sIg_20160126.png"></a>
+					</li>
+
+
+					<li class="b1">
+						<h2>Store Search</h2>
+						<p>가까운 커핀그루나루를 만나보세요.</p>
+						<a href="javascript:;"><img src="images/btn_main_intro_go.gif"></a>
+						<img src="images/main_intro_img2.jpg">
+					</li>
+				</ul>
+			</div>  <!-- 섹션1이너 끝 -->
+		</div> <!-- 섹션1끝 -->
+
+<!-- 섹션2 -->
+
+		<div class="section2">
+			<div class="section2_inner">
+				<h2>NEW <span>&</span> BEST</h2>
+				<div class="b1">
+					<a href="javascript:;"><img src="images/A5hfEBtSKR9TzJ7O_20160122.png"></a>
+				</div>
+
+
+				<div class="b2">
+					<ul>
+						<li><a href="javascript:;">
+							<p><img src="images/wQsamc3xWPUH1ypo_20191126.png"></p>
+							<h3>밀키라떼(HOT/ICED)</h3>
+							<p>Milky Latte</p>
+						</a></li>
+
+			
+						<li><a href="javascript:;">
+							<p><img src="images/3R5aAkGTQil9JyHc_20191126.png"></p>
+							<h3>더블 카페라떼(HOT/ICED)</h3>
+							<p>Doble Caffe Latte</p>
+						</a></li>	
+
+
+	
+						<li><a href="javascript:;">
+								<p><img src="images/XbD4nSmPvu5EhwCK_20191002.png"></p>
+								<h3>흑당 라떼(HOT/ICED)</h3>
+								<p>Black Sugar Latte</p>
+							</a></li>
+						
+				
+						
+					
+						<li><a href="javascript:;">
+								<p><img src="images/w796Z1dCKSnkJGe0_20191002.png"></p>
+								<h3>흑당 큐브 브래드</h3>
+								<p>Black Sugar Cube Bread</p>
+						</a></li>
+						
+					</ul>	
+			
+				</div><!-- b2끝 -->
+			</div><!-- section2_inner끝 -->
+		</div><!-- section2 -->
+
+
+<!-- 섹션3 -->
+
+	<div class="section3">
+		<div class="section3_inner">
+			<!-- <img src="images/main_menu_banner_img.png"> -->
+			<h2>프리미엄 액상 <strong>블랙 / 스위트</strong></h2>
+			<p>원두추출액을 90%사용하여 진한 커피의 향과 맛을 담았습니다.</p>
+			<button type="button">VIEW MORE ></button>
+			<h3></h3>
+		</div>
+	</div>
+
+
+<!-- 섹션4 -->
+
+	<div class="section4">
+		<div class="section4_inner">
+			<div class="box1"><a href="javascript:;"><img src="images/CaYidjnEzb5qtJMk_20160126.jpg"></a></div>
+			<div class="box23">
+				<div class="box2"><a href="javascript:;">
+					<h2>사회공헌</h2>
+					<p>커핀그루나루는 지역사회에<br>
+						이바지하는<br>
+						사회적 책임을 수행합니다.
+					</p>
+					<h3></h3>
+				</a></div>
+				<div class="box3"><a href="javascript:;">
+					<h2>RECRUIT</h2>
+					<p>당신의 꿈과 열정을<br>
+						커핀그루나루와 함께 마음껏 펼치세요	
+					</p>
+					<h3></h3>
+				</a></div>
+			</div>
+			<div class="box4"><a href="javascript:;"><img src="images/main_article_section3.jpg">
+				<div class="box4_b">
+					<h2>COFFINE<br>FRANCHISE</h2>
+					<p>커핀그루나루만의 노하우를 가지고<br>
+						성공적인 창업방법을 알려드립니다.		
+					</p>
+					<h3></h3>
+				</div>
+			</a></div>
+		</div>
+	</div>
+
+
+	<!-- 섹션5 -->
+	<div class="section5">
+		<div class="section5_inner">
+			<ul class="tab">
+				<li class="tab1"><a href="javascript:;">FACE BOOK</a></li>
+				<li class="tab2"><a href="javascript:;">INSTAGRAM</a></li>
+			</ul>
+			
+		</div>
+	</div>
+
+	</main>
+
+
+	<!-- footer -->
+
+
+	<footer>
+		<div class="footer_inner">
+		     <div class="info">
+		     	<h3><img src="images/ft_logo.gif"></h3>
+		     	<ul class=info1>
+		     		<li><a href="javascript:;">마케팅 제휴문의</a></li>
+		     		<li><a href="javascript:;">원 · 부자재 문의</a></li>
+		     		<li><a href="javascript:;">개인정보취급방침</a></li>
+		     		<li><a href="javascript:;">이용약관</a></li>
+		     	</ul>
+		     	
+		     	
+		     	 <ul class="info2">
+		     		<li><a href="javascript:;">찾아오시는 길</a></li>
+		     		<li><a href="javascript:;">신규입점제안</a></li>
+		     		<li><a href="javascript:;">전체메뉴</a></li>
+		     	</ul>
+
+		     	<ul class="sns">
+		     		<li><a href="javascript:;"><img src="images/ft_sns_facebook.png"></a></li>
+		     		<li><a href="javascript:;"><img src="images/ft_sns_instagram.png"></a></li>
+		     		<li><a href="javascript:;"><img src="images/ft_speaker.png"></a></li>
+		     	</ul>
+		     </div>
+
+
+		     <address>사업자등록번호 215-87-06529 서울시 송파구 백제고분로114 대표자 김은희    고객센터 02-2202-0791 FAX 02-2202-0807<br>COPYRIGHT© 2016 COFFINE GURUNARU ALL RIGHTS RESERVED.
+		     </address>
+
+
+			
+
+
+
+
+		</div>
+		
+
+
+
+	</footer>
+
+
+
+	
+</body>
+</html>

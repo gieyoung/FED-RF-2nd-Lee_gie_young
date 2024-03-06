@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>애니메이션 함수 복습</title>
+	<script src="js/jquery-3.4.0.min.js"></script>
+	<style>
+		*{margin: 0; padding: 0;}
+
+		h1{
+			margin-bottom: 10px;
+		}
+
+		button{
+			margin:10px 0;
+		}
+
+		.wrapb1{
+			width: 400px;
+			height: 200px;
+			border:5px solid #ccc;
+			overflow: hidden;
+			margin:20px 0;
+		}
+
+		.box1{
+			background: red;
+			width: 200px;
+			height: 200px;
+			float:left;
+
+		}
+
+		.box2{
+			background:green;
+			width: 200px;
+			height: 200px;
+			float:left;
+		}
+
+		.wrapb2{
+			width: 400px;
+			height: 200px;
+			border:5px solid #ccc;
+			overflow: hidden;
+
+		}
+
+		.box3{
+			background:yellow;
+			width: 200px;
+			height: 200px;
+			float:left;
+		}
+
+		.box4{
+			background:blue;
+			width: 200px;
+			height: 200px;
+			float:left;
+		}
+
+		
+
+
+	</style>
+
+	<script>
+		$(document).ready(function(){
+			$("#btn1").click(function(){
+				$(".box1").fadeOut();
+			})
+
+			$("#btn2").click(function(){
+				$(".box1").fadeIn();
+
+			})
+
+			$("#btn3").click(function(){
+				$(".box2").fadeToggle();
+			})
+
+			$("#btn4").click(function(){
+				$(".box3").slideUp();
+
+
+
+			})
+
+			$("#btn5").click(function(){
+				$(".box3").slideDown();
+
+			})
+
+			$("#btn6").click(function(){
+				$(".box4").slideToggle();
+			})
+			
+
+
+
+
+
+		});
+
+
+
+
+		
+
+
+
+	</script>
+
+
+
+</head>
+
+
+
+<body>
+	<h1>[jQuery 애니메이션 관련 메서드]</h1>
+	<ol>
+
+		<li>$("대상).fadeOut(); 대상이 사라짐</li>
+		<li>$("대상").fadeIn(); 숨겨져 있던 대상이 보임</li>
+		<li>$("대상").fadeToggle(); 클릭-사라짐-클릭-나타남</li>
+		<li>$("대상").slideUp.(); 클릭하면 대상의 높이가 0(사라짐)</li>
+		<li>$("대상).slideDown.(); 클릭하면 대상의 높이가 설정된 높이로 복구(나타남)</li>
+		<li>$("대상").slideToggle(); 클릭-높이0-클릭-높이복구</li>
+		
+	</ol>
+
+	<button type="button" id="btn1">fadeOut</button>
+	<button type="button" id="btn2">fadeIn</button>
+	<button type="button" id="btn3">fadeToggle</button>
+	<button type="button" id="btn4">slideUp</button>
+	<button type="button" id="btn5">slidDown</button>
+	<button tupe="button" id="btn6">slideToggle</button>
+	<hr>
+	<div class="wrapb1">
+		<div class="box1">fadeOut/fadeIn</div>
+		<div class="box2">fadeToggle</div>
+	</div>
+
+	<div class="wrapb2">
+		<div class="box3">slideDown/slideUp</div>
+		<div class="box4">slideToggle</div>
+		
+
+
+	</div>
+
+	
+</body>
+
+
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>에버그룹</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<script src="js/jquery-3.5.0.min.js"></script>
+</head>
+
+
+<body>
+
+	<!-- 커버 -->
+	<div class="cover"></div>
+	<!-- 모바일메뉴 -->
+	<div class="m_gnb">
+		<div class="m_home">
+			<a href="javascript:;" class="btn_home"><img src="images/btn_side_home (1).png"></a>
+			<button type="button" class="btn_close"><img src="images/btn_side_close.png"></button>
+		</div>
+	
+
+	<!-- 모바일메뉴2 -->
+	<ul class="m_menu">
+		<li><a href="javascript:;">COMPANY</a></li>
+		<li><a href="javascript:;">BUSINESS</a></li>
+		<li><a href="javascript:;">RECRUIT</a></li>
+		<li><a href="javascript:;">CUSTOMER</a></li>
+		<li><a href="javascript:;">SITE MAP</a></li>
+	</ul>
+
+	<ul class="m_lang">
+		<li><a href="javascript:;">KOR</a></li>
+		<li><a href="javascript:;">ENG</a></li>
+		<li><a href="javascript:;">CHN</a></li>
+	</ul>
+
+	<p class="copy">
+		COPURIGHT&copy;2016 EVER GROUP<br>ALL RIGHTS RESERVED
+
+
+	</p>
+</div>
+
+
+
+
+	<div class="header">
+		<div class="header_inner">
+			<h1><a href="index.html"><img src="images/logo.png" alt="로고"></a></h1>
+			<ul class="gnb">
+				<li><a href="javascript:;">COMPANY</a></li>
+				<li><a href="javascript:;">BUSINESS</a></li>
+				<li><a href="javascript:;">RECRUIT</a></li>
+				<li><a href="javascript:;">CUSTOMER</a></li>
+			</ul>
+
+			<ul class="util">
+				<li><a href="javascript:;">SITE MAP</a></li>
+				<li><a href="javascript:;">ENG</a></li>
+				
+
+			</ul>
+
+			<button type="button" class=m_btn><img src="images/header_mobile_list.png"></button>
+			
+		</div>
+
+		
+
+	</div>
+
+
+	<div class="main">
+		<div class="visual">
+			
+		</div>
+		
+
+	</div>
+
+	<script>
+		$(function(){
+			$('.m_btn').click(function(){
+				$('.m_gnb').animate({'right':0},300);
+				$('.cover').fadeIn(500);
+
+			})
+
+
+			$('.btn_close, .btn_home, .cover').click(function(){
+				$('.m_gnb').animate({'right':-200},300);
+				$('.cover').fadeOut(500);
+
+			})
+
+
+
+
+		});
+
+		
+
+
+
+	</script>
+	
+</body>
+</html>

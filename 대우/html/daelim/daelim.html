@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>대림산업</title>
+  <link rel="stylesheet" href="css/slick.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script src="js/jquery-3.5.0.min.js"></script>
+  <script src="js/slick.js"></script>
+
+
+
+  <script>
+
+
+
+    $(document).ready(function(){
+      // 전체메뉴구현
+      $(".gnb").mouseenter(function(){
+        $("#header").stop().animate({'height':322},300);
+        $(".depth2").stop().slideDown(300);
+      })
+      $("#header").mouseleave(function(){
+        $("#header").stop().animate({'height':70},300);
+        $(".depth2").stop().slideUp(300);
+      })
+
+    });
+
+</script>
+
+
+  <style>
+  *{margin:0; padding:0; vertical-align:top;}
+  #header{width:100%;border-bottom:1px solid #d0d0d0;}
+  #header .header_inner{width:1200px; height:70px;
+  margin: auto;}
+  body{font-family:"Noto Sans KR", "맑은 고딕", "malgun gothic","돋움","dotum","sans-serif";font-size:16px;}
+  li{list-style:none;}
+  a{text-decoration:none;}
+
+   #header{
+    width: 100%;
+    height: 70px;
+   }
+   #header .header_inner h1{float:left;margin-top:25px;}
+   #header .header_inner .gnb{float:left; margin-left:54px;}
+   #header .header_inner .gnb>li{float:left;margin-right:64px; position: relative;}
+   #header .header_inner .gnb>li:nth-child(7){margin-right:0;}
+   #header .header_inner .gnb>li>a{height:70px;display:block;line-height:70px;color:#222; font-size:16px;font-weight:500;}
+   #header .header_inner .gnb>li>a:hover{color:#2f6aaf;}
+
+
+/*2단메뉴*/
+
+
+
+  #header .header_inner .gnb>li >.depth2{
+    position: absolute;
+    left:-13px;
+    border:1px solid #ccc;
+    padding-left:15px;
+    background: #fff;
+    padding-right: 10px;
+    display: none;
+
+  }
+
+
+
+
+   #header .header_inner .gnb>li >.depth2 li{
+      padding-top: 20px;
+
+   }
+
+   #header .header_inner .gnb>li:nth-child(4) .depth2{
+    padding-right: 40px;
+   }
+
+
+
+
+
+  #header .header_inner .gnb>li >.depth2 li a{ 
+    display: inline-block;
+    width: 95px;
+    font-size: 14px;
+    color: #727272;
+    font-weight: 300;
+    border:1px solid blue;
+
+
+  }
+
+
+#header .header_inner .gnb>li >.depth2 li a:hover{
+  color:#308bd5;
+
+}
+
+
+
+
+
+ 
+
+
+
+
+   #header .header_inner .util{float:right;overflow:hidden; margin-top:28px;}
+   #header .header_inner .util li{float:left;}
+   #header .header_inner .util li:nth-child(2){margin-top:2px;}
+   #header .header_inner .util li{margin-left:14px;}
+   #header .header_inner .util li:nth-child(1){margin-left:0;}
+
+  .main{width:100%;}
+  .main .visual{height:920px; 
+          background:url("images/main_01_01.jpg") no-repeat center top;}
+
+
+  /*footer*/
+  .footer{
+    width: 100%;
+    background:#e1e1e1; 
+
+  }
+
+  .footer .footer_inner{
+    width: 1200px;
+    height: 90px;
+   /* border: 1px solid red;*/
+    margin:auto;
+  }
+
+
+  .footer .footer_inner .left{
+    float: left;
+  }
+
+
+  .footer .footer_inner .left .footer_info{
+    padding-top: 25px;
+  }
+
+
+  .footer .footer_inner .left .footer_info li{
+    float: left;
+    padding: 0 15px;
+    position: relative;
+    /*border: 1px solid red;*/
+  }
+
+  .footer .footer_inner .left .footer_info li:nth-child(3) a{
+    color:#2b4a90;
+    font-weight: bold;
+  }
+
+  .footer .footer_inner .left .footer_info li a:hover{
+    text-decoration: underline;
+
+  }
+
+
+  /*경계선*/
+
+  .footer .footer_inner .left .footer_info li::before{
+    content:"";
+    position: absolute;
+    left: 0; top:0;
+    width: 1px; height: 11px;
+    background:#989898;
+    top:5px;
+
+  }
+
+  .footer .footer_inner .left .footer_info li:first-child{
+    padding-left:0;
+
+  }
+
+  .footer .footer_inner .left .footer_info li:first-child::before{
+    display: none;
+  }
+
+  .footer .footer_inner .left .footer_info li:last-child::before{
+    display: none;
+  }
+
+  /*경계선 끝*/
+
+  .footer .footer_inner .left .footer_info li:last-child img{
+    width: 53px;
+    margin-top: -10px;
+  }
+
+
+  .footer .footer_inner .left .footer_info li a{
+    color:#222;
+    font-size:13px;
+  }
+
+
+  .footer .footer_inner .left address{
+    font-size: 13px;
+    font-style: normal;
+    margin-top: 35px;
+
+  }
+
+
+  .footer .footer_inner .family{
+    float:right;
+    margin-top: 13px;
+  }
+
+  .footer .footer_inner .family .btn_family{
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid #222;
+    text-align: left;
+    cursor: pointer;
+    background: transparent url("images/ico_plus.png") no-repeat right center;
+  }
+    
+
+
+
+
+  
+ 
+  </style>
+ </head>
+
+
+ <body>
+ <div id="header">
+	<div class="header_inner">
+		<h1><a href="daelim.html"><img src="images/pic_mtopLogo.png" alt="대림산업로고"></a></h1>
+
+		<ul class="gnb">
+			<li><a href="#">회사소개</a>
+        <ul class="depth2">
+          <li><a href="javascript:;">기업정보</a></li>
+          <li><a href="javascript:;">CEO 인사말</a></li>
+          <li><a href="javascript:;">기업연혁</a></li>
+          <li><a href="javascript:;">그룹사현황</a></li>
+          <li><a href="javascript:;">CONTACT</a></li>
+        </ul>
+      </li>
+			<li><a href="#">사업소개</a>
+        <ul class="depth2">
+          <li><a href="javascript:;">사업개요</a></li>
+          <li><a href="javascript:;">건축</a></li>
+          <li><a href="javascript:;">주택</a></li>
+          <li><a href="javascript:;">토목</a></li>
+          <li><a href="javascript:;">플랜트</a></li>
+        </ul>
+      </li>
+			<li><a href="#">기술혁신</a>
+        <ul class="depth2">
+          <li><a href="javascript:;">기술개발원소개</a></li>
+          <li><a href="javascript:;">주요연구분야</a></li>
+          <li><a href="javascript:;">지식재산권</a></li>
+          <li><a href="javascript:;">대림기술정보</a></li>
+        </ul>
+      </li>
+			<li><a href="#">지속가능경영</a>
+        <ul class="depth2">
+          <li><a href="javascript:;">정도경영</a></li>
+          <li><a href="javascript:;">상생경영</a></li>
+          <li><a href="javascript:;">품질경영권</a></li>
+          <li><a href="javascript:;">안전보건경영</a></li>
+          <li><a href="javascript:;">환경경영</a></li>
+          <li><a href="javascript:;">사회공헌</a></li>
+          <li><a href="javascript:;">성과보고</a></li>
+        </ul>
+      </li>
+			<li><a href="#">투자정보</a>
+        <ul class="depth2">
+          <li><a href="javascript:;">IR소식</a></li>
+          <li><a href="javascript:;">주식정보</a></li>
+          <li><a href="javascript:;">재무정보</a></li>
+          <li><a href="javascript:;">기업지배구조</a></li>
+        </ul>
+      </li>
+			<li><a href="#">홍보센터</a>
+        <ul class="depth2">
+          <li><a href="javascript:;">대림소식</a></li>
+          <li><a href="javascript:;">미디어센터</a></li>
+          <li><a href="javascript:;">대림스토리</a></li>
+          <li><a href="javascript:;">다운로드센터</a></li>
+          <li><a href="javascript:;">CI/BI소개</a></li>
+          <li><a href="javascript:;">대림역사관</a></li>
+        </ul>
+      </li>
+			<li><a href="#">인재채용</a>
+         <ul class="depth2">
+          <li><a href="javascript:;">인재상</a></li>
+          <li><a href="javascript:;">인사제도</a></li>
+          <li><a href="javascript:;">직무소개</a></li>
+          <li><a href="javascript:;">채용정보</a></li>
+        </ul>
+      </li>
+        </ul>
+
+		<ul class="util">
+			<li><a href="#"><img src="images/ico_mTopetc01.png" alt="검색"></a></li>
+			<li><a href="#"><img src="images/ico_mTopetc02.png" alt="영어버전"></a></li>
+			<li><a href="#"><img src="images/ico_mTopetc04.png" alt="전체메뉴"></a></li>
+		</ul>
+
+	
+
+	</div>
+
+
+
+  <!-- main -->
+
+
+  <div class="main">
+    <div class="visual"></div>  
+
+
+  </div>
+
+
+
+  <!-- footer -->
+
+
+  <div class="footer">
+    <div class="footer_inner">
+      <div class="left">
+          <ul class="footer_info">
+                <li><a href="#">전자공고</a></li>
+                <li><a href="#">원가절감제안</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">영상정보처리기기운영관리방침</a></li>
+                <li><a href="#">이메일무단수집거부</a></li>
+                <li><a href="#">사이트맵</a></li>
+                <li><a href="#">사옥안내</a></li>
+                <li><a href="#">고객문의</a></li>
+                 <li><a href="#"><img src="images/wa_mark.png"></a></li>
+          </ul>
+
+
+          <address>
+               서울특별시 종로구 종로1길 36 대림빌딩 
+              COPYRIGHT (c) 2016 DAELIM All RIGHTS RESERVED.
+          </address>
+        
+      </div>
+      
+
+
+      <div class="family">
+        <button type="button" class="btn_family">패밀리사이트</button>
+     <!--      <ul class="list">
+            <li><a href="#">관련사이트</a></li>
+            <li><a href="#">포스코그룹사</a></li>
+            <li><a href="#">포스코 해외법인</a></li>
+            <li><a href="#">포스코 철강제품</a></li>
+            <li><a href="#">포스코 뉴스룸</a></li>
+            <li><a href="#">포스코 역사관</a></li>
+            <li><a href="#">세계철강협회</a></li>
+            <li><a href="#">한국철강협회</a></li>
+          </ul> -->
+      </div>  
+    </div>    
+  </div>      
+</body>
+</html>
+    
+
+
+ 
+	
+
+
+
+  

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<style>
+		.section{width: 100%;background: #fff;border-bottom: 1px solid #ccc;}
+		.section .gnb{width: 500px;border: 1px solid red;margin: 0 auto;overflow: hidden;position: relative;}
+		.section .gnb a{display: block;float: left;width: 100px;height: 40px;line-height: 40px;text-align: center;color: #000;}
+		.section .gnb a.on{color: red;}
+		.section .gnb a span{position: absolute;left: 0;bottom: 0;width: 100px;height: 5px;background: #000;transition: all 0.5s ease;}
+		.section .gnb a:nth-child(1).on~span{left: 0;opacity: 1;}
+		.section .gnb a:nth-child(2).on~span{left: 100px;opacity: 1;}
+		.section .gnb a:nth-child(3).on~span{left: 200px;opacity: 1;}
+		.section .gnb a:nth-child(4).on~span{left: 300px;opacity: 1;}
+		.section .gnb a:nth-child(5).on~span{left: 400px;opacity: 1;}
+
+	</style>
+	<script>
+		$(document).ready(function(){
+			$('.gnb a').mouseenter(function(){
+				console.log("클릭")
+
+				$(this).siblings().removeClass('on');
+				$(this).addClass('on');
+				
+				var num = $(this).index();
+				if(num==0){
+					$('span').animate({'left':0},100)
+				}else if(num==1){
+					$('span').animate({'left':100},100)
+				}else if(num==2){
+					$('span').animate({'left':200},100)
+				}else if(num==3){
+					$('span').animate({'left':300},100)
+				}else{
+					$('span').animate({'left':400},100)
+				}
+
+		});
+		});
+	</script>
+</head>
+<body>
+	<div class="section">
+		<div class="gnb">
+			<a href="#"><span></span>menu1</a>
+			<a href="#"><span></span>menu2</a>
+			<a href="#"><span></span>menu3</a>
+			<a href="#"><span></span>menu4</a>
+			<a href="#"><span></span>menu5</a>
+		</div>
+	</div>
+</body>
+</html>

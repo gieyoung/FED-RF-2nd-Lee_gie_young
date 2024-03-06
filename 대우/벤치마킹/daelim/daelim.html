@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>대림산업</title>
+ <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <script src="js/jquery-3.5.0.min.js"></script>
+  <script src="js/slick.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+
+<script>
+    
+    
+    
+  $(document).ready(function(){
+      
+//      슬라이드
+      $('.bxslider').bxSlider({ 
+          auto: true, 
+          speed: 3000, 
+          pause: 5000, 
+          mode:'fade', 
+          autoControls: false, 
+          pager:false,
+      });
+
+
+      
+//      2단메뉴
+    $(".gnb").mouseenter(function(){
+        $(".nav_cover").stop().slideDown(200);
+        $(".depth2").stop().slideDown(200);
+        $(".depth2_img").stop().slideDown(200);
+       
+
+      });
+
+    $(".gnb").mouseleave(function(){
+        $(".nav_cover").stop().slideUp(200);
+        $(".depth2").stop().slideUp(200);
+        $(".depth2_img").stop().slideUp(200);
+      });
+      
+      
+    $(".depth2_img").mouseleave(function(){
+        $(".depth2_img").stop().slideUp(200);
+        
+      });
+      
+  
+//     모달
+
+    $(".v1").click(function(){
+      $(".m_cover").fadeIn();
+      $(".modal1").fadeIn();
+   });
+
+    
+
+    $(".m_close").click(function(){
+      $(".m_cover").fadeOut();
+      $(".modal1").fadeOut();
+
+ });
+
+    $(".v2").click(function(){
+      $(".m_cover").fadeIn();
+      $(".modal2").fadeIn();
+ });
+
+    $(".m_close").click(function(){
+      $(".m_cover").fadeOut();
+      $(".modal2").fadeOut();
+
+ });
+
+     $(".v3").click(function(){
+      $(".m_cover").fadeIn();
+      $(".modal3").fadeIn();
+ });
+
+    $(".m_close").click(function(){
+      $(".m_cover").fadeOut();
+      $(".modal3").fadeOut();
+
+ });
+      
+      
+//      패밀리사이트
+
+    $(".btn_family").click(function(){
+      $(".t_wrap").fadeToggle();
+        $(".f_open").toggleClass('on');
+
+ });
+      $(".f_close2").click(function(){
+      $(".t_wrap").fadeOut();
+        
+
+ });
+
+     
+
+
+  });
+
+</script>
+
+  
+ </head>
+
+
+ <body>
+ 
+ <div class="m_cover"></div>
+ <div class="nav_cover">
+    
+ </div>
+
+  
+
+ <div id="header">
+	<div class="header_inner">
+		<h1><a href="daelim.html"><img src="images/pic_mtopLogo.png" alt="대림산업로고"></a></h1>
+
+		<ul class="gnb">
+			<li><a href="#">회사소개</a>
+        <ul class="depth2">
+          <li><a href="javascript:;">기업정보</a></li>
+          <li><a href="javascript:;">CEO 인사말</a></li>
+          <li><a href="javascript:;">기업연혁</a></li>
+          <li><a href="javascript:;">그룹사현황</a></li>
+          <li><a href="javascript:;">CONTACT</a></li>
+        </ul>
+      </li>
+
+			<li><a href="#">사업소개</a>
+        <ul class="depth2">
+          <li><a href="javascript:;">사업개요</a></li>
+          <li><a href="javascript:;">건축</a></li>
+          <li><a href="javascript:;">주택</a></li>
+          <li><a href="javascript:;">토목</a></li>
+          <li><a href="javascript:;">플랜트</a></li>
+        </ul>
+      </li>
+
+			<li><a href="#">기술혁신</a>
+        <ul class="depth2">
+          <li><a href="javascript:;">기술개발원소개</a></li>
+          <li><a href="javascript:;">주요연구분야</a></li>
+          <li><a href="javascript:;">지식재산권</a></li>
+          <li><a href="javascript:;">대림기술정보</a></li>
+        </ul>
+      </li>
+
+			<li><a href="#">지속가능경영</a>
+        <ul class="depth2">
+          <li><a href="javascript:;">정도경영</a></li>
+          <li><a href="javascript:;">상생경영</a></li>
+          <li><a href="javascript:;">품질경영권</a></li>
+          <li><a href="javascript:;">안전보건경영</a></li>
+          <li><a href="javascript:;">환경경영</a></li>
+          <li><a href="javascript:;">사회공헌</a></li>
+          <li><a href="javascript:;">성과보고</a></li>
+        </ul>
+      </li>
+
+			<li><a href="#">투자정보</a>
+        <ul class="depth2">
+          <li><a href="javascript:;">IR소식</a></li>
+          <li><a href="javascript:;">주식정보</a></li>
+          <li><a href="javascript:;">재무정보</a></li>
+          <li><a href="javascript:;">기업지배구조</a></li>
+        </ul>
+      </li>
+
+			<li><a href="#">홍보센터</a>
+        <ul class="depth2">
+          <li><a href="javascript:;">대림소식</a></li>
+          <li><a href="javascript:;">미디어센터</a></li>
+          <li><a href="javascript:;">대림스토리</a></li>
+          <li><a href="javascript:;">다운로드센터</a></li>
+          <li><a href="javascript:;">CI/BI소개</a></li>
+          <li><a href="javascript:;">대림역사관</a></li>
+        </ul>
+      </li>
+
+			<li><a href="#">인재채용</a>
+         <ul class="depth2">
+          <li><a href="javascript:;">인재상</a></li>
+          <li><a href="javascript:;">인사제도</a></li>
+          <li><a href="javascript:;">직무소개</a></li>
+          <li><a href="javascript:;">채용정보</a></li>
+        </ul>
+        
+        
+         <ul class="depth2_img"><a href="#">
+         <div class="text">
+      <li><h2>석유화학사업부</h2></li>
+      <li><a href="javascript:;">바로가기></a></li>
+         <li><img src="images/main_nav_banner.jpg"></li>
+         </div>
+         </a>
+    </ul>   
+      </li>
+  </ul><!-- gnb끝 -->
+
+		<ul class="util">
+			<li><a href="#"><img src="images/ico_mTopetc01.png" alt="검색"></a></li>
+			<li><a href="#"><img src="images/ico_mTopetc02.png" alt="영어버전"></a></li>
+			<li><a href="#"><img src="images/ico_mTopetc04.png" alt="전체메뉴"></a></li>
+		</ul>
+
+   
+	
+
+	</div>
+</div>
+
+
+
+
+  <!-- main -->
+
+
+  <div class="main">
+    <div class="visual">
+        <ul class="bxslider">
+           <li><img src="images/main_01_01.jpg"></li>
+           <li><img src="images/main_01_02.jpg"></li>
+           <li><img src="images/main_01_03.jpg"></li>
+        </ul>
+      </div>
+       
+    
+    
+     
+     
+      <div class="visual_inner">
+     <ul class="right">
+        <li><a href="javascript:;"><img src="images/pic_mainetc01_2.png"></a></li>
+       <li><a href="javascript:;"><img src="images/pic_mainetc01_3.png"></a></li>
+     </ul>
+
+      <h3>innovation</h3>
+      <p>기본을 지켜 혁신을 이루다.</p>
+
+<!-- 모달1 -->
+
+    <div class="modal modal1">
+     <iframe width="1280" height="800" src="https://www.youtube.com/embed/lAJ3SGjbdr4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    <div class="m_left">
+        <h2>D TOWER</h2>
+        <p>도시를 개발하다</p>
+    </div>
+
+  <ul class="m_right">
+      <li><button type="button"><img src="images/btn_main_youtube_l.png"></button></li>
+     <li><button type="button"><img src="images/btn_main_youtube_r.png"></button></li>
+     <li><button type="button" class="m_close"><img src="images/btn_main_youtube_close.png"></button></li>
+ </ul>
+</div><!-- 모달1끝 -->
+
+<!-- 모달2 -->
+
+<div class="modal modal2">
+     <iframe width="1280" height="800" src="https://www.youtube.com/embed/U7GoYtXvGvA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+      <div class="m_left">
+    <h2>
+Yi Sun Sin Bridge</h2>
+    <p>세계 6번째 현수교 기술자립국, 세계최고의 기술력, 대림.</p>
+  </div>
+
+ <ul class="m_right">
+    <li><button type="button"><img src="images/btn_main_youtube_l.png"></button></li>
+   <li><button type="button"><img src="images/btn_main_youtube_r.png"></button></li>
+   <li><button type="button" class="m_close"><img src="images/btn_main_youtube_close.png"></button></li>
+ </ul>
+</div>
+
+<!-- 모달3 -->
+<div class="modal modal3">
+     <iframe width="1280" height="800" src="https://www.youtube.com/embed/Dhk2zl4FUEw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+      <div class="m_left">
+    <h2>
+Petrochemical Plant</h2>
+    <p>1973년 해외플랜트 수출1호, 기본과 원칙으로 쌓아온 플랜트 노하우 43년.</p>
+  </div>
+
+ <ul class="m_right">
+    <li><button type="button"><img src="images/btn_main_youtube_l.png"></button></li>
+   <li><button type="button"><img src="images/btn_main_youtube_r.png"></button></li>
+   <li><button type="button" class="m_close"><img src="images/btn_main_youtube_close.png"></button></li>
+ </ul>
+</div>
+
+
+  
+
+
+
+      <ul class="video">
+        <li class="v1">
+          <a href="javascript:;">
+            <img src="images/main_vod_pic01_20190425.jpg">
+           <p class="p1">DAELIM D TOWER</p>
+          </a>
+        </li>
+       
+        <li class="v2">
+          <a href="javascript:;">
+            <img src="images/main_vod_pic02.jpg">
+            <p class="p2">DAELIM Yi Sun Sin Bridge</p>
+          </a>
+        </li>
+
+        <li class="v3">
+          <a href="javascript:;">
+            <img src="images/main_vod_pic03.jpg">
+            <p class="p3">DAELIM Petrochemical Plant</p>
+          </a>
+        </li>
+      </ul>
+
+<p class='line'></p>
+<p class="p4">대한민국 건설을 리드해온 대림산업은<br>
+이제 종합설계시공(EPC) 뿐만 아니라 토탈솔루션 사업자로서 도약합니다.</p>
+<button type="button">사업소개 바로가기</button>
+
+    </div> <!-- visual_inner끝 -->
+
+  </div><!-- main끝 -->
+
+
+
+  <!-- footer -->
+
+
+  <div class="footer">
+    <div class="footer_inner">
+      <div class="left">
+          <ul class="footer_info">
+                <li><a href="#">전자공고</a></li>
+                <li><a href="#">원가절감제안</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">영상정보처리기기운영관리방침</a></li>
+                <li><a href="#">이메일무단수집거부</a></li>
+                <li><a href="#">사이트맵</a></li>
+                <li><a href="#">사옥안내</a></li>
+                <li><a href="#">고객문의</a></li>
+                 <li><a href="#"><img src="images/wa_mark.png"></a></li>
+          </ul>
+
+
+          <address>
+               서울특별시 종로구 종로1길 36 대림빌딩 
+              COPYRIGHT (c) 2016 DAELIM All RIGHTS RESERVED.
+          </address>
+        
+      </div>
+      
+
+<!--패밀리사이트-->
+     
+     
+      <div class="family">
+       
+      
+        <button type="button" class="btn_family">패밀리사이트<a href="javascript:;" class="f_open"></a></button>
+        
+
+       
+       
+       
+       
+        <div class="t_wrap">
+          <table class="table table1">
+            <caption>패밀리 사이트</caption>
+            <tr>
+                <td><a href="javascript:;">e편한세상</a></td>
+                <td class="t1"><a href="javascript:;">대림미술관</a></td>
+            </tr>
+          
+             <tr>
+                 <td><a href="javascript:;">대림수암장학문화재단</a></td>
+                <td class="t1"><a href="javascript:;">대림인터넷 구매시스템</a></td>
+             </tr>
+
+              <tr>
+                <td><a href="javascript:;">대림 결제대금/거래내역 조회</a></td>
+                <td class="t1"><a href="javascript:;">전자세금계산서</a></td>
+             </tr>
+
+
+               <tr>
+                <td><a href="javascript:;">대림 협력업체 포탈 시스템</a></td>
+                <td class="t1"><a href="javascript:;">대림 OB</a></td>
+             </tr>
+
+
+              <tr>
+                <td><a href="javascript:;">전자근로계약</a></td>
+                <td class="t1"><a href="javascript:;">퇴직자제증명</a></td>
+             </tr>
+
+        
+            
+          
+          </table>
+
+
+                <table class="table table2">
+            <caption>관계사사이트링크</caption>
+        
+            <tr>
+                <td><a href="javascript:;">대림코퍼레이션</a></td>
+                <td class="t1"><a href="javascript:;">대림자동차공업</a></td>
+            </tr>
+          
+             <tr>
+                <td><a href="javascript:;">(주)대림피앤피</td>
+                <td class="t1"><a href="javascript:;">대림건설</a></td>
+             </tr>
+
+              <tr>
+                <td><a href="javascript:;">글래드 호텔앤리조트</a></td>
+                <td class="t1"><a href="javascript:;">대림C&S</a></td>
+             </tr>
+
+
+               <tr>
+                <td><a href="javascript:;">대림산업(주) 석유화학사업부</a></td>
+                <td class="t1"><a href="javascript:;">대림학원</a></td>
+             </tr>
+
+
+              <tr>
+                <td><a href="javascript:;">YNCC</a></td>
+                <td class="t1"><a href="javascript:;">폴리미래</a></td>
+             </tr>
+
+
+          </table> 
+
+          <button type="button" class="f_close2"></button>
+        </div>
+      </div>
+    
+ 
+    </div>    
+  </div>      
+</body>
+</html>
+    
+
+
+ 
+	
+
+
+
+  

@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>setinterval함수</title>
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <style>
+        *{margin: 0;padding: 0;}
+        .popup{
+            width: 200px;
+            height: 50px;
+            border:1px solid red;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+            color:red;
+            margin:100px auto 0;
+            }
+    </style>
+</head>
+<body>
+    <div class="popup">
+
+    </div>
+
+    <script>
+        $(function(){
+            var i = 1;
+            function time(){
+                $('.popup').text("time : " + i);
+
+                if(i<=9){
+                    i++;
+                }else{
+                    i=1;
+                }
+                
+            }
+//일정한 시간 간격으로 작업을 수행하기 위해 사용
+
+                setInterval(function(){
+                    time(); 
+                },1000);
+
+//해당시간이 지난 후 연결프로그램 실행(5초가 지난 후에 네이버로 이동)
+
+                setTimeout(function(){
+                   location.href = "http://www.naver.com";
+                },5000);
+            
+        });
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="gnb의 li를 누르면 밑에 이미지가 따라다님">
+	<title>요소를 기준으로 따라다니기</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+		
+
+
+	
+	<style>
+		.section{
+			width: 100%;
+			background: #fff;
+			border-bottom: 1px solid #ccc;
+		}
+
+		.section .gnb{
+			width: 500px;
+			margin: 0 auto;
+			border:1px solid red;
+			overflow: hidden;
+			position: relative;
+
+		}
+
+		.section .gnb a{
+			display: block;
+			float:left;
+			height: 40px;
+			width: 100px;
+			line-height: 40px;
+			text-align: center;
+			/*border:1px solid red;*/
+
+		}
+
+		.section .gnb a span{
+			color:#000;
+			position: absolute;
+			left:0; bottom:0;
+			width: 100px;
+			height: 5px;
+			background: #000;
+			opacity: 0;
+			transition:all 0.5s ease;
+		}
+
+
+		/*.section .gnb a:nth-child(1).on ~ span{
+			left:0; 
+
+		}
+		.section .gnb a:nth-child(2).on ~ span{
+			left:100px;
+
+		}
+		.section .gnb a:nth-child(3).on ~ span{
+			left:200px; 
+
+		}
+		.section .gnb a:nth-child(4).on ~ span{
+			left:300px; 
+
+		}
+		.section .gnb a:nth-child(5).on ~ span{
+			left:400px; 
+
+		}*/
+	</style>
+	<script>
+		$(document).ready(function(){
+			$('.gnb a').mouseenter(function(){
+				console.log('클릭');
+				$(this).siblings().removeClass('on');
+				$(this).addClass('on');
+				var num = $(this).index();
+				if(num==0){
+					$('span').animate({'left':0});
+				}else if(num==1){
+					$('span').animate({'left':100});
+				}else if(num==2){
+					$('span').animate({'left':200});
+				}else if(num==3){
+					$('span').animate({'left':300});
+				}else{
+					$('span').animate({'left':400});
+				}
+			});
+				});
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="section">
+		<div class="gnb">
+			<a href="#" class="on"><span></span>1</a>
+			<a href="#" class="on"><span></span>2</a>
+			<a href="#" class="on"><span></span>3</a>
+			<a href="#" class="on"><span></span>4</a>
+			<a href="#" class="on"><span></span>5</a>
+			
+		</div>
+	</div>	
+
+</body>

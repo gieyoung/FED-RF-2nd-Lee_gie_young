@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    
+<!--    스크립트는 head사이에-->
+    <script>
+        function myFunction(){
+            document.getElementById("text6").innerHTML = "반가워";
+        }
+    
+    </script>
+</head>
+<style>
+</style>
+<body>
+  
+<!--  HTML교체: 버튼을 클릭하면 id가 text인 문장이 반갑습니다 글자로 변경-->
+   <div id="text">안녕하세요 환영합니다.</div>
+   <button type="button" onclick='getElementById("text").innerHTML = "반갑습니다"'>click</button>
+
+   <hr>
+   
+   
+<!--   이미지교체: 불켜기 버튼을 클릭하면 불켜진 전구 사진으로 전환되고, 불끄기 버튼을 클릭하면 불꺼진 전구 사진으로 전환-->
+   <img src="pic_bulboff.gif" id="bulb">
+   <button onclick='getElementById("bulb").src="pic_bulbon.gif"'>불켜기</button>
+   <button onclick='getElementById("bulb").src="pic_bulboff.gif"'>불끄기</button>    
+   
+   <hr>
+   
+<!--   스타일교체: 버튼 클릭시 #text2의 글자가 폰트사이즈 커짐-->
+   <div id="text2">안녕하세요</div>
+   <button onclick='getElementById("text2").style.fontSize="35px"'>클릭</button>
+   
+   <hr>
+   
+<!--   스타일교체: 버튼 클릭하면 글자 사라짐-->
+   <div id="text3">숨겨주세요</div>
+   <button onclick='getElementById("text3").style.display="none"'>클릭</button>
+   
+   <hr>
+<!--스타일교체: 버튼 클릭하면 글자 나타남-->
+   <div id="text4" style="display:none">짜잔</div>
+   <button onclick='getElementById("text4").style.display="block"'>클릭</button>
+   
+   <hr>
+<!--   text5에 자바스크립트로 글자 넣기-->
+   <div id="text5"></div>
+   <script>
+       document.getElementById("text5").innerHTML="안녕하세요";
+    </script>
+    
+    <hr>
+    
+<!--    버튼을 클릭하면 글자변경(삳단스크립트)-->
+    <div id="text6">안녕</div>
+    <button onclick='myFunction()'>클릭</button>
+    
+    <hr>
+    <!--    버튼을 클릭하면 글자변경(하단스크립트)-->
+    <div id="text7">안녕</div>
+    <button onclick='myFunction()'>클릭</button>
+    
+    <hr>
+    <div id="text8"></div>
+    <hr>
+    <div id="text9"></div>
+     <hr>
+    <div id="text10"></div>
+    <hr>
+    <div id="text11"></div>
+    <hr>
+     <div id="text12"></div>
+    
+    
+<!--    하단 스크립트는 body사이에-->
+    <script>
+        function myFunction(){
+            document.getElementById("text7").innerHTML="반가워";
+        }
+    
+    </script>
+    
+<!--    페이지화면 열리면 팝업창으로 글이 뜸-->
+<!--
+    <script>
+    window.alert("반갑습니다");
+//        또는 alert("반갑습니다")-window생략가능;
+    </script>
+-->
+    
+
+    
+    <script>
+      var X;
+      X = 23;
+      document.getElementById("text8").innerHTML = X * 10;
+    </script>
+    
+    <script>
+        var a, b;
+        a = 5 + 6;
+        b = a * 10;
+        document.getElementById("text9").innerHTML = b;
+    
+    </script>
+    
+    <script>
+        //숫자는 그냥쓰고 문자는 따옴표 안에. 숫자를 따옴표 안에 쓰면 문자취급
+    var pi = 3.14;
+    var person = "지영"
+    var answer = "yes i am"
+    
+    document.getElementById("text10").innerHTML =
+    pi + "<br>" + person + "<br>" + answer;
+        
+    </script>
+    
+    <script>
+        //변수 name에 지영이라는 값을 할당
+        var name = "지영"
+        document.getElementById("text11").innerHTML = name;
+    </script>
+    
+    <script>
+        //변수 여러개 선언할 땐 따옴표
+        var animal = "강아지", 
+        fruit = "복숭아", 
+        food = "치킨";
+        document.getElementById("text12").innerHTML = food;
+    
+    </script>
+    
+</body>
+</html>  

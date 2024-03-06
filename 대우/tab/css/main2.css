@@ -1,0 +1,332 @@
+
+@charset "utf-8";
+
+
+
+
+		body{font-family: font-family: 'Roboto', sans-serif; letter-spacing: -1px; min-width:1164px;}
+		*{margin:0;padding: 0;vertical-align: top;}
+		a{text-decoration:none;outline: none;}
+		li{list-style: none;}
+
+
+
+		body{
+			width: 100%;
+			background: #f2f2f2;
+		}
+
+		.inner{
+			
+			width: 1200px;
+			height: 1000px;
+			/*border:1px solid red;*/
+			margin:auto;
+			overflow: hidden;
+			padding-top: 50px;
+
+		}
+
+		h2{
+			float:left;
+            /* padding: 47px 0 20px 10px;*/
+    		font-size: 23px;
+    		color: #333;
+    		font-weight: 700;
+
+
+		}
+
+		.p_right{
+			float:right;
+			padding-top: 10px;
+		}
+
+		.p_right li{
+			float:left;
+			padding-right: 32px;
+		}
+
+
+		.p_right li:last-child{
+			padding-right: 0;
+		}
+
+		.p_right li a{
+			font-size: 14px;
+			color:#666;
+		}
+
+
+		.tab_inner{
+			width: 1200px;
+			height: 350px;
+			background: #fff;
+			margin-top:50px;
+
+
+		}
+		.tab_inner .visual{
+			margin-top: 20px;
+
+			
+		}
+
+		.tab_inner .visual li{
+			float:left;
+			width: 200px;
+			position: relative;
+
+			
+			
+		
+
+		}
+
+		.tab_inner .visual li a{
+			display: block;
+			/*border:1px solid red;*/
+			padding:26px 21px;
+			position: relative;
+			
+				
+			
+
+		}
+
+
+		/*border띄우기*/
+
+		.tab_inner .visual li a:before{
+			content: '';
+			position: absolute;
+			border:1px solid #000;
+			width: 198px;
+			height: 350px;
+			left:0; top:0;
+			display: none;
+		}
+
+		.tab_inner .visual li a:hover:before{
+			display: block;
+
+		}
+		/*border띄우기 끝*/
+
+
+
+		
+	
+
+		.tab_inner li{
+			float:left;
+
+
+		}
+
+		
+
+		.tab_inner  h3{
+			color:#333;
+			font-size: 14px;
+			font-weight: 700;
+			text-align: left;
+			margin-bottom:10px;
+			margin-top:20px;
+
+			
+			
+
+		}
+
+		.tab_inner .visual li:nth-child(5) button{
+			background: #000;
+			color:#fff;
+			width: 40px;
+			height: 25px;
+			font-size: 11px;
+			border:none;
+			outline:none;
+			position: absolute;
+			left:20px; bottom: 45%;
+			cursor: pointer;
+		}
+
+
+		.tab_inner .visual h5{
+			float:right;
+			font-size: 12px;
+			color:#000;
+			margin-top: -11px;
+			margin-right: 30px;
+			font-weight: 700;
+			position: relative;
+
+
+
+		}
+
+		.tab_inner .visual h5:before{
+			content: '';
+			position: absolute;
+			left:0; top:0;
+			margin-left: -10px;
+			width: 1px;
+			height: 12px;
+			background: #ccc;
+
+		}
+
+
+		.tab_inner .visual p{
+			
+
+			white-space:nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			color:#333;
+			font-size: 13px;
+			margin-bottom: 10px;
+			height: 40px;
+
+			
+			
+
+
+		}
+
+
+		.visual li:hover p{
+			text-decoration: underline;
+		}
+
+		.tab_inner .visual h4{
+			color:#000;
+			font-size: 18px;
+			font-weight: 700;
+			margin-bottom: 15px;
+
+		}
+
+		.tab_inner .visual1 li:first-child h6{
+			color:#000;
+			opacity: 20%;
+
+		}
+
+		.tab_inner .visual h6{
+			display: block;
+			color:#000;
+
+		}
+
+		.tab_inner .visual2 li:nth-child(4) h6{
+			color:#000;
+			opacity: 20%;
+
+		}
+
+		.tab_inner .visual2 li:nth-child(5) h6{
+			color:#000;
+			opacity: 20%;
+
+		}
+
+
+
+		.p_right li.on a{
+			color:#000;
+			font-weight: 700;
+
+
+		}
+
+		
+
+
+		/*탭*/
+
+		/*탭*/
+
+		.tab_inner{
+			clear:both;
+
+
+		}
+
+		.visual2{
+			display: none;}
+
+		.visual2 li:nth-child(3) button{
+background: #000;
+			color:#fff;
+			width: 40px;
+			height: 25px;
+			font-size: 11px;
+			border:none;
+			outline:none;
+			position: absolute;
+			left:20px; bottom: 45%;
+			cursor: pointer;
+		}
+
+		.visual2 li:nth-child(5) button{
+			background: #000;
+			color:#fff;
+			width: 40px;
+			height: 25px;
+			font-size: 11px;
+			border:none;
+			outline:none;
+			position: absolute;
+			left:20px; bottom: 45%;
+			cursor: pointer;
+
+		}
+
+
+		
+		.visual3{
+			display: none;}
+
+
+		.visual3 li:nth-child(4) button{
+			background: #000;
+			color:#fff;
+			width: 40px;
+			height: 25px;
+			font-size: 11px;
+			border:none;
+			outline:none;
+			position: absolute;
+			left:20px; bottom: 45%;
+			cursor: pointer;
+
+		}
+
+		.visual3 li:nth-child(5) button{
+			background: #000;
+			color:#fff;
+			width: 40px;
+			height: 25px;
+			font-size: 11px;
+			border:none;
+			outline:none;
+			position: absolute;
+			left:20px; bottom: 45%;
+			cursor: pointer;
+
+		}
+
+
+		.tab_inner .visual .sale{
+			display: inline-block;
+			color:red;
+			margin-right: 7px;
+			font-weight: 900;
+		}
+
+		
+
+
+

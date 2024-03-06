@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>라이트박스<!-- 썸네일 클릭시 사진이 크게 확대되어 보여짐 --></title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/jquery.lightbox-0.5.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<script src="js/jquery.lightbox-0.5-mod.js"></script>
+	<style>
+
+
+		.gellery{width: 960px; /*border:1px solid red;*/ margin:50px auto 0;}
+		.gellery ul{overflow: hidden;}
+		.gellery ul li{float:left;margin-right: 20px;}
+		.gellery ul li:last-child{margin-right: 0;}
+		
+
+		
+	</style>
+</head>
+
+<body>
+	<div class="gellery">
+		<ul>
+			<li><a href="images/pic1.jpg"><img src="images/p1.jpg"></a></li>
+			<li><a href="images/pic2.jpg"><img src="images/p2.jpg"></a></li>
+			<li><a href="images/pic3.jpg"><img src="images/p3.jpg"></a></li>
+			<li><a href="images/note1.jpg"><img src="images/pic4.jpg"></a></li>
+			
+
+		</ul>
+		
+
+	</div>
+
+
+	<script>
+		$(function(){
+
+   $('.gellery a').lightBox({
+	overlayBgColor:'#000',  
+	overlayOpacity: 0.8,
+	imageLoading: 'images/lightbox-ico-loading.gif',
+	imageBtnClose: 'images/lightbox-btn-close.gif',
+	imageBtnPrev: 'images/lightbox-btn-prev.gif',
+	imageBtnNext: 'images/lightbox-btn-next.gif',
+	containerResizeSpeed: 100,
+	txtImage: '작품',
+	txtOf: '중에'
+   });
+});
+
+
+
+</script>
+
+
+
+	
+	
+</body>
+</html>

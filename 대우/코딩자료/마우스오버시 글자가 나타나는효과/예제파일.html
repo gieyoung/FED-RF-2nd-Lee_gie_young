@@ -1,0 +1,64 @@
+<style>
+
+/* 중앙정렬 코드- 삭제하고 사용하세요 */
+.gallerylist {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+* {margin:0;padding:0;box-sizing:border-box;} /* 모든 요소 마진패딩 리셋 */
+/* 중앙정렬 코드-삭제하고 사용하세요 */
+
+.gallerylist {max-width:1200px;width:100%;margin:0 auto;}
+.gallerylist > ul {font-size:0;}
+.gallerylist > ul > li {display:inline-block;vertical-align:top;width:33.3%;}
+.gallerylist > ul > li > a {display:block;width:auto;text-decoration: none;margin:5px;}
+.gallerylist > ul > li > a .screen {position:relative;overflow:hidden;}
+.gallerylist > ul > li > a .screen .top {position:absolute;bottom:150%;left:30px;z-index:2;color:#fff;font-size:26px;font-weight:900;transition:all .35s;}
+.gallerylist > ul > li > a .screen .bottom {position:absolute;top:150%;left:30px;z-index:2;color:#fff;font-size:12px;transition:all .35s;}
+.gallerylist > ul > li > a .screen img {width:100%;}
+.gallerylist > ul > li > a h3 {font-size:14px;text-align:center;padding:20px;color:#666;}
+.gallerylist > ul > li > a .screen::after {content:'';display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:1;opacity:0;transition:all .35s;}
+.gallerylist > ul > li > a:hover .top {bottom:52%;}
+.gallerylist > ul > li > a:hover .bottom {top:52%;}
+.gallerylist > ul > li > a:hover .screen::after {opacity:1;}
+
+</style>
+
+<div class="gallerylist">
+	<ul>
+		<li>
+			<a href="">
+				<div class="screen">
+					<div class="top">일본 도쿄도시 아침</div>
+					<div class="bottom">PIXABAY</div>
+					<img src="./img/image01.jpg">
+				</div>
+				<div>
+					<h3>마우스를</h3>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="screen">
+					<div class="top">뉴욕시티 브루클린 브리지</div>
+					<div class="bottom">PIXABAY</div>
+					<img src="./img/image02.jpg">
+				</div>
+				<div>
+					<h3>이미지 위에 올리면(:HOVER)</h3>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="screen">
+					<div class="top">도시의 사람들 군중</div>
+					<div class="bottom">PIXABAY</div>
+					<img src="./img/image03.jpg">
+				</div>
+				<div>
+					<h3>오브젝트가 나타나는 효과</h3>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>
+

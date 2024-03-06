@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    html {
+  height: 100%;
+}
+body {
+    min-height: 100%;
+    background: #777777; /* Old browsers */
+}
+
+#wrap{
+	width: 1300px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#main_logo{
+    background: none;
+}
+
+#main_logo>img {
+    left: 0;
+    top: calc(50% - 16px);
+}
+
+#containerTop{
+    background: #7fc41c;
+    box-shadow: 0px 10px 18px rgba(0,0,0,0.1);
+}
+
+#pagePath{
+	width: 1300px;
+    color : #fff;
+}
+
+@media all and (min-width:360px) and (max-width:1300px) {
+	#wrap, #pagePath {
+		width: calc(100% - 20px);
+		margin-left : 10px;
+		height:100%;
+	}
+}
+
+
+#login{
+    width: 300px;
+    background: #fff;
+    border: 1px solid #777;
+    border-radius: 3px;
+    text-align: center;
+    box-shadow: 2px 36px 45px rgba(0,0,0,0.3);
+    
+    margin: 0 auto;
+    margin-top: 160px;
+    
+}
+
+.loginTtl{
+    color: #fff;
+    background: #0768a9;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 13px 0;
+}
+
+#login img{
+    margin: 20px;
+}
+
+#login input{
+    width: 190px;
+    height: 35px;
+    background: none;
+    padding: 0 10px;
+    border: none;
+    border-bottom: 2px solid #0768a9;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #444;
+}
+
+
+#login input::placeholder {
+  color: #0768a9;
+}
+
+#login input:focus{
+    outline: none;
+    background: #ffffff;
+    box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
+}
+
+#login input.btn.loginBtn{
+    width: calc(100% - 40px);
+    height: 40px;
+    margin: 15px auto 20px;
+    border: none;
+    color:#fff;
+    cursor: pointer;
+	background: #0768a9; /* Old browsers */
+}
+
+
+#login input.btn.loginBtn:hover{
+	background: #7fc41c; /* Old browsers */
+}
+
+#message{
+	color:red;
+	width:80%;
+}
+
+#footer{
+    position: absolute;
+    width: 1300px;
+    color: #fff;
+    bottom: 0;
+}
+</style>
+</head>
+<body>
+    <div id="wrap">
+		<div id="container">
+		   <div id="containerTop">
+			   <div id="pagePath"></div>
+		   </div>
+		   
+		   <div id="login">
+		       <div class="loginTtl">종합정보시스템</div>
+		       <p><img src="/images/frame/main.png" width="230" alt=""/></p>
+		       <form id="loginForm" name="loginForm" method="post">
+			       <div class="relative">
+			           <label for="USER_ID"></label>
+			           <input type="text" id="USER_ID" name="USER_ID" placeholder = "ID" onkeydown="enterCheck2();"  />
+			       </div>
+			       
+			       <div class="relative">
+			           <label for="USER_PW"></label>
+			           <input type="password" id="USER_PW" name="USER_PW" placeholder = "Password" onkeydown="enterCheck();" onmousedown="checkCapsLock(event)" onkeyup="checkCapsLock(event)"/><div id="message"></div>
+			       </div>
+		       </form>
+		       <input type="button" onclick="loginProc()" class="btn loginBtn" value="로그인"/>
+		   </div>
+		   
+		</div>
+	</div>
+	<div id="alert">
+		<div class="alertContents">
+	   </div>
+	</div>
+	<script>
+	USER_ID.focus();
+	
+	//로그인 정보 무결성 확인
+	function loginProc(){
+		if($("#USER_ID").val() == ""){
+			//alert("ID를 입력하세요");
+			$("#USER_ID").focus();
+			return ;
+		}
+		
+		if($("#USER_PW").val() == ""){
+			alert("패스워드를 입력하세요");
+			$("#USER_PW").focus();
+			return ;
+		}
+		
+		//alert($("#USER_PW").val());
+		var loginForm = document.loginForm;
+
+		loginForm.action="/login/proc.do";
+		loginForm.submit();
+	}
+	
+	//키보드 응용 로그인 
+	function enterCheck(){
+		if(event.keyCode == 13){
+			loginProc();
+			return;
+		}
+	}
+	
+	//키보드 응용 로그인 
+	function enterCheck2(){
+		if(event.keyCode == 13){
+			if($("#USER_PW").val() == ""){
+				$("#USER_PW").focus();
+				return ;
+			}
+			else{
+				loginProc();
+				return;
+			}
+		}
+	}
+	
+	//Caps Lock 알림 
+	function checkCapsLock(event)  {
+		  if (event.getModifierState("CapsLock")) {
+		    document.getElementById("message").innerText 
+		      = "Caps Lock이 켜져 있습니다."
+		  }else {
+		    document.getElementById("message").innerText 
+		      = ""
+		  }
+		  
+		  
+	}
+	
+	</script>
+
+</body>
+</html>

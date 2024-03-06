@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>가속도</title>
+	<style>
+		*{margin: 0; padding: 0; vertical-align: top;}
+		div{
+			width: 100px;
+			height: 100px;
+			background: blue;
+			margin-bottom: 20px;
+			color:#fff;
+			transition: all 2s;
+		}
+
+		div:hover{
+			width: 500px;
+
+		}
+
+		.box1{
+
+		}
+
+		.box2{
+			transition-timing-function: ease;
+
+		}
+		.box3{
+			transition-timing-function: ease-in;
+
+		}
+
+		.box4{
+			transition-timing-function: ease-out;
+
+		}
+
+		.box4{
+			transition-timing-function: ease-in-out;
+
+		}
+		
+
+
+	</style>
+</head>
+
+
+
+
+<body>
+	<div class="box1">linear</div>
+	<div class="box2">ease</div>
+	<div class="box3">ease-in</div>
+	<div class="box4">ease-out</div>
+	<div class="box5">ease-in-out</div>
+	
+</body>
+</html>

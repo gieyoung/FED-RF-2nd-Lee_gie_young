@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<title>동부건설</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+	
+</head>
+<script>
+	$(document).ready(function(){
+		$('.m_btn').click(function(){
+			$('.m_btn').toggleClass('on');
+			
+
+
+		});
+
+		$('.m_btn').click(function(){
+			$('.hidden').toggleClass('on');
+			
+
+
+		});
+
+
+
+		// $(".m_btn").click(function(){
+		// 	$(".hidden").animate({"right":0},500);
+
+
+		// });
+
+		// $(".m_btn").click(function(){
+		// 	$(".hidden").animate({"right":-274},500);
+
+
+		// });
+
+
+
+		$('button').click(function(){
+			$('.depth2').fadeToggle();
+		});
+
+
+
+
+
+
+
+
+
+
+	});
+	
+
+
+
+</script>
+
+
+<body>
+	<div class="header">
+		<h1><a href="#">동부건설</a></h1>
+
+
+		<div class="right">
+
+			<button type="button">KOR
+				<div class="depth2">
+					<li><a href="#">KOR</a></li>
+					<li><a href="#">ENG</a></li>
+					
+				</div>
+
+
+
+			</button>
+			<div class="menu">
+				<a href="#" class="m_btn">
+					<span>메뉴</span>
+				</a>
+			</div>
+			
+		</div>
+
+
+
+
+
+
+	</div>
+
+		
+
+
+	<div class="hidden">
+		<ul>
+			<li><a href="#">회사소개</a></li>
+			<li><a href="#">사업소개</a></li>
+			<li><a href="#">투자정보</a></li>
+			<li><a href="#">지속가능경영</a></li>
+			<li><a href="#">홍보센터</a></li>
+			<li><a href="#">인재채용</a></li>
+			
+
+		</ul>
+		
+
+
+
+	</div>
+
+
+	<div class="main">
+		
+
+
+	</div>
+	
+</body>
+</html>

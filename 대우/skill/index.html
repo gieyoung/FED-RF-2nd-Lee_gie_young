@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="이지영">
+	<meta name="keyword" content="포트폴리오, 스킬">
+	<meta name="description" content="포트폴리오에 들어갈 스킬 능력치 그래프 만들기">
+	<title>skill(포플)</title>
+	<script src="js/jquery-3.5.0.min.js"></script>
+
+
+	<style>
+		*{margin: 0; padding: 0;}
+		.chart{
+			height: 50px;
+			background: #ccc;
+		}
+
+		.chart span{
+			display: block;
+			line-height: 50px;
+			text-align: right;
+			width: 95%;
+			background: lightblue;
+			color:#fff;
+			box-sizing: border-box;
+			animation: photo_ani 2s 1s ease;
+		}
+		
+
+		@keyframes photo_ani{
+			0%{width: 0;}
+			100%{width: 95%;}
+			
+		}
+		
+
+		.illu span{
+			background: #000;
+			animation: Illu_ani 2s 1s ease;
+			width: 90%;
+
+		}
+
+		@keyframes Illu_ani{
+			0%{width: 0;}
+			100%{width: 90%;}
+			
+		}
+
+
+		.html span{
+			background: yellow;
+			animation: html_ani 2s 1s ease;
+			width: 95%;
+			color:#000;
+
+		}
+
+		@keyframes html_ani{
+			0%{width: 0;}
+			100%{width: 95%;}
+			
+		}
+
+
+		.css span{
+			background: blue;
+			animation: css_ani 2s 1s ease;
+			width: 95%;
+			
+
+		}
+
+		@keyframes css_ani{
+			0%{width: 0;}
+			100%{width: 95%;}
+			
+		}
+
+
+
+		.java span{
+			background: orange;
+			animation: java_ani 2s 1s ease;
+			width: 70%;
+			
+
+		}
+
+		@keyframes java_ani{
+			0%{width: 0;}
+			100%{width: 70%;}
+			
+		}
+
+
+		.jq span{
+			background: green;
+			animation: jq_ani 2s 1s ease;
+			width: 80%;
+			
+
+		}
+
+		@keyframes jq_ani{
+			0%{width: 0;}
+			100%{width: 80%;}
+			
+		}
+
+
+
+
+	</style>
+</head>
+
+
+<body>
+	<h2>Photoshop</h2>
+	<div class="chart">
+		<span>95%</span>
+		
+	</div>
+
+	<h2>Illustrator</h2>
+	<div class="chart illu">
+		<span>90%</span>
+	</div>
+
+	<h2>Html5</h2>
+	<div class="chart html">
+		<span>95%</span>
+	</div>
+
+	<h2>CSS</h2>
+	<div class="chart css">
+		<span>95%</span>
+	</div>
+
+	<h2>javascript</h2>
+	<div class="chart java">
+		<span>70%</span>
+	</div>
+
+	<h2>jquery</h2>
+	<div class="chart jq">
+		<span>80%</span>
+	</div>
+	
+</body>
+</html>

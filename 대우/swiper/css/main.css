@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+
+
+<style>
+		body{font-family: 'Noto Sans KR', sans-serif; letter-spacing: -1px;}
+		*{margin:0;padding: 0;vertical-align: top; box-sizing: border-box;}
+		a{text-decoration:none;}
+		li{list-style: none;}
+
+/*내용보다 큰 이미지일 경우 가운데 정렬*/
+
+		.main_slider{
+			width: 100%;
+			height: 720px;
+		}
+
+
+		.main_slider .swiper-wrapper .swiper-slide{
+			height: 100%;
+			position: relative;
+		}
+
+
+		.main_slider .swiper-wrapper .swiper-slide .slider1{
+			position: absolute;
+			left:50%; top:0;
+			transform: translate(-50%,0);
+		}
+
+
+
+		/*슬라이드 좌우 버튼 커스텀화*/
+
+		.main_slider .swiper-button-prev{
+			background: url("../images/imgRoll_prev.png") no-repeat;
+			width: 70px;
+			height: 70px;
+			text-indent: -99999px;
+			
+		}
+
+		.main_slider .swiper-button-prev:hover{
+			background: url("../images/imgRoll_prev_on.png") no-repeat;
+			width: 70px;
+			height: 70px;
+			
+			
+			
+
+			
+		}
+
+
+
+
+
+		.main_slider .swiper-button-next{
+			background: url("../images/imgRoll_next.png") no-repeat;
+			width: 70px;
+			height: 70px;
+			text-indent: -99999px;
+			
+		}
+
+		.main_slider .swiper-button-next:hover{
+			background: url("../images/imgRoll_next_on.png") no-repeat;
+
+
+
+		
+
+		}
+
+
+		/*아래페이지버튼*/
+
+		.main_slider .swiper-pagination{
+			width:auto;
+			padding: 15px 50px 15px 30px;
+			height: 11px;
+			padding-bottom: 25px;
+			background: rgba(0,0,0,0.5);
+			border-radius: 20px;
+			position: absolute;
+			left:50%; bottom:50px;
+			transform: translate(-50%,-0);
+			/*border: 1px solid red;*/
+
+
+		}
+
+
+
+
+		.main_slider .swiper-pagination .swiper-pagination-bullet{
+			background: url("../images/imgRoll_indi.png") no-repeat;
+			width: 11px;
+			height: 11px;
+			
+
+
+
+		}
+
+		
+
+		.main_slider .swiper-pagination .swiper-pagination-bullet-active{
+			background: url("../images/imgRoll_indi_on.png") no-repeat;
+			width: 11px;
+			height: 11px;
+
+		}
+
+
+		/*정지재생버튼*/
+
+		.main_slider .btn_pause{
+			position: absolute;
+			left:50%; bottom:50px;
+			margin-left: 30px;
+			background: url("../images/play_bt.png") no-repeat;
+			width: 41px; height: 41px;
+			border:1px solid red;
+			z-index:100;
+			border:none;
+			outline: none;
+			cursor: pointer;
+
+		}
+
+		.main_slider .btn_pause.on{
+			background: url("../images/play_bt_on.png") no-repeat;
+			
+
+		}
+
+

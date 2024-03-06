@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티배경처리</title>
+    <style>
+        *{margin:0; padding:0;}
+
+        .box1{
+            width: 800px;
+            height: 600px;
+            border:1px solid #000;
+            margin: 50px auto;
+            background: url("images/macbookair.jpg") no-repeat 40px 254px,
+            url("images/house.jpg") no-repeat;
+            background-size:298px 160px,cover;
+        }
+
+        .box2{
+            width: 800px;
+            height: 600px;
+            border:50px dotted #000;
+            margin: 0 auto;
+            background: red;
+            box-sizing: border-box;
+            background-clip: padding-box;
+            padding:50px; 
+           
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="box1">이곳에 다중 배경을 처리해 봅시다</div>
+        <div class="box2">이곳에 배경 시작부분을 처리해 봅시다</div>
+    </div>
+</body>
+</html>

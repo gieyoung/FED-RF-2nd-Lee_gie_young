@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>이벤트함수</title>
+	<script src="js/jquery-3.5.0.min.js"></script>
+
+	<style>
+
+		.box1{
+			width: 500px;
+			height: 150px;
+			border:1px solid #000;
+			background:#fc0;
+			margin-bottom: 30px;
+			
+
+		}
+
+		ul,li{margin:0; padding:0;list-style: none;}
+		a{text-decoration: none;}
+		ul{width: 346px; overflow: hidden;}
+		ul li{width: 100px; height: 30px; border:1px solid #000; float:left; margin-right:20px;}
+		ul li:last-child{margin-right: 0;}
+		ul li a{display: block; width: 100%; height: 100%; text-align: center; line-height:30px; color:#000; font-weight: bold;}
+		ul li.on{background:red;}
+		ul li.on a{color:#fff;}
+
+
+
+		
+		
+
+	</style>
+</head>
+
+
+<body>
+	<h1>[jQuery 이벤트 관련 메서드]</h1>
+	   <ol>
+		   	<li>click-마우스클릭</li>
+		   	<li>mouseenter-마우스 오버</li>
+		   	<li>mouseleave-마우스 아웃</li>
+		   	<li>hover-마우스오버&아웃 동시처리</li>
+		   	<li>focus-포커싱되있을때</li>
+		   	<li>blur-포커스 해제되었을 때</li>
+		   	<li>each-개별처리</li>
+	   </ol>
+
+	   <hr>
+
+	   <div class="box1"><a href="#">Click!</a></div>
+	   <div class="box1 box2"><a href="#">mouseover / mouseout</a></div>
+	   <div class="box1 box3"><a href="#">hover</a></div>
+	   <p>
+		   	<label for="">Message :</label>
+		   	<input type="text" id="t1">
+	   </p>
+
+	   <ul>
+		   	<li><a href="#">Menu1</a></li>
+		   	<li><a href="#">Menu2</a></li>
+		   	<li><a href="#">Menu3</a></li>
+	   </ul>
+
+
+	   <script>
+	   	$(function(){
+	   		// $('.box1').click(function(){
+	   		// 	$('.box1').css('background','#0cf')
+	   		// })
+
+	   		var box1 = $('.box1')
+	   		box1.click(function(){
+	   			$(this).css('background','#0cf')
+
+
+	   		});
+
+	   	
+
+	   	// $('box2').mouseenter(function(){
+	   	// 	$(this).css('background','#0cf')
+	   	// });
+
+	   	// $('box2').mouseleave(function(){
+	   	// 	$(this).css('background','#fc0')
+	   	// });
+
+
+	   	var box2 = $('.box2');
+	   	box2.mouseenter(function(){
+	   		box2.css('background','#0cf');
+	   	});
+
+
+	   	box2.mouseleave(function(){
+	   		box2.css('background','#fc0')
+	   	});
+
+
+	   	//hover
+	   	var box3 = $('.box3');
+	   	box3.hover(
+	   		function(){
+	   			$(this).css('background','#0cf')
+
+	   		},
+
+	   		function(){
+	   			$(this).css('background','#fc0')
+
+	   		});
+
+
+	   	//focus 폼 클릭시 배경색과 글자색 바뀜
+
+	   	var t1 = $('#t1');
+	   	t1.focus(function(){
+	   		$(this).css({'color':'#c00', 'background':'#fc0'})
+
+	   	});
+
+
+	   	t1.blur(function(){
+	   		$(this).css({'color':'#000', 'background':'#fefefe'})
+
+	   	});
+
+
+	   	//on 메뉴 클릭할 때마다 색변경
+	   	$('ul li').click(function(){
+	   		$('ul li').removeClass('on');
+	   		$(this).addClass('on');
+
+
+	   	})
+
+
+
+
+
+
+	   	});
+
+	   </script>
+
+	  
+
+
+
+
+	
+</body>
+</html>

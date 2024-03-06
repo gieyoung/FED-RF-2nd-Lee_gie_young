@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="이지영">
+	<meta name="keyword" content="스킬,막대그래프2">
+
+
+	<title>스킬막대그래프2</title>
+	<style>
+		*{margin: 0; padding: 0;}
+		li{list-style:none;}
+		body{background: #333; color:#fff;}
+
+		h2{text-align: center; margin-top: 100px;}
+
+		
+		.skill{
+			width: 600px;
+			margin: 50px auto;
+		}
+
+		p{
+			
+			margin-bottom: 10px;
+		}
+
+		.skill li{
+			margin-bottom: 23px;
+		}
+
+		.skill li .bar{
+			display: block;
+			background: #353b48;
+			height: 3px;
+			border:1px solid rgba(0,0,0,0.5);
+			box-shadow: 0 0 10px #42719e;
+			border-radius:3px;
+		
+
+		}
+
+		.skill li .bar span{
+			float:left;
+			/*display: block;*/
+			height: 3px;
+			background: #aaadb2;
+
+		}
+
+		.skill li .bar .html5{
+			width: 90%;
+			animation: html5_ani 2s 1s ease;
+		}
+
+		.skill li:first-child p, li:nth-child(2) p, li:last-child p{
+			margin-left: 530px;
+		}
+
+		.skill li:nth-child(3) p{
+			margin-left: 410px;
+		}
+
+		.skill li:nth-child(4) p{
+			margin-left: 440px;
+		}
+
+		.skill li:nth-child(5) p{
+			margin-left: 560px;
+		}
+
+
+
+
+
+		@keyframes html5_ani{
+			0%{width: 0;}
+			100%{width: 90%;}
+
+		}
+
+
+		.skill li .bar .css{
+			width: 90%;
+			animation: css_ani 2s 1s ease;
+		}
+
+		@keyframes css_ani{
+			0%{width: 0;}
+			100%{width: 90%;}
+
+		}
+
+			.skill li .bar .java{
+			width: 70%;
+			animation: java_ani 2s 1s ease;
+		}
+
+		@keyframes java_ani{
+			0%{width: 0;}
+			100%{width: 70%;}
+
+		}
+
+
+
+			.skill li .bar .jq{
+			width: 75%;
+			animation: jq_ani 2s 1s ease;
+		}
+
+		@keyframes jq_ani{
+			0%{width: 0;}
+			100%{width: 75%;}
+
+		}
+
+
+			.skill li .bar .photo{
+			width: 95%;
+			animation: photo_ani 2s 1s ease;
+		}
+
+		@keyframes photo_ani{
+			0%{width: 0;}
+			100%{width: 95%;}
+
+		}
+
+			.skill li .bar .illu{
+			width: 90%;
+			animation: illu_ani 2s 1s ease;
+		}
+
+		@keyframes illu_ani{
+			0%{width: 0;}
+			100%{width: 90%;}
+
+		}
+
+
+
+
+		
+
+	</style>
+</head>
+
+
+<body>
+	<h2>My Skill</h2>
+	<ul class="skill">
+		<li>
+			<h3>HTML5</h3>
+			<p>90%</p>
+			<span class="bar">
+				<span class="html5">
+					
+				</span>
+			</span>
+		</li>
+
+		<li>
+			<h3>css1,2,3</h3>
+			<p>90%</p>
+			<span class="bar">
+				<span class="css">
+					
+				</span>
+			</span>
+		</li>
+
+
+		<li>
+			<h3>javascript</h3>
+			<p>70%</p>
+			<span class="bar">
+				<span class="java">
+					
+				</span>
+				
+
+			</span>
+		</li>
+
+
+		<li>
+			<h3>jquery</h3>
+			<p>75%</p>
+			<span class="bar">
+				<span class="jq">
+					
+				</span>
+				
+
+			</span>
+		</li>
+
+		<li>
+			<h3>photoshop</h3>
+			<p>95%</p>
+			<span class="bar">
+				<span class="photo">
+					
+				</span>
+				
+
+			</span>
+		</li>
+
+		<li>
+			<h3>illust</h3>
+			<p>90%</p>
+			<span class="bar">
+				<span class="illu">
+					
+				</span>
+				
+
+			</span>
+		</li>
+	</ul>
+	
+</body>
+</html>

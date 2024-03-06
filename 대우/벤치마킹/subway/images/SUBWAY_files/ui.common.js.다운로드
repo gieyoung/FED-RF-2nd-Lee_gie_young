@@ -1,0 +1,392 @@
+﻿$(document).ready(function(){
+    subLoc();//sub location
+    sideMenu();//side menu
+})
+
+
+function subLoc(){//sub location
+    $('#container .sub_loc h2').on('click', function(){
+        var spd = 0.5;
+        var eft = Power4.easeOut;
+        var dp2_h = $('#container .sub_loc .dp2_layer ul').innerHeight();
+        if($(this).parent().hasClass('open')){
+            $(this).parent().removeClass('open');
+            TweenLite.to($('#container .sub_loc .dp2_layer'),spd,{ease:eft, height:0})
+        }else{
+            $(this).parent().addClass('open');
+            TweenLite.to($('#container .sub_loc .dp2_layer'),spd,{ease:eft, height:dp2_h})
+        }
+    })
+}
+
+
+function sideMenu(){//side menu
+    var gnbSwiper = new Swiper('#gnb .swiper-container', {//gnb scroll
+         direction: 'vertical',
+         slidesPerView: 'auto',
+         mousewheelControl: true,
+         freeMode: true
+    });
+
+    $('.btn_sidemenu').on('click', function(){//sidemenu open
+        $('body').addClass('fixed').on('touchmove', function(e){e.preventDefault();return false;});
+        $('#header').append('<div class="dim"></div>');
+        TweenLite.to($('#header .dim'),0.7,{ease:Power4.easeOut,opacity:0.8})
+        TweenLite.to($('#sidemenu_wrapper'),0.7,{ease:Power4.easeOut,left:0,onComplete:function(){
+            gnbSwiper.onResize();
+        }})
+    })
+
+    $('.btn_sidemenu_close').on('click', function(){//sidemenu close
+        gnbClose()
+    })
+
+    $('#gnb .dp1').on('click', function(){//sidemenu 1depth click
+        var tgH = $(this).next('.dp2').find('ul').innerHeight();
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            gnb_dp2_Resize(0,$(this))
+        }else{
+            $(this).addClass('active');
+            gnb_dp2_Resize(tgH,$(this))
+        }
+        return false;
+    })
+
+    $('#gnb .dp2 a').on('click', function(){//sidemenu 2depth click
+        var $this = $(this);
+        var tg = $this.attr('href');
+        $this.parent('li').append('<div class="mask"></div>');
+        setTimeout(function(){
+            $this.parent('li').find('.mask').remove();
+            $(location).attr('href',tg);
+        },800);
+
+        setTimeout(function(){
+            gnbClose();
+        },320)
+        return false;
+    })
+
+    function gnbClose(){
+        $('body').removeClass('fixed').off('touchmove');
+        $('.btn_sidemenu_close').removeClass('open');
+        TweenLite.to($('#sidemenu_wrapper'),0.7,{ease:Power4.easeOut,left:'100%'})
+        TweenLite.to($('#header .dim'),0.7,{ease:Power4.easeOut,opacity:0,onComplete:function(){
+            $('#header .dim').remove();
+            $('#gnb .dp2').css('height','0')
+            $('#gnb .dp1').removeClass('active')
+        }})
+    }
+
+    function gnb_dp2_Resize(h,t){
+        TweenLite.to(t.next('.dp2'),0.5,{ease:Power4.easeOut,height:h,onComplete:function(){
+            gnbSwiper.onResize();
+        }})
+    }
+}
+
+
+function eventSlider(){//이벤트ㆍ프로모션 슬라이더
+    var eventSwiper = new Swiper('.event_slider_wrapper >.swiper-container', {
+		pagination: '.swiper-pagination',
+		paginationClickable: true,
+		slidesPerView: 1,
+		autoHeight:true
+	})
+}
+
+
+function formFile(obj){// 첨부파일
+	var value = obj.value
+	$(obj).next('input').val(value)
+
+}
+
+function newStoreSlider(){//신규매장안내 슬라이더
+    var newStoreSwiper = new Swiper('.new_store_slider_wrapper >.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoHeight:true
+    })
+}
+
+function menuView(){//메뉴소개 상세
+    $('.menu_view_wrapper .sns .sns_btn').on('click', function(){//sns
+        if($(this).hasClass('open')){
+            $(this).removeClass('open')
+            $(this).next('.sns_list').hide();
+            $('.menu_view_wrapper .sns .sns_list a').attr('style','')
+        }else{
+            $(this).addClass('open');
+            $(this).next('.sns_list').show();
+            TweenMax.staggerTo($('.menu_view_wrapper .sns .sns_list a'),0.3,{ease:Power4.easeOut, top:0, opacity:1},0.1)
+        }
+    })
+
+    var fresh3Swiper = new Swiper('.fresh3_wrapper .swiper-container', {//메뉴소개 : 세가지원칙 slider
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        slidesPerView: 1,
+        autoHeight:true,
+        spaceBetween: 10
+    });
+
+    var menuNavSwiper = new Swiper('.menu_nav .swiper-container', {//메뉴소개 : 다른메뉴 slider
+        direction: 'horizontal',
+        slidesPerView: 'auto',
+        mousewheelControl: true,
+        freeMode: true,
+        spaceBetween: 10
+    });
+}
+
+
+function brandComp_swiper(){//프랜차이즈 : 써브웨이 브랜드 경쟁력
+    var barndComp = new Swiper('.barnd_comp .swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        slidesPerView: 1,
+        autoHeight:true,
+        spaceBetween: 10
+    });
+}
+
+function pdTab_Sort(){//메뉴소개 : 메뉴 정렬
+    $('.menu_list_wrapper .form_select select').on('change', function(){//메뉴소개 : 메뉴 정렬
+        var val = $(this).find("option:selected").val();
+        var eft = Power4.easeInOut;
+        var spd = 0.5;
+
+        TweenLite.to($('.pd_list_wrapper ul li'),spd,{ease:eft,opacity:0,scale:0.8});
+        setTimeout(function(){
+            if(val == 'all'){
+                TweenLite.to($('.pd_list_wrapper ul li').show(),spd,{ease:eft,opacity:1,scale:1})
+                TweenLite.to($('.btns_list_wrapper').hide(),spd,{ease:eft,opacity:0,scale:1})
+            }else{
+                $('.pd_list_wrapper ul li').each(function(){
+                    var $this = $(this);
+                    if($this.hasClass(val)){
+                        $this.show();
+                        TweenLite.to($this,spd,{ease:eft,opacity:1,scale:1})
+                        if(val == 'topping') {
+                            TweenLite.to($('.btns_list_wrapper').show(),spd,{ease:eft,opacity:1,scale:1})
+                        }
+                    }else{
+                        $this.hide();
+                        TweenLite.to($('.btns_list_wrapper').hide(),spd,{ease:eft,opacity:0,scale:1})
+                    }
+                })
+            }
+        },400)
+    })
+}
+
+function eventBanner(){//메뉴소개 : 이벤트배너
+    var eventBanner_slider = new Swiper('.event_banner_slider .swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        slidesPerView: 1,
+        autoHeight:true,
+    });
+};
+
+
+function popup_open(obj){//팝업 열기 iframe
+    var p_target = $(obj).attr('href');
+    $('body').prepend('<div class="popup_iframe_wrapper"><iframe src="'+p_target+'" scrolling="no"></iframe><button class="btn_close"></button></div>');
+    $('body').prepend('<div class="popup_dim"></div>');
+    TweenLite.to($('.popup_iframe_wrapper'),0.6,{ease:Power4.easeOut, top:0,delay:0.2})
+    TweenLite.to($('.popup_dim'),0.5,{ease:Power2.easeOut, opacity:0.7,delay:0.1,onComplete:function(){
+        $('body,.popup_dim').css('overflow-y','hidden').on('touchmove', function(e){e.preventDefault();return false;});
+    }})
+
+    $('.popup_iframe_wrapper .btn_close').on('click', function(){
+        $('body').css('overflow-y','auto')
+        TweenLite.to($('.popup_iframe_wrapper'),0.6,{ease:Power4.easeOut, top:'100%'})
+        TweenLite.to($('body >.popup_dim'),0.5,{ease:Power2.easeOut,delay:0.2, opacity:0,onComplete:function(){
+            $('body .popup_iframe_wrapper').remove();
+            $('body >.popup_dim').remove();
+            $('body').off('touchmove');
+        }})
+    })
+}
+
+
+function branchGuide(){//가맹점 : 지사안내
+	$('.branch_guide_wrapper .tab ul li a').on('click', function(){
+		var tg  = $(this).attr('href');
+		$(this).parent('li').addClass('active').siblings('li').removeClass('active');
+
+		$('.branch_guide_wrapper .branch_guide_map').removeClass('active')
+		$(tg).addClass('active');
+		return false;
+	})
+}
+
+function information(){//가맹점 : 사업설명회
+    $('.franchise_information .tab ul li a').on('click', function(){
+        var tg  = $(this).attr('href');
+        $(this).parent('li').addClass('active').siblings('li').removeClass('active');
+
+        $('.franchise_information .information').removeClass('active')
+        $(tg).addClass('active');
+        return false;
+    })
+}
+
+function tvCommercial(){//새소식 : 광고영상
+	$('.tv_commercial_wrapper .tv_commercial_list li a').on('click', function(){
+		var tg = $(this).attr('href');
+		$('.tv_commercial_wrapper .tv_commercial_view iframe').attr('src',tg);
+		$(this).parent('li').addClass('active').siblings('li').removeClass('active');
+		return false;
+	})
+}
+
+function subwayUtilization(){//써브웨이 이용방법
+    var orderSwiper = new Swiper('#store_order .swiper-container', {
+        nextButton: '#store_order .swiper-button-prev',
+        prevButton: '#store_order .swiper-button-next',
+        slidesPerView: 1,
+        autoHeight:true,
+        pagination:'#store_order .swiper-pagination',
+        paginationClickable:true,
+        paginationBulletRender: function (index, className) {
+            return '<div class="' + className + '"><span>' + (index+1) + '</span></div>';
+        }
+
+    })
+
+	$('.utilization_subway_wrapper .tab ul li a').on('click', function(){//써브웨이 이용방법 : tab
+		if($(this).parent('li').hasClass('active')){
+			return false;
+		}else{
+			var tg = $(this).attr('href');
+			$(this).parent('li').addClass('active').siblings('li').removeClass('active')
+			$(tg).show().siblings('.utilization_subway_content').hide();
+			if(tg == '#order_tip'){
+				$('#order_tip .tip_intro').each(function(){
+					var tipSwiper = $(this).find('.swiper-container');
+					var tipSwiper_prev = $(this).find('.swiper-button-prev');
+					var tipSwiper_next = $(this).find('.swiper-button-next');
+					var tipSwiper = new Swiper(tipSwiper, {
+						nextButton: tipSwiper_next,
+						prevButton: tipSwiper_prev,
+						slidesPerView: 1,
+						autoHeight:false
+					})
+				});
+
+				AOS.init({
+					once:'data-aos-once',
+					duration:600,
+					easing: 'ease-out-ease',
+				});
+			}
+			return false;
+		}
+	})
+}
+
+
+function mainScript(){
+    $('.subway_menu_wrapper .tab ul li a').on('click', function(){
+        var $this = $(this);
+        var tg = $this.attr('href');
+        var $index = $this.parent().index();
+        //alert($index)
+        $this.parent('li').addClass('active').siblings('li').removeClass('active');
+        $('.subway_menu_slider.active').css('height','0').removeClass('active')
+        TweenLite.to($(tg).addClass('active').css('height','auto'),0.7,{ease:Power4.easeOut,opacity:1})
+        return false;
+    })
+
+    $('.subway_menu_slider').each(function(){
+        var menu = $(this).find('.swiper-container');
+        var page = $(this).find('.swiper-pagination');
+        var tipSwiper_prev = $(this).find('.swiper-button-prev');
+        var tipSwiper_next = $(this).find('.swiper-button-next');
+        var subwayMenuSwiper = new Swiper(menu, {
+            pagination: page,
+            nextButton: tipSwiper_next,
+            prevButton: tipSwiper_prev,
+            slidesPerView: 1,
+            autoHeight:true
+        })
+    })
+
+    var eventSwiper = new Swiper('.main_top_event_wrapper >.swiper-container', {
+        autoplay:3000,
+        pagination: '.main_top_event_wrapper .swiper-pagination',
+        onlyExternal:false,
+        loop:true,
+        slidesPerView: 1,
+        autoHeight:true
+    })
+}
+
+
+function faq(){//faq
+	$('.faq_wrapper .fre').on('click', function(){
+		console.log("safasdfad");
+		var spd = 0.5,
+			eft = Power3.easeOut;
+		if($(this).parent('li').hasClass('open')){
+			$(this).parent('li').removeClass('open');
+			TweenLite.to($(this).next('.ask'),spd,{ease:eft,height:0})
+		}else{
+			$(this).parent('li').addClass('open');
+			var h = $(this).next('.ask').find('.ask_text').innerHeight();
+			TweenLite.to($(this).next('.ask'),spd,{ease:eft,height:h})
+		}
+	})
+}
+
+
+function groupMenu(){//써브웨이 이용방법 : 단체메뉴 주문하기 slider
+    var groupMenu_Swiper = new Swiper('.group_menu_wrapper .visual_slider_wrapper .swiper-container', {
+        slidesPerView: 1,
+        autoHeight:true,
+        pagination:'.group_menu_wrapper .visual_slider_wrapper .swiper-pagination',
+        paginationClickable:true,
+        autoplay:3000,
+        paginationBulletRender: function (index, className) {
+            return '<div class="' + className + '"><span>' + (index+1) + '</span></div>';
+        }
+
+    })
+
+    var groupMenu_order_Swiper = new Swiper('.group_menu_wrapper .group_menu_order .swiper-container', {
+        slidesPerView: 1,
+        autoHeight:true,
+        pagination:'.group_menu_wrapper .group_menu_order .swiper-pagination',
+        paginationClickable:true,
+        autoplay:3000,
+        paginationBulletRender: function (index, className) {
+            return '<div class="' + className + '"><span>' + (index+1) + '</span></div>';
+        }
+
+    })
+};
+
+function storedetail_Swiper(){//store detail swiper
+    var store_detailSwiper = new Swiper('.store_detail_wrapper .store_slider .swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        slidesPerView: 1,
+        autoHeight:true,
+		loop:true,
+    });
+}
+
+
+function storeview_layer_open(){//매장찾기 레이어 open
+	TweenLite.to($('.store_search_wrapper .store_map .store_map_layer').show(),0.5,{ease:Back.easeOut,top:'35px'})
+}
+
+function storeview_layer_close(){//매장찾기 레이어 close
+	$('.store_search_wrapper .store_map .store_map_layer').attr('style','')
+}

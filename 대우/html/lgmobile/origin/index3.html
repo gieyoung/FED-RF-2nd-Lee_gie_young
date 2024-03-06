@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>시계추 애니메이션</title>
+	<style>\
+	*{margin: 0; padding: 0;
+		box-shadow: border-box;}
+	.box{
+		width: 1232px;
+		height: 1000px;
+		border:10px solid #000;
+		margin:30px auto;
+		position: relative;
+
+	}
+
+	/*위시계*/
+
+	.clock{
+		animation: move 3s infinite ease-in-out;
+		animation-play-state:paused;
+	}
+
+	.box:hover .clock{
+		animation-play-state:running;
+	}
+
+
+
+
+	@keyframes move{
+		0%{transform:rotate(45deg);}
+		50%{transform:rotate(-45deg);}
+		100%{transform:rotate(45deg);}
+	}
+
+
+
+	.clock .line{
+		background:#000;
+		width: 5px;
+		height: 200px;
+		position: absolute;
+		left:50%; top:0;
+
+	}
+
+	.clock .circle{
+		width: 200px;
+		height: 200px;
+		border:7px solid #000;
+		border-radius: 100%;
+		position: absolute;
+		left:50%; top:200px;
+		margin-left: -100px;
+		background: url("images/suzi.JPG") no-repeat 80% center;
+        background-size: cover;
+		
+	}
+
+
+	/*아래시계*/
+
+
+
+	.clock2 .line{
+		background:#000;
+		width: 5px;
+		height: 200px;
+		position: absolute;
+		left:50%; bottom:0;
+
+	}
+
+	.clock2 .circle{
+		width: 200px;
+		height: 200px;
+		border:7px solid #000;
+		border-radius: 100%;
+		position: absolute;
+		left:50%; bottom:200px;
+		margin-left: -100px;
+		background: url("images/suzi.JPG") no-repeat 80% center;
+        background-size: cover;
+       
+	}
+
+	.clock2{
+		/*transform-origin: center bottom;*/
+		animation: m2 3s infinite ease-in-out;
+		border:1px solid red;
+		position: absolute;
+		left:50%; bottom:0;
+		animation-play-state: paused;
+	}
+
+
+	@keyframes m2{
+		0%{transform: rotate(45deg);}
+		50%{transform:rotate(-45deg);}
+		100%{transform: rotate(45deg);}
+	}
+
+	.box:hover .clock2{
+		animation-play-state: running;
+
+	}
+
+
+	/*왼쪽추*/
+
+	.clock3 .line{
+		background:#000;
+		width: 200px;
+		height: 5px;
+		position: absolute;
+		left:0; top:50%;
+
+	}
+
+	.clock3 .circle{
+		width: 200px;
+		height: 200px;
+		border:7px solid #000;
+		border-radius: 100%;
+		position: absolute;
+		left:200px; top:50%;
+		margin-top: -100px;
+		background: url("images/suzi.JPG") no-repeat 80% center;
+        background-size: cover;
+       
+	}
+
+	.clock3{
+		border:1px solid red;
+		position: absolute;
+		left:0; top:50%;
+		animation: m3 3s infinite ease-in-out;
+		animation-play-state: paused;
+	}
+
+	.box:hover .clock3{
+		animation-play-state: running;
+	}
+
+	@keyframes m3{
+		0%{transform: rotate(45deg);}
+		50%{transform: rotate(-45deg);}
+		100%{transform: rotate(45deg);}
+	}
+
+
+
+	/*오른시계*/
+
+	.clock4 .line{
+		background:#000;
+		width: 200px;
+		height: 5px;
+		position: absolute;
+		right:0; top:50%;
+
+	}
+
+	.clock4 .circle{
+		width: 200px;
+		height: 200px;
+		border:7px solid #000;
+		border-radius: 100%;
+		position: absolute;
+		right:200px; top:50%;
+		margin-top: -100px;
+		background: url("images/suzi.JPG") no-repeat 80% center;
+        background-size: cover;
+       
+	}
+
+	.clock4{
+		position: absolute;
+		right:0; top:50%;
+		animation: m4 3s infinite ease-in-out;
+		animation-play-state: paused;
+	}
+
+	.box:hover .clock4{
+		animation-play-state: running;
+
+	}
+
+	@keyframes m4{
+		0%{transform: rotate(45deg);}
+		50%{transform: rotate(-45deg);}
+		100%{transform: rotate(45deg);}
+
+	}
+
+	h2{ position: absolute;
+		left:50%; top:50%;
+		transform: translateX(-50%);
+		
+	
+
+
+
+
+	
+
+
+
+		
+
+
+	</style>
+	
+
+
+
+
+</head>
+
+
+
+<body>
+	<div class="box">
+		<h2>시계추 애니메이션</h2>
+		<div class="clock">
+			<div class="line"></div>
+			<div class="circle"></div>
+		</div>
+
+		<div class="clock2">
+			<div class="line"></div>
+			<div class="circle"></div>
+		</div>
+
+
+		<div class="clock3">
+			<div class="line"></div>
+			<div class="circle"></div>
+		</div>
+
+
+		<div class="clock4">
+			<div class="line"></div>
+			<div class="circle"></div>
+		</div>
+		
+
+
+	</div>
+	
+</body>
+</html>

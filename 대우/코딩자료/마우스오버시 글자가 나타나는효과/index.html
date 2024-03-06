@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="이지영">
+    <meta name="keywords" content="호버, 텍스트 움직임 효과">
+    <meta name="description" content="">
+    <title>마우스를 이미지위에 올리면 글자가 나타나는 효과</title>
+    
+    
+<style>
+    body{width: 100%;}
+    *{margin: 0; padding: 0;}
+    a{text-decoration: none;}
+    li{list-style: none;}
+    .box{width: 700px; height: 500px; margin: 200px auto 0;}
+    .box a{display: block;}
+    .box img{width:100%; height: 500px;}
+    .cover{position: relative;}
+
+
+    
+/*    마우스 오버시 움직이는 텍스트(처음에는 그림 밖에 위치)*/
+    .box h2{position: absolute; left:20px; top:-10%;color:#fff;z-index:99; transition:all .35s;}
+    .box p{position: absolute; left:20px; bottom:-10%; color:#fff;z-index:99; transition:all .35s;}
+    
+  
+    
+    
+/*  텍스트에 마우스 오버 효과(마우스 가져다 댄후 정착하는 위치)*/
+    .box a:hover h2{top:30%;}
+    .box a:hover p{bottom:40%;}
+    
+/*마우스 가져다대면 사진이 어두워짐*/
+    .box a:hover .cover::after{content:''; position: absolute; display:block;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
+    
+
+    
+
+        
+</style>
+</head>
+
+<body>
+
+<div class="box">
+ <a href="#">
+    <div class="cover">
+        <img src="images/image01.jpg">
+        <h2>마우스를 가져다대면</h2>
+        <p>글자가 위아래에서 나타나는 효과</p>
+    </div>
+ </a>
+  
+
+</div>
+ 
+</body>
+</html>
+
+
+
+
+

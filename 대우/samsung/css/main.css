@@ -1,0 +1,290 @@
+@charset "util-8";	
+body{
+	font-family: "맑은고딕";
+
+
+}	
+
+
+/*헤더*/
+
+
+.header{
+			width: 100%;
+			height: 65px;
+			border-bottom: 1px solid #eeeeee;
+}
+		
+
+.header .header_inner{
+			width: 1440px;
+			height: 65px;
+			/*border:1px solid red;*/
+			margin:0 auto;
+			position: relative;
+}
+
+
+/*헤더왼*/
+
+.header .header_inner .gnb{
+	float:left;
+}
+
+.header .header_inner .gnb a{
+	display: block;
+	height: 65px;
+	line-height: 65px;
+	font-weight: bold;
+	font-size: 14px;	
+	color:#000;
+	/*border:1px solid red;*/
+
+
+
+}
+
+.header .header_inner .gnb a:hover{
+	border-bottom: 3px solid #182d98;
+	color:#182d98;
+	box-sizing: border-box;
+}
+
+.header .header_inner .gnb li{
+	float: left;
+	padding:0 11px;
+	/*border:1px solid blue;*/
+
+}
+
+.header .header_inner .gnb li:nth-child(1){
+	padding-left: 0;
+}
+
+.header .header_inner .gnb li:nth-child(7){
+	padding-right: 0;
+}
+
+
+
+
+/*헤더오른*/
+
+.header .header_inner .util{
+	float:right;
+
+}
+
+.header .header_inner .util li{
+	float:left;
+	padding:0 11px;
+
+}
+
+.header .header_inner .util a{
+	display: block;
+	font-size: 14px;	
+	color:#000;
+	line-height: 65px;
+	font-weight: 700;
+	/*border:1px solid red;*/
+
+}
+
+.header .header_inner .util .icon{
+	font-size: 20px;
+
+	/*폰트어썸은 이미지가 아닌 글자*/
+}
+
+.header .header_inner .util span{
+	display: block;
+	position: absolute;
+	left:-99999px;
+	
+/*span은 인라인 요소라 디스플레이 블락 걸어줘야함.
+text-indent로 글자날리면 공간이 비니까 띄운다음 글자 왼쪽으로 보냄*/
+}
+
+.header .header_inner .util li:nth-child(1){
+	padding-left: 0;
+}
+
+.header .header_inner .util li:nth-child(6){
+	padding-right: 0;
+}
+
+
+
+.header .header_inner h1 a{
+	display: block;
+	background: url("../images/svg-logo.svg") no-repeat;
+	width: 133px;
+	height: 21px;
+	position: absolute;
+	left:50%; top:50%;
+	transform: translate(-50%,-50%);
+	text-indent: -99999px;
+
+}
+
+
+/*슬라이드*/
+
+
+
+		.main{
+			width: 100%;
+			position: absolute;
+			left:0; top:0;
+
+
+			
+		}
+
+		.main .slick-slide{
+			width: 100%;
+			height: 810px;
+
+		}
+
+		.main .slick-slide a{
+			display: block;
+			width: 100%;
+			height: 810px;
+
+		}
+
+		.main .main1 a{
+			background: url("../images/main_slide_01.png") no-repeat;
+			width: 1920px;
+			height: 810px;
+
+		}
+
+		.main .main2 a{
+			background: url("../images/main_slide_02.png") no-repeat;
+			width: 1920px;
+			height: 810px;
+		}
+
+		.main .main3 a{
+			background: url("../images/main_slide_03.png") no-repeat;
+			width: 1920px;
+			height: 810px;
+		}
+		
+
+		.main .main4 a{
+			background: url("../images/main_slide_04.png") no-repeat;
+			width: 1920px;
+			height: 810px;
+		}
+		
+
+		.main .main5 a{
+			background: url("../images/main_slide_05.png") no-repeat;
+			width: 1920px;
+			height: 810px;
+		}
+
+		.main .main6 a{
+			background: url("../images/AnyConv.com__main_slide_06.png") no-repeat;
+			width: 1920px;
+			height: 810px;
+		}
+
+
+
+
+		.main .slick-prev{
+			position: absolute;
+			z-index: 10;
+			left:50%; top:50%;
+			margin-left: -700px;
+			margin-top: -39px;
+    		transition: all 0.2s ease;
+			background: url("../images/arrowleft.svg") no-repeat;
+			width: 30px; height: 50px;
+			background-size: 25px;
+			text-indent: -99999px;
+			cursor: pointer;
+			border:none;
+			outline: none;
+		}
+
+
+		.main .slick-prev:hover{
+			background: url("../images/grayleft.svg") no-repeat;
+			width: 30px; height: 50px;
+			background-size: 25px;
+
+		}
+
+
+		.main .slick-next{
+			position: absolute;
+			z-index: 10;
+			left:50%; top:50%;
+			margin-left: 630px;
+			margin-top: -39px;
+			transition: all 0.2s ease;
+			background: url("../images/arrowright.svg") no-repeat;
+			width: 30px; height: 50px;
+			text-indent: -99999px;	
+			background-size: 25px;
+			cursor: pointer;
+			border:none;
+			outline: none;
+		}
+
+		.main .slick-next:hover{
+			background: url("../images/gray.svg") no-repeat;
+			width: 30px; height: 50px;
+			background-size: 25px;
+
+		}
+
+
+		/*페이지버튼 커스터 마이징*/
+
+		/*.main .slick-dots{
+			width: 100%;
+			position: absolute;
+			bottom:85px;
+			text-align: center;
+		}
+
+		.main .slick-dots li{
+			display: inline-block;
+			margin-right: 3px;
+		}
+
+		.main .slick-dots li:last-child{
+			margin-right: 0;
+		}
+
+		.main .slick-dots li button{
+			background: url("../images/ico_slide_control.png") no-repeat;
+			width: 12px; height: 12px;
+			outline:none;
+			border:none;
+			text-indent: -99999px;
+			cursor: pointer;
+		}
+
+
+	
+		.main .slick-dots .slick-active button{
+			background: url("../images/ico_slide_control2_on.png") no-repeat;
+			width: 26px; height: 12px;
+		}*/
+
+
+
+
+
+
+
+
+

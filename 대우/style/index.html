@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>스타일</title>
+	<script src="js/jquery-3.5.0.min.js"></script>
+
+	<script>
+		$(function(){
+			/*$("#btn2").click(function(){
+				$(".box1").hide(800);
+
+
+			});
+
+			$("#btn1").click(function(){
+				$(".box1").show(800);
+
+
+			});
+
+			$("#btn3").click(function(){
+				$(".box2").toggle(800);
+
+
+			});
+
+			$("#btn4").click(function(){
+				$(".box3").width(400);
+				$(".box3").height(400);
+
+
+
+			});
+
+
+			$("#btn5").click(function(){
+				$(".box3").width(200);
+				$(".box3").height(200);
+
+
+
+			});
+*/
+
+
+		var b2 = $("#btn2");
+		var bx1 = $(".box1");
+		b2.click(function(){
+			bx1.hide(800);
+
+
+		});
+
+		var b1 = $("#btn1");
+		var bx1 = $(".box1");
+		b1.click(function(){
+			bx1.show(800);
+
+
+		});
+
+		var b3 = $("#btn3");
+		var bx2 = $(".box2");
+		b3.click(function(){
+			bx2.toggle(800);
+
+
+		});
+
+		var b4 = $("#btn4");
+		var bx3 = $(".box3");
+		b4.click(function(){
+			bx3.width(400);
+		
+
+
+
+		});
+
+		var b4 = $("#btn4");
+		var bx3 = $(".box3");
+		b4.click(function(){
+			bx3.width(400);
+			bx3.height(400);
+
+		});
+
+		var b5 = $("#btn5");
+		var bx3 = $(".box3");
+		b5.click(function(){
+			bx3.width(200);
+			bx3.height(200);
+
+		
+
+
+
+		});
+
+
+		});
+
+		
+
+
+
+	</script>
+	<style>
+
+
+		div{
+			width: 200px;
+			height: 200px;
+			border:1px solid #000;
+			float:left;
+		}
+
+
+		.box1{
+			background: #ffcc00;
+			
+
+		}
+
+		.box2{
+			background: #47c2fb;
+			margin:0 20px;
+		
+
+		}
+
+		.box3{
+			background: #fd6f7d;
+			
+		}
+
+
+
+
+		
+
+
+</style>
+
+</head>
+
+
+
+
+<body>
+	<h1>[jQuery 스타일변경 메서드]</h1>
+
+	<ol>
+		<li>$('대상').css();</li>
+		<li>$('대상').show();</li>
+		<li>$('대상').hide();</li>
+		<li>$('대상').toggle();</li>
+		<li>$('대상').width();</li>
+		<li>$('대상').height();</li>
+		
+
+
+	</ol>
+
+	<button type="button"  id="btn1">Show</button>
+	<button type="button"  id="btn2">Hide</button>
+	<button type="button"  id="btn3">Toggle</button>
+	<button type="button"  id="btn4">Big</button>
+	<button type="button"  id="btn5">Small</button>
+	<hr>
+
+
+
+	<div class="box1">Show/Hide</div>
+	<div class="box2">Toggle</div>
+	<div class="box3">Width/Height</div>
+
+
+
+
+	</style>
+
+	
+		
+
+
+
+	
+</body>
+</html>

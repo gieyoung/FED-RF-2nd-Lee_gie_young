@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	
+	<title>에스원인재개발원</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/jquery-3.5.0.min.js"></script>
+	
+	<!-- 	
+	<script>
+		
+
+			$(document).ready(function(){
+				
+		});
+
+		
+
+
+
+	</script> -->
+
+
+
+
+	
+
+
+
+		
+	
+</head>
+
+<body>
+	<div class="wrap">
+
+<div class="header">
+	<div class="header_inner">
+		<h1><a href="index.html">에스원인재개발원</a></h1>
+		<ul class="gnb">
+			<li>
+				<a href="#">인재개발원 소개</a>
+				<ul class="depth2">
+					<li><a href="#">인사말</a></li>
+					<li><a href="#">오시는길</a></li>
+					<li><a href="#">새 소식</a></li>
+				</ul>
+			</li>
+
+
+
+
+			
+			<li><a href="#">시설안내</a>
+				<ul class="depth2">
+					<li><a href="#">시설 개요</a></li>
+					<li><a href="#">교육 시설</a></li>
+					<li><a href="#">숙박 시설</a></li>
+					<li><a href="#">편의 시설</a></li>
+					<li><a href="#">시설 단면도</a></li>
+				</ul>	
+			</li>
+
+
+			<li><a href="#">프로그램 안내</a>
+				<ul class="depth2">
+					<li><a href="#">챌린지 코스</a></li>
+					<li><a href="#">에스원 바이크 스쿨</a></li>
+					<li><a href="#">블루에셋 기술교육센터</a></li>
+					<li><a href="#">경비원 교육</a></li>
+				</ul>	
+			</li>
+
+			<li><a href="#">예약문의</a>
+				<ul class="depth2">
+					<li><a href="#">시설 문의</a></li>
+					<li><a href="#">프로그램 문의</a></li>
+					<li><a href="#">예약 조회</a></li>
+					<li><a href="#">간편 견적</a></li>
+				</ul>
+			</li>
+		</ul>
+
+
+
+		<div class="util_wrap">
+			<ul class="util">
+					<li><a href="#">ENG</a></li>
+					<li><a href="#">고객지원</a></li>
+			</ul>
+			
+
+			<div class="boxs">
+				<a href="#" class="a_1">수료증 발급</a>
+				<a href="#" class="a_2">내방객 등록</a>
+			</div>
+        
+        </div>
+
+
+
+</div>
+</div>	
+</div>
+
+	
+
+	<div id="main">
+		<div class="visual"></div>
+	</div>
+	
+
+
+
+
+	<script>
+		
+
+			$(function(){
+				// var gnb=$(".gnb");
+				// var wrap=$(".wrap");
+
+				// gnb.mouseenter(function(){
+				// 	wrap.higth(300);
+
+
+
+					$(".gnb").mouseenter(function(){
+						$(".wrap").stop().animate({"height":320})
+						$(".depth2").show();
+
+					});
+
+
+					$(".gnb").mouseleave(function(){
+						$(".wrap").stop().animate({"height":95})
+						$(".depth2").hide();
+
+					});
+
+
+
+
+					
+
+
+
+
+				
+				
+		});
+			
+
+		
+
+
+
+	</script>
+
+	
+</body>
+</html>

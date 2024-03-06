@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		p.typing{
+		  position:relative;
+		  display: inline-block;
+		  overflow:hidden;		  
+		  height: 25px;
+		  animation: typingAni 5s steps(30, end) 1;
+		  font-family:'∏º¿∫ ∞ÌµÒ';
+		}
+		p.typing::after{
+		  position:absolute; 
+		  display:block;
+		  content:""; 
+		  top : 3px;
+		  right:0; 		  
+		  width: 20px; 
+		  height: 20px;
+		  border-right: 1px solid #000;
+		  animation: cursor 0.5s step-end infinite;
+		}
+		@keyframes typingAni {
+		  0%{width:0%}
+		  100%{width: 165px};
+		}
+		@keyframes cursor{
+		  0%{opacity:0;}
+		  50%{opacity:1;}
+		  100%{opacity:0;}
+		}
+	</style>
+</head>
+	
+<body>
+	<p class="typing">æ»≥Á«œººø‰. π›∞©Ω¿¥œ¥Ÿ.</p> 
+</body>
+
+</html>
+
+
+
+
+

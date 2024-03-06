@@ -1,0 +1,431 @@
+@charset "utf-8";
+body{font-family: 'Noto Sans KR', sans-serif; 
+font-size: 14px;
+color:#333232;
+
+}
+
+
+.header{}
+
+
+.header .header_inner{
+	position: absolute;
+	left:50%; top:30px;
+	margin-left: -550px;
+	width: 1100px;
+	height: 66px;
+	background: #fff;
+
+}
+
+
+/*로고*/
+
+
+.header .header_inner h1{
+	float:left;
+	
+}
+
+.header .header_inner h1 a{
+	display: block;
+	width: 113px;
+	height: 37px;
+	background: url("../images/header_logo.jpg") no-repeat;
+	text-indent:-99999px;
+	margin:14px 50px 0 30px;
+	
+}	
+
+/*메뉴*/
+
+
+.header .header_inner>.gnb{
+	float:left;
+
+}
+
+.header .header_inner>.gnb>li{
+	float:left;
+
+	/*line-height: 66px;*/
+	padding: 26px 30px;
+	position: relative;
+	
+
+
+
+}
+
+
+
+.header .header_inner>.gnb>li::before{
+	content:"";
+	position: absolute;
+	left:0; top:19px;
+	width: 1px; height: 27px;
+	background: #c8c8c8;
+}
+
+.header .header_inner>.gnb>li:first-child::before{
+	display: none;
+}
+
+.header .header_inner .gnb>li>a{
+	font-size: 16px;
+	font-weight: 500;
+	color:#5a5a5a;	
+}
+
+
+
+.header .header_inner .gnb>li:hover>a{
+	color:#3381c0;
+	border-bottom:2px solid #3381c0;
+
+}
+
+/*2단메뉴*/
+
+
+
+
+
+
+.header .header_inner .gnb>li>.depth2{
+	position: absolute;
+	text-align: center;
+	left: 50%; top:66px;
+	margin-left: -83px;
+	width: 166px;
+	background: #fff;
+	display: none;
+	
+}
+   
+
+ 
+
+
+.header .header_inner .gnb>li:hover .depth2{
+	display: block;
+	z-index: 10;
+}
+
+
+	
+	
+
+
+.header .header_inner .gnb>li .depth2 li{
+	padding: 12px 0;
+	
+
+
+}
+
+.header .header_inner .gnb>li .depth2 li a{
+	display:inline-block;
+	color:#5a5a5a;
+	padding: 0 10px;
+
+}
+
+
+
+
+.header .header_inner .gnb>li>.depth2 li:hover{
+	background: #3381c0;
+
+
+
+}
+
+.header .header_inner .gnb>li .depth2 li:hover a{
+	color:#fff;
+	background: url("../images/icon_arrow2.png") no-repeat left center;
+
+}
+
+
+
+/*메뉴 오른쪽*/
+
+
+.header .header_inner .lang{
+	float:right;
+}
+
+.header .header_inner .lang a{
+	display: block;
+	margin:22px 30px 0 0;
+	border:1px solid #dedede;
+	color:#8d8d8d;
+	font-size: 12px;
+	font-weight: 300;
+	padding:5px;
+
+}
+
+
+
+
+
+
+.main .visual{
+	width: 100%;
+	height: 960px;
+	background: url("../images/mainslide_img01.jpg") no-repeat center top;
+
+}
+
+
+.main .visual .visual_inner{
+	position: absolute; 
+	left:50%; top:200px;
+	margin-left:-461px;
+
+}
+
+.main .visual .visual_inner h2{
+	font-size: 30px;
+	padding-bottom: 20px;
+	letter-spacing: -2px;
+	font-weight: 700;
+}
+
+
+.main .visual .visual_inner p{
+	font-size: 30px;
+	letter-spacing: -2px;
+	padding-bottom: 30px;
+
+}
+
+.main .visual .visual_inner ul li{
+	padding-bottom: 10px;
+	font-size: 18px;
+    color:#5a5a5a;
+
+}
+
+.main .visual .visual_inner a{
+	background: url("../images/btn_main01.png") no-repeat;
+	text-indent: -99999px;
+	display: block;
+	width: 145px; height: 40px;
+	margin-top: 20px;
+
+}
+
+
+/*footer*/
+
+
+.footer{
+	width:100%;
+	padding: 29px 0 40px;
+	background: #c8c8c8;
+    color: #666;
+
+}
+
+
+.footer .footer_inner{
+	width: 1100px;
+	
+	margin: auto;
+
+
+}
+
+.footer .footer_inner::after{
+	display:block;
+	clear: both;
+	content:"";
+}
+
+/*overflow명령과 기능이 같음*/
+
+
+
+.footer .footer_inner h2{
+	background: url("../images/footer_logo.jpg") no-repeat;
+	width: 104px; height: 32px;
+	text-indent: -99999px;	
+	float: left;
+	margin-right: 22px;
+}
+
+
+.footer .footer_inner .list_wrap{
+	float: left;
+}
+
+
+
+.footer .footer_inner .list_wrap .list::after{
+	display:block;
+	clear: both;
+	content:"";
+}
+
+/*이것과 같다
+.footer .footer_inner .list_wrap .list{
+	
+	overflow: hidden;
+}*/
+
+
+.footer .footer_inner .list_wrap .list li{
+	float: left;
+	padding:0 15px;
+	position: relative;
+	
+	
+
+}
+
+.footer .footer_inner .list_wrap .list li::after{
+	content:"";
+	position: absolute;
+	left:0; top:0;
+	width: 1px; height: 14px;
+	background:#666;
+
+}
+/*
+.footer .footer_inner .list_wrap .list li:first-child::after{
+	display: none;
+
+}*/
+
+.footer .footer_inner .list_wrap .list li:first-child{
+    padding-left:0;
+
+    }
+
+
+.footer .footer_inner .list_wrap .list li:first-child::after{
+	display: none;
+}
+
+
+.footer .footer_inner .list_wrap .list li:last-child{
+	padding-right: 0;
+}
+
+
+
+.footer .footer_inner .list_wrap .list li a{
+	color: #5a5a5a;
+	font-size: 12px;
+}
+
+.footer .footer_inner .list_wrap address{
+	font-size: 12px;
+	color:#5a5a5a;
+	padding-top: 30px;
+	line-height: 18px;
+
+}
+
+
+
+/*패밀리사이트*/
+
+
+.footer .footer_inner .family_site{
+	float: right;
+	background: #fff;
+	position: relative;
+	margin-top: -10px;
+
+}
+
+
+.footer .footer_inner .family_site .btn_family{
+	width: 147px;
+	padding: 8px 8px 7px 8px;
+	border:1px solid #a0a0a0;
+	text-align: left;
+	background: url("../images/icon_arrow.png") no-repeat 90% center;
+	color:#fff;
+    text-align: left;
+	text-indent: 6px;
+	cursor: pointer;
+
+}
+
+.footer .footer_inner .family_site:hover .btn_family{
+  background: url("../images/icon_arrow.jpg") no-repeat 90% center;
+
+}
+
+.footer .footer_inner .family_site .btn_family a{
+	font-size: 12px;
+	left:0;
+	color:#333;
+
+}
+
+.footer .footer_inner .family .list{
+			position: absolute;
+			left:0; bottom:29px;
+			border: 1px solid #a0a0a0;
+			width: 147px;
+			box-sizing: border-box;
+			background: #fff;
+			display: none;
+			
+		}
+
+
+
+.footer .footer_inner .family:hover .list{
+			display: block;
+			
+		}
+	
+
+
+
+.footer .footer_inner .family .list li a{
+			
+			display: block;
+			font-size: 12px;
+			color:#333;
+			padding:10px 0;
+			text-indent: 13px;
+
+
+
+		}
+
+.footer .footer_inner .family .list li a:hover{
+	color:#a0a0a0;
+}
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+			
+			
+
+
+
+
+

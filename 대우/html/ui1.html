@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+  body{background:#222;color:#eee;}
+  li{margin-bottom:10px; list-style:none;}
+  fieldset{width:800px;}
+  </style>
+ </head>
+
+
+
+ <body>
+ <h1>입력요소의 종류와 속성</h1>
+ <form>
+ <fieldset>
+	<legend>회원가입</legend>
+		<ul>
+		<li><label>아이디 :</label>
+			<input type="text">
+			<input type="button" value="중복확인">
+		</li>
+		<li><label>패스워드 :</label>
+			<input type="password"></li>
+		<li><label>메일수신 :</label><label>예</label>
+			<input type="radio" name="a" checked>
+			아니오<input type="radio" name="a">
+		</li>
+		
+		<li>
+		<label>관심분야 :</label>
+		<input type="checkbox" checked><label>HTML</label>
+		<input type="checkbox"><label>CSS</label>
+		<input type="checkbox"><label>Javascript</label>
+		</li>
+
+		<li>
+		<label>생일 :</label><input type="date">
+		</li>
+
+		<li>
+		<label>파일첨부</label><input type="file">
+		</li>
+
+		<li>
+		<label>이메일</label><input type="email">
+		</li>
+
+		<hr>
+		<input type="submit" value="가입하기">
+		<input type="reset" value="가입취소">
+	    </ul>
+
+ </fieldset>
+ </form>
+
+
+ <form>
+ <fieldset>
+	<legend>글상자와 선택</legend>
+	<p>설명<br>
+	<textarea rows="3" cols="30"></textarea>
+
+	<br>
+	
+
+
+
+	<p><label>과목선택:</label>
+	<select>
+	<option>HTML</option>
+	<option>CSS</option>
+	<option>Javascript</option>
+	<option>Jquary</option>
+	</select>
+
+	<label>지역선택:</label>
+	<select>
+	<optgroup label="관악구">
+	<option>남현동</option>
+	<option>신림동</option>
+	<option>봉천동</option>
+	<optgroup label="동대문구">
+	<option>답심리</option>
+	<option>신설동</option>
+	<option>전농동</option>
+	</optgroup>
+	</select>
+
+	<label>브라우저 선택:</label>
+	<input list="browers" name="web">
+	<datalist id="browers">
+		<option value="chrome">
+		<option value="safari">
+		<option value="internet explorer">
+		<option value="firefox">
+	</datalist>
+	
+	
+
+
+	</p>
+
+
+ 
+ 
+ 
+ 
+ 
+ </fieldset>
+
+
+ </form>
+	
+ </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">   
+   <title>부트스트랩 반응형 응용</title>
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet" href="css/bootstrap.min.css">   
+   <script src="js/jquery-3.5.0.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   
+   <style>
+   h1{margin: 0;}
+   .navbar{border-radius: 0;border: none;}
+   .navbar-inverse .navbar-nav>li>a:hover{color: yellow;}
+   .on{color: yellow!important;}
+   .jumbotron{margin-top: 70px;text-align: center;}
+    .col-md-3 p{margin-bottom: 20px;}
+    .col-md-3 a{margin-bottom: 30px;}
+       .pull-left{color:#fff;}
+       .pull-right{color:#fff;margin-top: 10px;}
+      
+   </style>
+   
+</head>
+<body>
+   <nav class="navbar navbar-default">
+    <div class="container">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <h1><a class="navbar-brand" href="#">Portfolio</a></h1>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" class="on">About</a></li>
+        <li><a href="#">Skill</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Photoshop<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">배너디자인</a></li>
+            <li><a href="#">이벤트디자인</a></li>
+            <li><a href="#">상품상세페이지</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="#">이미지합성</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Illustrator</a></li>
+        <li><a href="#">Web Page</a></li>
+        <li><a href="#">Mobile Page</a></li>
+        <li><a href="#">Responsive Page</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+       </div>
+  <div class="container">
+  <div class="jumbotron">
+  <h1>Hello, Jumbotron!</h1>
+  <p>Marbinn in sem quis dui placerat ornare. Pellentesque odio nisi,euismod in, pharetra a, ultrisies in, diam,<br>Sed arcu, Cras consequat</p>
+  <p><a class="btn btn-warning btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+ <div class="container">
+     <div class="row">
+        <div class="col-xs-12 col-md-3 col-sm-6">
+        <h2>Content Title1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur, quibusdam voluptatibus, facilis quo obcaecati, adipisci culpa quas provident delectus dolores similique dolore excepturi nemo consequuntur ad aspernatur voluptatem totam!</p>
+        <a href="#" class="btn btn-default">Read More</a>
+        </div>
+        <div class="col-xs-12 col-md-3 col-sm-6">
+        <h2>Content Title2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur, quibusdam voluptatibus, facilis quo obcaecati, adipisci culpa quas provident delectus dolores similique dolore excepturi nemo consequuntur ad aspernatur voluptatem totam!</p>
+        <a href="#" class="btn btn-default">Read More</a>
+        </div>
+        <div class="col-xs-12 col-md-3 col-sm-6">
+        <h2>Content Title3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur, quibusdam voluptatibus, facilis quo obcaecati, adipisci culpa quas provident delectus dolores similique dolore excepturi nemo consequuntur ad aspernatur voluptatem totam!</p>
+        <a href="#" class="btn btn-default">Read More</a>
+        </div>
+        <div class="col-xs-12 col-md-3 col-sm-6">
+        <h2>Content Title4</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur, quibusdam voluptatibus, facilis quo obcaecati, adipisci culpa quas provident delectus dolores similique dolore excepturi nemo consequuntur ad aspernatur voluptatem totam!</p>
+        <a href="#" class="btn btn-default">Read More</a>
+        </div>
+     </div>
+ </div>
+  </div>
+</nav>
+
+<footer>
+    <nav class="navbar navbar-default navbar-fixed-bottom navbar-inverse">
+  <div class="container">
+    <p class="pull-left navbar-text">Site copywrite</p>
+    <a href="#" class="pull-right btn btn-danger">Subscript on YouTube</a>
+  </div>
+</nav>
+</footer>
+<script>
+   $(function(){
+      $('.collapse>ul>li>a').click(function(){
+         $('.collapse>ul>li>a').removeClass('on')
+         $(this).addClass('on')
+      });
+   });
+</script>
+</body>
+</html>
