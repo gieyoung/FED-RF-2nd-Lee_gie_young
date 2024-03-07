@@ -24,6 +24,9 @@
         // 2-2.출력요소 : #jexp
         var jexp = document.querySelector(".jexp");
 
+        // 2-3.칭찬스티커요소 : #jshow
+        var jshow = document.querySelector(".jshow");
+
         // console.log('선택요소들:',
         // jumsu,jexp);
 
@@ -38,14 +41,16 @@
         // [ 4번 필터링을 위한 공통 처리 함수 ] /////
         var doItNow = function (message) {
           // message전달변수는 에러메시지임!
-          // 메시지 넣기
+          // 1.메시지 넣기
           jexp.innerHTML = message;
-          // 메시지 글자색 복원하기(변경가능성있음)
+          // 2.메시지 글자색 복원하기(변경가능성있음)
           jexp.style.color = "black";
-          // 기존값 지우기
+          // 3.기존값 지우기
           jumsu.value = "";
-          // 포커스넣기 : focus() 내장함수
+          // 4.포커스넣기 : focus() 내장함수
           jumsu.focus();
+          // 5.칭찬스티커 배경위치값 초기화
+          jshow.style.backgroundPosition = "-50% 0%";
         }; ///////// doItNow 함수 ///////////
 
         // 4. 입력된값 필터링처리 ////////////
@@ -84,7 +89,7 @@
           return;
         }
 
-        // 5. 출력 메시지 만들기
+        // 5. 출력 메시지 만들기 ///////////
         // ((점수별 메시지))
         // 90점 이상 : 매우잘함
         // 80점 이상 : 잘함
@@ -97,11 +102,14 @@
         var msg;
         // 글자색 변수
         var fcolor;
+        // 배경위치 변수
+        var bgPos;
 
         // 90점이상일때
         if (score >= 90) {
           msg = "매우잘함";
           fcolor = "blue";
+          bgPos = "100% 50%";
         }
 
         // if(score >= 80 && score < 90){
@@ -112,29 +120,36 @@
         else if (score >= 80) {
           msg = "잘함";
           fcolor = "green";
+          bgPos = "0% 100%";
         }
         // 70점이상일때
         else if (score >= 70) {
           msg = "보통";
           fcolor = "purple";
+          bgPos = "50% 50%";
         }
         // 60점이상일때
         else if (score >= 60) {
           msg = "노력요함";
           fcolor = "orange";
+          bgPos = "100% 100%";
         }
         // 60점 미만(그밖의 모든경우->else)
         else {
           msg = "재시험";
           fcolor = "red";
+          bgPos = "100% 0%";
         }
 
         // 6. 화면출력하기 ///////
-        // innerText 는 텍스트 출력
+        // 6-1. innerText 는 텍스트 출력
         jexp.innerText = "평가결과는 " + msg;
-        // 글자색 처리하기
+        // 6-2. 글자색 처리하기
         jexp.style.color = fcolor;
+        // 6-3. 칭찬스티커 배경위치 변경하기 //
+        jshow.style.backgroundPosition = bgPos;
       } /////////// showJumsu 함수 ////////////
+      /////////////////////////////////////////
 
       // if문 튜닝~~~!
       if (true) {
@@ -236,6 +251,171 @@
 
             if(aa>10) my = "ㅎㅎㅎ";
        ***************************************/
+
+      /********************************************* 
+            함수명 : showLocal
+            기능 : 지역명을 입력하면 지역국번을 안내한다
+       *********************************************/
+      function showLocal() {
+        // 1. 함수호출확인
+        // console.log('지역국번이 뭐야?');
+
+        // 2. 대상선정 : 변경대상
+        // 2-1. 입력요소 : input#local
+        var local = document.querySelector("#local");
+        // 2-2. 출력요소 : h3#info
+        var info = document.querySelector("#info");
+
+        // console.log('대상선정:',local,info);
+
+        // 3. 입력된 값 읽어오기
+        var txt = local.value;
+        // input요소의 값은 value속성으로 읽어온다!
+
+        // 일반적으로 선택요소의 속성을
+        // 이퀄 오른쪽에 쓰면 값을 읽어오고
+        // 이퀄 왼쪽에 쓰고 오른쪽에 값을 쓰면
+        // 값이 셋팅된다!
+        // 예) 속성값 셋팅
+        // document.querySelector('aa').src = 값
+        // 예) 속성값 읽어오기
+        // var bb = document.querySelector('aa').src
+
+        // console.log('입력값:',txt);
+
+        // 4. 빈값 걸러내기 //////////
+        // trim() 문자열 앞뒤공백 제거 메서드
+        if (txt.trim() == "") {
+          // 경고창 띄우기
+          alert("값을 입력후 조회하세요~!");
+          // 입력창 데이터 초기화
+          local.value = "";
+          // 입력창에 포커스
+          local.focus();
+          // 함수나감!
+          return; // 리턴안하면 함수 하단이 실행됨!
+        } /// if ///
+
+        // 5. 지역명을 switch case문으로
+        // 분류하여 메시지 넣기
+
+        // 메시지변수
+        var message;
+
+        switch (txt) {
+          case "서울":
+            message = "02";
+            break;
+          case "경기":
+            message = "031";
+            break;
+          case "인천":
+            message = "032";
+            break;
+          case "부산":
+            message = "051";
+            break;
+          case "대구":
+            message = "053";
+            break;
+          case "광주":
+            message = "062";
+            break;
+          case "전북":
+            message = "063";
+            break;
+          case "전남":
+            message = "061";
+            break;
+          case "경북":
+            message = "054";
+            break;
+          case "경남":
+            message = "055";
+            break;
+          case "세종":
+            message = "044";
+            break;
+          case "울산":
+            message = "052";
+            break;
+          case "대전":
+            message = "042";
+            break;
+          case "충북":
+            message = "043";
+            break;
+          case "충남":
+            message = "041";
+            break;
+          case "제주":
+            message = "064";
+            break;
+          case "나성":
+            message = 
+            "나성에 가면 편지를 전해줘요~!";
+            break;
+          default:
+            message = "etc";
+        } /// switch case /////
+
+        console.log("스위치결과:", message);
+
+        // 6. 메시지 만들기 ////////////
+        // message 변수에 최종 출력내용을 다시 담아서 저장한 후 출력한다!
+        if(message == 'etc'){ // 미등록메시지
+          message = '등록되지 않은 지역입니다!';
+        } /// if ///
+        else{ // 등록지역 메시지
+          message = 
+          `${txt}의 지역번호는 
+          <span 
+          style="
+          color:hotpink;
+          font-size:50px">
+          ${message}</span>입니다!`;
+        } /// else ///
+
+        // 7. 화면출력하기 /////////
+        // 출력대상: #info -> info변수
+        info.innerHTML = message;
+        // 선택요소.innerText 
+        // -> 요소의 문자데이터 넣기
+        // -> html태그를 넣을때는 innerHTML 사용!
+
+
+      } ////////////// showLocal 함수 ////////////////
+      ///////////////////////////////////////////////
+
+      /********************************************** 
+      [ switch case문 ]
+      - 단일조건을 분류하여 실행문을 만들어 줄때 사용하는 제어문
+
+      ((구문구조))
+      ________________________________________
+
+      switch(변수){
+          case 경우1: 실행코드; break;
+          case 경우2: 실행코드; break;
+          case 경우3: 실행코드; break;
+          ...
+          default: 실행문;
+      }
+      ________________________________________
+
+      ((구문해석))
+
+      1. 변수값에 해당하는 경우 그 값에 해당하는
+      case에 들어가서 실행코드를 실행함
+
+      2. 각 case 끝에 break 예약어를 반드시 써야함!
+      -> 안쓰면 다른 case에 또 들어가는 경우가 생김!
+      -> 일반적으로 break 키워드는 제어문을 빠져나갈때 씀!
+
+      3. default 는 if문의 else문과 비슷하여 해당 케이스가 
+      없으면 이 부분이 실행됨(단, 필요시 사용)
+      -> default문에는 break를 쓰지 않는다!
+  **********************************************/
     </script>
     <!-- CSS코드구역 -->
     <style>
@@ -259,6 +439,55 @@
 
       body {
         text-align: center;
+      }
+
+      /* 칭찬스티커박스 */
+      .jshow {
+        position: absolute;
+        top: 18vw;
+        left: 74vw;
+        /* 부모는? .bx-if */
+        width: 15vw;
+        height: 15vw;
+        outline: 5px dotted lightgreen;
+        border-radius: 50%;
+        background: url(./images/ifshow.jpg) no-repeat;
+        /* 배경위치 : 처음에 안보임 */
+        background-position: -50% 0%;
+        /* 배경크기 */
+        background-size: 300%;
+
+        /* 트랜지션 : 배경위치만! */
+        transition: background-position 1s;
+      }
+      /* 가상요소로 글자넣기 */
+      .jshow::before {
+        content: "칭찬스티커";
+        position: relative;
+        z-index: -1;
+        /* 글자를 배경보다 아래로 
+        하려면 z-index -1주면됨
+        이때 포지션 있어야함! */
+        line-height: 15vw;
+        font-size: 2vw;
+        color: lightseagreen;
+        font-weight: bold;
+      }
+      /* 가상요소 하트 */
+      .jshow::after {
+        content: "♥";
+        position: absolute;
+        top: 2%;
+        left: 50%;
+        /* 하트중앙이동 */
+        transform: translateX(-50%);
+        z-index: -1;
+        /* 글자를 배경보다 아래로 
+        하려면 z-index -1주면됨
+        이때 포지션 있어야함! */
+        font-size: 4vw;
+        color: red;
+        font-weight: bold;
       }
     </style>
   </head>
@@ -304,6 +533,27 @@
             - maxlength -> 최대입력 글자수 제한
          -->
       <button class="sbtn" onclick="showJumsu()">평가하기</button>
+      <!-- 칭찬스티커 박스 -->
+      <div class="jshow"></div>
     </div>
+
+    <br /><br />
+    <hr />
+
+    <!-- switch case문 연습 -->
+    <h2 class="tit">switch case문 연습</h2>
+    <h3 id="info">국번안내</h3>
+    <label for="local">지역명 입력:</label>
+    <input
+      type="text"
+      id="local"
+      placeholder="지역명을 '도'를 빼고 쓰세요!"
+      maxlength="10"
+      onkeypress="if(event.keyCode==13)showLocal()"
+    />
+    <button class="sbtn" onclick="showLocal()">국번문의</button>
+
+    <br /><br />
+    <hr />
   </body>
 </html>

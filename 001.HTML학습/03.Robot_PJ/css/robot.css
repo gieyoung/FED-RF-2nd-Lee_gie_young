@@ -27,6 +27,7 @@ ol {
 /* html루트 설정 */
 html{
   font-size:10px;
+  scroll-behavior: smooth;
 }
 
 /* 전체 배경이미지 */
@@ -36,9 +37,9 @@ body {
 }
 
 /* 공사중 표시 */
-body * {
+/* body * {
   outline: 2px dashed yellow;
-}
+} */
 
 /*********************** 공통클래스 ***********************/
 /* 메탈배경 클래스 */
@@ -49,6 +50,7 @@ body * {
   background: url(../images/metal02.jpg) no-repeat center/cover;
 }
 /********************** 1. 상단영역 **********************/
+/* 로고 */
 h1.logo{
   position: fixed;
   top:calc(50% - 10vw);
@@ -67,14 +69,46 @@ h1.logo{
   text-shadow: 0 0 10px #000;
 }
 
+
+/* 탑이동버튼 */
+.btn-top{
+  position: fixed;
+  bottom:3vw;
+  right:3vw;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  background-color: #c8c8c8;
+  border: 5px outset #fff;
+  z-index:10;
+}
+
+.btn-top a{
+  display: block;
+  color:red;
+  text-align: center;
+  text-decoration: none;
+  line-height: 15vw;
+  font-size:4vw;
+  font-weight: bold;
+  font-family:  'Black Ops One';
+}
+
+.btn-top:hover a{
+  background-color: yellow;
+  border-radius: 50%;
+}
+
 /********************** 2. 메인영역 **********************/
 /* 2-1.로봇박스 */
 .robot-box {
     margin-bottom: 500px;
     position: fixed;
-    top: 0;
+    top: -55px;
     left: 50%;
-    transform: translate(124%, -10%) scale(0.3);
+    transform: translate(63%, -3%) scale(0.3);
+    /* 박스 내 모든 요소에 외곽선에 glow 주기 */
+    filter:drop-shadow(2px 2px 4px #fff);
     
     
 }
@@ -234,9 +268,10 @@ h1.logo{
 /* 팔공통*/
 .arm {
   position: absolute;
-  top: 10px;
+  top: 33px;
   width: 50px;
   height: 150px;
+ 
 }
 
 /* 팔하단공통 */
@@ -247,6 +282,7 @@ h1.logo{
   left: 10%;
   width: 80%;
   height: 80%;
+  
 }
 
 /* 팔하단 가상요소 손 공통 */
@@ -269,6 +305,7 @@ h1.logo{
 .arm1 span::after{
     background-image: url("../images/hand_left.png") ;
     left: -21px;
+   
 }
 
 /* 오른손 */
@@ -581,4 +618,61 @@ h1.logo{
   font-weight: bold;
 }
 
+
+
+
+/* 말풍선 */
+.link-title{
+  font-size: 3vw;
+  display: inline-block;
+  background: yellow;
+  width: 24vw;
+  padding: 30px;
+  text-align: center;
+  line-height: 5vw;
+  border-radius: 50%;
+  text-decoration: none;
+  position: relative;
+  right: -100%;
+  top: -29px;
+  font-weight:bold;
+  transform: translateX(200px) scale(0);
+ 
+ 
+    
+
+}
+
+.link-title::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -6px;
+  top: 60%;
+  border-radius: 0 0 100% 100%;
+  transform: rotate(50deg);
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-top:50px solid yellow;
+  border-left:20px solid transparent;
+  border-right:20px solid transparent;
+  
+}
+
+
+.link-title:hover{
+  color:#fff;
+  background-image: radial-gradient(to bottom, yellow, blue);
+}
 /********************** 3. 하단영역 **********************/
+#bottom-area{
+  font:3rem 'Black Ops One';
+  text-shadow: 2px 2px 2px #fff;
+  text-align: center;
+  padding:7vmin;
+  background-color: rgba(0,0,0,0.5);
+  margin-top: 100px;
+  position: relative;
+  z-index:100;
+}
