@@ -126,13 +126,13 @@ __________________________________________________
 
 [ 별도 지정한 단축키 ]
 
-1. Wrap with Abbribiation (약어로 태그 감싸기)
+1. Wrap with Abbribiation (약어로 래핑)
 -> ctrl+alt+A (A는 Abbribiation 약어)
 
-2. Upate Tag (기존태그 변경하기)
+2. Upate Tag (태그 업데이트)
 -> ctrl+alt+U (U는 Update)
 
-3. Remove Tag(감싼태그 지우기)
+3. Remove Tag(태그제거)
 -> ctrl+alt+R (R은 Remove)
 
 4. Prettier(자동줄맞춤)
