@@ -20,6 +20,18 @@ visual studio desktop 설치
 FED-RF-2nd-Lee_gie_young 레지토리 생성
 
 쌤깃허브 주소
+
+
+[ 오늘의 일정 : 3월14일(목) ]
+------------------------------
+
+1. JS학습
+      1) for문 옵션
+
+2. 도깨비 PJ 
+- 메인구현 : 상단 파트 + 배너(캐릭터소개)
+
+3. 프로젝트 구현 및 리뷰 시간
 https://github.com/tombap8/FED-RF-2nd-2024-TOM
 
 

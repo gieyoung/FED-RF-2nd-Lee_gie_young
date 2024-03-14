@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>for문 연습1 - 파란상자에 미니언즈 집어넣기</title>
-        <script src="./js/3-4.for문연습1.js" defer></script>
         <style>
             /* 미니언즈 이미지 */
             .mini {
@@ -73,8 +72,10 @@
                 font-weight: bold;
             }
         </style>
-        <!-- 외부 JS 불러오기 -->
-
+        <!-- 외부JS불러오기 
+        defer(지연) 셋팅을 하여서 html코드를
+        모두 로딩후 실행하도록 한다!-->
+        <script src="./js/JS3-4.for문연습1.js" defer></script>
     </head>
 
     <body>
@@ -101,13 +102,14 @@
                 class="mini"
                 title="나를 클릭하면 열개씩 가방에 들어갈꼬얌~!"
                 data-num="10"
-
-         
             />
+            <!-- 
+                [ 사용자 정의 속성 : 'data-' 로 시작! ]
+                -> 사용자가 요소의 속성을 만들어 쓰고자할때
+                이름을 'data-'로 시작하면 공식적인 속성으로
+                인정된다!
+             -->
         </div>
-
-              <!-- [사용자 정의 속성: data- 로 시작]
-                사용자가 요소의 속성을 만들어 쓰고자 할 때 이름을 data-로 시작하면 공식적인 속성으로 인정됨-->
 
 
      
