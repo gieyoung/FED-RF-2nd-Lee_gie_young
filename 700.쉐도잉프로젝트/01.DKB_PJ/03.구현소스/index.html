@@ -1,114 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>쓸쓸하고 찬란하神 도깨비 드라마 소개</title>
-    <link rel="shortcut icon" href="./images/pavicon_tvN.png"/>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
+    <link rel="shortcut icon" href="./images/pavicon_tvN.png" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
     <!-- 1. 상단영역 -->
     <div id="top-area">
-        <header class="top-area inbox">
-            <h2 class="temp-tit">1. 상단영역</h2>
-            <div class="cont-box">
-                <div class="col-1"></div>
-                <div class="col-11"></div>
-            </div>
-
-
-        </header>
+      <header class="top-area inbox">
+        <!-- 
+            <h2 class="temp-tit">1. 상단영역</h2> 
+        -->
+        <!-- 1-1.로고/GNB파트 -->
+        <div class="cont-box">
+          <!-- 1-1-1.로고 -->
+          <div class="col-2">
+            <h1 class="mlogo">
+              <img src="./images/tvnlogo2.png" alt="메인tvN로고" />
+            </h1>
+          </div>
+          <!-- 1-1-2.GNB -->
+          <div class="col-10">
+            <!-- Top메뉴 -->
+            <nav class="top-menu">
+              <ul>
+                <li>
+                  <a href="#">로그인</a>
+                </li>
+                <li>
+                  <a href="#">회원가입</a>
+                </li>
+                <li>
+                  <a href="#">검색</a>
+                </li>
+              </ul>
+            </nav>
+            <!-- GNB메뉴 -->
+            <nav class="gnb">
+              <ul>
+                <li>
+                  <a href="#">About tvN</a>
+                </li>
+                <li>
+                  <a href="#">편성표</a>
+                </li>
+                <li>
+                  <a href="#">채널번호</a>
+                </li>
+                <li>
+                  <a href="#">드라마</a>
+                  <!-- 서브메뉴 -->
+                  <div class="smenu">
+                    <div class="swrap">
+                      <h2>드라마</h2>
+                      <ol>
+                        <li>
+                          <a href="#">[예정] 선재 업고 튀어</a>
+                        </li>
+                        <li>
+                          <a href="#">[종영] 내 남편과 결혼해줘</a>
+                        </li>
+                        <li>
+                          <a href="#">[월/화] 웨딩 임파서블</a>
+                        </li>
+                        <li>
+                          <a href="#">[토/일] 눈물의 여왕</a>
+                        </li>
+                        <li>
+                          <a href="#">[종영] 세작, 매혹된 자들</a>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="#">연예오락</a>
+                  <!-- 서브메뉴 -->
+                  <div class="smenu">
+                    <div class="swrap">
+                      <h2>연예오락</h2>
+                      <ol>
+                        <li>
+                          <a href="#">[월] 줄 서는 식당2</a>
+                        </li>
+                        <li>
+                          <a href="#">[금] 아파트404</a>
+                        </li>
+                        <li>
+                          <a href="#">[일] 텐트 밖은 유럽 남프랑스 편</a>
+                        </li>
+                        <li>
+                          <a href="#">[화] 벌거벗은 세계사</a>
+                        </li>
+                        <li>
+                          <a href="#">[금] 프리한 닥터</a>
+                        </li>
+                        <li>
+                          <a href="#">[종영] 나나투어 with 세븐틴</a>
+                        </li>
+                        <li>
+                          <a href="#">[수] 유 퀴즈 온 더 블럭</a>
+                        </li>
+                        <li>
+                          <a href="#">[토] 웰컴투불로촌</a>
+                        </li>
+                        <li>
+                          <a href="#">[목] 70억의 선택</a>
+                        </li>
+                        <li>
+                          <a href="#">[토] 놀라운 토요일</a>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="#">인사이트</a>
+                  <!-- 서브메뉴 -->
+                  <div class="smenu">
+                    <div class="swrap">
+                      <h2>인사이트</h2>
+                      <ol>
+                        <li>
+                          <a href="#">[목] 김창옥쇼2</a>
+                        </li>
+                        <li>
+                          <a href="#">[종영] 희망의 빛, 블루라이팅</a>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="#">동영상</a>
+                </li>
+                <li>
+                  <a href="#">이벤트</a>
+                </li>
+                <li>
+                  <a href="#">프로그램</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
     </div>
     <!-- 2. 배너영역 -->
     <div id="ban-area">
-        <section class="ban-area inbox">
-            <h2 class="temp-tit">2. 배너영역</h2>
-            <div class="cont-box">
-                <div class="col-12"></div>
-            </div>
+      <section class="ban-area">
+        <h2 class="temp-tit">2. 배너영역</h2>
+        <div class="cont-box">
+          <div class="col-12">
+           <!-- 슬라이드 박스 -->
+           <div class="slide-box">
+            <ul class="slider">
+                <li class="snum01"></li>
+                <li class="snum02"></li>
+                <li class="snum03"></li>
+            </ul>
 
 
-        </section>
+
+           </div>
+           <!-- 캐릭터 박스 -->
+           <div class="cat-box">
+             <div class="cat-inbox">
+               <article>
+                <!-- 이미지 박스 -->
+                <div class="imbx">
+                   <img src="./images/dc1.png" alt="공유">
+                </div>
+                 <!-- 설명박스 -->
+                 <div class="descbx"></div>
+               </article>
+               <article>
+                <!-- 이미지 박스 -->
+                <div class="imbx">
+                   <img src="./images/dc2.png" alt="공유">
+                </div>
+                 <!-- 설명박스 -->
+                 <div class="descbx"></div>
+               </article>
+               <article>
+                <!-- 이미지 박스 -->
+                <div class="imbx">
+                   <img src="./images/dc3.png" alt="공유">
+                </div>
+                 <!-- 설명박스 -->
+                 <div class="descbx"></div>
+               </article>
+               <article>
+                <!-- 이미지 박스 -->
+                <div class="imbx">
+                   <img src="./images/dc4.png" alt="공유">
+                </div>
+                 <!-- 설명박스 -->
+                 <div class="descbx"></div>
+               </article>
+               
+             </div>
+           </div>
+
+
+          </div>
+        </div>
+      </section>
     </div>
     <!-- 서브파트메뉴 -->
     <div id="spart-menu">
-        <nav class="spart-menu inbox">
-            <h2 class="temp-tit">서브파트메뉴</h2>
-            <div class="cont-box">
-                <div class="col-12"></div>
-            </div>
-
-
-        </nav>
+      <nav class="spart-menu inbox">
+        <h2 class="temp-tit">서브파트메뉴</h2>
+        <div class="cont-box">
+          <div class="col-12"></div>
+        </div>
+      </nav>
     </div>
     <!-- 3. 인트로영역 -->
     <div id="intro-area">
-        <section class="intro-area inbox">
-            <h2 class="temp-tit">3. 인트로영역</h2>
-            <div class="cont-box">
-                <div class="col-6"></div>
-                <div class="col-6"></div>
-            </div>
-
-
-        </section>
+      <section class="intro-area inbox">
+        <h2 class="temp-tit">3. 인트로영역</h2>
+        <div class="cont-box">
+          <div class="col-6"></div>
+          <div class="col-6"></div>
+        </div>
+      </section>
     </div>
     <!-- 4. 미리보기영역 -->
     <div id="preview-area">
-        <section class="preview-area inbox">
-            <h2 class="temp-tit">4. 미리보기영역</h2>
-            <div class="cont-box">
-                <div class="col-12"></div>
-            </div>
-
-
-        </section>
+      <section class="preview-area inbox">
+        <h2 class="temp-tit">4. 미리보기영역</h2>
+        <div class="cont-box">
+          <div class="col-12"></div>
+        </div>
+      </section>
     </div>
     <!-- 5. 현장포토영역 -->
     <div id="real-photo-area">
-        <section class="real-photo-area inbox">
-            <h2 class="temp-tit">5. 현장포토영역</h2>
-            <div class="cont-box">
-                <div class="col-12"></div>
-            </div>
-
-
-        </section>
+      <section class="real-photo-area inbox">
+        <h2 class="temp-tit">5. 현장포토영역</h2>
+        <div class="cont-box">
+          <div class="col-12"></div>
+        </div>
+      </section>
     </div>
     <!-- 6. 대표이미지 영역 -->
     <div id="main-photo-area">
-        <section class="main-photo-area inbox">
-            <h2 class="temp-tit">6. 대표이미지 영역</h2>
-            <div class="cont-box">
-                <div class="col-12"></div>
-            </div>
-
-
-        </section>
+      <section class="main-photo-area inbox">
+        <h2 class="temp-tit">6. 대표이미지 영역</h2>
+        <div class="cont-box">
+          <div class="col-12"></div>
+        </div>
+      </section>
     </div>
     <!-- 7. 최신동영상영역 -->
     <div id="clip-video-area">
-        <section class="clip-video-area inbox">
-            <h2 class="temp-tit">7. 최신동영상영역</h2>
-            <div class="cont-box">
-                <div class="col-12"></div>
-            </div>
-
-
-        </section>
+      <section class="clip-video-area inbox">
+        <h2 class="temp-tit">7. 최신동영상영역</h2>
+        <div class="cont-box">
+          <div class="col-12"></div>
+        </div>
+      </section>
     </div>
     <!-- 8. 하단영역 -->
     <div id="footer-area">
-        <footer class="footer-area inbox">
-            <h2 class="temp-tit">8. 하단영역</h2>
-            <div class="cont-box">
-                <div class="col-8"></div>
-                <div class="col-4"></div>
-                <div class="col-12"></div>
-            </div>
-       </footer>
+      <footer class="footer-area inbox">
+        <h2 class="temp-tit">8. 하단영역</h2>
+        <div class="cont-box">
+          <div class="col-8"></div>
+          <div class="col-4"></div>
+          <div class="col-12"></div>
+        </div>
+      </footer>
     </div>
-    
-</body>
+  </body>
 </html>

@@ -18,6 +18,14 @@
     font-family: 'Nanum Gothic', sans-serif;
 */
 
+html{
+  font-size: 10px;
+  /* rem단위 계산편의위해 */
+}
+
+body{
+  font-family: 'Nanum Gothic', sans-serif;
+}
 
 /* 임시타이틀 */
 .temp-tit{
@@ -33,6 +41,3 @@
   margin: 0 auto;
 }
 
-.cont-box{
-  height: 100%;
-}

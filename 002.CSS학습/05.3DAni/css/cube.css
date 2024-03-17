@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* 큐브 애니메이션 CSS - cube.css */
+
+/* 초기화 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(to bottom, rgb(147, 234, 250), rgb(176, 110, 247));
+  width: 100vw;
+  height: 100vh;
+}
+
+/* css변수 셋팅 */
+:root {
+  /* 큐브공통크기 */
+  --cube-size: 300px;
+  /* z축 거리 나눔수 */
+  --divide-num: 2;
+}
+
+
+html.on:root{
+  --divide-num:1.5;
+}
+
+/* 큐브 */
+.cube {
+  position: absolute;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  /* outline: 2px solid red; */
+  /* 가운데 정렬 */
+  top: calc(50% - var(--cube-size) / var(--divide-num));
+  left: calc(50% - var(--cube-size) / var(--divide-num));
+  /* 
+  [ 입체로 설정하기 ]
+  -입체로 설정할 요소의 부모박스에 아래와 같이 설정.
+  transform-style속성값은 아래 2가지
+  1.trasform-style: flat(기본값)
+  2.preserve-3d: 3D -> 이 값으로 설정함
+  */
+  transform-style: preserve-3d;
+  /* 입체를 잘 보이게 하기 위해 약간 회전 */
+  transform: rotateX(10deg) rotateY(30deg);
+}
+
+.rotate-cube {
+  animation: cube-ani 8s linear alternate infinite;
+  /* 애니메이션 멈춤상태 */
+  animation-play-state: paused;
+}
+
+/* 작동버튼 */
+.btngo{
+  cursor: pointer;
+  display: block;
+  position: fixed;
+  top:5%;
+  left:50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  font-size: 40px;
+
+}
+
+.btngo:hover{
+  background-color: lime;
+}
+
+/* 애니메이션 작동 클래스 */
+.rotate-cube.on{
+  animation-play-state: running;
+}
+
+
+@keyframes cube-ani {
+  /* 
+            x축 양의 방향으로 10도에서 출발
+            양의 방향 360도+10도=370도
+            음의 방향 -360도+10도=-350도
+            ____________________________
+
+            y축 양의 방향으로 30도에서 출발
+            양의 방향 360도+30도=390도
+            음의 방향 -360도+30도=-330도
+        */
+  to {
+    transform: rotateX(370deg) rotateY(390deg) rotateZ(360deg);
+  }
+
+ 
+}
+
+/* 큐브 각면 공통 */
+.cube span {
+  /* 부모는? cube */
+  position: absolute;
+  /* absolute는 자동으로 display:block이 됨 */
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+  /* outline:2px dotted blue; */
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  transition: .5s;
+}
+
+/* 1. 앞면 */
+.cube span:nth-child(1) {
+  /* 화면방향 Z축 이동 */
+  /* 양의 값은 앞쪽, 음의 값은 뒷쪽 */
+  /* transform: translateZ(-100px); */
+  transform: translateZ(calc(var(--cube-size) / var(--divide-num)));
+  /* 큐브의 앞쪽이동은 큐브 크기의 절반 */
+  background: url("../images/seoulCity.jpg") no-repeat center/cover;
+}
+
+/* 2. 오른쪽면 */
+.cube span:nth-child(2) {
+  /* Y축회전 + Z축 이동 */
+  transform: rotateY(90deg) translateZ(calc(var(--cube-size) / var(--divide-num)));
+  /* 큐브의 앞쪽이동은 큐브 크기의 절반 */
+  background: url("../images/newyorkCity.jpg") no-repeat right/cover;
+}
+
+/* 3. 뒷면 */
+.cube span:nth-child(3) {
+  /* Y축회전 + Z축 이동 */
+  transform: rotateY(180deg) translateZ(calc(var(--cube-size) / var(--divide-num)));
+  /* 큐브의 앞쪽이동은 큐브 크기의 절반 */
+  background: url("../images/parisCity.jpg") no-repeat center/cover;
+}
+
+/* 4. 왼쪽면 */
+.cube span:nth-child(4) {
+  /* Y축회전 + Z축 이동 */
+  transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / var(--divide-num)));
+  /* 큐브의 앞쪽이동은 큐브 크기의 절반 */
+  background: url("../images/cityMain.jpg") no-repeat center/cover;
+}
+
+/* 5. 윗면 */
+.cube span:nth-child(5) {
+  /* X축회전 + Z축 이동 */
+  transform: rotateX(90deg) translateZ(calc(var(--cube-size) / var(--divide-num)));
+  background: url("../images/citys.jpg") no-repeat center/cover;
+}
+/* 6. 아래면 */
+.cube span:nth-child(6) {
+  /* X축회전 + Z축 이동 */
+  transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / var(--divide-num)));
+  background: url("../images/London_city.jpg") no-repeat center/cover;
+}
