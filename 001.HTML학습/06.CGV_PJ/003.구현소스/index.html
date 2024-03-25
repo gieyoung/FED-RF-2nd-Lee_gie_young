@@ -1,73 +1,78 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CGV에 오신것을 환영합니다!</title>
     <link rel="stylesheet" href="./css/main.css" />
-    <!-- 자바스크립트 코드 구역 -->
+    <!-- 자바스크립트 코드구역 -->
     <script>
       // JS 코드구역
-      //alert('안녕');
-      // JS코드는 만나자마자 바로 실행됨
-      // 그래서 함수라는 코드 저장소를 만들고
-      // 호출시에만 실행되도록 한다.
+      // alert('나는 누구? 여긴어디?');
+      // JS코드는 만나자만자 바로실행됨!
+      // 그래서 함수라는 코드저장소를 만들고
+      // 호출시에만 실행되도록 한다!
 
-      // JS 함수-> function 함수명(){코드}
+      // JS함수 -> function 함수명(){코드}
       function 멍멍이(먹이) {
         alert(먹이);
-        document.getElementById("ifr").src = "https://www.youtube.com/embed/"+먹이;
-      } /////////멍멍이 함수구역 //////////
+        document.getElementById("ifr").src =
+          "https://www.youtube.com/embed/"+먹이;
+      } ////////// 멍멍이 함수구역 ////////
     </script>
   </head>
   <body>
     <!-- 1. 상단영역 -->
-
     <header class="top-area part">
       <!-- 1-1.타이틀 -->
-      <h1 class="tit">CGV예고편 상영관</h1>
+      <h1 class="tit">CGV 예고편 상영관</h1>
     </header>
     <!-- 2. 메인영역 -->
     <main class="main-area part">
       <!-- 2-1.스크린 -->
       <div class="screen">
         <!-- 유튜브 아이프레임 -->
-        <iframe id="ifr" src="https://www.youtube.com/embed/8fs5YClZVfg?autoplay=1&mute=1&loop=1&playlist=vteD1f-SV5I" allow="autoplay"></iframe>
-        <!-- autoplay=1 // 자동플레이
-              loop=1 //반복재생하기(playlist=같은동영상id) mute=1//소리안남-->
+        <iframe
+          id="ifr"
+          src="https://www.youtube.com/embed/vteD1f-SV5I?autoplay=1&mute=1&loop=1&playlist=vteD1f-SV5I"
+          allow="autoplay"
+        ></iframe>
       </div>
       <!-- 2-2.포스터메뉴 -->
       <nav class="poster-menu">
         <ul>
           <li>
             <a
-              href="#" onclick="멍멍이('듄 파트2')">
-              <img src="./images/poster1.jpg" alt="듄 파트2" />
+              href="#"
+              onclick="멍멍이('rjW9E1BR_30')"
+            >
+              <img src="./images/m1.jpg" alt="파묘" />
             </a>
           </li>
           <li>
-            <a href="#" onclick="멍멍이('rjW9E1BR_30')">
-              <img src="./images/poster2.jpg" alt="파묘" />
+            <a href="#">
+              <img src="./images/m2.jpg" alt="이프온리" />
             </a>
           </li>
           <li>
-            <a href="#" onclick="멍멍이('Ac7j_wLYJ9Y')">
-              <img src="./images/poster3.jpg" alt="웡카" />
+            <a href="#">
+              <img src="./images/m3.jpg" alt="웡카" />
             </a>
           </li>
           <li>
-            <a href="#" onclick="멍멍이('oSqK_v6zPoM')">
-              <img src="./images/poster4.jpg" alt="오펜하이머" />
+            <a href="#"
+            onclick="멍멍이('dW8klYbV5t0')">
+              <img src="./images/m4.jpg" alt="시민덕희" />
             </a>
           </li>
           <li>
-            <a href="#" onclick="멍멍이('yVvM2NFSkE0')">
-              <img src="./images/poster5.jpg" alt="월레스와 그로밋 더 클래식 컬렉션" />
+            <a href="#">
+              <img src="./images/m5.jpg" alt="소풍" />
             </a>
           </li>
           <li>
-            <a href="#" onclick="멍멍이('DNUF8Mt0svk')">
-              <img src="./images/poster6.jpg" alt="바튼 아카데미 " />
+            <a href="#">
+              <img src="./images/m6.jpg" alt="건국전쟁" />
             </a>
           </li>
         </ul>
