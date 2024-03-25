@@ -78,32 +78,69 @@ body * {
 }
 /* 2-2.포스터 메뉴 */
 .poster-menu{
-    position: absolute;
-    bottom: 50px;
-    left: 215px;
     /* 부모는? .main-area */
+    position: absolute;
+    width: 65%;
+    bottom: 5%;
+    left:50%;
+    transform: translate(-50%,0);
+    
+    
     /* 한번에 메인영역 하단으로
     위치이동 포지셔닝을 하기위한
     최적의 포지션은 absolute다! */
 }
 /* 포스터 ul 가상요소 clear */
-.poster-menu ul::after{
+/* .poster-menu ul::after{
     content: '';
     display: block;
     clear: both;
-}
+} */
 /* 포스터 리스트 */
-.poster-menu li{
-    /* 블록요소 옆으로 흐르게 */
-    float: left;
+.poster-menu ul{
+    display: flex;
+    /* 하위요소 사이간격 */
+    gap:0 15px;
 }
 /* li리스트 사이간격 */
-.poster-menu li+li{
-    margin-left: 15px;
+.poster-menu>ul>li{
+    position: relative;
+    overflow: hidden;
 }
 /* 포스터 이미지 */
 .poster-menu img{
-    height: 170px;
+    width: 100%;
+    /* height: 170px; */
+}
+
+/* 영화정보박스: 오버시 올라올 박스 */
+.mv-info{
+    /* 부모는 .poster-menu li */
+    position: absolute;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top:100%;
+    transition: .3s ease-in-out;
+}
+.poster-menu>ul>li:hover .mv-info{
+    top:0;
+}
+
+/* 영화정보박스 하위ol */
+.mv-info ol{
+    display: flex;
+    /* 플렉스 진행방향 */
+    flex-direction: column;
+    /* 진행방향 정렬 */
+    justify-content: center;
+    height: 100%;
+    /* 줄바꿈 방지 */
+    white-space: nowrap;
+    /* 줄간격 */
+    line-height: 2;
+    background-color: rgba(0,0,0,0.6);
 }
 /************ 3. 하단영역 ************/
 .footer-area{

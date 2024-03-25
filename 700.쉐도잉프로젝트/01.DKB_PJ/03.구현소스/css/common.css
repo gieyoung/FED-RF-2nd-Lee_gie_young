@@ -3,9 +3,7 @@
 /* 도깨비 PJ : 공통 모듈 CSS - common.css */
 /* 공유기능 요소 셋팅 */
 
-
-/**************전체 레이아웃 영역별 셋팅***********/
-
+/* 0. 전체 레이아웃 영역별 셋팅 */
 /* 1. 상단영역 */
 .top-area{
   height: 120px;
@@ -13,6 +11,7 @@
 /* 2. 배너영역 */
 .ban-area{
   position: relative;
+  /* 부모자격 - .cat-box */
   height: 680px;
 }
 /* 2.5.서브파트메뉴 */
@@ -23,7 +22,6 @@
 .footer-area{
   height: 371px;
 }
-
 
 /************* 1. 상단영역 *************/
 /* 메인로고 */
@@ -94,18 +92,19 @@
   left: 0;
   /* 부모는? 보이는 화면 */
   width: 100%;
+z-index: 999;
+  background-color: #fff;
 
   /* 최대높이값 0 */
   max-height: 0;
   /* 서브메뉴숨기기 */
   overflow: hidden;
   /* 트랜지션 */
-  transition: .4s;
-  background-color: #fff;
+  transition: 0.4s;
 }
 /* 상위메뉴 오버시 서브메뉴 보이기 */
-.gnb>ul>li:hover .smenu {
-    max-height: 50vh;
+.gnb > ul > li:hover .smenu {
+  max-height: 50vh;
 }
 /* 서브 속박스 */
 .swrap {
@@ -131,86 +130,143 @@
 }
 
 /************ 2. 메인영역 ************/
-
-/* 2-1.배너영역 */
+/* 2-1. 배너영역 */
 
 /* 슬라이드 박스 */
 .slide-box{
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  
-
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
-
 /* 슬라이더 */
 .slider{
-  display:flex;
-  position: relative;
-  left:0;
-  width: 100%;
-  height: 100%;
-
+    position: relative;
+    /* 슬라이드 위치이동 초기값 */
+    left: 0;
+    display: flex;
+    /* 하위 li를 옆으로 흐르게함 */
+    width: 100%;
+    height: 100%;
 }
-
 .slider li{
-  flex-basis: 100%;
-  /* 부모 크기 만큼 옆으로 나가게 하려면 flex-shrink 기본값 1을 0으로 변경해야함 
-  */
-  flex-shrink: 0;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size:cover;
+    flex-basis: 100%;
+    flex-shrink: 0;
+    /* 부모크기만큼 옆으로 나가게 하려면
+    flex-shrink 기본값 1을 0으로 변경한다!
+    1의 의미는 자동으로 부모크기에 맞추어 줄어듬
+    0의 의미는 설정된 크기만큼 늘어남! */
 
+    /* 공통배경설정 */
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+/* 슬라이드 01 */
+.snum-01 {
+    background-image: url(../images/bg_mainvisual2.jpg);
+}
+.snum-02 {
+    background-image: url(../images/bg_main_02.jpg);
+}
+.snum-03 {
+    background-image: url(../images/bg_main_03.jpg);
 }
 
-
-/* 슬라이드01 */
-.snum01{
-  background-image: url(../images/bg_mainvisual.jpg);
-}
-.snum02{
-  background-image: url(../images/bg_main_02.jpg);
-}
-.snum03{
-  background-image: url(../images/bg_main_03.jpg);
-}
-
-
-
-/* 캐릭터 박스 */
+/* 캐릭터 박스
+-> 캐릭터 속박스가 있는 공간을 확보해준다! */
 .cat-box{
-  /* 부모는 .ban-area */
   position: absolute;
-  left:0;
-  bottom:0;
-  max-width:1360;
-  margin:0 auto;
-  background: rgba(0,0,0,.5);
+  left: 0;
+  bottom: 5%;
+  /* 부모는? .ban-area */
+  width: 100%;
+  /* height: 300px; */
+  outline-color: red;
+
 }
-
-
+/* 캐릭터 속박스 - static한 박스임!(공간차지) */
 .cat-inbox{
+  /* 플렉스박스 */
   display: flex;
-  gap:0 1vw;
- 
+  /* 플렉스자식 사이간격
+  gap: 위아래 양쪽 */
+  gap: 0 1vw;
+  /* 가로최대크기 설정 */
+  max-width: 1360px;
+  /* 가로중앙정렬 */
+  margin: 0 auto;
+  /* 양쪽패딩 */
+  padding: 0 1vw;
 }
-
+/* 캐릭터 개별박스 등분할 */
 .cat-inbox article{
-  flex:1;
-
- 
+  flex: 1;
 }
-
+/* 캐릭터 이미지박스 */
 .imbx img{
   width: 100%;
+}
+/* 캐릭터 이름이미지 박스 */
+.iname{
+  display: block;
+  margin-top: -19%;
+  /* 앱솔루트없이 마진으로
+  상단이미지와 겹치게하기!
+  %의 기준은 마진주기전 박스의
+  세로 크기를 기준한다! */
+  text-align: center;
+}
+/* 캐릭터 이름이미지 */
+.iname img{
+  width: 40%;
+}
+/* 두번째 이미지 숨기기 */
+.iname img:last-child{
+  display: none;
+}
+/* 오버시 두번째 이미지 보이기 */
+.cat-inbox article:hover 
+.iname img:last-child{
+  display: inline;
+}
+/* 오버시 첫번째 이미지 숨기기 */
+.cat-inbox article:hover 
+.iname img:first-child{
+  display: none;
+}
 
+/* 캐릭터 설명박스 */
+.descbx{
+  background: url("../images/eachBG.jpg") no-repeat bottom/cover;
+  height:0;
+  overflow: auto;
+  transition: .4s ease-in-out;
+}
+
+.cat-box article:hover .descbx{
+  height: 200px;
+}
+
+.cat-inbox article .imbx {
+  transition: .4s ease-in-out;
+}
+.cat-inbox article:hover .imbx {
+  margin-top: -200px;
+}
+
+/* 캐릭터 타이틀 */
+.descbx h3{
+  font-family: 'Gugi';
+  font-size: 2.4rem;
+  font-weight: normal;
+  padding: 15px 10px 5px;
 
 }
 
-
-
-
-
-
+.descbx p{
+  font-family: 'Single Day',
+  'ZCOOL KuaiLe';
+  font-size: 1.8rem;
+  padding: 1.5rem;
+}
 /************* 3. 하단영역 *************/
