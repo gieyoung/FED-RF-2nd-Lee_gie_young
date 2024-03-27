@@ -44,16 +44,15 @@ function loadFn() {
     console.log("로딩완료!");
     
 
+    // [대상선정]
     // 이동버튼 대상:  .abtn
     const abtn = qsa('.abtn');
     // 변경대상 : #slide
     const slide = qs('#slide');
-    // console.log(abtn,slide);
-
-    //블릿대상
+    // 블릿대상:
     const indic = 
     document.querySelectorAll('.indic li');
-
+    // console.log(abtn,slide,indic);
 
     // 왼쪽 버튼 처음에 숨기기
     abtn[0].style.display = 'none';
@@ -126,20 +125,18 @@ function loadFn() {
        slide.style.left = (-100*snum)+'%';
        slide.style.transition = '.6s ease-in-out';
 
-
-       //5. 블릿표시 구현하기
-       //5-1.모든 클래스 on지우기
+       // 5. 블릿표시 구현하기
+       // 모든 클래스 on지우기+현재 순번 클래스 넣기
        indic.forEach((ele,idx)=>{
-        if(idx===snum){
+        // ele - 각각의 li, idx - 각각의 순번
+        if(idx===snum){ // 현재순번 on넣기
             ele.classList.add('on');
-        }
-        else{
+        } /// if ///
+        else{ // 나머지는 on빼기
             ele.classList.remove('on');
-        }
-         
+        } /// else ///
 
-       });/////////forEach///////
-       //5-2.현재 순번 클래스 넣기
+       }); ///// forEach /////
 
    } ///////////// goSlide 함수 ////////////////
    /////////////////////////////////////////////
