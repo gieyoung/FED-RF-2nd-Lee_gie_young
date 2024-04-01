@@ -33,7 +33,7 @@ const movieId = {
 
 // 3. 이벤트 설정 및 기능구현
 // 포스터 버튼에 forEach()메서드로 순회한다!
-pMenu.forEach((ele) => {
+pMenu.forEach((ele, idx) => {
   ele.onclick = () => {
     // 1.클릭된 a요소를 구분하기 위해
     // 하위 img 포스터의 alt 속성 읽어오기
@@ -49,9 +49,14 @@ pMenu.forEach((ele) => {
     // 객체호출법 : movieId[영화이름속성명]
     // 영화이름속성명은 txt변수에 할당되어 있음
     // 객체호출코드 : movieId[txt]
-    ifr.setAttribute(
-      "src",
-      `https://www.youtube.com/embed/${movieId[txt]}?autoplay=1`
-    );
+    ifr.setAttribute("src", `https://www.youtube.com/embed/${movieId[txt]}?autoplay=1`);
+
+    pMenu.forEach((x, i) => {
+      if (i === idx) {
+        x.parentElement.classList.add("on");
+      } else {
+        x.parentElement.classList.remove("on");
+      }
+    });
   }; /// click함수 ////
 }); //// forEach /////

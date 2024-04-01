@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CGV PJ 미디어쿼리 CSS-media.css */
+
+/* max-width를 사용한 미디어쿼리를 큰 사이즈부터 작은 사이즈 순으로 셋팅 */
+
+@media screen and (max-width: 1350px) {
+  /* GNB위치이동 */
+  .gnb {
+    right: 70px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /* 1-2. GNB메뉴 */
+ /* GNB메뉴 위치 및 배치 변경하기 */
+ .gnb {
+  bottom:auto;
+  top: 81px;
+  right: 17px;
+}
+.gnb ul {
+  flex-direction: column;
+  align-items: flex-end;
+  height: 0;
+  overflow: hidden;
+}
+
+.gnb:hover ul{
+  height: 127px;
+}
+/* 서브메뉴 오버시 숨기기 */
+.gnb ul > li:hover .smenu {
+  display: none;
+}
+/* 영사기 위치변경 */
+.cam {
+  top: -62px;
+  right: -12px;
+}
+  
+  
+
+}
+@media screen and (max-width: 810px) {
+  /* GNB위치이동 */
+  .gnb {
+    right: 70px;
+  }
+
+  /************ 3. 하단영역 ************/
+.footer-area{
+  gap: 20px;
+  flex-direction: column;
+  }
+  /* 3-3.SNS */
+  .sns-box{
+  margin-left: 0;
+  }
+
+  /* 포스터 리스트 */
+.poster-menu ul{
+  flex-wrap: wrap;
+  }
+  /* 상위 ul>li 리스트 */
+  .poster-menu>ul>li{
+      flex-basis: calc(100%/3 - 15px*2);
+  }
+}
