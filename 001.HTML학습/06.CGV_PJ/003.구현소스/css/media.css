@@ -60,6 +60,7 @@
   /* 포스터 리스트 */
 .poster-menu ul{
   flex-wrap: wrap;
+  gap: 0 2%;
   }
   /* 상위 ul>li 리스트 */
   .poster-menu>ul>li{
