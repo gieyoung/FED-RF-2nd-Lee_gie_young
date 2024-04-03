@@ -127,4 +127,14 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 10vw;
+  transition: top .6s ease-out;
+  animation: woman-ani 2s ease-in-out infinite alternate;
+}
+
+/* 떨녀 애니 */
+@keyframes woman-ani {
+  to{
+    transform: translateX(-50%) rotate(360deg) scale(4);
+  }
+  
 }
