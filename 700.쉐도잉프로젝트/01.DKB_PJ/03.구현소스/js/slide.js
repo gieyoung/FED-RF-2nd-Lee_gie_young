@@ -1,8 +1,10 @@
-// 도깨비 JS -  배너 슬라이드 //
-//모듈로 내보낼 때 하나만 내보내면 export default를 사용
-//맨 아래서 이름을 호출하여 사용하거나
-//함수 앞에 사용할 수도 있음
-//슬라이드 전체 함수
+// 배너 슬라이드 JS - slide.js //
+
+// 모듈로 내보낼때 하나만 내보내면 export default를 사용!
+// 맨 아래서 이름을 호출하여 사용하거나
+// 함수 앞에 사용할 수 도 있음.
+
+/// 슬라이드 전체 함수 //////////////
 export default function slideFn() {
   // DOM 선택함수
   const qs = (x) => document.querySelector(x);
@@ -10,7 +12,8 @@ export default function slideFn() {
 
   // addEvent 함수
   // ele - 요소, evt - 이벤트, fn - 함수
-  const addEvt = (ele, evt, fn) => ele.addEventListener(evt, fn);
+  const addEvt = (ele, evt, fn) => 
+  ele.addEventListener(evt, fn);
 
   // HTML태그 로딩후 loadFn함수 호출! ///
   addEvt(window, "DOMContentLoaded", loadFn);
@@ -57,11 +60,11 @@ export default function slideFn() {
     기능: 로딩 후 버튼 이벤트 및 기능구현
 ******************************************/
   function loadFn() {
-    console.log("로딩완료!");
+    // console.log("로딩완료!");
 
     // 이동버튼 대상:  .abtn
     const abtn = qsa(".abtn");
-    // 변경대상 : .slider
+    // 변경대상 : #slide
     const slide = qs(".slider");
     // 블릿버튼 : .indic
     let indic = document.querySelector(".indic");
@@ -72,7 +75,8 @@ export default function slideFn() {
     for (let i = 0; i < 3; i++) {
       // 슬라이드 넣기
       slide.innerHTML += `
-    <li data-seq="${i}" class="snum-0${i + 1}"></li>`;
+    <li data-seq="${i}" class="snum-0${i+1}"></li>    
+    `;
       // 블릿 넣기
       indic.innerHTML += `
     <li ${i === 0 ? 'class="on"' : ""}></li>
@@ -84,7 +88,7 @@ export default function slideFn() {
     indic = document.querySelectorAll(".indic li");
 
     // 슬라이드 순번 전역변수
-    //let snum = 0;
+    // let snum = 0; -> 불필요!
 
     // 2. 버튼을 모두 이벤트 설정하기
     for (let x of abtn) {
@@ -119,7 +123,7 @@ export default function slideFn() {
       // 함수의 전달변수 하나를 쓸 경우 또는
       // 여러전달변수중 첫번째 변수는 이벤트객체가
       // 전달된다!
-      console.log("전달변수:", evt, sts);
+      // console.log("전달변수:", evt, sts);
 
       // 만약 버튼 클릭일 경우 인터발지우기함수호출!
       if (sts) {
@@ -148,7 +152,7 @@ export default function slideFn() {
       // 해당클래스가 있으면 true, 없으면 false
 
       // 함수호출확인
-      console.log("나 슬라이드야~!", this, isRbtn);
+      // console.log("나 슬라이드야~!", this, isRbtn);
       // this는 호출한 버튼 자신
 
       // 2. 버튼별 분기하기 //////
@@ -215,8 +219,10 @@ export default function slideFn() {
       // 이동후 잘라내므로 두번째순번[1]
       // 왼쪽버튼은 먼저 앞에 붙이고
       // 이동하므로 첫번째순번[0]
-      let seq = slide.querySelectorAll("li")[isRbtn ? 1 : 0].getAttribute("data-seq");
-      console.log("블릿이 읽어올 슬순번:", seq, "/데이터형:", typeof seq);
+      let seq = slide
+        .querySelectorAll("li")
+        [isRbtn ? 1 : 0].getAttribute("data-seq");
+      // console.log("블릿이 읽어올 슬순번:", seq, "/데이터형:", typeof seq);
       // string - 문자형, number - 숫자형
 
       // 4. 블릿변경하기 ///////////
@@ -264,7 +270,7 @@ export default function slideFn() {
     /// [ 인터발 지우기함수 ] ///////
     function clearAuto() {
       // 지우기 확인!
-      console.log("인터발 지워!");
+      // console.log("인터발 지워!");
       // 1.인터발 지우기
       clearInterval(autoI);
       // 2.타임아웃 지우기 : 실행쓰나미 방지!!!
@@ -275,29 +281,39 @@ export default function slideFn() {
       }, 5000);
     } ////////// clearAuto ////////////
 
-    //이동버튼 이벤트 설정하기
-    //대상: 이동버튼 영역- .evt-cover aside
-    const evtCover = qsa(".evt-cover aside");
-    //변경대상: .abtn ->abtn변수에 할당됨
-    evtCover.forEach((ele, idx) => {
-      // console.log(ele);
-      //이벤트 셋팅:mouseover-버튼보이기
-      ele.onmouseover = () => {
-        abtn[idx].style.display = "block";
-      }; //mouseover
-      //이벤트 셋팅:mouseout-버튼숨기기
-      ele.onmouseout = () => {
-        abtn[idx].style.display = "none";
-      }; //mouseout
-      //이벤트 셋팅:mousemove-버튼따라오기
-      ele.onmousemove = (e) => {
-        abtn[idx].style.top = e.pageY + "px";
-        abtn[idx].style.left = e.pageX + "px";
-      }; //mousemove
 
-      //이벤트 셋팅:click-이동함수 호출
+    // 이동버튼 이벤트 설정하기 //////
+    // 이벤트대상: 이동버튼 영역 - .evt-cover aside
+    const evtCover = qsa('.evt-cover aside');
+    // 변경대상: 버튼 - .abtn -> abtn변수에 할당됨!
+    evtCover.forEach((ele,idx)=>{
+      // console.log(ele);
+      // 이벤트 셋팅하기1 : mouseover - 버튼보이기
+      ele.onmouseover = ()=>{
+        abtn[idx].style.display = 'block';
+      }; /// mouseover ///
+
+      // 이벤트 셋팅하기2 : mouseout - 버튼숨기기
+      ele.onmouseout = ()=>{
+        abtn[idx].style.display = 'none';
+      }; /// mouseout ///
+
+      // 이벤트 셋팅하기3 : mousemove - 버튼따라오기
+      ele.onmousemove = (e)=>{
+        abtn[idx].style.top = e.pageY+'px';
+        abtn[idx].style.left = e.pageX+'px';
+      }; /// mousemove ///
+
+      // 이벤트 셋팅하기4 : click - 이동함수 호출!
       ele.onclick = goSlide;
-    }); ////////forEach////////////
+    }); ///// forEach /////////////////
+
+
+
+
+
+
   } //////////////// loadFn 함수 ///////////////
   /////////////////////////////////////////////
-} /////////slideFn함수///////////////
+} ///////////// slideFn 함수 ///////////////
+////////////////////////////////////////////

@@ -135,42 +135,44 @@ z-index: 999;
 /* 슬라이드 박스 */
 .slide-box{
   position: relative;
+  /* 부모자격 - 이벤트 커버박스 */
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 /* 이벤트 커버박스 */
 .evt-cover{
- position: absolute;
- top:0;
- left:0;
- bottom: 0;
- right: 0;
- display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
 }
-
-/* 양분박스 */
+/* 양분박스 aside */
 .evt-cover aside{
+  /* 등분할 */
   flex: 1;
+  /* 손가락모양 */
   cursor: pointer;
 }
-
 /* 버튼요소 */
 .abtn{
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99;
   font-size: 24px;
   font-weight: bold;
-  color:#fff;
+  color: #fff;
   text-shadow: 0 0 5px #000;
-  display: none;
-  /* 따라다니는 버튼 요소 오버시 무시하기 */
+  z-index: 99;
+  display: none;/* 처음에 숨기기 */
+  /* 따라다니는 버튼요소 오버시 무시하기 */
   pointer-events: none;
-  transition: .2s ease-out;
-  /* 따라다니는 버튼 포인터 위치 */
-  transform:translate(-50%,-100%)
+  /* 트랜지션 */
+  transition: .3s ease-out;
+  /* 트랜스폼 */
+  transform: translate(-50%, -100%);
 }
 /* 슬라이더 */
 .slider{
@@ -205,45 +207,39 @@ z-index: 999;
 .snum-03 {
     background-image: url(../images/bg_main_03.jpg);
 }
-
 /* 블릿박스 */
-
 .indic-box{
   position: absolute;
-  top:20px;
+  top: 20px;
   left: 30px;
   width: 450px;
   height: 5px;
-  z-index:99;
-
+  z-index: 1;
 }
-
 .indic{
   display: flex;
-  gap:0 15px;
+  gap: 0 15px;
 }
-
 .indic li{
   width: 150px;
   height: 5px;
-  background-color: #fff;
+  background-color: #ffffff66;
 }
-
 /* 가상요소바 */
 .indic li::before{
   content: '';
   display: block;
   width: 0;
   height: 5px;
-  background-color: red;
-  transition: width .6s linear;
+  background-color: #fff;
 }
-
-/* li.on일 경우 가상요소 width */
+/* li.on일 경우 가상요소 width변경 */
 .indic li.on::before{
   width: 100%;
   transition: width 3s linear;
 }
+
+
 
 
 /* 캐릭터 박스
@@ -360,13 +356,13 @@ z-index: 999;
   text-align: justify;
 }
 
-
-/* 2.5.도깨비 드라마 메뉴: 스티키 메뉴 */
+/******** 2.5. 도깨비 드라마 메뉴 : 스티키메뉴 ********/
 #spart-menu{
   /* 스티키 포지션 - 상단스크롤 걸림! */
   position: sticky;
   top: 0;
   background-color: #fff;
+  z-index: 999;
 }
 .spart-menu ul{
   /* 플렉스박스 */
@@ -422,5 +418,6 @@ z-index: 999;
   padding: 10px 15px;
   font-size: 1.8rem;
 }
+
 
 /************* 3. 하단영역 *************/
