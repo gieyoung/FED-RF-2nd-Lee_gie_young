@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오뚜기 홈페이지 벤치마킹</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+
+    <!-- CSS연결 -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/core.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <!-- <link rel="stylesheet" href="./css/grid_12_flex.css" /> -->
+
+    <!-- JS연결 -->
+    <script src="./js/main.js" defer></script>
+    <!-- <script src="./js/scroll_action.js" defer></script> -->
+
+    <!-- CDN연결(swiper슬라이더) -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- AOS 라이브러리 불러오기-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- 뒷배경 암전 효과 -->
+      <div class="black-back"></div>
+      <!-- 1. 상단 -->
+      <div id="top-area">
+        <header class="top-area inbox">
+          <!-- 사이트맵 팝업 -->
+          <div class="pop-menu">
+            <h2>사이트맵</h2>
+            <div class="list">
+              <h3 class="depth1">회사소개</h3>
+              <ol>
+                  <li class="depth2">
+                    <a href="/about/otgoverview">Overview</a>
+                  </li>
+                  <li>
+                    <h4 class="depth2">오뚜기 소개</h4>
+                    <ol class="depth3">
+                      <li><a href="/about/otgcompany">회사개요</a></li>
+                      <li><a href="/about/otghamtaiho">창업주생애</a></li>
+                      <li><a href="/about/otgbusiness">사업소개</a></li>
+                      <li><a href="/about/otghistory">연혁</a></li>
+                      <li><a href="/about/otgci">CI</a></li>
+                      <li><a href="/about/otgceo">CEO메시지</a></li>
+                      <li><a href="/about/otgresearchinstitute">중앙연구소</a></li>
+                      <li><a href="/about/otgfoodsafetyscience">식품안전과학연구소</a></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <h4 class="depth2">글로벌 오뚜기</h4>
+                    <ol class="depth3">
+                      <li><a href="/about/otgoverseascorporation">해외법인소개</a></li>
+                      <li><a href="/about/otgglobalstatus">글로벌 현황</a></li>
+                    </ol>
+                  </li>
+                  <li class="depth2">
+                    <a href="/about/otglocation">오시는길</a>
+                  </li>
+                  <li>
+                    <h4 class="depth2">인재채용</h4>
+                    <ol class="depth3">
+                      <li><a href="/about/otgtalent">인재상</a></li>
+                      <li><a href="/about/otgpersonnelsystem">인사제도</a></li>
+                      <li><a href="/about/otgjobintroduction">직무소개</a></li>
+                      <li><a href="/about/otgrecruitment">채용공고</a></li>
+                    </ol>
+                  </li>
+              </ol>
+            </div>
+            <div class="list">
+              <h3 class="depth1">ESG경영</h3>
+              <ol>
+                  <li class="depth2">
+                    <a href="/esg/otgoverview">Overview</a>
+                  </li>
+                  <li class="depth2">
+                    <a href="/esg/otgmanagementintroduction">ESG경영 소개</a>
+                  </li>
+                  <li>
+                    <h4 class="depth2">환경</h4>
+                    <ol class="depth3">
+                      <li><a href="/esg/otgactpolicy">선포 및 실천방침</a></li>
+                      <li><a href="/esg/otgstrategy">전략 및 방향</a></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <h4 class="depth2">사회</h4>
+                    <ol class="depth3">
+                      <li><a href="/esg/otgsocialhumanright">인권경영</a></li>
+                      <li><a href="/esg/otgsocialethical">윤리경영</a></li>
+                      <li><a href="/esg/otgsocialsafety">안전·보건·환경</a></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <h4 class="depth2">지배구조</h4>
+                    <ol class="depth3">
+                      <li><a href="/esg/otggovernance">이사회</a></li>
+                      <li><a href="/esg/otggovernance2">감사의견</a></li>
+                      <li><a href="/esg/otggovernance3">주총 의결권행사현황</a></li>
+                      <li><a href="/esg/otggovernance4">배당현황</a></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <h4 class="depth2">사회공헌</h4>
+                    <ol class="depth3">
+                      <li><a href="/esg/otgsocialcontribution">사회공헌</a></li>
+                      <li><a href="/esg/otgsocialwelfare">사회복지</a></li>
+                      <li><a href="/esg/otgvolunteerwork">자원봉사</a></li>
+                      <li><a href="/esg/otgeducationalscholarship">교육장학</a></li>
+                      <li><a href="/esg/otgeducationalscholarship">기타사회공헌</a></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <h4 class="depth2">동반성장</h4>
+                    <ol class="depth3">
+                      <li><a href="/esg/otggrowth">동반성장 소개</a></li>
+                      <li><a href="/esg/otggrowth2">동반성장 지원</a></li>
+                      <li><a href="/esg/otggrowth3">소통채널</a></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <h4 class="depth2">보고서 및 정책</h4>
+                    <ol class="depth3">
+                      <li><a href="/esg/otgsustainabilityreport">지속가능경영 보고서</a></li>
+                      <li><a href="/esg/otgcorporatereport">기업지배구조 보고서</a></li>
+                      <li><a href="/esg/otgreportpolicies">규정 및 정책</a></li>
+                    </ol>
+                  </li>
+                  <li class="depth2">
+                    <a href="/esg/otgesgdata">ESG Data</a>
+                  </li>
+              </ol>
+            </div>
+            <div class="list">
+              <h3 class="depth1">제품이야기</h3>
+              <ol>
+                  <li>
+                    <h4 class="depth2">브랜드 스토리</h4>
+                    <ol class="depth3">
+                      <li><a href="/product/otgbrandstory">Overview</a></li>
+                    </ol>
+                  </li>
+                  <li class="depth2">
+                    <a href="/product/product_cat">제품정보</a>
+                  </li>
+              </ol>
+            </div>
+            <div class="list">
+              <h3 class="depth1">브랜드경험</h3>
+              <ol>
+                  <li class="depth2">
+                    <a href="/brand/otgoverview">Overview</a>
+                  </li>
+                  <li>
+                    <h4 class="depth2">공식캐릭터</h4>
+                    <ol class="depth3">
+                      <li><a href="/brand/otggoods">Yellows</a></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <h4 class="depth2">브랜드공간</h4>
+                    <ol class="depth3">
+                      <li><a href="/brand/otgrolypoly">rolypoly</a></li>
+                      <li><a href="/brand/otgokitchen">오키친스튜디오</a></li>
+                      <li><a href="/brand/otgfoodtruck">오뚜기푸드트럭</a></li>
+                    </ol>
+                  </li>
+                  <li class="depth2">
+                    <a href="/brand/brands_visit">공장견학</a>
+                  </li>
+                  <li>
+                    <h4 class="depth2">공모전</h4>
+                    <ol class="depth3">
+                      <li><a href="/brand/otgcontest_oif">OIF</a></li>
+                      <li><a href="/brand/otgcontest">푸드에세이</a></li>
+                    </ol>
+                  </li>
+                  <li class="depth2">
+                    <a href="/brand/otgfestival">페스티벌</a>
+                  </li>
+                  <li class="depth2">
+                    <a href="/brand/otgevent_list">이벤트</a>
+                  </li>
+              </ol>
+            </div>
+            <div class="list">
+              <h3 class="depth1">홍보센터</h3>
+              <ol>
+                  <li class="depth2">
+                    <a href="/pr/otgnotice_list">공지사항</a>
+                  </li>
+                  <li class="depth2">
+                    <a href="/pr/otgnews_list">오뚜기 뉴스룸</a>
+                  </li>
+                  <li class="depth2">
+                    <a href="/pr/otgmedia_list">언론보도</a>
+                  </li>
+                  <li class="depth2">
+                    <a href="/pr/otgcf_list">CF스토리</a>
+                  </li>
+                  <li class="depth2">
+                    <a href="/pr/otgcolumn_list">칼럼</a>
+                  </li>
+                  <li>
+                    <h4 class="depth2">투자정보</h4>
+                    <ol class="depth3">
+                      <li><a href="/pr/otginvest_list">재무정보</a></li>
+                      <li><a href="/pr/otginvest_official">공시정보</a></li>
+                    </ol>
+                  </li>
+              </ol>
+            </div>
+            <div class="list">
+              <h3 class="depth1">고객서비스</h3>
+              <ol>
+                  <li class="depth2">
+                    <a href="/customer/customer_voice_process">고객상담 프로세스</a>
+                  </li>
+                  <li>
+                    <h4 class="depth2">고객의 소리</h4>
+                    <ol class="depth3">
+                      <li><a href="/customer/customer_voice">상담접수</a></li>
+                      <li><a href="/customer/customer_voice_history">접수내역 조회</a></li>
+                    </ol>
+                  </li>
+                  <li class="depth2">
+                    <a href="/service/otgfaq">자주묻는 질문</a>
+                  </li>
+                  <li>
+                    <h4 class="depth2">고객만족활동</h4>
+                    <ol class="depth3">
+                      <li><a href="/service/otgproductsafety">제품안전사용영상</a></li>
+                      <li><a href="/service/otgimprovecase">개선사례</a></li>
+                    </ol>
+                  </li>
+                  <li class="depth2">
+                    <a href="/service/customer_ccm_noncertification">소비자중심경영</a>
+                  </li>
+              </ol>
+            </div>
+          </div>
+          <!-- 검색창 팝업 -->
+          <div class="pop-search">
+             <div class="pop-logo"><span class="ir"></span></div>
+             <h2>통합검색</h2>
+              <form action="search">
+                <label for=""></label>
+                <input type="text" id="" name="keyword" class="" title="검색" placeholder="검색어를 입력해 주세요">
+                <button type="submit" class="search-btn"><span class="ir">검색하기</span></button>
+              </form>
+              <button type="button" class="del-btn"><span class="ir">삭제</span></button>
+          </div>
+          <div class="nav-wrap">
+            <!-- 1-1.로고 -->
+            <h1 class="logo">
+              <a href="" alt="오뚜기 로고"><span class="ir">로고</span></a>
+            </h1>
+            <!-- 1-2.메뉴 -->
+            <nav id="nav">
+              <ul class="gnb">
+                <li class="gnb-depth1">
+                  <a href="javascript:;"><span class="red">회사소개</span></a>
+                  <ul class="gnb-depth2">
+                    <li><a href="javascript:;"><span>Overview</span></a></li>
+                    <li><a href="javascript:;"><span>오뚜기 소개</span></a></li>
+                    <li>
+                      <a href="javascript:;"><span>글로벌 오뚜기</span></a>
+                    </li>
+                    <li><a href="javascript:;"><span>오시는길</span></a></li>
+                    <li><a href="javascript:;"><span>인재채용</span></a></li>
+                  </ul>
+                </li>
+                <li class="gnb-depth1">
+                  <a href="javascript:;"><span class="red">ESG경영</span></a>
+                  <ul class="gnb-depth2">
+                    <li><a href="javascript:;"><span>Overview</span></a></li>
+                    <li><a href="javascript:;"><span>ESG경영</span></a></li>
+                    <li>
+                      <a href="javascript:;"><span>환경</span></a>
+                    </li>
+                    <li><a href="javascript:;"><span>사회</span></a></li>
+                    <li><a href="javascript:;"><span>지배구조</span></a></li>
+                  </ul>
+                </li>
+                <li class="gnb-depth1">
+                  <a href="javascript:;"><span class="red">제품이야기</span></a>
+                  <ul class="gnb-depth2">
+                    <li><a href="javascript:;"><span>브랜드 스토리</span></a></li>
+                    <li><a href="javascript:;"><span>제품정보</span></a></li>
+                  
+                  </ul>
+                </li>
+                <li class="gnb-depth1">
+                  <a href="/brand/otgoverview"><span class="red">브랜드경험</span></a>
+                  <ul class="gnb-depth2">
+                    <li><a href="javascript:;"><span>Overview</span></a></li>
+                    <li><a href="javascript:;"><span>공식캐릭터</span></a></li>
+                    <li>
+                      <a href="javascript:;"><span>글로벌 오뚜기</span></a>
+                    </li>
+                    <li><a href="javascript:;"><span>오시는길</span></a></li>
+                    <li><a href="javascript:;"><span>인재채용</span></a></li>
+                  </ul>
+                </li>
+                <li class="gnb-depth1">
+                  <a href="/pr/otgnotice_list"><span class="red">홍보센터</span></a>
+                  <ul class="gnb-depth2">
+                    <li><a href="javascript:;"><span>Overview</span></a></li>
+                    <li><a href="javascript:;"><span>브랜드공간</span></a></li>
+                    <li>
+                      <a href="javascript:;"><span>공장견학</span></a>
+                    </li>
+                    <li><a href="javascript:;"><span>페스티벌</span></a></li>
+                    <li><a href="javascript:;"><span>이벤트</span></a></li>
+                  </ul>
+                </li>
+                <li class="gnb-depth1">
+                  <a href="/customer/customer_voice_process"><span class="red">고객서비스</span></a>
+                  <ul class="gnb-depth2">
+                    <li><a href="javascript:;"><span>고객상담 프로세스</span></a></li>
+                    <li><a href="javascript:;"><span>고객의 소리</span></a></li>
+                    <li>
+                      <a href="javascript:;"><span>자주묻는 질문</span></a>
+                    </li>
+                    <li><a href="javascript:;"><span>고객만족활동</span></a></li>
+                    <li><a href="javascript:;"><span>소비자중심경영</span></a></li>
+                  </ul>
+                </li>
+
+                
+              </ul>
+            </nav>
+            <!-- 1-3.기타 -->
+            <div class="etc-box">
+              <!-- 사이트맵 -->
+              <div class="sitemap">
+                <div class="hambtn hambtn2">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <!-- 다국어 셀렉버튼 -->
+              <div class="lang">
+                <a href="javascript:;" class="btn-lang">KR</a>
+                <div class="lang-menu">
+                  <ul>
+                    <li class="active"><a href="#" title="국문">KR</a></li>
+                    <li><a href="/en/main/" title="영문">EN</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- 검색 -->
+              <div class="search">
+                <a href="#" class="search-btn"><span class="ir">검색하기</span></a>
+              </div>
+              <!-- 챗봇 -->
+              <div class="chat">
+                <a href="javascript:window.open('https://v2.coginsight.net/service/#/aa15f11b-60b0-470a-90df-c84d1af43be9?', '가족친화인증서', 'top=0, left=0, width=530, height=750, scrollbars=no, overflow=hidden');" class="chat-btn"><span class="ir">챗봇열기</span></a>
+              </div>
+              <!-- 오뚜기몰 바로가기 버튼 -->
+              <div class="ottugi-go">
+                <a href="https://www.ottogimall.co.kr/" target="_blank" title="오뚜기몰 새창열림" class="go-btn"><span class="ir">오뚜기 mall바로가기</span></a>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <!-- 2. 배너 -->
+      <div id="ban-area">
+        <section class="ban-area inbox">
+          <!-- <h2 class="temp-tit">2. 배너</h2> -->
+          <!-- 배너 슬라이더 -->
+          <!-- Swiper -->
+          <div class="swiper mySwiper swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <video class="video mask on" autoplay="autoplay" muted="muted" preload="auto" loop playsinline>
+                  <source src="./images/51b6eeb6bbb449aab4bf46502e2bc074.mp4" type="video/mp4" />
+                </video>
+                <div class="slide-txt">
+                  <h2 class="txt">인류의 식생활 향상과<br />건강에 이바지 합니다.</h2>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/57a43ca6550d4bbcad24b4118b7e3fe6.jpg" alt="배너 슬라이드 이미지" />
+                <div class="slide-txt">
+                  <h2 class="txt">맛과 품질을 가장 소중히<br />생각하고 행동합니다.</h2>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/c6a1af1ea63c482ab65d1d3c1156a538.jpg" alt="배너 슬라이드 이미지" />
+                <div class="slide-txt">
+                  <h2 class="txt">식품안전문화 정착을 위해<br />노력하고 있습니다.</h2>
+                </div>
+              </div>
+            </div>
+
+            <!-- 슬라이드 버튼 -->
+            <div class="controls">
+              <!-- 슬라이드 시간 바 -->
+              <div class="autoplay-progress">
+                <svg viewBox="0 0 48 48">
+                  <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span></span>
+              </div>
+              <!-- 슬라이드 페이지 숫자 -->
+              <div class="swiper-pagination"></div>
+              <!-- 슬라이드 정지/재생 버튼 -->
+              <div class="btn_wrap">
+                <button type="button" class="swiper-button-pause"><span class="ir">전체 정지</span></button>
+                <button type="button" class="swiper-button-play"><span class="ir">전체 재생</span></button>
+              </div>
+              <!-- 슬라이드 이전/다음 버튼 -->
+              <button type="button" class="swiper-button-prev"><span class="ir">이전</span></button>
+              <button type="button" class="swiper-button-next"><span class="ir">다음</span></button>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- 3. 사업소개 -->
+      <div id="about-area">
+        <section class="about-area inbox">
+          <!-- 스크롤 -->
+          <a href="#" class="scroll-btn"><span class="ir">아래 스크롤</span></a>
+          <h2 class="scroll-el hide-el">인류 식생활을 향상시키는<br />글로벌 식품 기업</h2>
+
+          <ul class="about-box">
+            <li class="con scroll-el hide-el">
+              <!-- 이미지 영역 -->
+              <div class="img-fade img-fade1 aos-init aos-animate" data-aos="fade-up">
+                <img src="./images/clip1.jpg" alt="" class="fade1" />
+                <img src="./images/clip1_1.jpg" alt="" class="fade2" />
+              </div>
+              <!-- 글자영역 -->
+              <div class="text">
+                <h3>
+                  보다 좋은 품질의<br />
+                  <span>제품</span>을
+                </h3>
+                <p>
+                  자동화된 생산라인과 첨단설비, 위생적인 환경을 구축하여<br />
+                  오뚜기의 1등 제품을 우수한 품질로 제공합니다.
+                </p>
+                <a href="#" class="more"><span class="ir">더보기</span></a>
+              </div>
+            </li>
+            <li class="con scroll-el hide-el">
+              <!-- 글자영역 -->
+              <div class="text">
+                <h3>
+                  보다 높은 영양을 위해<br />
+                  <span>1969년</span>부터 한결같이
+                </h3>
+                <p>
+                  식품이 사람들의 심신 건강을 지키는 영양분이 될 수 있도록<br />
+                  과거부터 현재까지 이어온<br />
+                  그리고 앞으로도 계속 이어갈 오뚜기의 마음입니다.
+                </p>
+                <a href="#" class="more"><span class="ir">더보기</span></a>
+              </div>
+              <!-- 이미지 영역 -->
+              <div class="img-fade img-fade2">
+                <!-- 클리핑 마스크 -->
+                <svg class="svg">
+                  <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
+                    <path
+                      d="M0.5,1 C0.469,1,0.439,0.996,0.419,0.989 L0.049,0.855 C0.025,0.846,0,0.809,0,0.781 V0.219 C0,0.191,0.025,0.154,0.049,0.145 L0.419,0.011 C0.439,0.004,0.469,0,0.5,0 C0.531,0,0.561,0.004,0.581,0.011 L0.951,0.145 C0.975,0.154,1,0.191,1,0.219 V0.781 C1,0.809,0.975,0.846,0.951,0.855 L0.581,0.989 C0.561,0.996,0.531,1,0.5,1"
+                    ></path>
+                  </clipPath>
+                </svg>
+                <img src="./images/clip2.jpg" alt="" class="fade1" />
+                <img src="./images/clip2_1.jpg" alt="" class="fade2" />
+              </div>
+            </li>
+            <li class="con scroll-el hide-el">
+              <!-- 이미지 영역 -->
+              <div class="img-fade img-fade3">
+                <svg class="svg">
+                  <clipPath id="my-clip-path2" clipPathUnits="objectBoundingBox"><path d="M0.9,0.9 C0.633,1,0.367,1,0.1,0.9 C-0.033,0.633,-0.033,0.367,0.1,0.1 C0.367,-0.033,0.633,-0.033,0.9,0.1 C1,0.367,1,0.633,0.9,0.9"></path></clipPath>
+                </svg>
+                <img src="./images/clip3.jpg" alt="" class="fade1" />
+                <img src="./images/clip3_1.jpg" alt="" class="fade2" />
+              </div>
+              <!-- 글자영역 -->
+              <div class="text">
+                <h3>
+                  보다 앞선 <span>식품개발</span>에<br />
+                  노력하고 있습니다.
+                </h3>
+                <p>
+                  오뚜기는 항상 앞장서서 창조의 기쁨과 보람을 경험하고<br />
+                  앞선 식품을 우리 인류에게 선보입니다.
+                </p>
+                <a href="#" class="more"><span class="ir">더보기</span></a>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <!-- 4. 글로벌오뚜기 -->
+      <div id="global-area">
+        <section class="global-area inbox">
+          <div class="con">
+            <h3 class="scroll-el hide-el">
+              <span>세계로 나가는</span><br />
+              Global OTTOGI
+            </h3>
+            <p class="scroll-el hide-el">전 세계인의 식탁에 오뚜기가 놓여지는 그 날까지, 오뚜기는 끊임없이 글로벌 고객의 니즈에 귀를 기울일 것입니다.</p>
+            <a href="#" class="more"><span class="ir">더보기</span></a>
+
+            <!-- 원 이미지 영역 -->
+            <ul class="img-fade">
+              <li class="img1 g1 active ">
+                <img src="./images/list_bg1_1_mo.png" alt="" class="fade1" />
+                <img src="./images/list_bg1_2_mo.png" alt="" class="fade2" />
+              </li>
+              <li class="img2 g2 active">
+                <img src="./images/list_bg2_1_mo.png" alt="" class="fade1" />
+                <img src="./images/list_bg2_2_mo.png" alt="" class="fade2" />
+              </li>
+              <li class="img3 g3 active">
+                <img src="./images/list_bg4_1_mo.png" alt="" class="fade1" />
+                <img src="./images/list_bg4_2_mo.png" alt="" class="fade2" />
+              </li>
+              <li class="img4 g2 active">
+                <img src="./images/list_bg3_1_mo.png" alt="" class="fade1" />
+                <img src="./images/list_bg3_2_mo.png" alt="" class="fade2" />
+              </li>
+              <li class="img5 g1 active">
+                <img src="./images/list_bg5_1_mo.png" alt="" class="fade1" />
+                <img src="./images/list_bg5_2_mo.png" alt="" class="fade2" />
+              </li>
+              <li class="img6 g3 active">
+                <img src="./images/list_bg2_1_mo.png" alt="" class="fade1" />
+                <img src="./images/list_bg2_2_mo.png" alt="" class="fade2" />
+              </li>
+              <li class="img7 g1 active">
+                <img src="./images/list_bg5_2_mo.png" alt="" class="fade1" />
+                <img src="./images/list_bg5_1_mo.png" alt="" class="fade2" />
+              </li>
+              <li class="img8 g2 active">
+                <img src="./images/list_bg3_1_mo.png" alt="" class="fade1" />
+                <img src="./images/list_bg3_2_mo.png" alt="" class="fade2" />
+              </li>
+              <li class="img9 g3 active">
+                <img src="./images/list_bg1_2_mo.png" alt="" class="fade1" />
+                <img src="./images/list_bg1_1_mo.png" alt="" class="fade2" />
+              </li>
+              <li class="img10 g2 active">
+                <img src="./images/list_bg3_2_mo.png" alt="" class="fade1" />
+                <img src="./images/list_bg3_1_mo.png" alt="" class="fade2" />
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <!-- 5. ESG경영 -->
+      <!-- <div id="esg-area">
+        <section class="esg-area inbox">
+           <h3>미래가치를 창조하고,<br>
+            지속가능한 식문화를 만들어 가겠습니다.</h3>
+        </section>
+      </div> -->
+      <!-- 6. 브랜드스토리 -->
+      <div id="story-area">
+        <section class="story-area inbox">
+          <h3 class="scroll-el hide-el">
+            오뚜기는 생각합니다.<br />
+            "맛있는 식품은 신선한 원료로 부터"
+          </h3>
+          <div class="visual">
+            <!-- <img src="./images/main_brand_mo.jpg" alt="브랜드스토리"> -->
+            <div class="text">
+              <h4 class="scroll-el hide-el">OTTOGI</h4>
+              <h5 class="scroll-el hide-el">BRAND<span>STORY</span></h5>
+              <h6 class="scroll-el hide-el">오뚜기의 전통&진화, 시너지, 가능성,가치 그리고 미래를 이야기하고자 합니다.</h6>
+              <a href="#" class="more2 clb"><span class="ir">더보기</span></a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- 7. 제품소개 -->
+      <div id="product-area">
+        <div class="bg-con"></div>
+        <section class="product-area inbox">
+          <!-- 제품소개 슬라이더 -->
+          <!-- Swiper -->
+          <div class="swiper mySwiper swiper-container2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="slide-img">
+                  <img src="./images/b8bdc5697fa1486fb3c11f19495b3e58.png" alt="" />
+                </div>
+                <div class="slide-txt">
+                  <h2 class="txt">
+                    맛있는 생활의<br />
+                    오뚜기 제품
+                  </h2>
+                  <h3>카레/짜장</h3>
+                  <h4>오뚜기를 대표하는<br />카레,짜장!</h4>
+                  <a href="#" class="more3"><span>오뚜기몰에서 상품보기</span></a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-img">
+                  <img src="./images/3399ed06bd1d4f29a3cb0df825c576d8.png" alt="" />
+                </div>
+                <div class="slide-txt">
+                  <h2 class="txt">
+                    맛있는 생활의<br />
+                    오뚜기 제품
+                  </h2>
+                  <h3>봉지라면</h3>
+                  <h4>언제 어디서나 맛있는!<br />오뚜기 라면</h4>
+                  <a href="#" class="more3"><span>오뚜기몰에서 상품보기</span></a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-img">
+                  <img src="./images/a47c5a4b54ac43eca0f6cc3a4d5a0d5b.png" alt="" />
+                </div>
+                <div class="slide-txt">
+                  <h2 class="txt">
+                    맛있는 생활의<br />
+                    오뚜기 제품
+                  </h2>
+                  <h3>만두</h3>
+                  <h4>좋은 재료로 속을<br />꽉 채워만든 만두</h4>
+                  <a href="#" class="more3"><span>오뚜기몰에서 상품보기</span></a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-img">
+                  <img src="./images/9d23d293d25e42f0be1a71697649cffc.png" alt="" />
+                </div>
+                <div class="slide-txt">
+                  <h2 class="txt">
+                    맛있는 생활의<br />
+                    오뚜기 제품
+                  </h2>
+                  <h3>참기름/들기름/고추맛기름/볶음참깨</h3>
+                  <h4>엄선한 재료로<br />고소한 맛과 향</h4>
+                  <a href="#" class="more3"><span>오뚜기몰에서 상품보기</span></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 슬라이드 버튼 -->
+            <div class="controls">
+              <!-- 슬라이드 페이지 숫자 -->
+              <div class="swiper-pagination"></div>
+              <!-- 슬라이드 정지/재생 버튼 -->
+              <button type="button" class="swiper-button-pause2"><span class="ir">전체 정지</span></button>
+              <button type="button" class="swiper-button-play2"><span class="ir">전체 재생</span></button>
+
+              <!-- 슬라이드 이전/다음 버튼 -->
+              <button type="button" class="swiper-button-prev"><span class="ir">이전</span></button>
+              <button type="button" class="swiper-button-next"><span class="ir">다음</span></button>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- 8. 오뚜기 소식 -->
+      <div id="news-area">
+        <section class="news-area inbox">
+          <h2 class="scroll-el hide-el">세상과 함께하는 <br />이야기를 나누고자 합니다.</h2>
+
+          <!-- 탭버튼 -->
+          <ul class="tab">
+            <li><a href="javascript:;" class="news on">뉴스룸</a></li>
+            <li><a href="javascript:;" class="recipe">레시피</a></li>
+            <li><a href="javascript:;" class="sns">SNS</a></li>
+          </ul>
+
+          <!-- 탭 리스트 -->
+          <div class="tab-list scroll-el hide-el">
+             <!-- 뉴스룸 -->
+                 <!-- 더보기 버튼 -->
+                 <a href="#" class="more on"><span class="ir">뉴스룸 더보기</span></a>
+              <ul class="list list1 clb on">
+              
+                <li>
+                  <a href="#" class="img-box">
+                    <img src="./images/ed1cb0af3276411c919f1966a27cda11.jpg" alt="오뚜기 , ‘ 스위트홈 제 27 회 오뚜기 가족요리 페스티벌 ’ 참가자 모집 … ‘ 오뚜기 카레 ’ 활용" />
+                  </a>
+                  <a href="#" class="txt-box">
+                    <p>오뚜기 , ‘ 스위트홈 제 27 회 오뚜기 가족요리 페스티벌 ’ 참가자 모집 … ‘ 오뚜기 카레 ’ 활용</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="img-box">
+                    <img src="./images/45eabc71773c4c7ba99410a1cd2af9b7.jpg" alt="“ 세계 물의 날 ” ㈜오뚜기 , 공장 설비 개선 등 ‘ 수자원 보호 ’ 행보 눈길" />
+                  </a>
+                  <a href="#" class="txt-box">
+                    <p>“ 세계 물의 날 ” ㈜오뚜기 , 공장 설비 개선 등 ‘ 수자원 보호 ’ 행보 눈길</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="img-box">
+                    <img src="./images/95f462abf9ad47c19e9555ddb31ed18c.jpg" alt="“ 파우치에 담은 비법양념 ” ㈜오뚜기 ‘ 오늘밥상 ’, 집밥·캠핑족 잡았다" />
+                  </a>
+                  <a href="#" class="txt-box">
+                    <p>“ 파우치에 담은 비법양념 ” ㈜오뚜기 ‘ 오늘밥상 ’, 집밥·캠핑족 잡았다</p>
+                  </a>
+                </li>
+              </ul>
+           
+              <!-- 레시피 -->
+               <!-- 더보기 버튼 -->
+               <a href="#" class="more"><span class="ir">레시피 더보기</span></a>
+            <ul class="list list2 clb">
+                <li>
+                  <a href="#" class="img-box">
+                    <img src="./images/bfe208e34139487e99f8c585ae1de1ec.jpg" alt="" />
+                  </a>
+                  <a href="#" class="txt-box">
+                    <p>차돌 냉이 된장찌개</p>
+                    <div class="tag">
+                      <span>#오늘밥상&nbsp;</span>
+                      <span>#된장찌개양념&nbsp;</span>
+                      <span>#냉이&nbsp;</span>
+                    </div>
+                  </a>
+                </li>
+  
+                <li>
+                  <a href="#" class="img-box">
+                    <img src="./images/6f245a1fbcd340818adc37734a3cbe44.jpg" alt="" />
+                  </a>
+                  <a href="#" class="txt-box">
+                    <p>찹쌀크림도너츠</p>
+                    <div class="tag">
+                      <span>#크림듬뿍&nbsp;</span>
+                      <span>#오뚜기쨈&nbsp;</span>
+                      <span>#디저트&nbsp;</span>
+                    </div>
+                  </a>
+                </li>
+  
+                <li>
+                  <a href="#" class="img-box">
+                    <img src="./images/41ac71e70ad54b88b8e867507335d13f.jpg" alt="" />
+                  </a>
+                  <a href="#" class="txt-box">
+                    <p>낙지 초무침</p>
+                    <div class="tag">
+                      <span>#안주&nbsp;</span>
+                      <span>#야식&nbsp;</span>
+                      <span>#새콤달콤&nbsp;</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="img-box">
+                    <img src="./images/cb5e4658d06b4997a6788b9bfd476453.jpg" alt="" />
+                  </a>
+                  <a href="#" class="txt-box">
+                    <p>쭈꾸미 떡볶이</p>
+                    <div class="tag">
+                      <span>#주꾸미&nbsp;</span>
+                      <span>#떡볶이&nbsp;</span>
+                      <span>#간식&nbsp;</span>
+                    </div>
+                  </a>
+                </li>
+             
+              </ul>
+            </ul>
+               <!-- SNS -->
+                <!-- 더보기 버튼 -->
+                <a href="#" class="more"><span class="ir">sns 더보기</span></a>
+               <ul class="list list3 clb">
+                <li>
+                  <p class="insta">ottogi_daily</p>
+                  <a href="#" class="img-box">
+                    <img src="./images/3e35470307d04b508e0d9913ca762fea.jpg" alt="" />
+                  </a>
+                  <a href="#" class="txt-box">
+                    <p>오즈키친 주먹밥으로 간편하게 담기만 하면 도시락 완성🍱</p>
+                    
+                  </a>
+                </li>
+  
+                <li>
+                  <p class="insta">ottogi_daily</p>
+                  <a href="#" class="img-box">
+                    <img src="./images/d1e0b2850f174bbba7ba4cd61d40bf67.jpg" alt="" />
+                  </a>
+                  <a href="#" class="txt-box">
+                    <p>아침 메뉴로 딱! 가볍고 든든한 참치미역죽 레시피🥣</p>
+                    
+                  </a>
+                </li>
+  
+                <li>
+                  <p class="insta">ottogi_daily</p>
+                  <a href="#" class="img-box">
+                    <img src="./images/d6e09404285f4c9f86dd29c98c6065c8.jpg" alt="" />
+                  </a>
+                  <a href="#" class="txt-box">
+                    <p>🆕상큼달달 LIGHT SUGAR 사과쨈🍎</p>
+                    
+                  </a>
+                </li>
+              </ul>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <!-- 9. 하단영역 -->
+      <div id="footer-area">
+        <footer class="footer-area inbox">
+          <!-- sns -->
+          <ul class="sns">
+            <li class="insta">
+              <a href="https://www.instagram.com/ottogi_daily/" target="_blank" title="인스타그램 새창열림"><span class="ir">인스타그램</span></a>
+            </li>
+            <li class="youtube">
+              <a href="https://www.youtube.com/user/Ottogimkt" target="_blank" title="유튜브 새창열림"><span class="ir">유튜브</span></a>
+            </li>
+            <li class="facebook">
+              <a href="https://www.facebook.com/Ottogitoday" target="_blank" title="페이스북 새창열림"><span class="ir">페이스북</span></a>
+            </li>
+            <li class="blog">
+              <a href="https://blog.naver.com/ottogitoday1" target="_blank" title="블로그 새창열림"><span class="ir">블로그</span></a>
+            </li>
+          </ul>
+
+          <div class="con">
+            <!-- 하단로고 -->
+            <h2 class="logo">
+               <a href="#"><span class="ir">로고</span></a>
+            </h2>
+            <!-- 하단메뉴 -->
+            <ul class="f-gnb">
+              <li>
+                <a href="javascript:;">Family Site</a>
+                <ul class="f-sub">
+                   <li><a href="https://www.ottogimall.co.kr/"  target="_blank" class="more3" title="오뚜기몰 새창열림"><span>오뚜기몰</span></a></li>
+                   <li><a href="https://ottogi.okitchen.co.kr/" target="_blank" class="more3" title="오키친 새창열림"><span>오키친</span></a></li>
+                   <li><a href="http://ottogifdn.org/" target="_blank" class="more3" title="오뚜기함태호재단 새창열림"><span>오뚜기함태호재단</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:;">함께하는 오뚜기</a>
+                <ul class="f-sub">
+                   <li><a href="javascript:;"><span>스위트홈 가족요리 페스티벌</span></a></li>
+                   <li><a href="javascript:;"><span>공장견학</span></a></li>
+                   <li><a href="javascript:;"><span>공모전</span></a></li>
+                   <li><a href="javascript:;"><span>오키친 스튜디오</span></a></li>
+                   <li><a href="javascript:;"><span>오뚜기 푸드트럭</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:;">고객지원</a>
+                <ul class="f-sub">
+                   <li><a href="javascript:;"><span>개인정보 처리방침</span></a></li>
+                   <li><a href="javascript:;"><span>고객의 소리</span></a></li>
+                   <li><a href="javascript:;"><span>자주묻는 질문</span></a></li>
+                   <li><a href="javascript:;"><span>고객상담 챗봇</span></a></li>
+                   <li><a href="javascript:;"><span>오시는 길</span></a></li>
+                </ul>
+              </li>
+
+            </ul>
+            <!-- 기타 -->
+            <div class="etc">
+              <!-- 연락처 -->
+              <table class="tel">
+                <tr>
+                  <th>오뚜기 고객상담실</th>
+                  <td>080-024-2311</td>
+                </tr>
+                <tr>
+                  <th>오뚜기라면 고객상담실</th>
+                  <td>080-088-1212<br>
+                    <span>(월~금 08:30~17:00)</span>
+                  </td>
+              
+                </tr>
+
+              </table>
+              <!-- 인증마크 -->
+              <ul class="mark">
+                <li><a title="인증서 보기" href="javascript:window.open('./images/popup_iso27701_kr.png', 'ISO27001/27701 인증서', 'top=0, left=0, width=805, height=565, scrollbars=no, overflow=hidden');" title="ISO인증서 새창열림"><span class="ir">ISO27001/27701 인증서</span></a></li>
+                <li><a href="https://www.wa.or.kr/" target="_blank" title="한국웹접근성인증평가원 2023.12.18~2024.12.17 새창열림"><span class="ir">웹접근성우수기업인증마크</span></a></li>
+                <li><a href="javascript:window.open('./images/popup_ffsb.png', '가족친화인증서', 'top=0, left=0, width=530, height=750, scrollbars=no, overflow=hidden');" title="가족친화인증서 새창열림"><span class="ir">가족친화우수기업인증마크</span></a></li>
+
+              </ul>
+             
+            </div>
+            
+
+          </div>
+           <!-- 저작권 표시 -->
+           <p class="copy">© OTTOGI CORP. ALL RIGHTS RESERVED</p>
+            
+          
+        </footer>
+        
+      </div>
+      <!-- 탑버튼 -->
+      <a href="javascript:;" class="top-btn on"><span class="ir">상단으로 이동</span></a>
+    </div>
+   <script>
+    
+
+
+
+   </script>
+  </body>
+</html>

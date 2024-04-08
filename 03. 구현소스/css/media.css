@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+/* 1차 PJ : 미디어쿼리 CSS - media.css */
+
+
+/* 1200이하 */
+@media screen and (max-width:1200px) {
+  /* 공통 */
+  html {font-size: 8px;}
+  /* 상단영역 */
+  .gnb{margin-left:-100px;}
+  .gnb > li { width: calc(60% / 7);}
+  .nav-wrap .etc-box{width:25%;}
+  /* 글로벌오뚜기 */
+  .global-area .img-fade .img9,.global-area .img-fade .img10{display: none;}
+ 
+}
+/* 1024이하 */
+@media screen and (max-width:1024px) {
+   /* 공통 */
+   /* 상단영역 */
+  .gnb{overflow:hidden; height:0;}
+  .nav-wrap:hover .gnb-depth1::before{height:100px;}
+  .nav-wrap:hover .gnb-depth2{height: 0;overflow: hidden;}
+  .search{display: none;}
+  .chat{display: none;}
+  .ottugi-go{display: none;}
+  .lang{display: none;}
+  /* 브랜드스토리 */
+  .story-area .visual .text{width: 80%; left:10%; top: 10%; transform: translate(0,0);}
+  .visual h4{font-size: 10.1rem; line-height: 6.7rem;}
+  .visual h5{font-size: 7rem; margin-top: 44px; padding-left:0;}
+  .visual span{padding-left: 10px;}
+  .visual h5::after{display: none;}
+  .visual h6{text-align: center;}
+
+  /* 오뚜기 소식 */
+  #news-area .list1 li:last-child{display: none;}
+  #news-area .list1 li:nth-child(2){margin-right: 0;}
+  #news-area .list2 li:last-child{display: none;}
+  #news-area .list2 li:nth-child(3){display: none;}
+  #news-area .list2 li:nth-child(2){margin-right: 0;}
+  #news-area .list3 li:last-child{display: none;}
+  #news-area .list3 li:nth-child(2){margin-right: 0;}
+  /* 하단 */
+  #footer-area .con{flex-direction: column;}
+  #footer-area .logo{margin-right: 0; margin: 0 auto; margin-bottom: 40px;}
+  #footer-area .f-gnb{display: flex; justify-content: center; width: 80%; margin: 0 auto;margin-bottom: 40px;}
+  #footer-area .etc {width: 100%;display: flex;gap: 10%;margin-bottom:40px;
+    justify-content: center;}
+  
+
+
+
+
+
+}
+
+@media screen and (max-width:760px) {
+  /* 배너영역 */
+  #ban-area .slide-txt .txt{font-size: 5rem; line-height: 8rem;}
+   /* 사업소개 */
+  .about-area .con{flex-direction: column;}
+  .about-area .con .img-fade1{margin-right: 0; width: 37.5rem; height: 37.5rem;}
+  .about-area .con .img-fade2{margin-right: 0; width: 37.5rem; height: 37.5rem;    margin-bottom: 30px;}
+  .about-area .con .img-fade3{margin-right: 0; width: 37.5rem; height: 37.5rem;}
+  .about-area .text{text-align: center; margin-top: 30px;}
+  .about-area .more{margin:30px auto;}
+   /* 브랜드스토리 */
+  
+   .story-area .visual .text{width: 80%;left: 50%;top: 10%;transform: translate(-50%,0);}
+   .visual h4{letter-spacing:0; display: flex;
+    justify-content: center;}
+   .visual h5{justify-content: center; letter-spacing:0;}
+  
+    /* 제품소개 */
+    #product-area .slide-txt .txt{font-size: 4.6rem;
+      line-height: 5.6rem;}
+    #product-area .controls{right: 50%;bottom: 0;transform: translate(50%,0);}
+    #product-area .slide-txt h3{font-size:2rem;}
+    #product-area .slide-txt h4{font-size: 3rem; line-height: 4rem;}
+    #product-area .swiper-pagination-fraction{font-size:2rem;}
+    #product-area .swiper-button-prev{width:50px; height:50px;}
+    #product-area .swiper-button-next{width:50px; height:50px;}
+    #product-area .swiper-button-pause2{width:50px; height:50px;}
+    #product-area .controls{width:223px;}
+    /* 오뚜기 소식 */
+    #news-area h2{font-size: 4.6rem; line-height: 5.6rem;}
+    #news-area .list .txt-box p{font-size: 2rem; line-height: 3rem;}
+    #news-area .list.on{display: block;}
+  #news-area .list li{margin-right: 0; margin-bottom: 20px;}
+  #news-area .list2 .img-box{height:40rem;}
+  #news-area .tab li a{font-size:2rem;}
+
+   /* 하단 */
+   #footer-area .etc{flex-direction: column;}
+   #footer-area .etc .tel{margin-bottom: 40px;}
+   #footer-area .f-gnb{width: 100%;}
+   #footer-area .copy{margin-top: 0;}
+
+
+  }
+  
+  
+
+@media screen and (max-width:480px) {
+  /* 상단영역 */
+  .nav-wrap .etc-box{width: 40%;}
+  /* 배너영역 */
+  #ban-area .swiper-button-next, #ban-area .swiper-button-prev{display:none;}
+  #ban-area .autoplay-progress{display: none;}
+  #ban-area .slide-txt .txt{font-size: 3rem; line-height: 4rem;}
+  #ban-area .swiper-pagination-fraction{width: 130px;}
+  /* 사업소개 */
+  .about-area h2{font-size: 3rem; line-height: 4rem;}
+  .about-area .con .text h3{font-size: 3rem; line-height: 4rem;}
+  /* 글로벌오뚜기 */
+  .global-area .con{text-align: center;}
+  .global-area h3 span{font-size:3.0rem;}
+  .global-area h3{font-size: 4rem; line-height: 4rem;}
+  .global-area p{font-size: 1.8rem;}
+  .global-area .more{margin:30px auto;}
+  .global-area .img-fade li{width:16rem; height:16rem;}
+  /* 브랜드스토리 */
+  .story-area h3{font-size: 3rem; line-height: 4rem;}
+  .visual h4{font-size: 4rem;line-height: 4rem;}
+  .visual h5{font-size: 4rem; margin-top: 0;line-height: 4rem;}
+  .visual span{font-size: 4rem;line-height: 4rem;}
+  .visual h6{font-size: 1.8rem;}
+  .story-area .visual{height:500px;}
+
+   /* 제품소개 */
+   #product-area .swiper-slide{display: block; height:50%;}
+   #product-area .slide-img{margin: 0 auto;
+    display: block; width:100%;}
+   #product-area .slide-txt{width:100%; position: static; transform: translate(0,0); text-align: center;}
+   #product-area .swiper-slide img{width: 100%; height: 100%;}
+  #product-area .slide-txt .txt{font-size: 3rem; line-height: 4rem;}
+  #product-area .controls{right: 50%;bottom: 0;transform: translate(50%,0);}
+  #product-area .slide-txt h3{font-size:2rem;}
+  #product-area .slide-txt h4{font-size: 2rem; line-height: 3rem;}
+ /* 오뚜기 소식 */
+  #news-area .tab{gap:50px;}
+  #news-area .list .txt-box p{font-size: 1.8rem;}
+  #news-area .list2 li,  #news-area .list3 li{height:auto;}
+  #news-area h2{font-size: 3rem; line-height: 4rem;}
+  /* 하단 */
+  #footer-area .f-gnb > li > a{font-size:1.8rem;}
+  
+ 
+}
+
+@media screen and (max-width:360px) {
+  /* 사업소개 */
+  .about-area .con .img-fade1{width: 80%; height:30rem;}
+  .about-area .con .img-fade2{width: 80%; height:25rem;}
+  .about-area .con .img-fade3{width: 80%; height:30rem;}
+    /* 글로벌오뚜기 */
+  .global-area .img-fade li{width:14rem; height:14rem;}
+  .global-area .img-fade{gap:1rem;}
+   /* 브랜드스토리 */
+   .visual h4{font-size: 3rem;}
+   .visual h5{font-size:3rem; margin-top: 0;}
+   .visual span{font-size: 3rem;}
+   .visual h6{font-size: 1.8rem;}
+
+  /* 제품소개 */
+   #product-area .slide-txt h3{font-size: 1.5rem;}
+  /* 오뚜기 소식 */
+  #news-area .list2 .img-box,  #news-area .list3 .img-box{height:20rem;}
+  /* 하단 */
+  #footer-area .f-gnb{flex-direction: column;}
+  #footer-area .f-gnb > li{margin-right: 0; text-align: center; margin-bottom: 30px;}
+ 
+  
+ 
+
+ 
+}

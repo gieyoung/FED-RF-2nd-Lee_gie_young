@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+/* 1차 PJ : 공통 클래스 CSS - core.css */
+/* 공통 셋팅을 위한 클래스 + 웹폰트 */
+
+/* 웹폰트*/
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap");
+
+/* 
+    0. 메뉴 등 일반체
+    font-family: "Jua", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
+    font-family: "Hahmlet", serif;
+
+}
+
+    1. 캐릭터 설명 제목체
+    
+    2. 캐릭터 설명 내용체
+    
+    3. 캐릭터 설명 한자체
+    
+    4. 전체 공통체(메뉴 등)
+    
+*/
+
+/* 공사중 표시 */
+body * {
+  /* outline:1px solid red; */
+}
+
+/* 전체 감싼 박스 */
+#wrap {
+  position: relative;
+}
+
+/* 공통클래스 중앙속박스 */
+.inbox {
+  max-width: 1600px;
+  margin: 0 auto;
+  /* outline: 1px solid red; */
+  height: 100%;
+}
+
+/* 글자날리기 */
+.ir {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 임시타이틀 */
+.temp-tit {
+  position: absolute;
+  font-size: 2vw;
+  color: #888;
+}
+
+/* 공통클래스: 클리어 설정 */
+.clb::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* rem 계산 편하게 하기 위해 */
+html {
+  font-size: 10px;
+}
+
+body {
+  /* 폰트 */
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.cont-box {
+  height: 100%;
+}
+
+
+
+/* 스크롤 등장*/
+.scroll-el{
+  transform: translateY(20%);
+  opacity: 0;
+  transition: .75s ease;
+
+}
+
+.scroll-el.on{
+  transform: translateY(0);
+  opacity: 1;
+}
