@@ -53,7 +53,14 @@ const mvData = [
     ],
 ];
 
-export {mTitle,sTitle,personInfo,mvData};
+//객체예시
+const myobj = {name:'수현',age:34};
+
+//함수예시
+const myFunc = x => `나는 ${x}다`;
+
+
+export {mTitle,sTitle,personInfo,mvData,myobj,myFunc};
 
 
 /******************************************** 
