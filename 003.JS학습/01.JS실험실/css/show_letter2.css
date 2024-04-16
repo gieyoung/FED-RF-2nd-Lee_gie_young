@@ -6,20 +6,21 @@ body {
 }
 /* 타이틀 */
 .tit{
-  color:#fff;
-  text-align: center;
-  font-size: 4vw;
-  line-height: 100vh;
+    color: #fff;
+    text-align: center;
+    font-size: 4vw;
+    line-height: 100vh;
 }
 /* 글자스테이지 */
 .stage-letters {
     position: relative;
+    margin: 0 auto;
+    margin-bottom: 50vh;
+
     /* 플렉스박스 */
     display: flex;
     flex-wrap: wrap;
     width: 70vw;
-    margin:0 auto;
-    margin-bottom: 50vh;
     outline: 2px dashed yellow;
 
     /* 글자설정 */
@@ -33,9 +34,9 @@ body {
     /* 트랜스폼 적용위해 */
     display: block;
 }
-/* 앞에 span이 있는 span */
-.stage-letters span+span{
-  margin-left: 15px;
+/* 글자 단위 앞쪽에 마진설정 */
+.stage-letters span+span {
+    margin-left: 15px;
 }
 /* 글자등장 스타일1 */
 .style1 span{

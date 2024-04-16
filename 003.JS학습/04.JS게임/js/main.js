@@ -8,8 +8,10 @@ import myFn from "./dom.js";
 // -> 내가 지은 변수명으로 import후 맨끝에 assert {type:'json'}씀
 // import msgTxt from "./data_racing.json" assert { type: "json" };
 
-// 'assert' is deprecated in import statements and support will be removed
-// in V8 v12.6 and Chrome 126; use 'with' instead
+// 'assert' is deprecated in import statements 
+// and support will be removed in V8 v12.6
+// and Chrome 126; use 'with' instead
+
 // -> assert 키워드 지원중단됨(사용은가능). 대신 with 키워드 권장!
 // -> 같이써 타입제이슨! with {type:'json'}
 // -> 브라우저 지원버전이 너무 최신이라 지금은 assert를 사용하자!
@@ -125,7 +127,7 @@ function goGame() {
 let autoI;
 function goR1(){
     // 호출이 한번만 되도록 autoI가 할당전엔 undefined
-    // 이므로 if문에서 false 처리됨! 이것을 이용하자!
+    // 이므로 if문에서 false 처리됨! 이것이 이용하자!
     if(!autoI){ // false일때만 들어감(할당전에만)
         console.log('토끼 인터발!!!',level.value);
         autoI = setInterval(() => {
@@ -222,11 +224,11 @@ function whoWinner(){
     Math.ceil(Math.random() * 8)+3
 ****************************************/
 
-console.log('Math.random():',
-Math.random());
-console.log('Math.random()*8:',
-Math.random()*8);
-console.log('Math.ceil(Math.random()*8):',
-Math.ceil(Math.random()*8));
-console.log('4~12 랜덤수:',
-Math.ceil(Math.ceil(Math.random() * 8)+3));
+// console.log('Math.random():',
+// Math.random());
+// console.log('Math.random()*8:',
+// Math.random()*8);
+// console.log('Math.ceil(Math.random()*8):',
+// Math.ceil(Math.random()*8));
+// console.log('4~12 랜덤수:',
+// Math.ceil(Math.ceil(Math.random() * 8)+3));

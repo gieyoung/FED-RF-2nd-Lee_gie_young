@@ -17,9 +17,14 @@ body * {
     padding-top: 80px;
     padding-bottom: 60px;
 }
+/* 메인파트 직계하위박스(겉박스) div 두번째부터
+패딩탑 위아래 간격주기 */
+.main-area>div+div{
+    padding-top: 60px;
+}
 /**************** 3. 인트로영역 ****************/
 .intro-area{
-    height: 575px;
+    /* height: 575px; */
 }
 /*********** 방송편성소개파트 : .intro-part ***********/
 .main .intro-part .partbox {
@@ -97,7 +102,11 @@ body * {
 
 /************** 4. 미리보기영역 **************/
 .preview-area{
-    height: 803px;
+    /* height: 803px; 
+    -> 높이값을 지정하면 내용만큼 자동으로
+    높이값이 잡히지 않아서 매번 크기에 따라
+    값을 셋팅해야하므로 auto로 두자!
+    */
 }
 .preview-box ul {
     gap: 20px;
@@ -143,16 +152,15 @@ body * {
 /************** 5. 현장포토영역 **************/
 .real-photo-area{
     /* height: 1043px; */
-   
 }
-
-
 /* 현장포토 그리드박스 */
-.live-box ul{
+.live-box ul {
     display: grid;
     /* 4개 컬럼 동일비율 셋팅 */
-    grid-template-columns:repeat(4, 1fr);
-    gap:min(20px,1.2vw);
+    grid-template-columns: repeat(4, 1fr);
+    /* 사이간격 */
+    gap: min(20px,1.2vw);
+
 }
 /* 현장포토 리스트 */
 .live-box li{
@@ -163,49 +171,141 @@ body * {
     border-radius: 6px;
     width: 100%;
 }
-
 /* 이미지 타이틀 */
 .live-box figcaption{
     font-size: 2rem;
-    padding-top: 10px;
+    padding-top: 1.4rem;
 }
 /************** 6. 대표이미지 영역 **************/
 .main-photo-area{
-    height: 731px;
+    /* height: 731px; */
 }
-
-.poster-box ul{
+/* 대표이미지 그리드박스 */
+.poster-box ul {
     display: grid;
     /* 4개 컬럼 동일비율 셋팅 */
-    grid-template-columns:repeat(4, 1fr);
-    gap:min(20px,1.2vw);
+    grid-template-columns: repeat(4, 1fr);
+    /* 사이간격 */
+    gap: min(20px,1.2vw);
 
 }
+/* 대표이미지 리스트 */
+.poster-box li{
+    cursor: pointer;
+}
+/* 대표이미지 리스트 grid-row셋팅하기
+-> 2줄로 세팅하려면 줄번호가 3번이 끝번호임! */
+/* 1번 */
+.poster-box li:nth-child(1){
+    grid-row: 1/2;
+}
+/* 2번째부터 4번째까지 선택 */
+.poster-box li:nth-child(1) ~ li:nth-child(-n+4){
+    grid-row: 1/3;
+}
+/* 다음줄 첫번째 li가 윗줄로 올라옴! */
+.poster-box li:nth-child(5){
+    grid-row: 2/3;
+}
 
+/* 이미지 */
 .poster-box img{
     border-radius: 6px;
     width: 100%;
 }
-
-.poster-box li:nth-child(1){
-    grid-row:1/2;
+/* 이미지 타이틀 */
+.poster-box figcaption{
+    font-size: 2rem;
+    padding-top: 1.4rem;
 }
-.poster-box li:nth-child(2){
-    grid-row:1/3;
-}
-.poster-box li:nth-child(3){
-    grid-row:1/3;
-}
-.poster-box li:nth-child(4){
-    grid-row:1/3;
-}
-.poster-box li:nth-child(5){
-    grid-row:2/3;
-}
-
-
 /************** 7. 최신동영상영역 **************/
 .clip-video-area{
-    height: 548px;
+    position: relative;
+    /* 부모자격 - 이동버튼의 부모 */
+}
+.clip-box ul {
+    position: relative;
+    left: 0;/* 이동초기값 */
+    display: flex;
+    gap: 0 2%;
+    /* 트랜지션 */
+    transition: left .4s ease-in-out;
 }
 
+.clip-box li {
+    flex-basis: calc(25.5% - 2%);
+    flex-shrink: 0;
+}
+
+/* 동영상 이미지박스 */
+.clip-mv-box {
+    position: relative;
+    /* 부모자격 */
+}
+/* 동영상 이미지박스 이미지 */
+.clip-mv-box img {
+    width: 100%;
+    border-radius: 6px;
+}
+/* 동영상 이미지박스 가상요소로 플레이버튼 */
+.clip-mv-box::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62px;
+    height: 62px;
+    background: url(../images/icon_play.png) no-repeat 0/100%;
+    cursor: pointer;
+}
+
+.clip-box h4 {
+    font-size: 18px;
+    font-weight: normal;
+
+    /* 2줄 말줄임 셋팅 */
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.clip-box h3 {
+    font-size: 15px;
+    font-weight: normal;
+    color: #555;
+}
+
+.clip-box {
+    overflow: hidden;
+}
+
+
+/* 양쪽버튼만들기 */
+.btn-box button{
+    position: absolute;
+    z-index: 999;
+    top: 43%;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    line-height: 65px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+/* 왼쪽버튼 */
+.btn-box button:first-child{
+    left: -35px;
+    /* 처음에 안보임 */
+    display: none;
+}
+/* 오른쪽버튼 */
+.btn-box button:last-child{
+    right: -35px;
+    display: none;
+}
