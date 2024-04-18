@@ -1,4 +1,4 @@
-// 05. 드래그 기본 JS - drag.js
+// 슬라이드 드래그 모듈 JS - slide_drag.js
 
 // 나의 함수 불러오기
 import mFn from "./my_function.js";
@@ -54,7 +54,7 @@ function setDrag(clsName) {
 } /////////// setDrag 함수 ////////////////
 
 // z-index 공통관리 변수(전역변수)
-let zNum = 0;
+// let zNum = 0;
 
 /******************************************* 
     [ 드래그 다중적용 함수 만들기 ]
@@ -80,8 +80,14 @@ function goDrag(ele) {
   // 드래그할 대상의 CSS 기본값을 셋팅한다!
   // 필수 셋팅요소는 position:relative / top:0 / left:0
   dtg.style.position = "relative";
-  dtg.style.top = "0";
-  dtg.style.left = "0";
+  // dtg.style.top = "0";
+  // 배너가 left값 -220% 기준박스에서 이동함
+  // .banbx의 width값 곱하기 2.2
+  // 기준위치값 변수에 할당
+  let leftVal = mFn.qs('.banbx').offsetWidth*-2.2;
+  console.log('레프트 셋팅값',leftVal);
+  //  left위치값 최초 셋업->px단위 꼭 쓸 것
+  dtg.style.left = leftVal + 'px';
 
   // 2. 변수 셋팅 ///////////////////////
   // (1) 드래그 상태 변수 만들기
@@ -89,20 +95,20 @@ function goDrag(ele) {
   // false는 드래그 아님, true는 드래그 상태!
 
   // (2) 첫번째 위치 포인트 : first x, first y
-  let firstX, firstY;
+  let firstX;
 
   // (3) 마지막 위치 포인트 : last x, last y
-  let lastX = 0,
-    lastY = 0;
+  //최초위치 셋팅값으로 프리셋팅
+  let lastX = leftVal;
   // -> 중첩된 최종위치가 처음에는 계산되지 않았으므로
   // 출발위치인 0값으로 초기값을 넣어준다!
   // 초기값을 안넣으면 최초에 값을 더할때 에러가 발생한다!
 
   // (4) 움직일때 위치 포인트 : move x, move y
-  let moveX, moveY;
+  let moveX;
 
   // (5) 위치이동 차이 계산 결과변수 : result x, result y
-  let resultX, resultY;
+  let resultX;
 
   //////////////////////////////////
   // 3. 함수 만들기 /////////////////
@@ -130,7 +136,6 @@ function goDrag(ele) {
       // ->>> 두 할당문중 값이 유효한(true)값이 할당됨!
       // DT용 코드와 Mobile코드를 동시에 셋팅할 수 있다!
       moveX = e.pageX || e.touches[0].screenX;
-      moveY = e.pageY || e.touches[0].screenY;
       // console.log(e.touches[0]);
       // moveX = e.pageX;
       // moveY = e.pageY;
@@ -140,7 +145,6 @@ function goDrag(ele) {
       // moveX - firstX
       // moveY - firstY
       resultX = moveX - firstX;
-      resultY = moveY - firstY;
       // -> 순수하게 움직인 거리를 계산함!
       // -> 움직인위치 - 첫번째위치 순으로 빼준 이유는?
       // ->>> top, left위치이동 양수 음수차를 고려한 순서임
@@ -148,14 +152,13 @@ function goDrag(ele) {
       // 3. 이동차를 구한 resultX,resultY값을 대상 위치값에 적용
       // 대상 : 드래그 요소 dtg
       dtg.style.left = resultX + lastX + "px";
-      dtg.style.top = resultY + lastY + "px";
       // 처음엔 lastX,lastY값이 0으로 들어오기
       // 두번째부터는 mouseup이벤트 발생부터 저장된
       // 최종 이동위치값이 더해진다!
 
       // 값확인
-      console.log(`moveX: ${moveX}, moveY: ${moveY}`);
-      console.log(`resultX: ${resultX}, resultY: ${resultY}`);
+      console.log(`moveX: ${moveX}`);
+      console.log(`resultX: ${resultX}`);
     } //// if ////////
 
     // 드래그 중(dragSts===true)일때는 주먹손(grabbing),
@@ -167,10 +170,9 @@ function goDrag(ele) {
   const firstPoint = (e) => {
     // DT용값과 Mobile값을 동시에 OR문으로 할당함!
     firstX = e.pageX || e.touches[0].screenX;
-    firstY = e.pageY || e.touches[0].screenY;
     // firstX = e.pageX;
     // firstY = e.pageY;
-    console.log("첫포인트:", firstX, " | ", firstY);
+    console.log("첫포인트:", firstX);
   }; ///////// firstPoint 함수 //////////
 
   // (5) 마지막 위치포인트 셋팅함수 : lastX, lastY 값셋팅
@@ -179,8 +181,7 @@ function goDrag(ele) {
   const lastPoint = () => {
     // 이동결과 계산된 최종값을 기존값에 더함(+=)
     lastX += resultX;
-    lastY += resultY;
-    console.log("끝포인트:", lastX, " | ", lastY);
+    console.log("끝포인트:", lastX);
   }; ///////// lastPoint 함수 //////////
 
   // 4. 드래그 이벤트 설정하기 //////////
@@ -197,7 +198,7 @@ function goDrag(ele) {
     dtg.style.cursor = "grabbing";
 
     // z-index 전역변수(zNum) 숫자를 1씩 높이기
-    dtg.style.zIndex = ++zNum;
+    // dtg.style.zIndex = ++zNum;
 
     console.log("마우스 다운!", dragSts);
   }); ///////// mousedown //////////
@@ -227,7 +228,6 @@ function goDrag(ele) {
     // 셋팅되지 못한다! 이것을 기존 요소의 위치값으로 보정함!
     // 단, style위치값 코드는 'px'단위가 있으므로 parseInt처리!
     lastX = parseInt(dtg.style.left);
-    lastY = parseInt(dtg.style.top);
 
     console.log("마우스나감!", dragSts);
   }); ///////// mouseleave //////////
@@ -245,7 +245,7 @@ function goDrag(ele) {
     // 이벤트 전달을 토스해줘야 한다!(전달변수 e)
 
     // z-index 전역변수(zNum) 숫자를 1씩 높이기
-    dtg.style.zIndex = ++zNum;
+    // dtg.style.zIndex = ++zNum;
 
     console.log("터치스타트!", dragSts);
   }); ///////// touchstart //////////
