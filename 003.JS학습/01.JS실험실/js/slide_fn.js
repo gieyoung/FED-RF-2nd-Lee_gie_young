@@ -1,9 +1,10 @@
-// 슬라이드 배너 모듈 JS - slide_fn.js //
+// 슬라이드 배너 모듈 JS - slide_fn.js
+
 
 // DOM 모듈함수
 import mFn from "./my_function.js";
 
-//배너 셋팅을 위한 함수(노출용)///
+/// 배너 셋팅을 위한 함수(노출용) /////
 export default function setSlide(clsName){
     // 슬라이드 대상요소 : .banbx
     const banBox = mFn.qsa('.'+clsName);
@@ -16,8 +17,9 @@ export default function setSlide(clsName){
         // 실제 DOM요소를 보낸다!
     
     }); /////// forEach ///////////
-    
-}/////////setSlide함수//////////
+
+} ///////////// setSlide 함수 //////////
+
 
 /***************************************************** 
     [ 슬라이드 이동 기능정의 ]
@@ -256,7 +258,7 @@ function slideFn(selEl) { // selEl 선택 슬라이드 부모 요소
    } ///////// slideAuto 함수 //////////////
 
    // 인터발함수 최초호출!
-   //slideAuto();
+//    slideAuto();
 
    // 버튼을 클릭할 경우를 구분하여 자동넘김을 멈춰준다!
    function clearAuto(){
@@ -281,5 +283,3 @@ function slideFn(selEl) { // selEl 선택 슬라이드 부모 요소
 
 } //////////////// slideFn 함수 ///////////////
 /////////////////////////////////////////////
-
-
