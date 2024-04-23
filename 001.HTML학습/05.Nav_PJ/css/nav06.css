@@ -27,10 +27,23 @@ html,body{
     /* outline: 5px dotted blue; */
 }
 
+/* 가상요소로 드래그 막기 장치 */
+.banbx.on::after{
+    content: "";
+    position:absolute;
+    transform: scaleY(1.1);
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    z-index:99;
+    /* background-color: rgba(43, 55, 224, 0.5); */
+}
+
 .slide {
     display: flex;
     /* 플렉스박스!!! */
-    gap: 0 5vw;
+    gap:0 10%;
     /* 양쪽간격 5vw */
 
     /*사진을 싸고 있는 슬라이드*/
@@ -68,8 +81,8 @@ html,body{
     /* 트랜지션 */
     transition: .4s ease-out;
 }
-/* 3번째가 주인공이므로 원래밝기로 조금 크게변경! */
-.slide li:nth-child(3){
+/* on인 클래스 밝고 조금 크게변경! */
+.slide li.on{
     filter: brightness(100%);
     transform: scale(1.1);
 }
@@ -80,6 +93,8 @@ html,body{
     object-fit: cover;
     /* 이미지 비율유지 채우기! */
 }
+
+
 
 /*이동버튼*/
 .abtn {
@@ -152,3 +167,44 @@ html,body{
     opacity: 1;
     /*우선적용!*/
 }
+
+
+/* 서브컨텐츠 */
+.sub-cont{
+    /* height: 500px; */
+    max-width: 1200px;
+    aspect-ratio: 2/1.1;
+    margin: 0 auto;
+    display: flex;
+    padding: 50px 0;
+
+}
+
+.sub-cont>div{
+    flex: 1;
+    outline: 2px dashed black;
+}
+
+/* 서브컨텐츠 오른쪽 박스 */
+.cont-right-box{
+    overflow: hidden;
+}
+
+.sub-banbx {
+    left: 3.2%;
+    width: 92.2%;
+    aspect-ratio: 1;
+}
+
+.sub-banbx .ab1 {
+    left: 15px;
+}
+
+.sub-banbx .ab2 {
+    right: 15px;
+}
+
+.sub-slide li{
+    transform: scale(1.1);
+}
+
