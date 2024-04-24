@@ -65,8 +65,8 @@ function slideFn(selEl) {
   for (let i = 0; i < sldCnt; i++) {
     indic.innerHTML += `
             <li ${i == 0 ? 'class="on"' : ""}>
-                <img src="images/img_nav06/dot1.png" alt="흰색">
-                <img src="images/img_nav06/dot2.png" alt="회색">
+              <img src="images/img_nav06/dot1.png" alt="흰색">
+              <img src="images/img_nav06/dot2.png" alt="회색">
             </li>
         `;
   } /////// for문 ////////////
@@ -78,19 +78,19 @@ function slideFn(selEl) {
   // 만드는이유: 블릿변경 등에 현재 슬라이드 순번 필요!
   // 사용자 정의 속성은 반드시 'data-'로시작해야함!(W3C규칙)
   // data-seq 로 순번 속성을 넣을 것임!
-  slide.querySelectorAll("li").forEach((ele, idx) => ele.setAttribute("data-seq", idx));
+  slide
+    .querySelectorAll("li")
+    .forEach((ele, idx) => ele.setAttribute("data-seq", idx));
   // setAttribute(속성명,속성값) -> 속성셋팅 JS내장메서드
 
   // 2. 이벤트 설정하기 : 버튼요소들 -> forEach()
   abtn.forEach((ele) => mFn.addEvt(ele, "click", goSlide));
 
-  // 3. 함수만들기
-
-  /*******************************************************
-   함수명: goSlide
-   기능: 이동버튼클릭시 이동분기하기
-  *******************************************************/
-
+  // 3. 함수만들기 //////////////////
+  /********************************** 
+    함수명: goSlide
+    기능: 이동버튼 클릭시 이동분기하기
+  **********************************/
   function goSlide() {
     // a요소 기본이동 막기
     event.preventDefault();
@@ -132,12 +132,10 @@ function slideFn(selEl) {
     addOnSlide(slideSeq);
   } ////////// goSlide 함수 /////////
 
-  /*******************************************************
-   함수명: addOnSlide
-   기능: 중앙슬라이드 클래스 on처리
-  *******************************************************/
-
-  // 중앙슬라이드 클래스 on처리 함수 /////
+  /********************************** 
+    함수명: addOnSlide
+    기능: 중앙슬라이드 클래스 on처리
+  **********************************/
   function addOnSlide(slideSeq) {
     mFn.qsaEl(slide, "li").forEach((ele, idx) => {
       if (idx === slideSeq) ele.classList.add("on");
@@ -145,12 +143,10 @@ function slideFn(selEl) {
     }); ///// forEach ///////
   } //////////// addOnSlide 함수 ///////////
 
-  /*******************************************************
-   함수명: chgIndic
-   기능: 블릿순번 변경
-  *******************************************************/
-
-  // 블릿순번 변경 함수 /////////////
+  /********************************** 
+    함수명: chgIndic
+    기능: 블릿순번 변경
+  **********************************/
   function chgIndic(isRight) {
     // isRight(0-왼쪽,1-오른쪽)
     // 1. 슬라이드 순번과 일치하는 블릿에 클래스 넣기
@@ -158,7 +154,9 @@ function slideFn(selEl) {
     // 맨앞 슬라이드 li의 'data-seq' 값 읽어오기
     // isRight값이 true이면 오른쪽버튼이고 순번은 [1]
     // isRight값이 false이면 왼쪽버튼이고 순번은 [0]
-    let nowSeq = slide.querySelectorAll("li")[isRight ? 1 : 0].getAttribute("data-seq");
+    let nowSeq = slide
+      .querySelectorAll("li")
+      [isRight ? 1 : 0].getAttribute("data-seq");
 
     // console.log("현재슬라이드 순번:", nowSeq);
 
@@ -170,11 +168,10 @@ function slideFn(selEl) {
     }); ///////// forEach ///////////
   } /////////// chgIndic함수 ////////////
 
-  /*******************************************************
-   함수명: rightSlide
-   기능: 슬라이드 오른쪽버튼클릭시 왼쪽방향 이동함수
-  *******************************************************/
-
+  /********************************** 
+    함수명: rightSlide
+    기능: 왼쪽방향 이동(오른쪽버튼)
+  **********************************/
   function rightSlide() {
     //1.대상이동하기 : -330%
     slide.style.left = "-330%";
@@ -190,16 +187,15 @@ function slideFn(selEl) {
       // 5.트랜지션 없애기
       slide.style.transition = "none";
     }, TIME_SLIDE);
+
     // 슬라이드 커버 만들기 함수 호출
     coverDrag();
-
   } //////////// rightSlide 함수 ////////////
 
-  /*******************************************************
-   함수명: leftSlide
-   기능: 슬라이드 왼쪽버튼클릭시 오른쪽방향 이동함수
-  *******************************************************/
-
+  /********************************** 
+    함수명: leftSlide
+    기능: 오른쪽방향 이동(왼쪽버튼)
+  **********************************/
   function leftSlide(leftVal = "-330%") {
     // 드래그 이동시엔 left값을 -330%가 아닌
     // 드래그가 이동된 값을 적용한 left값을 적용한다!
@@ -234,8 +230,9 @@ function slideFn(selEl) {
       // 5. 트랜지션주기
       slide.style.transition = TIME_SLIDE + "ms ease-out";
     }, 0);
-     // 슬라이드 커버 만들기 함수 호출
-     coverDrag();
+
+    // 슬라이드 커버 만들기 함수 호출
+    coverDrag();
   } //////////// leftSlide 함수 ////////////
 
   /********************************** 
@@ -255,10 +252,10 @@ function slideFn(selEl) {
   // 타임아웃함수도 마찬가지임!
   // clearTimeout(할당변수) 해야 실행 쓰나미를 막을 수 있다!
 
-  /*******************************************************
-   함수명: slideAuto
-   기능: 인터발 호출
-  *******************************************************/
+  /********************************** 
+    함수명: slideAuto
+    기능: 인터발호출
+  **********************************/
   function slideAuto() {
     autoI = setInterval(() => {
       // 오른쪽이동 슬라이드 함수호출
@@ -277,14 +274,12 @@ function slideFn(selEl) {
   } ///////// slideAuto 함수 //////////////
 
   // 인터발함수 최초호출!
-  //slideAuto();
+  // slideAuto();
 
-  /*******************************************************
-   함수명: clearAuto
-   기능: 자동넘김 멈추기
-  *******************************************************/
-
-  // 버튼을 클릭할 경우를 구분하여 자동넘김을 멈춰준다!
+  /********************************** 
+    함수명: clearAuto
+    기능: 자동넘김을 멈추기(인터발삭제)
+  **********************************/
   function clearAuto() {
     // 자동넘김 지우기
     // clearInterval(인터발할당변수)
@@ -299,19 +294,19 @@ function slideFn(selEl) {
     // 결과적으로 5초후 인터발재실행은 하나만 남는다!
   } //////////// clearAuto 함수 ///////////
 
-  /*******************************************************
-   함수명: coverDrag
-   기능: 슬라이드 이동시 드래그 막기
-  *******************************************************/
- function coverDrag(){
-  // selEl로 전달된 대상에 클래스 on을 줘서 가상요소로 셋팅된 슬라이드 커버가 나오게 함
-  selEl.classList.add("on");
-  // 슬라이드 기본 이동시간(TIME_SLIDE) 후 on제거
-  setTimeout(() =>{
-    selEl.classList.remove("on");
-  }, TIME_SLIDE);
-
- }///////////coverDrag////////////////
+  /********************************** 
+    함수명: coverDrag
+    기능: 슬라이드 이동시 드래그막기
+  **********************************/
+  function coverDrag() {
+    // selEl로 전달된 대상에 클래스 on을 줘서
+    // 가상요소로 셋팅된 슬라이드 커버가 나오게함
+    selEl.classList.add("on");
+    // 슬라이드 기본 이동시간(TIME_SLIDE)후 on제거
+    setTimeout(() => {
+      selEl.classList.remove("on");
+    }, TIME_SLIDE);
+  } ////////// coverDrag 함수 /////////
 
   ////////////////////////////////////////////
   ////////// 드래그 기능 구현 구역 /////////////
@@ -497,7 +492,7 @@ function slideFn(selEl) {
   mFn.addEvt(dtg, "mousedown", (e) => {
     // 0. 자동넘김 멈춤함수 호출하기
     // clearAuto();
-    // 자동호출을 지우기만 해서 자동시작안함
+    // 자동호출을 지우기만 해서 자동시작안함!
     clearInterval(autoI);
     clearTimeout(autoT);
 
@@ -518,14 +513,14 @@ function slideFn(selEl) {
   }); ///////// mousedown //////////
 
   // (2) 마우스 업 이벤트 함수연결하기
-  mFn.addEvt(dtg, "mouseup", () => {
+  mFn.addEvt(dtg, "mouseup", (e) => {
     // 0. 자동넘김 멈춤함수 호출하기
     clearAuto();
 
     // 드래그 상태값 false로 변경!
     dFalse();
     // 마지막 위치포인트 셋팅!
-    lastPoint();
+    lastPoint(e);
 
     // 마우스 업시 편손!
     dtg.style.cursor = "grab";
@@ -558,8 +553,8 @@ function slideFn(selEl) {
   // (1) 터치스타트 이벤트 함수연결하기
   mFn.addEvt(dtg, "touchstart", (e) => {
     // 0. 자동넘김 멈춤함수 호출하기
-    //clearAuto();
-    // 자동호출을 지우기만 해서 자동시작안함
+    // clearAuto();
+    // 자동호출을 지우기만 해서 자동시작안함!
     clearInterval(autoI);
     clearTimeout(autoT);
 
@@ -597,7 +592,7 @@ function slideFn(selEl) {
   //////////// touchmove /////////////
 
   // (4) 버튼,블릿에 오버시 자동처리호출셋팅 ///
-  mFn.qsaEl(selEl,'.control').forEach(
+  mFn.qsaEl(selEl, ".controls").forEach(
     (ele) =>
       mFn.addEvt(ele, "mouseenter", () => {
         moveDragSlide();
@@ -619,7 +614,13 @@ function slideFn(selEl) {
     valSecond = leftVal * 0.9;
 
     // 호출작동확인!
-    console.log("리사이즈 작동!!!", originalValue, leftVal, valFirst, valSecond);
+    console.log(
+      "리사이즈 작동!!!",
+      originalValue,
+      leftVal,
+      valFirst,
+      valSecond
+    );
   }); ////////////// resize함수 //////////////////
 } /////////////// slideFn 함수 ///////////////
 /////////////////////////////////////////////
