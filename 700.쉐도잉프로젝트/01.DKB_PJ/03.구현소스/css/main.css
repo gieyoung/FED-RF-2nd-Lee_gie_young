@@ -8,6 +8,9 @@
 /* 그리드 12 불러오기 */
 @import url(./grid_12_flex.css);
 
+/* 드래그 슬라이드 CSS불러오기 */
+/* @import url(./drag_slide.css); */
+
 /* 공사중 표시 */
 body * {
     /* outline: 2px dashed #ccc; */
@@ -227,14 +230,20 @@ body * {
     position: relative;
     left: 0;/* 이동초기값 */
     display: flex;
-    gap: 0 2%;
+    /* gap: 0 2%; */
     /* 트랜지션 */
-    transition: left .4s ease-in-out;
+    transition: left .3s ease-out;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
-.clip-box li {
-    flex-basis: calc(25.5% - 2%);
+.clip-box li {    
+    flex-basis: 25%;
     flex-shrink: 0;
+    /* 플렉스 gap 속성대신 패딩으로 처리!
+    이유는? 드래그시 영역아웃현상때문! */
+    padding: 0 1.1%;
+    box-sizing: border-box;
 }
 
 /* 동영상 이미지박스 */
@@ -246,6 +255,8 @@ body * {
 .clip-mv-box img {
     width: 100%;
     border-radius: 6px;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 /* 동영상 이미지박스 가상요소로 플레이버튼 */
 .clip-mv-box::after {
@@ -270,12 +281,16 @@ body * {
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .clip-box h3 {
     font-size: 15px;
     font-weight: normal;
     color: #555;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .clip-box {
