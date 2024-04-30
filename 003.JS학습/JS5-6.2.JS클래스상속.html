@@ -135,22 +135,19 @@
                    (v) => `
                   <li>
                     ${
-                      v == "포스터" ? 
-                      `<img src="${cgvInfo[v]}" 
-                      alt="영화 ${cgvInfo["제목"]}의 포스터">`
-                        : v + ":" + cgvInfo[v]
+                      (v == "포스터") ? 
+                      (`<img src="${cgvInfo[v]}" 
+                      alt="영화 ${cgvInfo["제목"]}의 포스터">`) : 
+                      (v + ":" + cgvInfo[v])
                     }
                   </li>
                 `
                  )
                  .join("")}
 
-
                  <li>
                   🎁 메시지 : ${
-                    cgvInfo.showCGV("cgv짱!")
-                  }
-
+                    cgvInfo.showCGV("CGV는 항상 훌륭합니다!")}
                   </li>
               </ol>
             </h2>

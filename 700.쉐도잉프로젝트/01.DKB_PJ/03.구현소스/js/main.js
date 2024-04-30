@@ -15,7 +15,7 @@ import * as dkbData from "../data/dkb_data.js";
 // import { previewData } from '../data/dkb_data.js';
 
 // 드래그 슬라이드 불러오기 ///////
-import setSlide from "./drag_slide.js";
+import setSlide from "./drag_slide_multi.js";
 
 ///////////////////////////////////////////////
 
@@ -28,7 +28,6 @@ startSS();
 
 // console.log('모듈로 메인JS호출!!!',
 // document.querySelector('.top-menu'));
-
 
 
 // 3. 인트로 동영상 파트 클릭시 동영상태그 넣기
@@ -213,3 +212,20 @@ introMv.onclick = () => {
 
 // 드래그 슬라이드 태그 구성후 호출하기!
 setSlide('banbx');
+
+
+
+// myFn.addEvt(myFn.qs(".banbx"),'wheel',e=>{e.preventDefault();});
+// myFn.qsa("#spart-menu a").forEach(ele=>{
+// // console.log(ele);
+//   ele.onclick = function(e){
+//     e.preventDefault();
+//     let x = ele.href.split('#');
+//     x = "#"+x[x.length-1].replace('part','area');
+//     x = myFn.qs(x).offsetTop;
+//     setScrollPos(x);
+//     // setTimeout(()=>{window.scrollTo(0,x)},400);
+//     console.log(x)
+  
+//   }
+// })
