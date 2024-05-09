@@ -108,4 +108,4 @@ function SmoothScroll(scrollTarget, speed, smooth) {
 // 함수 외부 공개하기
 // 부드러운 스크롤 시작함수 : startSS()
 // 위치값 변경함수 : setScrollPos()
-export {startSS, setScrollPos};
+export default SmoothScroll;
