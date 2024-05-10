@@ -403,7 +403,13 @@ const updateCode = (arrData, exBox) => {
         </tr>
       </thead>
       <tbody>
-        ${arrData
+        ${arrData.length==0?
+          `<tr>
+          <td colspan="3">
+          검색하신 데이터가 없습니다.
+          </td>
+          </tr>`:
+          arrData
           .map(
             (v) => `
               <tr>
@@ -450,6 +456,8 @@ function sortingFn(evt, cta, arrData, exBox) {
   // arrData - 배열 데이터
   // exBox - 출력 대상박스
   // console.log(evt,arrData,exBox);
+
+  const xxx = JSON.parse(JSON.strigify(arrData));
 
   // 1. 선택값 읽어오기(오름차순:1,내림차순:2)
   let selVal = evt.target.value;
@@ -525,10 +533,30 @@ const searchCta4 = mFn.qs(".search-cta4");
 const btnSearch = mFn.qs(".sbtn");
 // (3) 검색어 입력창
 const keyWord = mFn.qs("#stxt");
+// (4) 전체버튼
+const btnTotal = mFn.qs(".fbtn");
 // console.log(searchCta4,btnSearch,keyWord);
 
 // 4-5-2. 이벤트 설정하기 ////
+// (1) 검색버튼
 mFn.addEvt(btnSearch, "click", searchingFn);
+// (2) 전체버튼 클릭시 초기 리스트
+mFn.addEvt(btnTotal, "click", ()=>{
+  // 초기 리스트
+  updateCode(list2, showList4);
+  // 검색어 초기화 
+  keyWord.value = "";
+});
+// (3) 입력창 키보드 입력 이벤트
+
+mFn.addEvt(keyWord, "keypress", (e) => {
+  // 키값이 13이면 검색버튼 클릭
+  if (e.keyCode == 13) {
+    searchingFn();
+  }///if///
+});
+
+
 
 // 4-6. 검색함수 만들기 ////////////////
 function searchingFn() {
@@ -565,7 +593,29 @@ function searchingFn() {
 
   // 결과찍기
   console.log(result);
+  console.log(list2);
 
   // 5. 결과를 화면에 보여주기 : updateCode 함수호출
   updateCode(result, showList4);
 } ////////////// searchingFn 함수 ///////////
+
+
+// 4-7. 정렬변경 이벤트 발생시 실제 정렬 변경하기 ////
+// - change 이벤트 대상 선택박스들
+// (1) 정렬종류 대상: .sel3
+const sel4 = mFn.qs(".sel4");
+// (2) 정렬기준 대상: .cta4
+const cta4 = mFn.qs(".cta4");
+
+// (4) 정렬종류 대상 선택 변경시
+// -> 실제 정렬을 적용하여 리스트를 갱신한다!
+// -> 정렬 적용시 정렬기준 대상 선택항목을 가져가야함!
+mFn.addEvt(sel4, "change", (e) => sortingFn(e, cta4.value, list2, showList4));
+
+// (4) 정렬기준 대상 선택 변경시
+// -> 정렬종류 대상 초기화하기("정렬선택"으로 변경!)
+mFn.addEvt(cta4, "change", () => {
+  // 정렬종류 첫번째 값은 value가 "0"이므로
+  // 이것을 value 에 할당하면 선택박스값이 첫번째로 변경된다!
+  sel4.value = "0";
+}); //////////// change 이벤트 함수 //////////
