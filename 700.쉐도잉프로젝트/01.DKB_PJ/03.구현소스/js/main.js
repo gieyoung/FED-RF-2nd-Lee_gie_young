@@ -214,50 +214,18 @@ introMv.onclick = () => {
 setSlide('banbx');
 
 
-/*****************************************************
- * 메인페이지용 도깨비 메뉴 스크롤 이동 제이쿼리 구현
- * 
-*****************************************************/
 
-// 메뉴 클릭 대상 .spart-menu a
-$(".spart-menu a").click(e=>{
- // a요소 클릭시 기본이동 막기
- e.preventDefault();
-
- // 1. 클릭한 a요소의 글자 읽어오기
- let txt = $(e.target).text();
- console.log(txt);
-
- // 2. 이동할 위치값 알아내기
- let pos;
- switch(txt){
-   case "미리보기": pos = "#preview-area"; break; 
-   case "프로그램 소개": pos = "#intro-area"; break; 
-   case "동영상": pos = "#clip-video-area"; break; 
-   case "현장 포토": pos = "#real-photo-area"; break; 
-   case "대표 포스터": pos = "#main-photo-area"; break; 
- }//////switch case//////////
-
- if(!pos) return;
-
- // 제이쿼리 top위치값 알아내기
-pos = $(pos).offset().top;
-console.log(pos);
-
-
-$("html,body").animate({scrollTop:pos+"px"},800, "easeInOutQuint",
-
-// 이동후 부드러운 스크롤 위치값 업데이트 필수
-()=>{
-  //이거 안하면 스크롤시 위치이동 스크롤쉬 튐
-  setScrollPos(pos);
-}
-
-
-);
-
-
-
-
-
-});///////////도깨비 파트 메뉴 클릭 함수//////////
+// myFn.addEvt(myFn.qs(".banbx"),'wheel',e=>{e.preventDefault();});
+// myFn.qsa("#spart-menu a").forEach(ele=>{
+// // console.log(ele);
+//   ele.onclick = function(e){
+//     e.preventDefault();
+//     let x = ele.href.split('#');
+//     x = "#"+x[x.length-1].replace('part','area');
+//     x = myFn.qs(x).offsetTop;
+//     setScrollPos(x);
+//     // setTimeout(()=>{window.scrollTo(0,x)},400);
+//     console.log(x)
+  
+//   }
+// })
