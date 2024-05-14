@@ -17,10 +17,14 @@ import * as dkbData from "../data/dkb_data.js";
 // 드래그 슬라이드 불러오기 ///////
 import setSlide from "./drag_slide_multi.js";
 
-// 서브박스 셋팅 불러오기
+// 서브박스 셋팅 코드 불러오기 ////
 import showSubBox from "./sub_cont.js";
-
-setTimeout(showSubBox,0);
+// 박스 생성후 호출(큐로 보내면 스택실행후 호출!)
+setTimeout(showSubBox);
+// 시간을 0으로 써도, 심지어 시간을 안써도
+// setTimout()으로 함수를 호출하면
+// 스택에 실행후 큐에서 가지고 있다가
+// 스택 코드 실행이 모두 끝난후 호출하여 실행함!
 
 ///////////////////////////////////////////////
 
@@ -36,7 +40,7 @@ const mySmooth = new SmoothScroll(document, 30, 20);
 // 이벤트 대상 === 변경대상 : .intro-mv-img
 const introMv = myFn.qs(".intro-mv-img");
 introMv.onclick = () => {
-  console.log("인트로영상!!!");
+  // console.log("인트로영상!!!");
   // 1. 동영상 넣기
   introMv.innerHTML = `<video src="./images/intro_mv.mp4" 
     autoplay controls></video>`;
@@ -82,26 +86,39 @@ introMv.onclick = () => {
 
   // 1. 8개만 데이터를 html로 구성하여 넣는다!
   // html 코드변수
-  let hcode = `<ul class="fx-box">`;
+  // let hcode = `<ul class="fx-box">`;
 
   // li구성을 hcode변수에 대입연산자로 할당함!
-  for (let i = 0; i < 8; i++) {
-    hcode += `
-        <li>
-            <h3>${pData[i].title}</h3>
-            <p>${pData[i].story}</p>
-        </li>
-    `;
-  } //// for //////
+  // for (let i = 0; i < 8; i++) {
+  //   hcode += `
+  //       <li>
+  //           <h3>${pData[i].title}</h3>
+  //           <p>${pData[i].story}</p>
+  //       </li>
+  //   `;
+  // } //// for //////
 
-  hcode += `</ul>`;
+  // hcode += `</ul>`;
 
   // 데이터 확인
   // console.log(hcode);
   // console.log('대상:',previewBox,'미리보기 data:',pData);
 
-  // 2. 화면출력하기 ///////
-  previewBox.innerHTML = hcode;
+  // 2. 화면출력하기 -> map()으로 한번에 출력하자! ///////
+  previewBox.innerHTML = `
+    <ul class="fx-box">
+      ${pData
+        .map(
+          (v) => `
+        <li data-idx="${v.idx}">
+            <h3>${v.title}</h3>
+            <p>${"방송일 : " + v.date + " " + v.story}</p>
+        </li>      
+      `
+        )
+        .join("")}
+    </ul>
+  `;
 })(); //// 미리보기 코드랩핑구역 종료 /////////
 
 // 3. 현장포토 파트 내용 넣기 //////////
@@ -222,7 +239,7 @@ $(".spart-menu a").click((e) => {
 
   // 1. 클릭한 a요소의 글자 읽어오기
   let txt = $(e.target).text();
-  console.log(txt);
+  // console.log(txt);
 
   // 2. 이동할 위치값 알아내기
   let pos;
@@ -253,7 +270,7 @@ $(".spart-menu a").click((e) => {
   // 2-2. 해당 박스 아이디의 위치값 알아내기
   // offset().top 제이쿼리 top 위치값정보
   pos = $(pos).offset().top;
-  console.log("위치값:", pos);
+  // console.log("위치값:", pos);
 
   // 3. 스크롤 애니메이션 이동하기
   // 제이쿼리는 이것을 정말 잘한다!!!
@@ -268,12 +285,9 @@ $(".spart-menu a").click((e) => {
       // 이것 안하면 위치이동후 스크롤시 튐!
       // 생성자함수 하위 객체변수로 등록된 함수를 호출함!
       mySmooth.setScrollPos(pos);
-      
     }
   );
 }); //////// 도깨비 파트 메뉴 클릭 함수 ///////////////
-
-
 
 // 개별 박스에 부드러운 스크롤 생성자함수 적용하기연습
 // $(".preview-box").css({
@@ -285,8 +299,6 @@ $(".spart-menu a").click((e) => {
 // })
 
 // 부드러운 스크롤 개별박스 적용
-// const smallSmooth = 
+// const smallSmooth =
 // new SmoothScroll(
 //   myFn.qs(".preview-box"),20,30);
-
-
