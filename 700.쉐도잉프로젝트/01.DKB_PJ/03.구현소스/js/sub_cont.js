@@ -25,6 +25,11 @@ export default function showSubBox() {
   // (1-2) 변경대상 : .sub-cont
   const subContBox = $(".sub-cont");
 
+  // 전체 휠 이벤트 막기 때문에 서브 컨텐츠 박스도 
+  // 휠이 되지 않는다.
+  // 따라서 휠이벤트 버블링 막기 해야한다. -> stopPropagation()
+  subContBox.on("wheel",e=>e.stopPropagation());
+
   // console.log(subViewBox);
 
   // 2. 이벤트 설정 및 함수구현하기 ////
@@ -129,7 +134,7 @@ export default function showSubBox() {
                 <h1>대표 포스터 : ${selData.title}</h1>
                 <div class="sub-item">
                     <img 
-                      src="./images/poster_img/${selData.imgName}.jpg" 
+                      src="./images/poster_img/${selData.imgName}_big.jpg" 
                       alt="${selData.title}" />
                 </div>
             </div>
