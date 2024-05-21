@@ -24,7 +24,9 @@ body {
 }
 /* 제목 */
 .tit {
-  color: orangered;
+  color: lightblue;
+  -webkit-text-stroke: 1px #000;
+  font-family: "Single Day", cursive;
 }
 /* 내용박스 */
 #root section {
