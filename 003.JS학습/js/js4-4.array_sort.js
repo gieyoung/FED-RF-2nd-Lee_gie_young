@@ -110,7 +110,8 @@ import mFn from "./my_function.js";
       (5) 활용케이스 : 아이디검사 결과 리턴
       (6) 코드예 :
           변수 = 배열.find(v=>{
-              if(v[속성명].indexOf(검색어)!==-1) return true;
+              if(v[속성명].indexOf(검색어)!==-1) 
+              return true;
           })
           -> 배열을 자동순회하여 if문에 해당되는 데이터가 있으면
           return true 하여 할당된 변수에 저장하고 문장이 바로 끝난다!
@@ -141,8 +142,7 @@ import mFn from "./my_function.js";
       예) 
       if(문자열.indexOf(검색문자열)!==-1){결과리턴}
 
-
-      *************************************************
+*************************************************
 
       [ 객체를 배열로 변환하여 리스트 만들기 : 정렬시 필수! ]
 
@@ -162,7 +162,12 @@ import mFn from "./my_function.js";
 
           (2) 변경확인 
               변경전 : {속성1:값1,속성2:값2}
+              결과:
+              키배열 - Object.keys(객체)
               변경후 : [속성1,속성2]
+
+              값배열 - Object.values(객체)
+              변경후 : [값1,값2]
 
           (3) 객체의 키를 값으로 하는 배열로 정렬을 변경할 수 있다
           -> Object.keys(객체).sort()
@@ -185,6 +190,7 @@ import mFn from "./my_function.js";
 
       3. 새로구성한 객체 변환 배열로 기존 배열 메서드를 사용하여
           정렬, 검색 후 정렬 등을 수행한다!!
+
 
 ******************************************************/
 
@@ -537,7 +543,8 @@ function sortingFn(evt, cta, arrData, exBox) {
 
   // 3. 정렬결과 리스트 업데이트하기
   updateCode(xxx, exBox);
-  console.log(searchResult);
+
+  console.log("검색결과변수값:",searchResult);
 } ////////////// sortingFn 함수 ////////////////
 
 //////////////////////////////////////////////
@@ -600,13 +607,13 @@ const btnTotal = mFn.qs(".fbtn");
 mFn.addEvt(btnSearch, "click", searchingFn);
 // (2) 전체버튼 클릭시 처음 리스트 보이기
 mFn.addEvt(btnTotal, "click", () => {
-  // 처음리스트 다시 만들기
+  // 1. 처음리스트 다시 만들기
   updateCode(list2, showList4);
-  // 검색어 지우기
+  // 2. 검색어 지우기
   keyWord.value = "";
-  // 검색결과변수 초기화
+  // 3. 검색결과변수 초기화
   searchResult = null;
-  //검색후에 항상 정렬선택값을 초기화
+  // 4. 정렬선택값을 초기화
   sel4.value = "0";
 });
 // (3) 입력창 키보드입력시 엔터키 구분하여 검색하기
@@ -663,7 +670,7 @@ function searchingFn() {
   // 6. 검색결과를 공유변수에 저장하기
   searchResult = result;
 
-  // 7. 검색후에 항상 정렬선택값을 초기화
+  // 7. 검색후엔 항상 정렬선택값을 초기화해준다!
   sel4.value = "0";
 } ////////////// searchingFn 함수 ///////////
 
@@ -691,6 +698,7 @@ mFn.addEvt(cta4, "change", () => {
   sel4.value = "0";
 }); //////////// change 이벤트 함수 //////////
 
+
 // 5. 객체원본 배열로 변환하기
 // (1) 데이터 : 객체데이터
 const list3 ={ 
@@ -716,25 +724,20 @@ const list3 ={
   },
 }; /////////////// list3 ///////////// 
 
-
-console.log("list3 원본객체",list3);
-console.log("list3의 키배열",Object.keys(list3));
-console.log("list3의 값배열",Object.values(list3));
-
-
+console.log("list3 원본객체:",list3);
+console.log("list3의 키배열:",Object.keys(list3));
+console.log("list3의 값배열:",Object.values(list3));
 
 // 5-1. 출력대상선정: showList5
 const showList5 = mFn.qs(".showList5");
 // console.log(showList5);
 
-// 5-2. 객체데이터를 값배열로 변환하여 변수 할당
- const arrlist3 = Object.values(list3);
+// 5-2. 객체데이터를 값배열로 변환하여 변수할당
+const arrList3 = Object.values(list3);
 
-
-
-// 5-2. 객체데이터를 값배열로 변환하여 리스트생성함수에 보내어 리스트 화면 출력하기
-updateCode(arrlist3, showList5);
-
+// 5-2. 객체데이터를 값배열로 변환하여 
+// 리스트생성함수에 보내어 리스트 화면 출력하기
+updateCode(arrList3, showList5);
 
 // 5-3. 정렬변경 이벤트 발생시 실제 정렬 변경하기 ////
 // - change 이벤트 대상 선택박스들
@@ -742,3 +745,19 @@ updateCode(arrlist3, showList5);
 const sel5 = mFn.qs(".sel5");
 // (2) 정렬기준 대상: .cta5
 const cta5 = mFn.qs(".cta5");
+
+
+// (3) 정렬종류 대상 선택 변경시
+// -> 실제 정렬을 적용하여 리스트를 갱신한다!
+// -> 정렬 적용시 정렬기준 대상 선택항목을 가져가야함!
+mFn.addEvt(sel5, "change", 
+(e) => sortingFn(e, cta5.value, arrList3, showList5));
+  // list3는 객체이므로 값배열로 변환한 배열을 보낸다!
+
+// (5) 정렬기준 대상 선택 변경시
+// -> 정렬종류 대상 초기화하기("정렬선택"으로 변경!)
+mFn.addEvt(cta5, "change", () => {
+  // 정렬종류 첫번째 값은 value가 "0"이므로
+  // 이것을 value 에 할당하면 선택박스값이 첫번째로 변경된다!
+  sel5.value = "0";
+}); //////////// change 이벤트 함수 //////////
