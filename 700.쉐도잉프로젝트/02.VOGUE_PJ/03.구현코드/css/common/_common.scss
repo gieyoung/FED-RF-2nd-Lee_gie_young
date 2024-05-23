@@ -1,4 +1,3 @@
-// @charset "utf-8";
 /* 보그 PJ 공통 CSS - common.css */
 /* 상단, 하단 공통 모듈 CSS */
 
@@ -7,16 +6,17 @@
   /* 최소높이 */
   min-height: 206px;
 }
-// <!-- 1-1.상단메뉴 -->
+// 1-1.상단메뉴
 .tmenu {
   display: flex;
   max-width: 970px;
   height: 44px;
   margin: 0 auto;
+  // 상단 메뉴 하위 파티션 박스 1:1 비율
   div {
     flex: 1;
   }
-  // sns박스
+  // 1-1-1.sns박스
   .sns a {
     width: 16px;
     height: 16px;
@@ -33,6 +33,7 @@
     /* 트랜지션: 속시이지 */
     transition: opacity 0.2s;
 
+    // a요소 마우스 오버시
     &:hover {
       opacity: 0.8;
       color: hotpink;
@@ -49,15 +50,13 @@
     &.cas {
       background: url(../images/sns_kakao.png) no-repeat center/auto 100%;
     }
-
-    &.fi-camera {
+    // 갤러리 아이콘, 로그인 아이콘
+    &.fi-camera,
+    &.fi-laptop {
       font-size: 14px;
     }
-
-    &.fi-laptop {
-      font-size: 15px;
-    }
   }
+  // 1-1-2. 사이드 메뉴
   .sideMenu {
     .smbx {
       /* 플렉스박스 */
@@ -66,11 +65,12 @@
       justify-content: flex-end;
 
       /* 글자체: Roboto, 나눔바른고딕 */
-      font-family: "Roboto", nbg;
-      font-size: 12px;
+      font: {
+        family: "Roboto", nbg;
+        size: 12px;
+      }
       /* 사이드메뉴 상위 a요소 */
-
-      & > li {
+      > li {
         > a {
           display: block;
           padding: 0 13px;
@@ -78,35 +78,41 @@
           color: #747474;
         }
         /* 사이드메뉴 상위메뉴 첫번째li 사이구분선 */
+        // &는 선택자를 명확히 구분할때 사용한다!
         &:first-child {
           border-right: 1px solid #e5e5e5;
-
+          // 직계 a요소만 오버시 커서글자용표시
           > a {
             cursor: text;
           }
         }
-
+        // 사이드 메뉴 서브박스
         .smsub {
           position: absolute;
           border: 1px solid #e5e5e5;
           /* 박스숨기기 */
           height: 0;
+          overflow: hidden;
           /* display: none; */
           opacity: 0;
           /* 트랜지션 */
           transition: 0.5s;
+
+          // a요소 디자인
           a {
             display: block;
             padding: 7px 10px;
             padding-right: 19px;
             background-color: #fff;
             color: #747474;
-
+            // 서브a에 마우스 오버시
             &:hover {
-              color: red;
+              background-color: pink;
+              color: #333;
             }
           }
         }
+        // 상위li에 마우스 오버시 서브메뉴 보이기
         &:hover .smsub {
           opacity: 1;
           height: auto;
@@ -115,14 +121,13 @@
     }
   }
 }
-
-/* 1-2.로고박스 */
+// 1-2.로고박스
 .logo {
   height: 104px;
   margin-bottom: 10px;
   text-align: center;
 }
-//  <!-- 1-3.GNB박스 -->
+// 1-3.GNB박스
 .gnb {
   min-height: 46px;
   padding: 0 30px;
@@ -135,39 +140,37 @@
     /* 플렉스 줄바꿈설정 */
     flex-wrap: wrap;
     /* 사이간격 속성 -> gap: 위아래 양쪽 (flex에서 사용함)
-            -> 숫자를 하나만 쓰면 양방향이 모두같은수치 셋팅 */
+          -> 숫자를 하나만 쓰면 양방향이 모두같은수치 셋팅 */
     gap: 0 45px;
     /* GNB li 리스트 */
     li {
       /* padding-right: 45px; 
-            -> 사이간격을 li에 패딩으로 안주고
-            부모요소인 flex박스에서 gap속성으로 준다! */
+        -> 사이간격을 li에 패딩으로 안주고
+        부모요소인 flex박스에서 gap속성으로 준다! */
       font-family: "Roboto Condensed", sans-serif;
       line-height: 40px;
 
+      // 마지막 li돋보기 두꺼운 글자적용
       &:last-child i {
         font-weight: bold;
-        padding-top: 2px;
-
-        /* GNB a요소 */
-       
-      }
-      a {
-        /* 트랜지션 */
-        transition: color 0.2s linear;
-      }
-      /* 오버시 a요소 + i요소 */
-      a:hover,
-      i:hover {
-        color: red;
-      }
-      /* 돋보기는 i요소 */
-      i {
-        font-weight: bold;
         cursor: pointer;
+        // i에 오버시
+        &:hover {
+          color: red;
+        }
       }
     }
   }
+  /* GNB a요소 */
+  a {
+    /* 트랜지션 */
+    transition: color 0.2s linear;
+    // a에 오버시
+    &:hover {
+      color: red;
+    }
+  }
+  
 }
 
 /****************** 2.메인영역 ******************/
