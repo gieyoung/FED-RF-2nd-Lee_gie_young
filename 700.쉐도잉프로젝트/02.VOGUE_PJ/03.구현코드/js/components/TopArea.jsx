@@ -1,6 +1,7 @@
-// 상단영역 컴포넌트
-// 상단영역 서브 컴포넌트
+// 상단영역 컴포넌트 ///////
+
 export default function TopArea() {
+  // 코드 리턴구역 /////
   return (
     <div id="top-area">
       <header className="top-area ibx common-area">
@@ -99,16 +100,7 @@ export default function TopArea() {
             </li>
           </ul>
         </nav>
-
-        {/* <!-- 모바일용 햄버거버튼 --> */}
-        <a href="#" className="mobtn hbtn fi fi-nav-icon">
-          <span className="ir">GNB button</span>
-        </a>
-        {/* <!-- 모바일용 검색버튼 --> */}
-        <a href="#" className="mobtn sbtn fi fi-search">
-          <span className="ir">search</span>
-        </a>
       </header>
     </div>
   );
-} //////////TopArea컴포넌트////////////
+} ///////// TopArea 컴포넌트 ///////////

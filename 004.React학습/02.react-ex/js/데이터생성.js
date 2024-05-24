@@ -12,7 +12,7 @@ const countryNum = country.length;
 // 랜덤수 생성함수
 const rdmNum = (n) => Math.floor(Math.random()*n);
 
-// 1~n까지의 랜덤수
+// 1~n까지의 map
 // Math.ceil(Math.random()*n)
 
 // 0~n-1까지의 랜덤수
