@@ -1,4 +1,5 @@
 // JS 페이지간 데이터 전달하기 : 서브페이지 JS - sub.js
+
 // 내함수 불러오기
 import mFn from "./my_function.js";
 
@@ -6,30 +7,24 @@ import mFn from "./my_function.js";
 // location.href를 오른쪽에 쓰면 상단의 URL값을 읽어온다!
 let pm = location.href;
 
-
-
-
 // 기본 Get방식 파라미터의 물음표시그널이 있는지 확인하여
 // 없으면 자르기전에 첫 페이지로 돌려보낸다!
 // indexOf('?') -> 물음표 문자열의 순번리턴
 // 찾는문자열이 없으면 -1리턴함 -> 이것으로 존재유무 판별함
-
-
-
-if(pm.indexOf('?') == -1){
-alert("올바른 경로가 아닙니다.");
-location.href = "Get01.html";
-}///////////if///////////////
-//console.log(pm.indexOf('?'));
+if(pm.indexOf("?") == -1) {
+    alert("올바른 접근이 아닙니다~!");
+    // 없으면 첫페이지로 돌아가라!
+    location.href = "Get01.html";
+} /////// if /////
+// console.log(pm.indexOf('?'));
 
 // ?(물음표) 로 잘라서 뒤엣것!
 // split(자를기준문자열) -> 배열데이터가 됨!
 pm = pm.split("?")[1];
-console.log(pm);
 
 // =(이퀄) 로 잘라서 뒤엣것!
 pm = pm.split("=")[1];
-console.log(pm);
+
 // 인코딩 처리된 문자열 디코딩하기!
 pm = decodeURIComponent(pm);
 console.log(pm);
@@ -77,5 +72,6 @@ title.innerText = pm;
 // 2-2. 타이틀 배경색 넣기
 title.style.backgroundColor = sdata[pm].배경색;
 
-// 2-3. 메인 배경이미지 변경하기
-main.style.backgroundImage = `url(./images/${sdata[pm].이미지})`;
+// 2-3. 메인 배경이미지 변경하기(경로주의!)
+main.style.backgroundImage = 
+`url(./images/${sdata[pm].이미지})`;

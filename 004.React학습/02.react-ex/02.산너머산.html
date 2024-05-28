@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>01.공유신발</title>
-    <!-- 메인 CSS -->
-    <link rel="stylesheet" href="./css/gong.css">
+    <title>02.산너머산</title>
 
     <!-- 제이쿼리 라이브러리 CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -27,44 +25,45 @@
     <!-- 3.리액트 바벨 라이브러리 -->
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-    <!-- 데이터 호출 : 공유신발 데이터 -->
+    <!-- 데이터 JSX 호출 -->
     <script
-      src="./js/data/gu_data.js"
+      src="./js/data/mt_data.js"
       data-plugins="transform-es2015-modules-umd"
       type="text/babel"
     ></script>
-    <!-- 데이터 호출 : 효진드레스 데이터 -->
+    
+    <!-- 컨텍스트 프로바이더 : 순서가 위(아래 사용 컴포넌트 보다!) -->
     <script
-      src="./js/data/hj_data.js"
+      src="./js/components/provider.jsx"
       data-plugins="transform-es2015-modules-umd"
       type="text/babel"
     ></script>
-    <!-- DOM 기능JS 호출 -->
+    
+    <!-- 서브 컴포넌트 -->
     <script
-      src="./js/common/com_fn.js"
+      src="./js/components/mt_icon.jsx"
       data-plugins="transform-es2015-modules-umd"
       type="text/babel"
     ></script>
-    <!-- 서브컴포넌트1 등록 -->
+    <!-- 서브 컴포넌트 -->
     <script
-      src="./js/components/goods_list.jsx"
+      src="./js/components/story.jsx"
       data-plugins="transform-es2015-modules-umd"
       type="text/babel"
     ></script>
-    <!-- 서브컴포넌트2 등록 -->
-    <script
-      src="./js/components/goods_detail.jsx"
-      data-plugins="transform-es2015-modules-umd"
-      type="text/babel"
-    ></script>
+    
+    
     <!-- 메인 JSX 호출 -->
     <script
-      src="./js/01.공유신발.jsx"
+      src="./js/02.산너머산.jsx"
       data-plugins="transform-es2015-modules-umd"
       type="text/babel"
     ></script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- 제목출력 컴포넌트 Root -->
+    <div id="root1"></div>
+    <!-- 내용출력 컴포넌트 Root -->
+    <div id="root2"></div>
   </body>
 </html>

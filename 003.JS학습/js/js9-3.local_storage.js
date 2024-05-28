@@ -42,9 +42,11 @@ import mFn from "./my_function.js";
     -> 서버세션은 접속된 로그인정보세션을 서버에서 관리하는 단위임
 
     [ JS 로컬 스토리지 / 세션 스토리지 장단점 ]
-    (1) 장점: 간단한 프론트엔드 데이터를 DB없이 테스트해보는데 탁월함
-    쿠키와 같이 사용자 동의를 필요로 하는 로컬 기록수단의 단점은 이것을 거부하면 쓸 수 없는데
-    js스토리지는 이런 제약이 없다. 보안상 안전하기 때문에
+    (1) 장점: 
+        간단한 프론트엔드 데이터를 DB없이 테스트해보는데 탁월함
+        쿠키와 같이 사용자 동의를 필요로하는 로컬 기록수단의 단점은
+        이것을 거부하면 쓸 수 없는데 JS 스토리지는 이런 제약이
+        없다! 보안상 안전이 보장되므로 사용가능함!
     (2) 단점: 데이터의 지속 보장이 없다!
         (그나마 로컬 스토리지는 브라우저 경로가 같고 PC가 같고
         브라우저종류가 같다면 지우기 전까지는 데이터를 유지한다!)
@@ -317,7 +319,8 @@ mFn.addEvt(selBox, "change", (e) => {
 }); ///////////// change ////////////
 
 // ♣ 수정버튼 클릭시 이벤트 설정하기
-mFn.qs("#mobtn").onclick = () => {
+mFn.qs("#mobtn").onclick = () => {    
+
   // 1. 선택박스 선택값 읽어오기
   let optVal = selBox.value;
   console.log("수정해라~!", optVal);
@@ -331,47 +334,48 @@ mFn.qs("#mobtn").onclick = () => {
     return; // 여기서나감!
   } /// if ///
 
-  // 3. 로컬쓰 데이터 읽어와서 배열로 변환
+  // 3. 입력값이 비었으면 돌려보내기!
+  // trim() - 앞뒤공백 제거 메서드
+  if (mFn.qs("#tit2").value.trim() == "" || 
+  mFn.qs("#cont2").value.trim() == "") {
+    alert("제목과 내용입력은 필수입니다!");
+    return;
+  } ////// if //////
+
+  // 4. 로컬쓰 데이터 읽어와서 배열로 변환
   const localData = JSON.parse(localStorage.getItem("minfo"));
 
   console.log(localData);
 
-  // 4. 배열데이터에서 읽어온 옵션값 idx와 비교하여
+  // 5. 배열데이터에서 읽어온 옵션값 idx와 비교하여
   // 데이터 업데이트 하기
   // -> 배열.find(v=>{if(조건){변경코드;return true}})
   localData.find((v) => {
     console.log(v.idx);
-    if (v.idx == optVal){ 
-        // 해당항목값 업데이트 하기
-        v.tit = mFn.qs("#tit2").value;
-        v.cont = mFn.qs("#cont2").value;
-        // 변수에 find()할당시 저장하거나
-        // 여기서 순회를 끝낸다는 의미임!
-        return true;
+    if (v.idx == optVal) {
+      // 해당항목값 업데이트 하기
+      v.tit = mFn.qs("#tit2").value;
+      v.cont = mFn.qs("#cont2").value;
+      // 변수에 find()할당시 저장하거나
+      // 여기서 순회를 끝낸다는 의미임!
+      return true;
     }
   }); //// find ////
 
-  console.log("변경후 배열:",localData);
+  console.log("변경후 배열:", localData);
 
-  // 5. 변경된 배열 로컬쓰에 저장하기
-  localStorage.setItem("minfo",JSON.stringify(localData));
+  // 6. 변경된 배열 로컬쓰에 저장하기!
+  localStorage.setItem("minfo", JSON.stringify(localData));
 
-  // 6. 데이터 바인딩 함수호출
+  // 7. 데이터 바인딩 함수호출
   bindData();
 
-  // 7. 선택값 초기화
+  // 8. 선택박스 초기화
   selBox.value = "opt";
 
-  mFn.qs("#mobtn").onclick = () => {
-  if (mFn.qs("#tit2").value.trim() == "" || mFn.qs("#cont2").value.trim() == "") {
-    alert("제목과 내용입력은 필수입니다!");
-    return;
-  } ////// if //////
-  }
-
-
-
-
+  // 9. 입력창 초기화
+  mFn.qs("#tit2").value = "";
+  mFn.qs("#cont2").value = "";
 }; //////////// click //////////////
 
 //////////////////////////////////
@@ -396,19 +400,17 @@ function updateItemList() {
       .join("");
 } //////////// updateItemList 함수 ///////////
 
-
-
-
-
+//******************************************** */
+///////////////////////////////////////////////
 // [ 2. 세션 스토리지 연습 ] ////////////////////
-// 1. 버튼 기능 이벤트 대상 : .local-box button
+// 1. 버튼 기능 이벤트 대상 : .session-box button
 const btnSession = mFn.qsa(".session-box button");
 console.log("대상:", btnSession);
 
 // 2. 버튼에 이벤트 설정하기
 btnSession.forEach((ele) => mFn.addEvt(ele, "click", sessionsFn));
 
-// 3. 로컬쓰 처리 함수 만들기 ///////
+// 3. 세션쓰 처리 함수 만들기 ///////
 function sessionsFn() {
   // 1. 버튼 텍스트 읽기
   let btxt = this.innerText;
@@ -427,11 +429,14 @@ function sessionsFn() {
   } /// if ////
   else if (btxt == "보여줘") {
     // 배우이름 출력
-    mFn.qs(".session .nm").innerText = sessionStorage.getItem("actor-name");
+    mFn.qs(".session .nm").innerText = 
+    sessionStorage.getItem("actor-name");
     // 역할이름 출력
-    mFn.qs(".session .role").innerText = sessionStorage.getItem("actor-role");
+    mFn.qs(".session .role").innerText = 
+    sessionStorage.getItem("actor-role");
     // 캐릭터소개 출력
-    mFn.qs(".session .cat").innerText = sessionStorage.getItem("actor-cat");
+    mFn.qs(".session .cat").innerText = 
+    sessionStorage.getItem("actor-cat");
   } /// else if ////
   else if (btxt == "전체삭제") {
     // 로컬스토리지 전체 삭제
@@ -441,5 +446,8 @@ function sessionsFn() {
     // 개별삭제는 removeItem(키)
     // sessionStorage.removeItem("actor-name");
   } //// else if ////
+} /////////// sessionsFn //////////
 
-} /////////// localsFn //////////
+
+
+
