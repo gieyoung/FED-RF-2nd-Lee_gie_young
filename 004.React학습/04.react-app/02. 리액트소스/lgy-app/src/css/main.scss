@@ -1,0 +1,73 @@
+// 메인 페이지 css
+
+// 공통리셋 불러오기
+@import "./common/reset";
+
+
+// 사이즈 변수 불러오기
+@import "./variables/size-set";
+@import "./variables/color-set";
+@import "./variables/bg-set";
+
+// 배경설정 믹스인
+@mixin bgSet($imgSrc){
+  background-image:url($imgSrc);
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center;
+}////bgSet믹스인//////
+
+//body배경넣기
+body{
+  @include bgSet($bigbg);
+  height: 100vh;
+}
+
+
+//작은박스
+h1{
+  width: $box-wz;
+  height: $box-hz;
+  border:3px dotted $bd-color1;
+  font-size: 40px;
+  line-height: $box-hz;
+  text-align: center;
+
+  // 배경 믹스인 호출
+  @include bgSet($sunjae);
+
+  // 하위 b요소
+  b{
+    color:#fff;
+    -webkit-text-stroke: 1px #000;
+
+  }
+
+  span{
+    text-decoration:overline;
+    text-decoration-style: wavy;
+    font-size: 20px;
+    color:red;
+    transition: .3s .4s;
+    
+  }
+  *{
+    opacity:0;
+  }
+
+  &:hover *{
+    opacity:1;
+    span{
+      color:blue;
+      scale:2s;
+      translate:500px 0;
+    }
+  }
+  &:hover{
+    translate:200px 50px;
+    scale:1.5;
+  }
+
+
+
+}
