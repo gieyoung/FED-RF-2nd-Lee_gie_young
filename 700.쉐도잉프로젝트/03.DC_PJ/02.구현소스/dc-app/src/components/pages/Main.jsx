@@ -1,11 +1,16 @@
 // 메인 페이지 컴포넌트 ///
 
+import Banner from "../modules/Banner";
+
 export default function Main(){
 
     //// 코드 리턴구역 //////////////
     return(
         <>
-           <h1>첫페이지</h1>
+           {/* 1. 배너 컴포넌트 */}
+           <Banner catName="THE FLASH" />
+           {/* 1. 배너 컴포넌트 */}
+           <Banner catName="CHARACTERS" />
         </>
     );
 

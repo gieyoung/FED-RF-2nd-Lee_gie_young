@@ -5,12 +5,12 @@ import Layout from "./components/layout/Layout";
 import Main from "./components/pages/Main";
 import Comics from "./components/pages/Comics";
 import Character from "./components/pages/Character";
-import Character from "./components/pages/Movies";
-import Character from "./components/pages/Series";
-import Character from "./components/pages/Games";
-import Character from "./components/pages/News";
-import Character from "./components/pages/Video";
-import Character from "./components/pages/Board";
+import Movies from "./components/pages/Movies";
+import Series from "./components/pages/Series";
+import Games from "./components/pages/Games";
+import News from "./components/pages/News";
+import Video from "./components/pages/Video";
+import Board from "./components/pages/Board";
 
 // 전체 공통 CSS 불러오기
 import "../src/css/index.scss";
