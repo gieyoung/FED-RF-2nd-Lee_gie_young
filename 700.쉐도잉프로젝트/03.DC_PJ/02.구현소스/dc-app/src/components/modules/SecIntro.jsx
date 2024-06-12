@@ -1,19 +1,19 @@
-// 섹션소개모듈 - SecIntro.jsx
-
+// DC.com 섹션소개모듈 -  SecIntro.jsx
 import React from "react";
 
 // 섹션소개모듈 데이터 가져오기
 import { secIntroData } from "../data/sec_intro";
 
-// 섹션소개모듈 css불러오기
+// 섹션소개모듈 CSS 불러오기
 import "../../css/sec_intro.scss";
 import { Link } from "react-router-dom";
 
 function SecIntro(props) {
-  // 불러온 데이터 변수 할당
+  // 불러온 데이터 변수할당
   const selData = secIntroData;
+
   return (
-    <div>
+    <>
       <section className="sec-intro">
         {/* 반복단위박스 */}
         {selData.map((v, i) => (
@@ -21,7 +21,7 @@ function SecIntro(props) {
             {/* 1. 이미지박스 */}
             <div className="imbx">
               <img src={v.isrc} alt={v.tit.split("^")[0]} />
-              {/* split으로 자르면 배열이 된다 */}
+              {/* split()으로 자르면 배열이된다! */}
             </div>
             {/* 2. 타이틀박스 */}
             <div className="titbx">
@@ -37,7 +37,7 @@ function SecIntro(props) {
           </div>
         ))}
       </section>
-    </div>
+    </>
   );
 }
 

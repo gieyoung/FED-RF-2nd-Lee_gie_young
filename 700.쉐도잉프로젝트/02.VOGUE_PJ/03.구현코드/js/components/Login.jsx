@@ -50,7 +50,7 @@ export default function Login({changeMenu}) {
                 type="password"
                 name="mpw"
                 id="mpw"
-                maxlength="15"
+                maxlength="10"
                 placeholder="비밀번호를 입력해 주세요!"
               />
             </div>
