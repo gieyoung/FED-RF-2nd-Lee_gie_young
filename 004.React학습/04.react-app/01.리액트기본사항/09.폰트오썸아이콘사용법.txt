@@ -52,3 +52,10 @@ import { 아이콘명 } from "@fortawesome/free-solid-svg-icons";
 5. Individual Import에서 코드를 클릭하여 복사함
 <FontAwesomeIcon icon={faHand} />
 
+
+
+
+
+
+
+
