@@ -1,10 +1,10 @@
 import React from 'react';
-import MainCont from '../page/MainCont';
+import MainCont from '../pages/MainCont';
 
 function MainArea(props) {
     return (
         <>
-        <MainCont />
+            <MainCont />
         </>
     );
 }
