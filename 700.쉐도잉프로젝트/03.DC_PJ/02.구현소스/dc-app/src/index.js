@@ -11,11 +11,11 @@ import News from "./components/pages/News";
 import Main from "./components/pages/Main";
 import Comics from "./components/pages/Comics";
 import Board from "./components/pages/Board";
-import CatDetail from "./components/pages/CatDetail";
-import SearchPage from "./components/pages/SearchPage";
 
 // 전체 공통 CSS 불러오기
 import "../src/css/index.scss";
+import CatDetail from "./components/pages/CatDetail";
+import SearchPage from "./components/pages/SearchPage";
 
 /********************************************* 
     [ 리액트 라우터 ]
