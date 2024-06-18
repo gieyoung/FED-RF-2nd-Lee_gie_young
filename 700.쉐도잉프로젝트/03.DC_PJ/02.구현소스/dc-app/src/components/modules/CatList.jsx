@@ -4,6 +4,7 @@ import React from "react";
 // 캐릭터 리스트 CSS
 import "../../css/cat_list.scss";
 import { SwiperCat } from "../plugin/SwiperCat";
+import { useNavigate } from "react-router-dom";
 /* 
 Root >
     section.cat-swbox >
@@ -19,6 +20,8 @@ Root >
 */
 
 function CatList(props) {
+
+  // 코드리턴구역
   return (
     <section className="cat-swbox">
       {/* 1. 모듈타이틀 */}
