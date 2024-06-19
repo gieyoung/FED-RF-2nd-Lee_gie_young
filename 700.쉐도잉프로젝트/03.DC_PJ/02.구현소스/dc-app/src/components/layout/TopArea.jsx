@@ -52,7 +52,6 @@ export default function TopArea() {
       if(txt!=''){
         // 입력창 비우고 부모박스 닫기
         $(e.target).val("").parent().hide();
-        
         // 검색 보내기
         goSearch(txt);
 

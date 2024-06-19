@@ -5,7 +5,12 @@ export function TotalMenu() {
   return (
     <>
       <div className="mbox">
-        <video src="./images/disc2018.mp4" loop="loop" muted="muted" className="bgm"></video>
+        <video
+          src="./images/disc2018.mp4"
+          loop="loop"
+          muted="muted"
+          className="bgm"
+        ></video>
         <nav className="mlist">
           <dl>
             <dt>

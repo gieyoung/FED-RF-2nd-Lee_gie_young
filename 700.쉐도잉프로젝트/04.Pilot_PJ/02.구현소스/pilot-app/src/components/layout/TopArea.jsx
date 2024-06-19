@@ -7,37 +7,45 @@ import { TotalMenu } from "../modules/TotalMenu";
 import $ from "jquery";
 
 function TopArea(props) {
-  // 전체메뉴 열기닫기 함수
-  const showHideMenu = (e) => {
-    // 전체 메뉴대상: .mbox
+
+  // 전체 메뉴 열기닫기 함수 ////
+  const showHideMenu = (e)=>{
+    // console.log(e.currentTarget);
+
+    // 전체 메뉴대상 : .mbox
+    // 1. 메뉴 보이기 숨기기 전환하기
     $(".mbox").fadeToggle(300);
-    //fadeIn() 서서히나타남
-    //fadeOut() 서서히사라짐 -> display:none됨
-    //fadeToggle() 
+    // fadeIn() 서서히 나타남
+    // fadeOut() 서서히 사라짐 -> display:none
+    // fadeToggle() 서서히 나타남/사라짐 전환
 
-    // 햄버거 버튼에 on넣고빼기
-    $(e.currentTarget).toggleClass("on")
+    // 2. 햄버거 버튼에 클래스 "on"넣기/빼기
+    $(e.currentTarget).toggleClass("on");
+    // addClass() 클래스넣기
+    // removeClass() 클래스빼기
+    // toggleClass() 클래스넣기/빼기
 
+    // console.log($(e.currentTarget).is(".on"));
 
-    // 3. 비디오 재생/멈춤
-    // 대상 .bgm
+    // 3. 비디오 재생/멈춤하기
+    // 대상: .bgm
     let bgm = $(".bgm");
-    // 햄버거 버튼에 클래스 on있으면 재생, 없으면 멈춤
-    // 제이쿼리의 미디어를 선택 후 실제 사용할 때는 
-    // get(0)하고 난 후 사용한다.
-    $(e.currentTarget).is(".on")?
-    bgm.get(0).play(): bgm.get(0).pause();
+    // 제이쿼리의 미디어를 선택후 실제 사용할때는
+    // get(0)하고 난 후 사용한다!
 
-    // js의 경우
+    // 햄버거버튼에 클래스"on"있으면 재생 없으면 멈춤 
+    $(e.currentTarget).is(".on")?
+    bgm.get(0).play()
+    : bgm.get(0).pause();
+    // play()는 재생, pause()는 멈춤 메서드
+
+    // 비교해서 JS는 선택후 바로 play(), pause()를 사용함
     // document.querySelector(".bgm").play();
     // document.querySelector(".bgm").pause();
 
-  };/////////showHideMenu//////////
+  }; ////////// showHideMenu /////////////
 
-  
-
-
-  // 코드 리턴구역
+  // 코드 리턴구역 //////////////
   return (
     <>
       <div id="top-area">
