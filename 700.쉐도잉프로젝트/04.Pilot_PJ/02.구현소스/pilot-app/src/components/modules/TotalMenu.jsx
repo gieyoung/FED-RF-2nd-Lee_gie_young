@@ -1,20 +1,31 @@
 // Pilot PJ 전체메뉴 컴포넌트
 
-export function TotalMenu() {
+// 컨텍스트 API호출
+import { useContext } from "react";
+import { pCon } from "./pCon";
+
+export function TotalMenu(e) {
+  // 컨텍스트 사용하기
+  const myCon = useContext(pCon);
+
+  // 서브페이지 이동함수
+  const goSub = (e) => {
+    e.preventDefault();
+    e.target.innerText.toLowerCase();
+    myCon.setPgName(pgName);
+    document.querySelector(".ham").click();
+  }; ///////////goSub////////
   // 코드 리턴 //////////////////////
   return (
     <>
       <div className="mbox">
-        <video
-          src="./images/disc2018.mp4"
-          loop="loop"
-          muted="muted"
-          className="bgm"
-        ></video>
+        <video src="./images/disc2018.mp4" loop="loop" muted="muted" className="bgm"></video>
         <nav className="mlist">
           <dl>
             <dt>
-              <a href="#">MEN</a>
+              <a href="#" onClick={goSub}>
+                MEN
+              </a>
             </dt>
             <dd>
               <a href="#">T-SHIRT</a>
@@ -31,7 +42,7 @@ export function TotalMenu() {
           </dl>
           <dl>
             <dt>
-              <a href="#">WOMEN</a>
+              <a href="#" onClick={goSub}>WOMEN</a>
             </dt>
             <dd>
               <a href="#">T-SHIRT</a>
@@ -48,7 +59,7 @@ export function TotalMenu() {
           </dl>
           <dl>
             <dt>
-              <a href="#">STYLE</a>
+              <a href="#" onClick={goSub}>STYLE</a>
             </dt>
             <dd>
               <a href="#">COLLECTION</a>
