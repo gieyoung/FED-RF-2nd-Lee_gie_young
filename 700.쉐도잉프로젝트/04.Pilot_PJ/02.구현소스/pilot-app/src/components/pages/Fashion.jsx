@@ -14,9 +14,9 @@ import "../../css/fashion.scss";
 import { SwiperBan } from "../plugin/SwiperBan";
 import SinSang from "../modules/SinSang";
 
-function Fashion({ subCat }) {
-  // subCat - 서브 카테고리명
-  // 값: men / women / style
+function Fashion({subCat}) {
+    // subCat - 서브 카테고리명
+    // 값: men / women / style
 
   // 컨텍스트 API사용하기
   const myCon = useContext(pCon);
@@ -75,8 +75,11 @@ function Fashion({ subCat }) {
     }); ////////// click ////////////
   }, []);
 
-  //후크상태변수
+  
+
+  // 후크 상태변수
   const [item, setItem] = useState("m1");
+
   // 신상컴포넌트에서 상세컴포넌트로 값을 전하기 위한
   // 상태변수를 셋팅하여 함수로 이것을 변경하게 해준다!
   // 프롭스 펑션다운~!!
@@ -97,7 +100,7 @@ function Fashion({ subCat }) {
       </section>
       {/* 2. 신상품영역 */}
       <section id="c1" className="cont sc-ani c1">
-        <SinSang cat={subCat} chgItemFn />
+        <SinSang cat={subCat} chgItemFn={chgItem} setPos={setPos} />
       </section>
       {/* 2.5. 상세보기박스 */}
       <div className="bgbx"></div>

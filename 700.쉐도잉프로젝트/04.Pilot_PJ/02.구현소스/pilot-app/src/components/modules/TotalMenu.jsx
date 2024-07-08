@@ -4,22 +4,35 @@
 import { useContext } from "react";
 import { pCon } from "./pCon";
 
-export function TotalMenu(e) {
+export function TotalMenu() {
   // 컨텍스트 사용하기
   const myCon = useContext(pCon);
 
-  // 서브페이지 이동함수
+  // 서브페이지 이동함수 ///
   const goSub = (e) => {
+    // 1.기본이동막기
     e.preventDefault();
-    e.target.innerText.toLowerCase();
+    // 2.이동할 서브 페이지명 : a요소의 글자를 소문자로!
+    let pgName = e.target.innerText.toLowerCase();
+    console.log("이동할 페이지:", pgName);
+    // -> 아이템 리스트 페이지는 중간 공백을 데쉬로 변경
+    pgName = pgName.replace(" ","-");
+    // 3.서브페이지 이동위해 상태변수업데이트
     myCon.setPgName(pgName);
+    // 4.햄버거버튼 클릭이벤트 발생하여 전체메뉴 닫기
     document.querySelector(".ham").click();
-  }; ///////////goSub////////
+  }; ///////// goSub ///////////////
+
   // 코드 리턴 //////////////////////
   return (
     <>
       <div className="mbox">
-        <video src="./images/disc2018.mp4" loop="loop" muted="muted" className="bgm"></video>
+        <video
+          src={process.env.PUBLIC_URL+"/images/disc2018.mp4"}
+          loop="loop"
+          muted="muted"
+          className="bgm"
+        ></video>
         <nav className="mlist">
           <dl>
             <dt>
@@ -42,7 +55,9 @@ export function TotalMenu(e) {
           </dl>
           <dl>
             <dt>
-              <a href="#" onClick={goSub}>WOMEN</a>
+              <a href="#" onClick={goSub}>
+                WOMEN
+              </a>
             </dt>
             <dd>
               <a href="#">T-SHIRT</a>
@@ -59,7 +74,9 @@ export function TotalMenu(e) {
           </dl>
           <dl>
             <dt>
-              <a href="#" onClick={goSub}>STYLE</a>
+              <a href="#" onClick={goSub}>
+                STYLE
+              </a>
             </dt>
             <dd>
               <a href="#">COLLECTION</a>
@@ -73,6 +90,14 @@ export function TotalMenu(e) {
             <dd>
               <a href="#">MAIN ITEM</a>
             </dd>
+          </dl>
+          <dl>
+            <dt>
+              <a href="#" onClick={goSub}>
+                ITEM LIST
+              </a>
+            </dt>
+            <dd></dd>
           </dl>
         </nav>
       </div>
