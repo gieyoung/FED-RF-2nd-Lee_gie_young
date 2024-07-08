@@ -3,6 +3,7 @@ import ReactDOM, { createRoot } from 'react-dom/client';
 import TopArea from './components/layout/TopArea';
 import MainArea from './components/layout/MainArea';
 import FooterArea from './components/layout/FooterArea';
+import CartList from './components/modules/CartList';
 
 // 컨텍스트 API 불러오기
 import { pCon } from './components/modules/pCon';
@@ -14,6 +15,9 @@ function MainComponent(props) {
   // 상태관리 변수 셋팅 ///////
   // 1. 페이지변경 상태변수
   const [pgName, setPgName] = useState("main");
+  // 2. 카트리스트 사용 여부: true일때 사용
+  const [cartSts,setCarSts] = useState(false);
+
 
   /**************************************** 
     [ 컨텍스트 API 공개 변수들 ]
@@ -26,6 +30,8 @@ function MainComponent(props) {
       <TopArea />
       <MainArea page={pgName} />
       <FooterArea />
+      {/* 카트리스트 */}
+      <CartList />
     </pCon.Provider>
   );
 }
