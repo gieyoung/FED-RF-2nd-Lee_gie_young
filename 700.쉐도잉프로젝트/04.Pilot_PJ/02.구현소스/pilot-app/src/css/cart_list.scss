@@ -6,7 +6,7 @@
   top: 0px;
   right: -60%;
   width: 60vw;
-  height: 100dvh;
+  height: 100dvh;/* vh -> dvh : 다이나믹 vh */
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 99999999;
 }
@@ -119,11 +119,11 @@
   padding: 0;
   overflow: hidden;
   width: 0;
-  transition: .1s .1s;
+  transition: 0.1s 0.1s;
   /* display: none; */
 }
 /* 입력창에 포커스 갈때 다음형제요소 반영버튼 보이기 */
-.item-cnt:focus+.btn-insert{
+.item-cnt:focus + .btn-insert {
   /* outline: 10px dotted red; */
   width: 34px;
   transition: none;
@@ -131,11 +131,12 @@
 }
 
 /* 페이징 파트 */
-.paging{
+.paging {
   text-align: center;
   padding: 20px 0;
 }
-.paging a, .paging b{
+.paging a,
+.paging b {
   color: #222;
   text-decoration: none;
   font-size: 20px;

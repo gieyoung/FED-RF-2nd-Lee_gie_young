@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // 카트 리스트 CSS
 import "../../css/cart_list.scss";
+import { pCon } from "./pCon";
 
 function CartList(props) {
+
+    // 컨텍스트 사용
+    const myCon = useContext(pCon);
+
+    ///// 코드리턴구역 /////////////
   return (
-    <section id="cartlist" style={{right:"0px"}}>
-      <a href="#" class="cbtn cbtn2">
+    <section id="cartlist" style={{right: "0px"}}>
+      <a href="#" className="cbtn cbtn2"
+      onClick={e=>{
+        e.preventDefault();
+        // 카트 상태값 업데이트
+        myCon.setCartSts(false);
+      }}>
         <span>닫기버튼</span>
       </a>
       <table>
@@ -26,62 +37,33 @@ function CartList(props) {
           </tr>
           <tr>
             <td>
-              <img src="images/goods/women/m8.png" alt="item" />
+              <img src={process.env.PUBLIC_URL+"/images/goods/women/m8.png"} alt="item" />
             </td>
             <td>6</td>
             <td>[여성]베이직 솔리드 래쉬가드</td>
             <td>DMSW15731-BK </td>
             <td>49,000원</td>
-            <td class="cnt-part">
+            <td className="cnt-part">
               <div>
                 <span>
-                  <input type="text" class="item-cnt" readOnly="" value="1" />
-                  <button class="btn-insert" data-idx="20">
+                  <input type="text" className="item-cnt" readOnly="" defaultValue="1" />
+                  <button className="btn-insert" data-idx="20">
                     반영
                   </button>
-                  <b class="btn-cnt">
-                    <img src="./images/cnt_up.png" alt="증가" />
-                    <img src="./images/cnt_down.png" alt="감소" />
+                  <b className="btn-cnt">
+                    <img src={process.env.PUBLIC_URL+"/images/cnt_up.png"} alt="증가" />
+                    <img src={process.env.PUBLIC_URL+"/images/cnt_down.png"} alt="감소" />
                   </b>
                 </span>
               </div>
             </td>
             <td>49,000원</td>
             <td>
-              <button class="cfn" data-idx="20">
+              <button className="cfn" data-idx="20">
                 ×
               </button>
             </td>
-          </tr>
-          <tr data-v="[object Object]">
-            <td>
-              <img src="images/goods/style/m6.png" alt="item" />
-            </td>
-            <td>7</td>
-            <td>[스타일]블럭형 풀집업 래쉬가드</td>
-            <td>DMSW21731-GR </td>
-            <td>99,000원</td>
-            <td class="cnt-part">
-              <div>
-                <span>
-                  <input type="text" class="item-cnt" readOnly="" value="1" />
-                  <button class="btn-insert" data-idx="26">
-                    반영
-                  </button>
-                  <b class="btn-cnt">
-                    <img src="./images/cnt_up.png" alt="증가" />
-                    <img src="./images/cnt_down.png" alt="감소" />
-                  </b>
-                </span>
-              </div>
-            </td>
-            <td>99,000원</td>
-            <td>
-              <button class="cfn" data-idx="26">
-                ×
-              </button>
-            </td>
-          </tr>
+          </tr>          
           <tr>
             <td colSpan="6">총합계 :</td>
             <td>662,000원</td>
@@ -90,7 +72,7 @@ function CartList(props) {
         </tbody>
         <tfoot>
           <tr>
-            <td colSpan="8" class="paging">
+            <td colSpan="8" className="paging">
               <a href="#">1</a> | <b>2</b>
             </td>
           </tr>
