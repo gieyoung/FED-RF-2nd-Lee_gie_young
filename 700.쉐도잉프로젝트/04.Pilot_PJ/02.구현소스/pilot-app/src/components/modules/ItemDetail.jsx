@@ -4,23 +4,29 @@ import { addComma } from "../../js/func/common_fn";
 import $ from "jquery";
 import { pCon } from "./pCon";
 
-function ItemDetail({ cat, ginfo, dt, setGinfo, gIdx }) {
-  // cat - 카테고리
-  // ginfo - 상품정보
+function ItemDetail({ tot, setTot, dt }) {
+  // tot - 상품토탈정보
+  // setTot - 상품토탈정보 업데이트함수
   // dt - 상품데이터
-  // setGinfo - ginfo값 변경메서드
-  // gIcx - 상품고유번호
-  console.log(cat, ginfo);
+
+  // 상품정보 개별 셋업 ////
+  // cat - 카테고리
+  let cat = tot.cat;
+  // ginfo - 상품정보
+  let ginfo = tot.ginfo;
+  // gIdx - 상품고유번호
+  let gIdx = tot.idx;
+
+  console.log(cat, ginfo, gIdx);
 
   // 전역 카트 사용여부값 업데이트 사용위해 전역 컨텍스트 사용
   const myCon = useContext(pCon);
-
 
   // 제이쿼리 이벤트함수에 전달할 ginfo값 참조변수
   const getGinfo = useRef(ginfo);
   // getGinfo참조변수는 새로들어온 ginfo전달값이 달라진 경우
   // 업데이트한다!
-  if(getGinfo.current!=ginfo) getGinfo.current = ginfo;
+  if (getGinfo.current != ginfo) getGinfo.current = ginfo;
 
   // [ 배열 생성 테스트 ]
   // 1. 배열변수 = [] -> 배열리터럴
@@ -85,11 +91,11 @@ function ItemDetail({ cat, ginfo, dt, setGinfo, gIdx }) {
   }, []); /// 현재컴포넌트 처음생성시 한번만 실행구역 ///
 
   // [ 화면랜더링구역 : 매번 ] ///
-  useEffect(()=>{
+  useEffect(() => {
     // 매번 리랜더링 될때마다 수량초기화!
     $("#sum").val(1);
     // 총합계 초기화
-    $("#total").text(addComma(ginfo[3])+"원");
+    $("#total").text(addComma(ginfo[3]) + "원");
   }); ////////// useEffect //////
 
   // 코드리턴구역 /////////////
@@ -103,6 +109,11 @@ function ItemDetail({ cat, ginfo, dt, setGinfo, gIdx }) {
           e.preventDefault();
           // 창닫기
           $(".bgbx").hide();
+          // 창닫을때 초기화하기!  
+          // 수량초기화!
+          $("#sum").val(1);
+          // 총합계 초기화
+          $("#total").text(addComma(ginfo[3]) + "원");
         }}
       >
         <span className="ir">닫기버튼</span>
@@ -152,9 +163,8 @@ function ItemDetail({ cat, ginfo, dt, setGinfo, gIdx }) {
                         console.log(res);
                         // 상품상세모듈 전달 상태변수 변경
                         // find에서 받은값은 객체값
-                        // 그중 ginfo속성값만 필요함!
-                        setGinfo(res.ginfo);
-                        // 카테고리값은 바꿀필요없음!
+                        // 상품토탈정보로 모든 객체값을 업데이트함
+                        setTot(res);
                       }}
                     >
                       <img
@@ -269,9 +279,44 @@ function ItemDetail({ cat, ginfo, dt, setGinfo, gIdx }) {
             </div>
             <div>
               <button className="btn btn1">BUY NOW</button>
-              <button className="btn"
-              onClick={()=>myCon.setCartSts(true)}>
-                SHOPPING CART</button>
+              <button
+                className="btn"
+                onClick={() => {
+                  // 로컬스에 넣기
+                  // 로컬스 없으면 만들어라!
+                  if (!localStorage.getItem("cart-data")) {
+                    localStorage.setItem("cart-data", "[]");
+                  } //// if /////
+
+                  // 로컬스 읽어와서 파싱하기
+                  let locals = localStorage.getItem("cart-data");
+                  locals = JSON.parse(locals);
+
+                  // 로컬스에 객체 데이터 추가하기
+                  locals.push({
+                    idx: gIdx,
+                    cat: cat,
+                    ginfo: ginfo,
+                    cnt: $("#sum").val()
+                  });
+                  /************************** 
+                    [데이터 구조정의]
+                    1. idx : 상품고유번호
+                    2. cat : 카테고리
+                    3. ginfo : 상품정보
+                    4. cnt : 상품개수
+                  **************************/
+
+                  // 로컬스에 문자화하여 입력하기
+                  localStorage.setItem(
+                    "cart-data", JSON.stringify(locals));
+
+                  // 카트 상태값 변경
+                  myCon.setCartSts(true);
+                }}
+              >
+                SHOPPING CART
+              </button>
               <button className="btn">WISH LIST</button>
             </div>
           </section>
