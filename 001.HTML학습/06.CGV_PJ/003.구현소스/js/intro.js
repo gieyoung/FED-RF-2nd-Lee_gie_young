@@ -1,18 +1,24 @@
-/* CGV PJ 인트로 페이지 CSS-intro.js */
+// CGV PJ 인트로 페이지 JS - intro.js
 
+// 요구사항 : 비디오 플레이가 끝나면 첫페이지인
+// main.html로 자동이동하기
+
+// 대상: #myvid
 const myvid = document.querySelector('#myvid');
 
-
+// 이벤트: timeupdate -> 동영상재생중 발생이벤트
 myvid.addEventListener('timeupdate',()=>{
-//동영상 멈춤 여부 확인
-// 비디오요소.paused => 멈춤상태면 true, 아니면 false
-let isStop = myvid.paused;
+    // 1. 동영상 멈춤여부 알아내기 : 
+    // -> 비디오요소.paused => 멈춤상태면 true, 아니면 false
+    let isStop = myvid.paused;
+    // 호출확인
+    console.log('재생중!',isStop);
 
+    // 2. 멈춤상태(true)이면 페이지 이동!
+    // -> JS에서 페이지이동은 
+    // location.href = 주소 or 페이지
+    if(isStop){
+        location.href = 'main.html';
+    } ////// if //////
 
-// 멈춘상태면 true이면 페이지 이동
-if(isStop == true){
-  location.href = './main.html';
-}
-
-console.log(isStop)
-});///////timeupdate////////
+}); ///////// timeupdate 이벤트 함수 //////////

@@ -236,9 +236,22 @@
   cursor: pointer;
   margin-left: 20px;
 
-  &:hover{
-    background-color: red;
-    text-decoration: overline;
+  // 마우스 오버시 셋팅하기
+  &:hover {
+    background-color: hotpink;
+    text: {
+        decoration: overline;
+        decoration-style: wavy;
+    }    
+  }
+  // 클래스가 "my"인 경우 디자인변경
+  &.my {
+    text: {
+        decoration: underline;
+        decoration-style: dotted;
+        underline-offset: 10px;
+        decoration-thickness: 5px;
+    }
   }
 
 }

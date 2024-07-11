@@ -1,16 +1,10 @@
 @charset "utf-8";
 /* CGV PJ 메인 페이지 CSS - main.css */
 
-/*********** 1. 웹폰트 : CDN ***********/
-/* Cute Font, Jua, Audiowide 체 */
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Cute+Font&family=Jua&display=swap');
-/* 
-    font-family: 'Audiowide', cursive;
-    font-family: 'Cute Font', cursive;
-    font-family: 'Jua', sans-serif;
-*/
+
 /* 리셋CSS 불러오기 */
 @import url(./reset.css);
+@import url(./core.css);
 
 body{
     background-color: #000;
@@ -202,7 +196,7 @@ body * {
     position: absolute;
     top: -15px;
     right: 120px;
-    width: 0;
+    width: 0;/* 오버시 129px */
     height: 66px;
     background: url(../images/screen.gif) no-repeat -50% center/auto 80%;
     z-index: -2;
@@ -212,8 +206,8 @@ body * {
 }
 /* 오버시 스크린 보이기 */
 .gnb:hover .cam::after{
-    opacity: 1;
     width: 129px;
+    opacity: 1;
     /* 트랜지션 */
     transition: opacity .3s .6s;
 }
@@ -272,7 +266,7 @@ body * {
     display: flex;
     /* 하위 요소 사이간격 */
     gap: 0 15px;
-    /* 3d효과 */
+    /* 원근설정 : 하위li에 적용! */
     perspective: 100vh;
 }
 /* 상위 ul>li 리스트 */
@@ -281,19 +275,25 @@ body * {
     /* 부모자격 - 영화정보박스 */
     overflow: hidden;
     /* 자식요소인 영화정보박스 숨기기 */
+    
+    /* X축회전 */
     transform: rotateX(40deg);
+    /* 기본회전축 하단변경 */
     transform-origin: bottom;
+    /* 트랜지션 */
     transition: transform .3s ease-in-out;
 }
-
-
+/* li에 오버시 일어나기 + .on 줄때 일어나기 */
 .poster-menu>ul>li.on,
 .poster-menu>ul>li:hover{
-    transform: rotateX(0);
-    transform-origin: bottom;
-    outline:2px solid skyblue;
-    z-index:1;
+    /* X축회전 */
+    transform: rotateX(0deg);
+    /* 아웃라인 */
+    outline: 1px solid aqua;
+    /* 오버요소 항상위 */
+    z-index: 1;
 }
+
 
 /* 포스터 이미지 */
 .poster-menu img{

@@ -5,6 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>아카이브 페이지</title>
     <link rel="stylesheet" href="./zcss/main.css" />
+    <style>
+      #pg2 a {
+        font-size: 40px;
+        display: inline-block;
+        text-align: center;
+        font-weight: bold;
+        color: darkred;
+        -webkit-text-stroke: 0.5px #000;
+        -webkit-text-: 0.5px #000;
+      }
+      #pg2 .pt1 li:nth-child(1) a {
+        margin-left: 10%;
+        color: lightgreen;
+      }
+      #pg2 .pt1 li:nth-child(1) a::after {
+        background-color: lightgreen;
+      }
+      #pg2 .pt1 li:nth-child(2) a {
+        margin-left: 80%;
+        color: lightsalmon;
+      }
+      #pg2 .pt1 li:nth-child(2) a::after {
+        background-color: lightsalmon;
+      }
+      #pg2 .pt2 li:nth-child(1) a {
+        margin-left: 30%;
+        color: aqua;
+      }
+      #pg2 .pt2 li:nth-child(1) a::after {
+        background-color: aqua;
+      }
+
+      .team-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        aspect-ratio: 3/4;
+        display: none;
+      }
+      .team-img span {
+        position: absolute;
+        left: 0;
+        bottom: 10%;
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+        font-size: 35px;
+        color: #fff;
+        text-shadow: 2px 2px 2px #000;
+
+      }
+      .team-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        border-radius: 15px;
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+
+    <!-- 제이쿼리 라이브러리 CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- 제이쿼리 UI CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+      $(() => {
+        ///////////// jQB /////////////////
+
+        const tgEle = $(".part ol li a");
+
+        tgEle.mouseenter((e) => {
+          $(e.target).next(".team-img").css({ display: "block" });
+        });
+        tgEle.mouseleave((e) => {
+          $(e.target).next(".team-img").css({ display: "none" });
+        });
+        tgEle.mousemove((e) => {
+          $(e.target)
+            .next(".team-img")
+            .css({
+              top: e.pageY-150 + "px",
+              left: e.pageX-200 + "px",
+            });
+        });
+      }); ///////////// jQB /////////////////
+    </script>
   </head>
   <body>
     <div id="top">
@@ -13,25 +102,8 @@
         <h1 class="tit">
           <img src="./imgs/mylogo_14.png" alt="나의로고" />
           <br />
-          팀 프로젝트 선정 페이지
+          팀 프로젝트 발표 페이지
         </h1>
-        <!-- 네비게이션 -->
-        <!-- <nav class="gnb">
-                    <ul>
-                        <li>
-                            <a href="#pg1">공통·개별PJ</a>
-                        </li>
-                        <li>
-                            <a href="#pg2">2페이지</a>
-                        </li>
-                        <li>
-                            <a href="#pg3">3페이지</a>
-                        </li>
-                        <li>
-                            <a href="#pg4">4페이지</a>
-                        </li>
-                    </ul>
-                </nav> -->
       </header>
     </div>
 
@@ -49,102 +121,55 @@
           </h2>
           <ol>
             <li>
-              <a href="./sample/1.Cars/intro.html" target="_blank">
-                1.Toy Story : 픽사 애니메이션 사이트
-              </a>
               <a
-                href="https://drive.google.com/file/d/1f40SDUzb83bWJyDAqS1_FbSIGQNRE443/view?usp=drive_link"
-                class="dld"
-                download
-                >[Download]</a
+                href="https://jaeyoonperl.github.io/TEAM-PJ-TOYSTORY/test/"
+                target="_blank"
               >
-              <h3>
-                ▶ 컨텐츠 사이트 :
-                <a
-                  href="https://www.pixar.com/feature-films/cars"
-                  target="_blank"
-                >
-                  픽사 공식 사이트
-                </a>
-              </h3>
+                토이팀 : Toy Story
+
+              </a>
+              <div class="team-img">
+                <img
+                  src="https://i.namu.wiki/i/I1QZ1s5Z6GX_t-KXUH359RsPwmkrSKD-jumcS4H3C-Mm-5NzCf4Jdauh9MuMu4nW35I4aw5NHqUGrAqHxYQvaQ.webp"
+                  alt="토이팀"
+                />
+              </div>
             </li>
             <li>
-              <a href="./sample/2.Solar_System/index.html" target="_blank">
-                2. Solar System : 행성소개 사이트
-              </a>
               <a
-                href="https://drive.google.com/file/d/17SmbCbjVOHy15-ZJ6GDxJXyVk4LQ8yiq/view?usp=drive_link"
-                class="dld"
-                download
-                >[Download]</a
+                href="https://gieyoung.github.io/Solar-system/"
+                target="_blank"
               >
-              <h3>
-                ▶ 컨텐츠 사이트 :
-                <a
-                  href="https://solarsystem.nasa.gov/solar-system/our-solar-system/overview/"
-                  target="_blank"
-                >
-                  나사 사이트
-                </a>
-              </h3>
+                쏠라팀 : Solar System
+              </a>
+              <div class="team-img">
+                <img
+                  src="https://i.pinimg.com/originals/28/18/17/28181771794bf7609788537306ed5c62.png"
+                  alt="쏠라팀"
+                />
+                <span>Solar&nbsp;&nbsp;&nbsp;&nbsp; <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System</span>
+              </div>
             </li>
           </ol>
         </section>
         <!-- 2. 개별프로젝트 링크파트 -->
         <section class="part pt2">
-          <h2>
-            <a
-              style="color: aqua"
-              href="https://drive.google.com/drive/folders/1Y4i_BjOXQNKdEHlGq5U-YZy94l2IjooT"
-              target="_blank"
-            >
-              팀 프로젝트 선정 신청
-            </a>
-            <small>
-              <a
-                href="./sample/4.Star_Wars/와이어프레임/스타워즈_Mockup.bmpr"
-                download
-                >목업샘플</a
-              >
-            </small>
-          </h2>
+          <h2>팀 프로젝트 발표!!!</h2>
           <ol>
             <li>
-              <a href="./sample/3.Peripera/intro.html" target="_blank">
-                3. Peripera Cosmetic : 화장품 사이트
-              </a>
               <a
-                href="https://drive.google.com/file/d/15Ji0zc1_gK8e1DdKgt38glxI2kX5k4yk/view?usp=drive_link"
-                class="dld"
-                download
-                >[Download]</a
+                href="https://alrang0929.github.io/FED_2rd_star_wars/%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/03.%EA%B5%AC%ED%98%84%EC%86%8C%EC%8A%A4/"
+                target="_blank"
               >
-              <h3>
-                ▶ 컨텐츠 사이트 :
-                <a
-                  href="http://www.periperacosmetic.com/ko/index.asp"
-                  target="_blank"
-                >
-                  페리페라 원본사이트
-                </a>
-              </h3>
-            </li>
-            <li>
-              <a href="./sample/4.Star_Wars/intro.html" target="_blank">
-                4. Star Wars : 영화 스타워즈 소개 사이트
+                스타팀 : Star Wars
               </a>
-              <a
-                href="https://drive.google.com/file/d/1s8wFgslj6Fhfr3DywRVErey3dwqH8mxg/view?usp=drive_link"
-                class="dld"
-                download
-                >[Download]</a
-              >
-              <h3>
-                ▶ 컨텐츠 사이트 :
-                <a href="https://www.starwars.com/" target="_blank">
-                  스타워즈 소개 원본사이트
-                </a>
-              </h3>
+              <div class="team-img">
+                <img
+                  src="https://cphoto.asiae.co.kr/listimglink/1/2012103110393113090_1.jpg"
+                  alt="스타팀"
+                />
+              </div>
             </li>
           </ol>
         </section>

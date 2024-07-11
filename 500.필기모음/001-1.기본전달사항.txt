@@ -1,5 +1,5 @@
 [ 프론트엔드(React, PHP), 플러터(Flutter)활용 웹&앱개발 양성과정 - 기본전달사항 ]
-탐쌤이멜: tombap@naver.com
+* 탐쌤이멜: tombap@naver.com
 
 1. 교재: 6권
 
@@ -13,7 +13,7 @@ https://www.w3schools.com/
 5. 강의 동영상 백업 유튜브: 탐쌤코딩 프론트엔드 2024
 https://www.youtube.com/channel/UCX6SkJ-L1DHBubuQETdBxHw
 
-6. 소스 깃허브 : 탐쌤코딩 프론트엔드 2022
+6. 소스 깃허브 : 탐쌤코딩 프론트엔드 2024
 https://github.com/tombap8/FED-RF-2nd-2024-TOM
 
 7. 사이트 벤치마킹 포털
@@ -58,5 +58,5 @@ https://youtu.be/EKFM5yeXdck
 
 -> 소통이 이루지는 장소에서 사용되는 
 수단과 방법을 인터페이스라고함!
-dfsdfsdfsdfsdfsdf
+
 

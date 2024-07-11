@@ -37,7 +37,7 @@ body{
     text-align: center;
 }
 /********* GNB박스 *********/
-.gnb ul{
+.gnb ul {
     display: flex;
     gap: 0 20px;
     line-height: 60px;
