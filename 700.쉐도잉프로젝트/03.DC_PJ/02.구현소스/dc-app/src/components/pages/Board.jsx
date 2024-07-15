@@ -305,7 +305,12 @@ export default function Board() {
               }
               {
                 // 2. 읽기상태 "R" 일 경우
-                mode == "R" && <button onClick={clickButton}>List</button>
+                <>
+                {mode == "R" && <button onClick={clickButton}>List</button>}
+
+                {// 로그인한 상태이고 글쓴이와 일치할 때 수정모드 이동버튼이 노출됨
+                mode == "R" && sts && <button onClick={clickButton}>Modify</button>}
+                </>
               }
               {
                 // 3. 쓰기상태 "W" 일 경우
