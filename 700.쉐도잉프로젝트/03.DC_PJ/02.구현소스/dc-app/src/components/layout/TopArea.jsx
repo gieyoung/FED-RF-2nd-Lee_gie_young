@@ -12,6 +12,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 // 제이쿼리
 import $ from "jquery";
+
 // 메모이제이션
 import { memo } from "react";
 
@@ -26,18 +27,21 @@ import { memo } from "react";
 // props로 전달하는 방식으로 전환하면 효과를 볼 수 있다!
 // -> React.memo는 전달속성이 변경됨을 기준하여
 // 메모이제이션 기능를 제공하기 때문이다!
-// -> 전달되는 함수가 반드시 useCallback() 처리가 되어야 한다!!!
-// ->> 객체, 배열, 함수는 모두 값 저장이 아니고 주소저장임
-// 그래서 이 주소를 고정해 줘야 같은 값으로 인식하여 메모이제이션 된다
 
-export const TopArea = memo(({ loginMsg, loginSts, logoutFn,goPage }) => {
+// [메모이제이션 중요체크]
+// -> 전달되는 함수가 반드시 useCallback() 처리가 되어야 한다!!!
+// ->> 객체, 배열, 함수는 모두 값저장이 아니고 주소저장임!
+// 그래서 이 주소를 고정해 줘야 같은 값으로 인식하여
+// 메모이제이션 된다!!!
+
+export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
   // 전달값
-  // 1. loginMsg - 로그인 메시지 변수
-  // 2. loginSts - 로그인 상태 변수
-  // 3. logoutFn - 로그아웃 함수
+  // 1. loginMsg - 로그인 메시지변수
+  // 2. loginSts - 로그인 상태변수
+  // 3. logoutFn - 로그아웃 함수!!!
 
   console.log("상단영역!!!");
-  // 컨텍스트 사용하기 -> 메모이제시션을 위해 사용안함
+  // 컨텍스트 사용하기 -> 메모이제이션을 위해 사용안함!
   // const myCon = useContext(dCon);
 
   // 이동함수 ////
@@ -125,7 +129,11 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn,goPage }) => {
                 {
                   // 하위 메뉴가 있으면 일반 a요소에 출력
                   // 없으면 Link 라우팅 출력
-                  v.sub ? <a href="#">{v.txt}</a> : <Link to={v.link}>{v.txt}</Link>
+                  v.sub ? (
+                    <a href="#">{v.txt}</a>
+                  ) : (
+                    <Link to={v.link}>{v.txt}</Link>
+                  )
                 }
                 {
                   // 서브 메뉴 데이터가 있으면 하위그리기
@@ -170,7 +178,13 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn,goPage }) => {
                   }}
                 />
                 {/* 입력창 */}
-                <input type="text" name="schinGnb" id="schinGnb" placeholder="Filter by Keyword" onKeyUp={enterKey} />
+                <input
+                  type="text"
+                  name="schinGnb"
+                  id="schinGnb"
+                  placeholder="Filter by Keyword"
+                  onKeyUp={enterKey}
+                />
               </div>
               {/* 검색기능링크 - 클릭시 검색창보이기 */}
               <a href="#" onClick={showSearch}>

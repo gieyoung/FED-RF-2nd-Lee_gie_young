@@ -9,12 +9,17 @@ import { TopArea } from "./TopArea";
 import { dCon } from "../modules/dCon";
 import { useNavigate } from "react-router-dom";
 
+import $ from "jquery";
+import "jquery.cookie";
+
 export default function Layout() {
   // [ 상태관리 변수 ] //////////////
   // 1. 로그인 상태관리변수
   const [loginSts, setLoginSts] = useState(sessionStorage.getItem("minfo"));
+
   // 상태관리변수 변경함수도 전달시 콜백처리해야 메모이제이션됨!
   // const 콜백처리함수 = useCallback((x)=>{setLoginSts(x)},[loginSts])
+  
   // -> 초기값으로 세션스토리지 "minfo"를 할당함
 
   // 2. 로그인 환영 메시지 상태변수
@@ -22,12 +27,13 @@ export default function Layout() {
   // console.log(loginMsg);
 
   // [ 공통 함수 ] ///
-  // 1. 라우팅 이동함수: 라우터 이동후크인 useNavigate는 
-  // 다른 useCallback() 후크로 처리할 수 없다.
+  // 1. 라우팅 이동함수 : 라우터 이동후크인 useNavigate는
+  // 다른 useCallback() 후크로 처리할 수 없다!
   const goNav = useNavigate();
-  // 따라서 별도의 함수를 만들고 이를 콜백처리 해준다.
-  // 함수메모처리 위해 useCallback()에 넣어준다.
-  const goPage = useCallback((pm1,pm2) =>{goNav(pm1,pm2);
+  // 따라서 별도의 함수를 만들고 이것을 콜백처리해준다!
+  // 함수메모처리 위해 useCallback()에 넣어준다!
+  const goPage = useCallback((pm1, pm2) => {
+    goNav(pm1, pm2);
   },[]);
 
   // 2. 로그인 환영메시지 생성함수
@@ -66,7 +72,10 @@ export default function Layout() {
       // 로그인 메시지 업데이트 :
       // -> 세션스의 unm(이름값)을 보내준다!
       makeMsg(JSON.parse(ss).unm);
+
+      
     } ///// if ///////
+    $.cookie("aa","bb",{expires: 2});
   }, []);
 
   //// 코드 리턴구역 //////////////
@@ -83,13 +92,8 @@ export default function Layout() {
         logoutFn,
       }}
     >
-      {/* 1.상단영역 : 메모이제이션을 위해 직접값 전달 */}
-      <TopArea 
-      loginMsg={loginMsg} 
-      loginSts={loginSts} 
-      logoutFn={logoutFn} 
-      goPage={goPage}
-      />
+      {/* 1.상단영역 : 메모이제이션을 위해 직접값전달! */}
+      <TopArea loginMsg={loginMsg} loginSts={loginSts} logoutFn={logoutFn} goPage={goPage} />
       {/* 2.메인영역 */}
       <MainArea />
       {/* 3.하단영역 */}
