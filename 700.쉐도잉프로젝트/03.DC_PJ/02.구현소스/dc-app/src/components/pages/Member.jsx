@@ -10,7 +10,7 @@ import $ from "jquery";
 // 회원가입 CSS 불러오기
 import "../../css/member.scss";
 import AddressInput from "../modules/AddressInput";
-// import Modal from "react-modal";
+import Modal from "react-modal";
 
 function Member() {
   // 라우터 이동 네비게이트
@@ -568,8 +568,18 @@ function Member() {
           </ul>
         </form>
       </section>
-      
-  
+          { <>!​modalIsOpen &&
+         
+          {/* <Modal
+            isOpen={true}
+            ariaHideApp={false}
+            onRequestClose={() => setModalIsOpen(false)}
+            style={{width:"30vw",height:"30vh"}}
+          >
+            <h1>제목</h1>
+            <div>내용</div>
+          </Modal> */}
+          </>}
     </div>
   );
 }

@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import $ from "jquery";
 import "jquery.cookie";
 
+
 export default function Layout() {
   // [ 상태관리 변수 ] //////////////
   // 1. 로그인 상태관리변수
