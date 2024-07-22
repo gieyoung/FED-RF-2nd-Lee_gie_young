@@ -38,7 +38,7 @@ export default function Board() {
     Number(a.idx) > Number(b.idx) ? -1 : Number(a.idx) < Number(b.idx) ? 1 : 0
   );
 
-  // [ 상태관리 변수 ] ///
+  ///////// [ 상태관리 변수 ] //////////////
   // [1] 페이지 번호
   const [pageNum, setPageNum] = useState(1);
   // [2] 기능모드
@@ -55,9 +55,14 @@ export default function Board() {
   // [2] 선택 데이터 저장
   const selRecord = useRef(null);
   // -> 특정리스트 글 제목 클릭시 데이터 저장함!
+  // [3] 페이징의 페이징 번호
+  const pgPgNum = useRef(1);
 
-  // 페이지당 개수
-  const unitSize = 8;
+  // [ 일반 변수로 매번 같은값을 유지하면 되는 변수 ]
+  // 페이지당 개수 : 페이지당 레코드수
+  const unitSize = 4;
+  // 페이징의 페이징 개수 : 한번에 보여줄 페이징개수
+  const pgPgSize = 4;
 
   /********************************************** 
         함수명: bindList
@@ -98,8 +103,8 @@ export default function Board() {
     } ///// for //////
 
     console.log("일부데이터:", selData);
-console.log("여기:",selData.length);
-if(selData.length == 0) setPageNum(pageNum-1);
+    console.log("여기:", selData.length);
+    if (selData.length == 0) setPageNum(pageNum - 1);
 
     return selData.map((v, i) => (
       <tr key={i}>
@@ -125,64 +130,6 @@ if(selData.length == 0) setPageNum(pageNum-1);
       </tr>
     ));
   }; /////////// bindList 함수 /////////////////
-
-  /****************************************** 
-    함수명 : pagingList
-    기능 : 게시판 리스트의 페이징 기능 목록
-  ******************************************/
-  const pagingList = () => {
-    // 전체 페이징 개수 : 전체레코드수 / 페이지당개수
-    // 유의점: 나머지가 있는지 검사해서 있으면 +1
-
-    // 1. 페이징 개수
-    let pagingCount = Math.floor(totalCount.current / unitSize);
-
-    // 나머지가 있으면 다음 페이지가 필요함!
-    // 나머지가 0이 아니면 1더하기
-    if (totalCount.current % unitSize > 0) {
-      pagingCount++;
-    }
-
-    // console.log(
-    //   "페이징개수:",
-    //   pagingCount,
-    //   "나머지개수:",
-    //   totalCount.current % unitSize
-    // );
-
-    // 링크코드 만들기 ///
-    const pgCode = [];
-
-    // 1부터 페이지 끝번호까지 돌면서 코드만들기
-    for (let i = 1; i <= pagingCount; i++) {
-      pgCode.push(
-        <Fragment key={i}>
-          {
-            // 페이징번호와 현재페이지번호 일치시 b요소
-            i === pageNum ? (
-              <b>{i}</b>
-            ) : (
-              // 불일치시에 모드 링크코드
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setPageNum(i);
-                }}
-              >
-                {i}
-              </a>
-            )
-          }
-          {/* 사이에 바넣기 */}
-          {i !== pagingCount && " | "}
-        </Fragment>
-      );
-    } ////// for /////
-
-    // 코드리턴
-    return pgCode;
-  }; ////////// pagingList 함수 //////////////
 
   // 버튼 클릭시 변경함수 ////////
   const clickButton = (e) => {
@@ -240,7 +187,6 @@ if(selData.length == 0) setPageNum(pageNum-1);
       // 4. 삭제후 리스트 리랜더링시 리스트 불일치로 인한
       // 에러를 방지하기 위하여 전체 개수를 바로 업데이트한다!
       totalCount.current = baseData.length;
-
 
       // 4. 리스트로 돌아가기 -> 리랜더링 /////
       // -> 모드변경! "L"
@@ -377,18 +323,27 @@ if(selData.length == 0) setPageNum(pageNum-1);
     }
   }; ////////// submitFn //////////////
 
-
   //// 코드 리턴구역 //////////////
   return (
     <main className="cont">
       <h1 className="tit">OPINION</h1>
       {
         // 1. 리스트 모드일 경우 리스트 출력하기
-        mode == "L" && <ListMode bindList={bindList} pagingList={pagingList} />
+        mode == "L" && (
+          <ListMode
+            bindList={bindList}
+            totalCount={totalCount}
+            unitSize={unitSize}
+            pageNum={pageNum}
+            setPageNum={setPageNum}
+            pgPgNum={pgPgNum}
+            pgPgSize={pgPgSize}
+          />
+        )
       }
       {
         // 2. 읽기 모드일 경우 상세보기 출력하기
-        mode == "R" && <ReadMode selRecord={selRecord} />
+        mode == "R" && <ReadMode selRecord={selRecord} sts={sts} />
       }
       {
         // 3. 쓰기 모드일 경우 로그인 정보 보내기
@@ -467,7 +422,25 @@ if(selData.length == 0) setPageNum(pageNum-1);
 /****************************************** 
         리스트 모드 서브 컴포넌트
 ******************************************/
-const ListMode = ({ bindList, pagingList }) => {
+const ListMode = ({
+  bindList,
+  totalCount,
+  unitSize,
+  pageNum,
+  setPageNum,
+  pgPgNum,
+  pgPgSize,
+}) => {
+  /******************************************* 
+    [ 전달변수 ] - 2~5까지 4개는 페이징전달변수
+    1. bindList : 리스트 결과 요소
+    2. totalCount : 전체 레코드 개수
+    3. unitSize : 게시판 리스트 당 레코드 개수
+    4. pageNum : 현재 페이지번호
+    5. setPageNum : 현재 페이지번호 변경 메서드
+  *******************************************/
+
+  // 코드리턴구역 //////////////////////
   return (
     <>
       <div className="selbx">
@@ -497,7 +470,16 @@ const ListMode = ({ bindList, pagingList }) => {
         <tfoot>
           <tr>
             <td colSpan="5" className="paging">
-              {pagingList()}
+              {
+                <PagingList
+                  totalCount={totalCount}
+                  unitSize={unitSize}
+                  pageNum={pageNum}
+                  setPageNum={setPageNum}
+                  pgPgNum={pgPgNum}
+                  pgPgSize={pgPgSize}
+                />
+              }
             </td>
           </tr>
         </tfoot>
@@ -509,7 +491,8 @@ const ListMode = ({ bindList, pagingList }) => {
 /****************************************** 
         읽기 모드 서브 컴포넌트
 ******************************************/
-const ReadMode = ({ selRecord }) => {
+const ReadMode = ({ selRecord, sts }) => {
+  // selRecord - 현재글정보 / sts - 로그인 사용자정보
   // 읽기 모드가 호출되었다는 것은
   // 리스트의 제목이 클릭되었다는 것을 의미!
   // 따라서 현재 레코드 값도 저장되었다는 의미!
@@ -527,16 +510,62 @@ const ReadMode = ({ selRecord }) => {
   // -> 쿠키는 삭제방법이 즉각적이지 못하므로 제외!
   // -> 참조변수는 새로고침하면 초기화 되므로 제외!
 
-  // 1.없으면 세션스 만들기
-  if(!sessionStorage.getItem("bd-rec")){
-    sessionStorage.setItem("bd-rec","[]");
+  // 1.세션스 없으면 세션스 만들기
+  if (!sessionStorage.getItem("bd-rec")) {
+    sessionStorage.setItem("bd-rec", "[]");
   }
   // 2.세션스에 글번호 저장하기
+
+  // (1) 세션스 파싱하여 변수할당
   let rec = JSON.parse(sessionStorage.getItem("bd-rec"));
 
-  rec.push(data.idx);
+  // (2) 기존 배열값에 현재글번호 존재여부검사하기
+  // 결과가 true이면 조회수를 증가하지 않는다!
+  let isRec = rec.includes(data.idx);
+  console.log("이미있니?", isRec);
 
-  sessionStorage.setItem("bd-rec",JSON.stringify(rec));
+  // (3) 로그인한 사용자의 글이면 isRec값을 true처리
+  // sts가 true이면 즉, 로그인한 사용자이면 처리
+  if (sts) {
+    console.log(
+      "선택글 아이디:",
+      data.uid,
+      "로그인사용자 아이디:",
+      JSON.parse(sts).uid
+    );
+    // 글쓴이 아이디와 로그인사용자 아이디가 같은가?
+    if (data.uid == JSON.parse(sts).uid) {
+      // 글번호저장과 조회수증가를 하지 않도록 isRec값을
+      // true로 변경한다!
+      isRec = true;
+    } //// if ///
+  } /// if ///
+
+  // (4) 배열에 값 추가하기 : 기존값에 없으면 넣기!
+  if (!isRec) rec.push(data.idx);
+
+  // (5) 다시 세션스에 저장하기
+  sessionStorage.setItem("bd-rec", JSON.stringify(rec));
+
+  // 3. 글번호 증가하기
+  // -> 게시판 원본 데이터에 조회수 업데이트하기
+  if (!isRec) {
+    // (1) 게시판 로컬스 데이터 파싱
+    let bdData = JSON.parse(localStorage.getItem("board-data"));
+
+    // (2) 게시판 해당데이터 cnt값 증가
+    // 조건: isRec값이 false일때
+    bdData.some((v) => {
+      if (v.idx == data.idx) {
+        // 기존값에 1증가하여 넣기
+        v.cnt = Number(v.cnt) + 1;
+        return true;
+      } /// if ///
+    }); /// some ////
+
+    // (3) 다시 로컬스에 저장하기
+    localStorage.setItem("board-data", JSON.stringify(bdData));
+  } /// if : (!isRec) ///
 
   /////// 코드리턴 구역 ///////////
   return (
@@ -710,3 +739,217 @@ const ModifyMode = ({ selRecord }) => {
     </>
   );
 }; ///////////// ModifyMode //////////////////
+
+/****************************************** 
+    PagingList : 페이징 기능 컴포넌트
+******************************************/
+const PagingList = ({
+  totalCount,
+  unitSize,
+  pageNum,
+  setPageNum,
+  pgPgNum,
+  pgPgSize,
+}) => {
+  /******************************************* 
+    [ 전달변수 ]
+    1. totalCount : 전체 레코드 개수
+    2. unitSize : 게시판 리스트 당 레코드 개수
+    3. pageNum : 현재 페이지번호
+    4. setPageNum : 현재 페이지번호 변경 메서드
+  *******************************************/
+  // 전체 페이징 개수 : 전체레코드수 / 페이지당개수
+  // 유의점: 나머지가 있는지 검사해서 있으면 +1
+
+  // 1. 페이징 개수
+  let pagingCount = Math.floor(totalCount.current / unitSize);
+
+  // 나머지가 있으면 다음 페이지가 필요함!
+  // 나머지가 0이 아니면 1더하기
+  if (totalCount.current % unitSize > 0) {
+    pagingCount++;
+  }
+
+  // console.log(
+  //   "페이징개수:",
+  //   pagingCount,
+  //   "나머지개수:",
+  //   totalCount.current % unitSize
+  // );
+
+  // [ 페이징의 페이징 하기 ]
+  // [1] 페이징 블록
+  // - 한 페이징블록수 : pgPgSize 변수(4개)
+  // [2] 페이징의 페이징 현재번호
+  // - pgPgNum 변수(기본값1)
+
+  // 2. 페이지의 페이징 한계수 구하기
+  // (1) 페이징의 페이징 개수
+  // 전체 페이징 개수 / 페이징의 페이징 단위수
+  let pgPgCount = Math.floor(pagingCount / pgPgSize);
+
+  // 페이징 개수를 페이징의 페이징 단위수로
+  // 나눈 나머지가 있으면 다음 페이징의 번호가 필요함!
+  // 나머지가 0이 아니면 1더하기
+  if (pagingCount % pgPgSize > 0) {
+    pgPgCount++;
+  } /// if ////
+
+  console.log("페이징의 페이징개수:", pgPgCount);
+
+  // (2) 리스트 시작값 / 한계값 구하기
+  // 시작값 : (페페넘-1)*페페단
+  let initNum = (pgPgNum.current - 1) * pgPgSize;
+  // 한계값 : 페페넘*페페단
+  let limitNum = pgPgNum.current * pgPgSize;
+
+  console.log("시작값:", initNum, "/한계값:", limitNum);
+
+  ///// [ 링크코드 만들기 ] /////////////////
+  const pgCode = [];
+
+  // [ 페이징의 페이징에 맞게 돌면서 코드만들기 ]
+  // 계산된 시작값, 한계값을 기준으로 코드를 생성!
+  // [1] for : 페이징 리스트 출력 시작 ///////////
+  for (let i = initNum; i < limitNum; i++) {
+    // 전체 페이징 번호를 만드는 i가 페이징 전체개수보다
+    // 클 경우 나가야함!
+    if (i >= pagingCount) break;
+
+    pgCode.push(
+      <Fragment key={i}>
+        {
+          // 페이징번호와 현재페이지번호 일치시 b요소
+          i + 1 === pageNum ? (
+            <b>{i + 1}</b>
+          ) : (
+            // 불일치시에 모드 링크코드
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setPageNum(i + 1);
+              }}
+            >
+              {i + 1}
+            </a>
+          )
+        }
+        {/* 사이에 바넣기 */}
+        {i + 1 !== limitNum && i + 1 < pagingCount && " | "}
+      </Fragment>
+    );
+  } ////// [1] for : 페이징 리스트 출력 끝 /////
+
+  {
+    // [2] 페이징 이전블록 이동버튼 만들기
+    // 기준: 1페이지가 아니면 보여라!
+    // 배열 맨앞추가는 unshift()
+    pgCode.unshift(
+      pgPgNum.current === 1 ? (
+        ""
+      ) : (
+        // for문으로 만든 리스트에 추가하는 것이므로
+        // key 값이 있어야함! 단, 중복되면 안됨!
+        // 중복안되는 수인 마이너스로 셋팅한다!
+        <Fragment key={-1}>
+          &nbsp;&nbsp;
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              goPaging(-1, false);
+            }}
+            title="move previous end"
+            style={{ marginLeft: "10px" }}
+          >
+            «
+          </a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              goPaging(-1, true);
+            }}
+            title="move previous"
+            style={{ marginLeft: "10px" }}
+          >
+            ◀
+          </a>
+          &nbsp;&nbsp;
+        </Fragment>
+      )
+    );
+  }
+  {
+    // [3] 페이징 다음블록 이동버튼 만들기
+    // 기준: 끝페이지가 아니면 보여라!
+    // 배열 맨뒤추가는 push()
+    pgCode.push(
+      pgPgNum.current === pgPgCount ? (
+        ""
+      ) : (
+        // for문으로 만든 리스트에 추가하는 것이므로
+        // key 값이 있어야함! 단, 중복되면 안됨!
+        // 중복안되는 수인 마이너스로 셋팅한다!
+        <Fragment key={-2}>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              goPaging(1, true);
+            }}
+            title="move next"
+            style={{ marginLeft: "10px" }}
+          >
+            ▶
+          </a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              goPaging(1, false);
+            }}
+            title="move next end"
+            style={{ marginLeft: "10px" }}
+          >
+            »
+          </a>
+        </Fragment>
+      )
+    );
+  }
+
+  // [ 블록이동함수 ] //////
+  const goPaging = (dir, opt) => {
+    // dir - 이동방향(오른쪽:+1, 왼쪽:-1)
+    // opt - 일반이동(true), 끝이동(false)
+    console.log("방향:", dir, "/옵션:", opt);
+
+    // 새 페이징의 페이징번호
+    let newPgPgNum;
+
+    // 1. opt 옵션에 따라 페이징의 페이징이동번호 만들기
+    // (1) 일반 페이징이동은 현재페이징번호에 증감
+    if (opt) newPgPgNum = pgPgNum.current + dir;
+    // (2) 끝 페이징이동은
+    // 오른쪽(1)일 경우 맨끝 페이징번호로 이동(pgPgCount)
+    // 왼쪽(-1)일 경우 맨앞 페이징번호로 이동(1)
+    else newPgPgNum = dir == 1 ? pgPgCount : 1;
+
+    // 2.페이징의 페이징 번호 업데이트하기
+    pgPgNum.current = newPgPgNum;
+
+    // 3. 새로운 페이지의 페이징 구역의
+    // 첫번째 페이지번호 업데이트하기
+    // -> 항상 이전블록의 마지막번호 + 1 이 다음페이지 첫번호임!
+    // 이동할 페이지번호
+    let landingPage = (pgPgNum.current - 1) * pgPgSize + 1;
+    console.log("도착페이지번호:", landingPage);
+    // 페이지번호 상태변수 업데이트로 전체 리랜더링!!!
+    setPageNum(landingPage);
+  }; //////////// goPaging /////////////
+
+  // 코드리턴
+  return pgCode;
+}; ////////// pagingList 함수 //////////////

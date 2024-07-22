@@ -10,7 +10,7 @@ import $ from "jquery";
 // 회원가입 CSS 불러오기
 import "../../css/member.scss";
 import AddressInput from "../modules/AddressInput";
-import Modal from "react-modal";
+// import Modal from "react-modal";
 
 function Member() {
   // 라우터 이동 네비게이트
