@@ -9,10 +9,11 @@ import { addComma } from "../../js/func/common_fn";
 import $ from "jquery";
 
 function CartList(props) {
+
   // 강제 리랜더링을 위한 상태변수
-  const [force, setForce] = useState(false);
+  const [force,setForce] = useState(false);
   // -> 불린값을 넣어놓고 강제 리랜더링이 필요한 경우
-  // setForce(!force) -> 기존 불린값을 반대로 넣어준다
+  // setForce(!force) -> 기존 불린값을 반대로 넣어준다!
 
   // 컨텍스트 사용
   const myCon = useContext(pCon);
@@ -42,9 +43,9 @@ function CartList(props) {
     return result;
   }; ////////// totalFn ///////////
 
-  // 화면랜더링 구역 : dataCnt, force의존성 /////////
+  // 화면랜더링 구역 : dataCnt, force 의존성 /////////
   useEffect(() => {
-    console.log("dataCnt, force 의존성");
+    console.log("dataCnt,force의존성");
     // 카트버튼 나타나기
     $("#mycart")
       .removeClass("on")
@@ -56,8 +57,9 @@ function CartList(props) {
 
     // 총합계 찍기 : 3자리마다 콤마함수호출도함
     $(".total-num").text(addComma(totalFn()));
-  }, [dataCnt, force]); //-> 숫자값은 값할당이므로 변함없음!
-  // 의존성 추가 -> 강제 리랜더링 상태변수도 등록해준다.
+  }, [dataCnt,force]); //-> 숫자값은 값할당이므로 변함없음!
+ // 의존성 추가-> 강제 리랜더링 상태변수도 등록해준다!
+
   // },[selData]); //-> 리랜더링시 객체주소값이 변경되어
   // 매번 새로운값이 업데이트 되기때문에 부적격임!
 
@@ -150,7 +152,13 @@ function CartList(props) {
                           <td>{i + 1}</td>
                           {/* 상품이미지 */}
                           <td>
-                            <img src={process.env.PUBLIC_URL + `/images/goods/${v.cat}/${v.ginfo[0]}.png`} alt="item" />
+                            <img
+                              src={
+                                process.env.PUBLIC_URL +
+                                `/images/goods/${v.cat}/${v.ginfo[0]}.png`
+                              }
+                              alt="item"
+                            />
                           </td>
                           <td>{v.ginfo[1]}</td>
                           <td>{v.ginfo[2]} </td>
@@ -174,7 +182,9 @@ function CartList(props) {
                                     /// 1. 클릭시 실제 데이터 수량변경 반영하기
                                     // 대상: selData -> 배열변환데이터
                                     // i는 배열순번임!(map 돌때 i가 들어옴)
-                                    selData[i].cnt = $(e.currentTarget).siblings(".item-cnt").val();
+                                    selData[i].cnt = $(e.currentTarget)
+                                      .siblings(".item-cnt")
+                                      .val();
                                     console.log("수량업데이트:", selData);
                                     // 2. 데이터 문자화하기 : 변경된 원본을 문자화
                                     let res = JSON.stringify(selData);
@@ -184,18 +194,22 @@ function CartList(props) {
 
                                     // 4. 카트리스트 전역상태변수 변경
                                     myCon.setLocalsCart(res);
+                                    
+                                    // 5. 반영버튼 숨기기
+                                    $(e.currentTarget)
+                                    .hide() // 숨기기
+                                    .next() // "취소"버튼
+                                    .hide(); // 숨기기
 
                                     // -> 아래 6번은 리랜더링 되면 해결됨
-                                    // 그리고 데이터변경 sync가 맞지 않는 경우가 생기게 됨
+                                    // 그리고 데이터변경 sync가 맞지 않는 경우가
+                                    // 생기게 됨!
                                     // 데이터를 변경했음에도 리랜더링이 안된 이유는
-                                    // 배열의 객체값이 변경되거나 배열 순서를 변경한 경우
-                                    // 배열이 변경되었다고 체크되지 않는다.
-                                    // 따라서 이때 강제 리랜더링이 필요하다
+                                    // 배열의 객체값이 변경되거나 배열 순서를 변경한
+                                    // 경우 배열이 변경되었다고 체크되지 않는다!
+                                    // 따라서 이때 강제 리랜더링이 필요하다!
                                     setForce(!force);
-
-                                    // 5. 반영버튼 숨기기
-                                    $(e.currentTarget).css({ width: "0" });
-
+                                    
                                     // 6. 전체 총합계 계산 다시하기
                                     // $(".total-num").text(addComma(totalFn()));
                                   }}
@@ -205,25 +219,31 @@ function CartList(props) {
                                 {/* 취소버튼 */}
                                 <button
                                   className="btn-cancel"
-                                  onClick={(e) => {
+                                  onClick={(e)=>{
                                     $(e.currentTarget)
-                                      .css({ width: "0" })
-                                      .prev() //반영버튼
-                                      .css({ width: "auto" })
-                                      .siblings("input")
-                                      .val(v.cnt);
-                                    //취소버튼 자신의 css를 변경하고 안보이게
-                                    //형제요소 중 input을 찾아
-                                    //값으로 기존값인 v.cnt를 넣는다.
+                                    .hide()
+                                    .prev() // "반영"버튼
+                                    .hide()
+                                    .siblings("input")
+                                    .val(v.cnt);
+                                    // 취소버튼 자신의
+                                    // css를 변경하고(안보이게)
+                                    // 이전버튼인 "반영"버튼도
+                                    // 안보이게 하고
+                                    // 형제요소중 input을 찾아
+                                    // 값으로 기존값인 v.cnt를 넣는다!
                                   }}
-                                >
+>
+                                  
                                   취소
                                 </button>
                                 <b
                                   className="btn-cnt"
                                   onClick={(e) => {
                                     // 업데이트 대상(input박스)
-                                    let tg = $(e.currentTarget).siblings("input");
+                                    let tg = $(e.currentTarget).siblings(
+                                      "input"
+                                    );
 
                                     // 입력창의 blur이벤트 발생을 위해
                                     // 강제로 포커스를 준다!
@@ -244,27 +264,50 @@ function CartList(props) {
                                     else if (btnAlt == "감소") {
                                       // tg값을 읽어와서 1을 뺀다!
                                       // 단, 1보다 작아지지 않게 한다!
-                                      tg.val(Number(tg.val()) == 1 ? 1 : Number(tg.val()) - 1);
+                                      tg.val(
+                                        Number(tg.val()) == 1
+                                          ? 1
+                                          : Number(tg.val()) - 1
+                                      );
                                     } ///// else if ////////
 
-                                    // 클릭시 반영, 취소 버튼 나타나기
+                                    // 클릭시 반영,취소버튼 나타나기
                                     $(e.currentTarget)
                                       .siblings(".btn-insert")
-                                      .css({ width: "auto" })
-
+                                      .show()
                                       .next() // 취소버튼
-                                      .css({ width: "auto" });
+                                      .show();
                                   }}
                                 >
-                                  <img src={process.env.PUBLIC_URL + "/images/cnt_up.png"} alt="증가" />
-                                  <img src={process.env.PUBLIC_URL + "/images/cnt_down.png"} alt="감소" />
+                                  <img
+                                    src={
+                                      process.env.PUBLIC_URL +
+                                      "/images/cnt_up.png"
+                                    }
+                                    alt="증가"
+                                  />
+                                  <img
+                                    src={
+                                      process.env.PUBLIC_URL +
+                                      "/images/cnt_down.png"
+                                    }
+                                    alt="감소"
+                                  />
                                 </b>
                               </span>
                             </div>
                           </td>
                           <td>
-                            <span className="sum-num1">{addComma(v.ginfo[3] * v.cnt)}</span>원{/* 계산된 합계금액 숫자만 히든필드에 넣어놓고 총합계 계산에 사용함! */}
-                            <input className="sum-num2" type="hidden" defaultValue={v.ginfo[3] * v.cnt} />
+                            <span className="sum-num1">
+                              {addComma(v.ginfo[3] * v.cnt)}
+                            </span>
+                            원
+                            {/* 계산된 합계금액 숫자만 히든필드에 넣어놓고 총합계 계산에 사용함! */}
+                            <input
+                              className="sum-num2"
+                              type="hidden"
+                              defaultValue={v.ginfo[3] * v.cnt}
+                            />
                           </td>
                           <td>
                             {/* 데이터 삭제기능 버튼 */}
@@ -272,7 +315,11 @@ function CartList(props) {
                               className="cfn"
                               onClick={() => {
                                 // confirm()의 "확인"클릭시 true
-                                if (window.confirm("정말정말정말로 지우시겠습니까? 할인도하는데???")) {
+                                if (
+                                  window.confirm(
+                                    "정말정말정말로 지우시겠습니까? 할인도하는데???"
+                                  )
+                                ) {
                                   // console.log("삭제함!!!");
                                   // console.log("현재객체:",selData);
                                   // console.log("지울순번:",i);
@@ -296,7 +343,8 @@ function CartList(props) {
                                   // 5. 데이터개수가 0이면 카트리스트
                                   // 상태변수를 false로 변경하여
                                   // 카트리스트 출력을 없앤다!
-                                  if (selData.length == 0) myCon.setCartSts(false);
+                                  if (selData.length == 0)
+                                    myCon.setCartSts(false);
 
                                   // let aa = [];
                                   // aa.splice(지울순번,지울개수)
@@ -346,7 +394,11 @@ function CartList(props) {
         }}
       >
         {/* 카트이미지 */}
-        <img src={process.env.PUBLIC_URL + "/images/mycart.gif"} title={dataCnt + "개의 상품이 있습니다"} alt="장바구니" />
+        <img
+          src={process.env.PUBLIC_URL + "/images/mycart.gif"}
+          title={dataCnt + "개의 상품이 있습니다"}
+          alt="장바구니"
+        />
         {/* 카트상품개수 출력박스 */}
         <div className="cntBx">{dataCnt}</div>
       </div>
