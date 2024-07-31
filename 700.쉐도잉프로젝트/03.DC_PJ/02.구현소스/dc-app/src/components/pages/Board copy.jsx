@@ -1,5 +1,5 @@
 // 오피니언 페이지 컴포넌트 ///
-import { Fragment, useContext, useReducer, useRef, useState } from "react";
+import { Fragment, useContext, useRef, useState } from "react";
 
 // 사용자 기본정보 생성 함수
 // import { initData } from "../func/mem_fn";
@@ -37,9 +37,7 @@ export default function Board() {
   const baseData = JSON.parse(localStorage.getItem("board-data"));
 
   // 원본 데이터에 정렬 적용하기 : 내림차순
-  baseData.sort((a, b) =>
-    Number(a.idx) > Number(b.idx) ? -1 : Number(a.idx) < Number(b.idx) ? 1 : 0
-  );
+  baseData.sort((a, b) => (Number(a.idx) > Number(b.idx) ? -1 : Number(a.idx) < Number(b.idx) ? 1 : 0));
 
   ///////// [ 상태관리 변수 ] //////////////
   // [1] 페이지 번호
@@ -83,100 +81,6 @@ export default function Board() {
   const unitSize = 4;
   // 페이징의 페이징 개수 : 한번에 보여줄 페이징개수
   const pgPgSize = 3;
-
-
-  // 검색 기능을 위한 리듀서 함수 ////
-  const reducerFn = (state, action) => {
-    // 1. 구조분해 할당으로 객체의 배열값 받기
-    const [ key, ele ] = action.type;
-    // 배열값 구조 : [구분문자열, 이벤트발생대상요소]
-    // action.type은 리듀서 호출시 보낸 객체값(배열임!)
-    console.log("key:",key, "\nele:",ele);
-    // 2. key값에 따라 분기하기 
-    switch (key) {
-      // (1) 검색일 경우 실행코드
-      case "search":
-        {
-          // 검색기준값 읽어오기
-          let creteria = $(ele).siblings(".cta").val();
-          console.log("기준값:", creteria);
-          // 검색어 읽어오기
-          let txt = $(ele).prev().val();
-          console.log(typeof txt, "/검색어:", txt);
-          // input값은 안쓰면 빈스트링이 넘어옴!
-          if (txt != "") {
-            console.log("검색해!");
-            // [검색기준,검색어] -> setKeyword 업데이트
-            setKeyword([creteria, txt]);
-            // 검색후엔 첫페이지로 보내기
-            setPageNum(1);
-            // 검색후엔 페이지의 페이징 번호 초기화(1)
-            pgPgNum.current = 1;
-          }
-          // 빈값일 경우
-          else {
-            alert("Please enter a keyword!");
-          }
-        }
-        // 리턴코드값은 리듀서 변수에 할당!
-        return true;
-        // (2) 전체리스트 돌아기기 실행코드
-        case "back" : 
-        {
-          // 검색어 초기화
-          setKeyword(["", ""]);
-          // 검색어삭제(input이니까 val())
-          $(ele).siblings("#stxt").val("");
-          // 검색항목초기화
-          $(ele).siblings("#cta").val("tit");
-          // 정렬초기화
-          setSort(1);
-          // 정렬항목초기화
-          setSortCta("idx");
-          // 첫페이지번호변경
-          setPageNum(1);
-        }
-        // 리턴코드값은 리듀서 변수에 할당!
-        return false;
-    }
-
-  };
-
-  // 검색기능 지원 후크 리듀서 : useReducer
-  const [state, dispach] = useReducer(reducerFn, null);
-
-  /*********************************************** 
- * [ 리듀서 후크 : useReducer ]
- * 복잡한 리액트 변수값/코드 처리를 해주는 후크
- *******************************************
-function 리듀서함수(리듀서변수, 호출때보낸객체) {
-  switch (호출때보낸객체.type) {
-    case 값1:
-      처리코드;
-      return 처리값;
-    case 값2:
-      처리코드;
-      return 처리값;
-    default:
-      처리코드;
-      return 처리값;
-  }
-}
-
-function 컴포넌트() {
-  const [리듀서변수, 호출메서드] = 
-  useReducer(리듀서함수, 리듀서변수초기값);
-
-  return(
-    <요소 on이벤트={()=>{
-      호출메서드({ type: 값 });      
-    } />
-  );
-} ///// 컴포넌트끝 ///////
-
-
-
-
 
   /********************************************** 
         함수명: bindList
@@ -224,9 +128,7 @@ function 컴포넌트() {
         : // "tit"는 문자형이고 소문자로 비교
           x[sortCta].toLowerCase();
 
-    orgData.sort((a, b) =>
-      chgVal(a) > chgVal(b) ? -1 * sort : chgVal(a) < chgVal(b) ? 1 * sort : 0
-    );
+    orgData.sort((a, b) => (chgVal(a) > chgVal(b) ? -1 * sort : chgVal(a) < chgVal(b) ? 1 * sort : 0));
 
     // 3. 일부 데이터만 선택
     // 예시로 0번부터 9번까지만 선택
@@ -560,7 +462,6 @@ function 컴포넌트() {
             setSort={setSort}
             sortCta={sortCta}
             setSortCta={setSortCta}
-            dispach={dispach}
           />
         )
       }
@@ -571,9 +472,7 @@ function 컴포넌트() {
       {
         // 3. 쓰기 모드일 경우 로그인 정보 보내기
         // sts값은 문자열이므로 파싱하여 객체로 보냄
-        mode == "W" && (
-          <WriteMode sts={JSON.parse(sts)} updateFileInfo={updateFileInfo} />
-        )
+        mode == "W" && <WriteMode sts={JSON.parse(sts)} updateFileInfo={updateFileInfo} />
       }
       {
         // 4. 수정 모드일 경우 상세보기 출력하기
@@ -587,9 +486,7 @@ function 컴포넌트() {
             <td>
               {
                 // 1. 글쓰기 버튼은 로그인상태이고 "L"이면출력
-                mode == "L" && sts && (
-                  <button onClick={clickButton}>Write</button>
-                )
+                mode == "L" && sts && <button onClick={clickButton}>Write</button>
               }
               {
                 // 2. 읽기상태 "R" 일 경우
@@ -609,11 +506,7 @@ function 컴포넌트() {
                     // 현재글은 selRecord 참조변수에 저장됨
                     // 글정보 항목중 uid 가 사용자 아이디임!
                     // 로그인 상태정보하위의 sts.uid와 비교함
-                    mode == "R" &&
-                      sts &&
-                      JSON.parse(sts).uid == selRecord.current.uid && (
-                        <button onClick={clickButton}>Modify</button>
-                      )
+                    mode == "R" && sts && JSON.parse(sts).uid == selRecord.current.uid && <button onClick={clickButton}>Modify</button>
                   }
                 </>
               }
@@ -647,22 +540,7 @@ function 컴포넌트() {
 /****************************************** 
         리스트 모드 서브 컴포넌트
 ******************************************/
-const ListMode = ({
-  bindList,
-  totalCount,
-  unitSize,
-  pageNum,
-  setPageNum,
-  pgPgNum,
-  pgPgSize,
-  keyword,
-  setKeyword,
-  sort,
-  setSort,
-  sortCta,
-  setSortCta,
-  dispach,
-}) => {
+const ListMode = ({ bindList, totalCount, unitSize, pageNum, setPageNum, pgPgNum, pgPgSize, keyword, setKeyword, sort, setSort, sortCta, setSortCta }) => {
   /******************************************* 
     [ 전달변수 ] - 2~5까지 4개는 페이징전달변수
     1. bindList : 리스트 결과 요소
@@ -690,13 +568,7 @@ const ListMode = ({
           <option value="unm">Writer</option>
         </select>
 
-        <select
-          name="sel"
-          id="sel"
-          className="sel"
-          onChange={() => setSort(sort * -1)}
-          value={sort == 1 ? "0" : "1"}
-        >
+        <select name="sel" id="sel" className="sel" onChange={() => setSort(sort * -1)} value={sort == 1 ? "0" : "1"}>
           <option value="0">Descending</option>
           <option value="1">Ascending</option>
         </select>
@@ -716,10 +588,26 @@ const ListMode = ({
         <button
           className="sbtn"
           onClick={(e) => {
-            // 리듀서 메서드 호출
-            dispach({type:["search",e.target]});
-            // 보낼값구성 : [구분문자열, 이벤트발생요소]
-
+            // 검색기준값 읽어오기
+            let creteria = $(e.target).siblings(".cta").val();
+            console.log("기준값:", creteria);
+            // 검색어 읽어오기
+            let txt = $(e.target).prev().val();
+            console.log(typeof txt, "/검색어:", txt);
+            // input값은 안쓰면 빈스트링이 넘어옴!
+            if (txt != "") {
+              console.log("검색해!");
+              // [검색기준,검색어] -> setKeyword 업데이트
+              setKeyword([creteria, txt]);
+              // 검색후엔 첫페이지로 보내기
+              setPageNum(1);
+              // 검색후엔 페이지의 페이징 번호 초기화(1)
+              pgPgNum.current = 1;
+            }
+            // 빈값일 경우
+            else {
+              alert("Please enter a keyword!");
+            }
           }}
         >
           Search
@@ -730,9 +618,18 @@ const ListMode = ({
             <button
               className="back-total-list"
               onClick={(e) => {
-                // 리듀서 메서드 호출
-                dispach({type:["back",e.target]});
-                // 보낼값구성 : [구분문자열, 이벤트발생요소]
+                // 검색어 초기화
+                setKeyword(["", ""]);
+                // 검색어삭제(input이니까 val())
+                $(e.currentTarget).siblings("#stxt").val("");
+                // 검색항목초기화
+                $(e.currentTarget).siblings("#cta").val("tit");
+                // 정렬초기화
+                setSort(1);
+                // 정렬항목초기화
+                setSortCta("idx");
+                // 첫페이지번호변경
+                setPageNum(1);
               }}
             >
               Back to Total List
@@ -741,14 +638,7 @@ const ListMode = ({
         }
 
         {/* 정렬기준선택박스 */}
-        <select
-          name="sort_cta"
-          id="sort_cta"
-          className="sort_cta"
-          onChange={(e) => setSortCta(e.currentTarget.value)}
-          style={{ float: "right", translate: "0 5px" }}
-          value={sortCta}
-        >
+        <select name="sort_cta" id="sort_cta" className="sort_cta" onChange={(e) => setSortCta(e.currentTarget.value)} style={{ float: "right", translate: "0 5px" }} value={sortCta}>
           <option value="idx">Recent</option>
           <option value="tit">Title</option>
         </select>
@@ -769,16 +659,7 @@ const ListMode = ({
             <td colSpan="5" className="paging">
               {
                 // 데이터 개수가 0이상일때만 출력
-                totalCount.current > 0 && (
-                  <PagingList
-                    totalCount={totalCount}
-                    unitSize={unitSize}
-                    pageNum={pageNum}
-                    setPageNum={setPageNum}
-                    pgPgNum={pgPgNum}
-                    pgPgSize={pgPgSize}
-                  />
-                )
+                totalCount.current > 0 && <PagingList totalCount={totalCount} unitSize={unitSize} pageNum={pageNum} setPageNum={setPageNum} pgPgNum={pgPgNum} pgPgSize={pgPgSize} />
               }
             </td>
           </tr>
@@ -827,12 +708,7 @@ const ReadMode = ({ selRecord, sts }) => {
   // (3) 로그인한 사용자의 글이면 isRec값을 true처리
   // sts가 true이면 즉, 로그인한 사용자이면 처리
   if (sts) {
-    console.log(
-      "선택글 아이디:",
-      data.uid,
-      "로그인사용자 아이디:",
-      JSON.parse(sts).uid
-    );
+    console.log("선택글 아이디:", data.uid, "로그인사용자 아이디:", JSON.parse(sts).uid);
     // 글쓴이 아이디와 로그인사용자 아이디가 같은가?
     if (data.uid == JSON.parse(sts).uid) {
       // 글번호저장과 조회수증가를 하지 않도록 isRec값을
@@ -879,37 +755,19 @@ const ReadMode = ({ selRecord, sts }) => {
           <tr>
             <td>Name</td>
             <td>
-              <input
-                type="text"
-                className="name"
-                size="20"
-                readOnly
-                value={data.unm}
-              />
+              <input type="text" className="name" size="20" readOnly value={data.unm} />
             </td>
           </tr>
           <tr>
             <td>Title</td>
             <td>
-              <input
-                type="text"
-                className="subject"
-                size="60"
-                readOnly
-                value={data.tit}
-              />
+              <input type="text" className="subject" size="60" readOnly value={data.tit} />
             </td>
           </tr>
           <tr>
             <td>Content</td>
             <td>
-              <textarea
-                className="content"
-                cols="60"
-                rows="10"
-                readOnly
-                value={data.cont}
-              ></textarea>
+              <textarea className="content" cols="60" rows="10" readOnly value={data.cont}></textarea>
             </td>
           </tr>
           <tr>
@@ -919,19 +777,12 @@ const ReadMode = ({ selRecord, sts }) => {
                 // 첨부파일 데이터가 빈값이 아닐때만 출력!
                 data.att != "" && (
                   <>
-                    <a
-                      href={process.env.PUBLIC_URL + "/uploads/" + data.att}
-                      download={data.att}
-                    >
+                    <a href={process.env.PUBLIC_URL + "/uploads/" + data.att} download={data.att}>
                       {data.att}
                     </a>
                     {imgExt.includes(data.att.split(".")[1]) && (
                       <div>
-                        <img
-                          src={process.env.PUBLIC_URL + "/uploads/" + data.att}
-                          alt="image"
-                          style={{ width: "100%" }}
-                        />
+                        <img src={process.env.PUBLIC_URL + "/uploads/" + data.att} alt="image" style={{ width: "100%" }} />
                       </div>
                     )}
                   </>
@@ -1033,35 +884,19 @@ const ModifyMode = ({ selRecord }) => {
           <tr>
             <td>Name</td>
             <td>
-              <input
-                type="text"
-                className="name"
-                size="20"
-                readOnly
-                value={data.unm}
-              />
+              <input type="text" className="name" size="20" readOnly value={data.unm} />
             </td>
           </tr>
           <tr>
             <td>Title</td>
             <td>
-              <input
-                type="text"
-                className="subject"
-                size="60"
-                defaultValue={data.tit}
-              />
+              <input type="text" className="subject" size="60" defaultValue={data.tit} />
             </td>
           </tr>
           <tr>
             <td>Content</td>
             <td>
-              <textarea
-                className="content"
-                cols="60"
-                rows="10"
-                defaultValue={data.cont}
-              ></textarea>
+              <textarea className="content" cols="60" rows="10" defaultValue={data.cont}></textarea>
             </td>
           </tr>
           <tr>
@@ -1071,19 +906,12 @@ const ModifyMode = ({ selRecord }) => {
                 // 첨부파일 데이터가 빈값이 아닐때만 출력!
                 data.att != "" && (
                   <>
-                    <a
-                      href={process.env.PUBLIC_URL + "/uploads/" + data.att}
-                      download={data.att}
-                    >
+                    <a href={process.env.PUBLIC_URL + "/uploads/" + data.att} download={data.att}>
                       {data.att}
                     </a>
                     {imgExt.includes(data.att.split(".")[1]) && (
                       <div>
-                        <img
-                          src={process.env.PUBLIC_URL + "/uploads/" + data.att}
-                          alt="image"
-                          style={{ width: "100%" }}
-                        />
+                        <img src={process.env.PUBLIC_URL + "/uploads/" + data.att} alt="image" style={{ width: "100%" }} />
                       </div>
                     )}
                   </>
@@ -1100,14 +928,7 @@ const ModifyMode = ({ selRecord }) => {
 /****************************************** 
     PagingList : 페이징 기능 컴포넌트
 ******************************************/
-const PagingList = ({
-  totalCount,
-  unitSize,
-  pageNum,
-  setPageNum,
-  pgPgNum,
-  pgPgSize,
-}) => {
+const PagingList = ({ totalCount, unitSize, pageNum, setPageNum, pgPgNum, pgPgSize }) => {
   /******************************************* 
     [ 전달변수 ]
     1. totalCount : 전체 레코드 개수
@@ -1127,14 +948,7 @@ const PagingList = ({
     pagingCount++;
   }
 
-  console.log(
-    "페이징개수:",
-    pagingCount,
-    "전체레코드수:",
-    totalCount.current,
-    "나머지개수:",
-    totalCount.current % unitSize
-  );
+  console.log("페이징개수:", pagingCount, "전체레코드수:", totalCount.current, "나머지개수:", totalCount.current % unitSize);
 
   // [ 페이징의 페이징 하기 ]
   // [1] 페이징 블록
@@ -1404,13 +1218,7 @@ const AttachBox = ({ saveFile }) => {
   */
   // 리턴 코드 //////////////////////
   return (
-    <label
-      className="info-view"
-      onDragEnter={controlDragEnter}
-      onDragLeave={controlDragLeave}
-      onDragOver={controlDragOver}
-      onDrop={controlDrop}
-    >
+    <label className="info-view" onDragEnter={controlDragEnter} onDragLeave={controlDragLeave} onDragOver={controlDragOver} onDrop={controlDrop}>
       {/* 파일을 클릭하여 선택창이 뜰때 파일을 선택하면
       현재 상태가 변경되기때문에 onChange이벤트 속성을씀! */}
       <input type="file" className="file" onChange={changeUpload} />
