@@ -37,7 +37,9 @@ export default function Board() {
   const baseData = JSON.parse(localStorage.getItem("board-data"));
 
   // 원본 데이터에 정렬 적용하기 : 내림차순
-  baseData.sort((a, b) => (Number(a.idx) > Number(b.idx) ? -1 : Number(a.idx) < Number(b.idx) ? 1 : 0));
+  baseData.sort((a, b) =>
+    Number(a.idx) > Number(b.idx) ? -1 : Number(a.idx) < Number(b.idx) ? 1 : 0
+  );
 
   ///////// [ 상태관리 변수 ] //////////////
   // [1] 페이지 번호
@@ -128,7 +130,9 @@ export default function Board() {
         : // "tit"는 문자형이고 소문자로 비교
           x[sortCta].toLowerCase();
 
-    orgData.sort((a, b) => (chgVal(a) > chgVal(b) ? -1 * sort : chgVal(a) < chgVal(b) ? 1 * sort : 0));
+    orgData.sort((a, b) =>
+      chgVal(a) > chgVal(b) ? -1 * sort : chgVal(a) < chgVal(b) ? 1 * sort : 0
+    );
 
     // 3. 일부 데이터만 선택
     // 예시로 0번부터 9번까지만 선택
@@ -472,7 +476,9 @@ export default function Board() {
       {
         // 3. 쓰기 모드일 경우 로그인 정보 보내기
         // sts값은 문자열이므로 파싱하여 객체로 보냄
-        mode == "W" && <WriteMode sts={JSON.parse(sts)} updateFileInfo={updateFileInfo} />
+        mode == "W" && (
+          <WriteMode sts={JSON.parse(sts)} updateFileInfo={updateFileInfo} />
+        )
       }
       {
         // 4. 수정 모드일 경우 상세보기 출력하기
@@ -486,7 +492,9 @@ export default function Board() {
             <td>
               {
                 // 1. 글쓰기 버튼은 로그인상태이고 "L"이면출력
-                mode == "L" && sts && <button onClick={clickButton}>Write</button>
+                mode == "L" && sts && (
+                  <button onClick={clickButton}>Write</button>
+                )
               }
               {
                 // 2. 읽기상태 "R" 일 경우
@@ -506,7 +514,11 @@ export default function Board() {
                     // 현재글은 selRecord 참조변수에 저장됨
                     // 글정보 항목중 uid 가 사용자 아이디임!
                     // 로그인 상태정보하위의 sts.uid와 비교함
-                    mode == "R" && sts && JSON.parse(sts).uid == selRecord.current.uid && <button onClick={clickButton}>Modify</button>
+                    mode == "R" &&
+                      sts &&
+                      JSON.parse(sts).uid == selRecord.current.uid && (
+                        <button onClick={clickButton}>Modify</button>
+                      )
                   }
                 </>
               }
@@ -540,7 +552,21 @@ export default function Board() {
 /****************************************** 
         리스트 모드 서브 컴포넌트
 ******************************************/
-const ListMode = ({ bindList, totalCount, unitSize, pageNum, setPageNum, pgPgNum, pgPgSize, keyword, setKeyword, sort, setSort, sortCta, setSortCta }) => {
+const ListMode = ({
+  bindList,
+  totalCount,
+  unitSize,
+  pageNum,
+  setPageNum,
+  pgPgNum,
+  pgPgSize,
+  keyword,
+  setKeyword,
+  sort,
+  setSort,
+  sortCta,
+  setSortCta,
+}) => {
   /******************************************* 
     [ 전달변수 ] - 2~5까지 4개는 페이징전달변수
     1. bindList : 리스트 결과 요소
@@ -568,7 +594,13 @@ const ListMode = ({ bindList, totalCount, unitSize, pageNum, setPageNum, pgPgNum
           <option value="unm">Writer</option>
         </select>
 
-        <select name="sel" id="sel" className="sel" onChange={() => setSort(sort * -1)} value={sort == 1 ? "0" : "1"}>
+        <select
+          name="sel"
+          id="sel"
+          className="sel"
+          onChange={() => setSort(sort * -1)}
+          value={sort == 1 ? "0" : "1"}
+        >
           <option value="0">Descending</option>
           <option value="1">Ascending</option>
         </select>
@@ -638,7 +670,14 @@ const ListMode = ({ bindList, totalCount, unitSize, pageNum, setPageNum, pgPgNum
         }
 
         {/* 정렬기준선택박스 */}
-        <select name="sort_cta" id="sort_cta" className="sort_cta" onChange={(e) => setSortCta(e.currentTarget.value)} style={{ float: "right", translate: "0 5px" }} value={sortCta}>
+        <select
+          name="sort_cta"
+          id="sort_cta"
+          className="sort_cta"
+          onChange={(e) => setSortCta(e.currentTarget.value)}
+          style={{ float: "right", translate: "0 5px" }}
+          value={sortCta}
+        >
           <option value="idx">Recent</option>
           <option value="tit">Title</option>
         </select>
@@ -659,7 +698,16 @@ const ListMode = ({ bindList, totalCount, unitSize, pageNum, setPageNum, pgPgNum
             <td colSpan="5" className="paging">
               {
                 // 데이터 개수가 0이상일때만 출력
-                totalCount.current > 0 && <PagingList totalCount={totalCount} unitSize={unitSize} pageNum={pageNum} setPageNum={setPageNum} pgPgNum={pgPgNum} pgPgSize={pgPgSize} />
+                totalCount.current > 0 && (
+                  <PagingList
+                    totalCount={totalCount}
+                    unitSize={unitSize}
+                    pageNum={pageNum}
+                    setPageNum={setPageNum}
+                    pgPgNum={pgPgNum}
+                    pgPgSize={pgPgSize}
+                  />
+                )
               }
             </td>
           </tr>
@@ -708,7 +756,12 @@ const ReadMode = ({ selRecord, sts }) => {
   // (3) 로그인한 사용자의 글이면 isRec값을 true처리
   // sts가 true이면 즉, 로그인한 사용자이면 처리
   if (sts) {
-    console.log("선택글 아이디:", data.uid, "로그인사용자 아이디:", JSON.parse(sts).uid);
+    console.log(
+      "선택글 아이디:",
+      data.uid,
+      "로그인사용자 아이디:",
+      JSON.parse(sts).uid
+    );
     // 글쓴이 아이디와 로그인사용자 아이디가 같은가?
     if (data.uid == JSON.parse(sts).uid) {
       // 글번호저장과 조회수증가를 하지 않도록 isRec값을
@@ -755,19 +808,37 @@ const ReadMode = ({ selRecord, sts }) => {
           <tr>
             <td>Name</td>
             <td>
-              <input type="text" className="name" size="20" readOnly value={data.unm} />
+              <input
+                type="text"
+                className="name"
+                size="20"
+                readOnly
+                value={data.unm}
+              />
             </td>
           </tr>
           <tr>
             <td>Title</td>
             <td>
-              <input type="text" className="subject" size="60" readOnly value={data.tit} />
+              <input
+                type="text"
+                className="subject"
+                size="60"
+                readOnly
+                value={data.tit}
+              />
             </td>
           </tr>
           <tr>
             <td>Content</td>
             <td>
-              <textarea className="content" cols="60" rows="10" readOnly value={data.cont}></textarea>
+              <textarea
+                className="content"
+                cols="60"
+                rows="10"
+                readOnly
+                value={data.cont}
+              ></textarea>
             </td>
           </tr>
           <tr>
@@ -777,12 +848,19 @@ const ReadMode = ({ selRecord, sts }) => {
                 // 첨부파일 데이터가 빈값이 아닐때만 출력!
                 data.att != "" && (
                   <>
-                    <a href={process.env.PUBLIC_URL + "/uploads/" + data.att} download={data.att}>
+                    <a
+                      href={process.env.PUBLIC_URL + "/uploads/" + data.att}
+                      download={data.att}
+                    >
                       {data.att}
                     </a>
                     {imgExt.includes(data.att.split(".")[1]) && (
                       <div>
-                        <img src={process.env.PUBLIC_URL + "/uploads/" + data.att} alt="image" style={{ width: "100%" }} />
+                        <img
+                          src={process.env.PUBLIC_URL + "/uploads/" + data.att}
+                          alt="image"
+                          style={{ width: "100%" }}
+                        />
                       </div>
                     )}
                   </>
@@ -884,19 +962,35 @@ const ModifyMode = ({ selRecord }) => {
           <tr>
             <td>Name</td>
             <td>
-              <input type="text" className="name" size="20" readOnly value={data.unm} />
+              <input
+                type="text"
+                className="name"
+                size="20"
+                readOnly
+                value={data.unm}
+              />
             </td>
           </tr>
           <tr>
             <td>Title</td>
             <td>
-              <input type="text" className="subject" size="60" defaultValue={data.tit} />
+              <input
+                type="text"
+                className="subject"
+                size="60"
+                defaultValue={data.tit}
+              />
             </td>
           </tr>
           <tr>
             <td>Content</td>
             <td>
-              <textarea className="content" cols="60" rows="10" defaultValue={data.cont}></textarea>
+              <textarea
+                className="content"
+                cols="60"
+                rows="10"
+                defaultValue={data.cont}
+              ></textarea>
             </td>
           </tr>
           <tr>
@@ -906,12 +1000,19 @@ const ModifyMode = ({ selRecord }) => {
                 // 첨부파일 데이터가 빈값이 아닐때만 출력!
                 data.att != "" && (
                   <>
-                    <a href={process.env.PUBLIC_URL + "/uploads/" + data.att} download={data.att}>
+                    <a
+                      href={process.env.PUBLIC_URL + "/uploads/" + data.att}
+                      download={data.att}
+                    >
                       {data.att}
                     </a>
                     {imgExt.includes(data.att.split(".")[1]) && (
                       <div>
-                        <img src={process.env.PUBLIC_URL + "/uploads/" + data.att} alt="image" style={{ width: "100%" }} />
+                        <img
+                          src={process.env.PUBLIC_URL + "/uploads/" + data.att}
+                          alt="image"
+                          style={{ width: "100%" }}
+                        />
                       </div>
                     )}
                   </>
@@ -928,7 +1029,14 @@ const ModifyMode = ({ selRecord }) => {
 /****************************************** 
     PagingList : 페이징 기능 컴포넌트
 ******************************************/
-const PagingList = ({ totalCount, unitSize, pageNum, setPageNum, pgPgNum, pgPgSize }) => {
+const PagingList = ({
+  totalCount,
+  unitSize,
+  pageNum,
+  setPageNum,
+  pgPgNum,
+  pgPgSize,
+}) => {
   /******************************************* 
     [ 전달변수 ]
     1. totalCount : 전체 레코드 개수
@@ -948,7 +1056,14 @@ const PagingList = ({ totalCount, unitSize, pageNum, setPageNum, pgPgNum, pgPgSi
     pagingCount++;
   }
 
-  console.log("페이징개수:", pagingCount, "전체레코드수:", totalCount.current, "나머지개수:", totalCount.current % unitSize);
+  console.log(
+    "페이징개수:",
+    pagingCount,
+    "전체레코드수:",
+    totalCount.current,
+    "나머지개수:",
+    totalCount.current % unitSize
+  );
 
   // [ 페이징의 페이징 하기 ]
   // [1] 페이징 블록
@@ -1218,7 +1333,13 @@ const AttachBox = ({ saveFile }) => {
   */
   // 리턴 코드 //////////////////////
   return (
-    <label className="info-view" onDragEnter={controlDragEnter} onDragLeave={controlDragLeave} onDragOver={controlDragOver} onDrop={controlDrop}>
+    <label
+      className="info-view"
+      onDragEnter={controlDragEnter}
+      onDragLeave={controlDragLeave}
+      onDragOver={controlDragOver}
+      onDrop={controlDrop}
+    >
       {/* 파일을 클릭하여 선택창이 뜰때 파일을 선택하면
       현재 상태가 변경되기때문에 onChange이벤트 속성을씀! */}
       <input type="file" className="file" onChange={changeUpload} />
