@@ -96,6 +96,8 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
     goPage("search", { state: { keyword: txt } });
   }; /////////// goSearch //////////////
 
+  
+
   //// 코드 리턴구역 //////////////
   return (
     <>
